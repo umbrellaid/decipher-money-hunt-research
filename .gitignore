@@ -1,0 +1,9 @@
+# Local-only: fetched corpora, environments, scratch output.
+# The repository deliberately ships no book texts; solver/fetch_texts.py rebuilds them.
+texts/
+.venv/
+__pycache__/
+*.pyc
+*.clean.txt
+*.chapters.json
+solver_validate_out.txt

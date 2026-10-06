@@ -1,0 +1,132 @@
+=== cipher 2-4: 31 files, max_n=1053, 21 rule families
+  browning_2002 done (2s)
+  browning_33363 done (11s)
+  browning_56621 done (33s)
+  hardy_107 done (72s)
+  hardy_110 done (117s)
+  hardy_122 done (155s)
+  hardy_143 done (186s)
+  hardy_153 done (224s)
+  hardy_224 done (259s)
+  hardy_3044 done (297s)
+  hardy_3146 done (323s)
+  hawthorne_13707 done (364s)
+  hawthorne_2081 done (384s)
+  hawthorne_2181 done (401s)
+  hawthorne_2182 done (422s)
+  hawthorne_25344 done (448s)
+  hawthorne_512 done (491s)
+  hawthorne_513 done (511s)
+  hawthorne_77 done (539s)
+  thoreau_1022 done (542s)
+  thoreau_205 done (572s)
+  thoreau_42500 done (599s)
+  thoreau_57393 done (634s)
+  verne_103 done (651s)
+  verne_1268 done (704s)
+  verne_164 done (732s)
+  verne_18857 done (754s)
+  verne_83 done (779s)
+  whitman_1322 done (812s)
+  whitman_8801 done (815s)
+  whitman_8813 done (881s)
+--- 2-4 TOP 10 (English band ~-7.9..-8.0; noise <=-8.6)
+   -8.7683 win= -8.4344  hawthorne_512:every3-wordlast            off=  30058 fwd      rev  FFTEDESTDYSMAFISEESSDENYTFDENDSEAELSNEDOFTEFEEEE
+   -8.8263 win= -8.7022  verne_83:every10-wordlast                off=   7822 fwd      fwd  DEEHNESODESTENSERSENNNEENDDESEADTDEINYSSRYRETTEM
+   -8.8307 win= -8.2267  verne_83:every2-wordlast                 off=  18856 from-end rev  YEYTHEEIERETETDHOEHEOTELRSLEEDEEYSHEDEFTETDETETE
+   -8.8507 win= -8.4190  thoreau_42500:every5-wordlast            off=  11841 fwd      rev  EETTHYISEENTEHEMDENDESDSITEEYSTRHESEETEETFELSTTE
+   -8.8528 win= -8.6598  hawthorne_2081:word3th-letter            off=  46696 fwd      fwd  ULIGESTIDOLIERPUSEEORORIOAFETHAARSELEEDFELTERPOR
+   -8.8657 win= -8.5359  thoreau_42500:last-letters               off=  39728 fwd      rev  NTDEDNSOADHYREEFRESEDTSSEREDEENETDEOHENTESETGTRD
+   -8.8693 win= -8.6324  thoreau_42500:last-letters               off=  40244 fwd      fwd  DSTSSWEDESDYLEOETERNSNOONDEDTEEREESADTMDYETFEDOD
+   -8.8951 win= -8.5504  thoreau_57393:last-letters               off=  25898 fwd      rev  FEDLLOLDSRSESSNNENOLDEONHERSEFETYSNSOKEESARTENYE
+   -8.9040 win= -8.6738  hardy_110:letters                        off= 470048 fwd      fwd  SYOFERNTLYIEEALLRTTTHTTSTETSEHUELLEDADEGTERALGTI
+   -8.9067 win= -8.6010  thoreau_205:last-letters                 off=  69428 fwd      rev  SAYNSRADESONDSEOSTAFTNNONDEDETSEYSSETONOEWDDLSOF
+=== cipher 3-2: 21 files, max_n=416, 21 rule families
+  christie_1155 done (903s)
+  christie_58866 done (916s)
+  christie_61168 done (930s)
+  christie_61262 done (941s)
+  christie_65238 done (955s)
+  christie_69087 done (971s)
+  christie_70114 done (984s)
+  christie_72824 done (998s)
+  christie_75288 done (1012s)
+  christie_863 done (1023s)
+  cummings_8446 done (1046s)
+  faulkner_75170 done (1067s)
+  faulkner_se_asilaydying done (1077s)
+  faulkner_se_soldierspay done (1095s)
+  faulkner_se_thesoundandthefury done (1113s)
+  oneill_22638 done (1119s)
+  oneill_4015 done (1122s)
+  oneill_4025 done (1126s)
+  oneill_72442 done (1132s)
+  oneill_77808 done (1137s)
+  sandburg_27085 done (1142s)
+--- 3-2 TOP 10 (English band ~-7.9..-8.0; noise <=-8.6)
+   -8.5379 win= -8.3160  christie_69087:every2-wordlast           off=  30652 from-end fwd  NTRIOANNEERETEDDINEEODODEMLSENRESESEERSERNIDMEEE
+   -8.5798 win= -8.3384  faulkner_se_asilaydying:every3-wordlast  off=   2264 from-end rev  ODYTTUEEENDDLEDSEENANNERTOYPEETETRIESETTTIRKEIDD
+   -8.5991 win= -8.3322  christie_75288:last-letters              off=  25855 fwd      rev  TSEGADREDOSSEMDEETEDOFIEINYDHTEDDETEELFWADOLETDD
+   -8.6025 win= -8.4832  christie_69087:every10-wordlast          off=   6057 fwd      fwd  LLEASDETSYTETSSETOTEETIESHNHEDIEREANNYENANERNODE
+   -8.6037 win= -8.3392  christie_61168:every3-letter             off=  30527 fwd      fwd  EFETELNEAANNOSEOTEHEDPHOLMYMETENENIOSENGRESEASER
+   -8.6084 win= -8.4186  christie_61262:every5-wordlast           off=   6723 fwd      rev  GETHDIDATSEDRNYRERDISREESDYOTDOTHEIETETOESEENNYE
+   -8.6104 win= -8.4034  christie_1155:last-letters               off=  61397 fwd      rev  SAESRISETTEDAMTEESNETSEDNEYSTETARDDETDRRNARESTTE
+   -8.6136 win= -8.1082  faulkner_75170:every2-wordlast           off=   9452 from-end fwd  ENNSOOEEESEENESESTTSEEEEIPDSELNTEEDSSEMISRSNIETS
+   -8.6144 win= -8.3358  christie_1155:every3-wordlast            off=   5686 from-end fwd  TEWSYESSSEEETERMYDEMDEDMREGEESERSETEITSOHNEOYOSH
+   -8.6217 win= -8.1597  christie_1155:every5-wordlast            off=    185 from-end fwd  TSESSTIESESEETENKNTETDFNNOTEEEOSEESTADDINGETTTHE
+=== cipher 3-3: 21 files, max_n=721, 21 rule families
+  christie_1155 done (1166s)
+  christie_58866 done (1181s)
+  christie_61168 done (1199s)
+  christie_61262 done (1212s)
+  christie_65238 done (1230s)
+  christie_69087 done (1247s)
+  christie_70114 done (1261s)
+  christie_72824 done (1278s)
+  christie_75288 done (1294s)
+  christie_863 done (1308s)
+  cummings_8446 done (1332s)
+  faulkner_75170 done (1355s)
+  faulkner_se_asilaydying done (1368s)
+  faulkner_se_soldierspay done (1389s)
+  faulkner_se_thesoundandthefury done (1411s)
+  oneill_22638 done (1419s)
+  oneill_4015 done (1422s)
+  oneill_4025 done (1428s)
+  oneill_72442 done (1435s)
+  oneill_77808 done (1441s)
+  sandburg_27085 done (1448s)
+--- 3-3 TOP 10 (English band ~-7.9..-8.0; noise <=-8.6)
+   -8.6957 win= -8.4163  christie_61168:last-letters              off=   1485 fwd      rev  OTEDESRERTEREESEURDNOTTTTEATEGEITENENEEITEHTDDEE
+   -8.7099 win= -8.5316  christie_72824:last-letters              off=  25429 from-end rev  EEFEESESENNETOLSEHYEFANENDEESTERYYSETEUDDYEDDIRE
+   -8.7133 win= -8.3884  faulkner_75170:last-letters              off=  37505 from-end rev  EMEONKINSFRITETESIDESEUTITENOFTTOEGTYEYEHETOETEE
+   -8.7133 win= -8.3884  faulkner_se_thesoundandthefury:last-letters off=  37585 from-end rev  EMEONKINSFRITETESIDESEUTITENOFTTOEGTYEYEHETOETEE
+   -8.7918 win= -8.3988  christie_61262:last-letters              off=  47069 fwd      fwd  RINNIHEEEEDEETNIFLUTEENTDAETHETTTEEOOKDSGFOEDROT
+   -8.8040 win= -8.1450  faulkner_se_asilaydying:last-letters     off=  46940 fwd      rev  IESFIGSTESNSENTREUEODDETNGYDIGSEHDENEENNEAIDDETO
+   -8.8250 win= -8.5299  christie_69087:every2-wordlast           off=   3082 from-end rev  SETESWOHTYODOTTHEEDIEESSTSLETYEGNHYFIEESNATHTAGS
+   -8.8290 win= -8.2903  christie_70114:every2-wordlast           off=   8771 fwd      fwd  SRSEENRLFTONINDDDETTEETWEEWWTSLENKEENTFSSENETDEA
+   -8.8395 win= -8.7101  christie_863:last-letters                off=  18962 from-end fwd  EDTEODEORSGNEKTYEEETHETORETTINSESDESEDHNTHEGSEDL
+   -8.8429 win= -8.8545  faulkner_75170:last-letters              off=  79717 fwd      fwd  YEEIRIENGENTYEWTISSPEEKTOTOHTSYTETSOUNGENTDRREFD
+ALL DONE 1452.4 s
+=== cipher 3-1: 9 files, max_n=516, 21 rule families
+  pg10031 done (17s)
+  pg1064 done (17s)
+  pg1065 done (17s)
+  pg2147 done (42s)
+  pg2148 done (67s)
+  pg2149 done (94s)
+  pg2150 done (117s)
+  pg2151 done (136s)
+  pg25525 done (259s)
+--- 3-1 TOP 10 (English band ~-7.9..-8.0; noise <=-8.6)
+   -8.8389 win= -8.6570  pg2150:last-letters                      off=   7763 from-end fwd  HTEHRSTETNSREEASTEDSETASSWWESESTSOFERETEDEARSESE
+   -8.8389 win= -8.6570  pg25525:last-letters                     off=  82350 from-end fwd  HTEHRSTETNSREEASTEDSETASSWWESESTSOFERETEDEARSESE
+   -8.8681 win= -8.8751  pg25525:every2-wordlast                  off= 156085 from-end fwd  ESSLARLEONEEYSEEDAWSEOTUSEEYLSSSAGLARASUEESEMTEE
+   -8.8778 win= -8.4668  pg2149:every2-wordlast                   off=   5921 from-end rev  NNFEYSELYEEDNESTEINTDERSTSTTODYSERSEOTENNSENDRIE
+   -8.8778 win= -8.4668  pg25525:every2-wordlast                  off=  87609 from-end rev  NNFEYSELYEEDNESTEINTDERSTSTTODYSERSEOTENNSENDRIE
+   -8.9002 win= -8.6913  pg2149:every2-wordlast                   off=   5897 from-end fwd  EEYEITESEEFEDNSNTWENROFTSTTDDRESEATEDECSEESSREES
+   -8.9002 win= -8.6913  pg25525:every2-wordlast                  off=  87585 from-end fwd  EEYEITESEEFEDNSNTWENROFTSTTDDRESEATEDECSEESSREES
+   -8.9098 win= -8.6490  pg10031:line-last                        off=   5980 from-end rev  RENKTRENSERERSEEATSREEEETTETGEDTEERELSSENSENSTRE
+   -8.9155 win= -8.9524  pg25525:every2-wordlast                  off= 183673 fwd      fwd  FLESTKSNDSTONFEFESEDESETDEESETENESNNDETSSEESNESN
+   -8.9339 win= -8.9488  pg2151:line-last                         off=   4250 fwd      rev  EEERERAARESTEEEORESEEREGSSTTEEEGEGETRSTORRERESGD
+ALL DONE 278.9 s

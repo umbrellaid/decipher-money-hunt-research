@@ -1,0 +1,97 @@
+=== cipher 2-4: 30 files, max_n=1053
+  browning_2002 done (1s)
+  browning_33363 done (5s)
+  browning_56621 done (15s)
+  hardy_107 done (32s)
+  hardy_110 done (49s)
+  hardy_143 done (63s)
+  hardy_153 done (80s)
+  hardy_224 done (94s)
+  hardy_3044 done (111s)
+  hardy_3146 done (122s)
+  hawthorne_13707 done (139s)
+  hawthorne_2081 done (148s)
+  hawthorne_2181 done (155s)
+  hawthorne_2182 done (164s)
+  hawthorne_25344 done (174s)
+  hawthorne_512 done (193s)
+  hawthorne_513 done (202s)
+  hawthorne_77 done (215s)
+  thoreau_1022 done (216s)
+  thoreau_205 done (229s)
+  thoreau_42500 done (241s)
+  thoreau_57393 done (257s)
+  verne_103 done (264s)
+  verne_1268 done (286s)
+  verne_164 done (298s)
+  verne_18857 done (308s)
+  verne_83 done (319s)
+  whitman_1322 done (334s)
+  whitman_8801 done (336s)
+  whitman_8813 done (365s)
+--- 2-4 TOP 8 (calibration: real English ~-7.9 to -8.0)
+   -8.8657  thoreau_42500:last-letters         off=  39728 fwd      rev
+   -8.8693  thoreau_42500:last-letters         off=  40244 fwd      fwd
+   -8.8951  thoreau_57393:last-letters         off=  25898 fwd      rev
+   -8.9040  hardy_110:letters                  off= 470048 fwd      fwd
+   -8.9067  thoreau_205:last-letters           off=  69428 fwd      rev
+   -8.9173  whitman_1322:last-letters          off=  74808 fwd      fwd
+   -8.9294  verne_18857:last-letters           off=  76737 from-end fwd
+   -8.9368  hardy_224:last-letters             off=  50602 from-end fwd
+=== cipher 3-2: 18 files, max_n=416
+  christie_1155 done (372s)
+  christie_58866 done (377s)
+  christie_61168 done (384s)
+  christie_61262 done (388s)
+  christie_65238 done (395s)
+  christie_69087 done (401s)
+  christie_70114 done (406s)
+  christie_72824 done (412s)
+  christie_75288 done (418s)
+  christie_863 done (423s)
+  cummings_8446 done (431s)
+  faulkner_75170 done (439s)
+  oneill_22638 done (442s)
+  oneill_4015 done (443s)
+  oneill_4025 done (445s)
+  oneill_72442 done (448s)
+  oneill_77808 done (450s)
+  sandburg_27085 done (453s)
+--- 3-2 TOP 8 (calibration: real English ~-7.9 to -8.0)
+   -8.5991  christie_75288:last-letters        off=  25855 fwd      rev
+   -8.6104  christie_1155:last-letters         off=  61397 fwd      rev
+   -8.6479  christie_61168:last-letters        off=  11233 from-end fwd
+   -8.6484  christie_61262:last-letters        off=  17959 fwd      rev
+   -8.6622  christie_75288:last-letters        off=  62941 fwd      fwd
+   -8.6628  christie_69087:last-letters        off=  49308 from-end rev
+   -8.6784  christie_863:last-letters          off=  33877 from-end rev
+   -8.6838  christie_58866:last-letters        off=  37179 fwd      rev
+=== cipher 3-3: 18 files, max_n=721
+  christie_1155 done (461s)
+  christie_58866 done (468s)
+  christie_61168 done (476s)
+  christie_61262 done (482s)
+  christie_65238 done (490s)
+  christie_69087 done (497s)
+  christie_70114 done (503s)
+  christie_72824 done (511s)
+  christie_75288 done (518s)
+  christie_863 done (524s)
+  cummings_8446 done (534s)
+  faulkner_75170 done (543s)
+  oneill_22638 done (547s)
+  oneill_4015 done (548s)
+  oneill_4025 done (551s)
+  oneill_72442 done (553s)
+  oneill_77808 done (556s)
+  sandburg_27085 done (559s)
+--- 3-3 TOP 8 (calibration: real English ~-7.9 to -8.0)
+   -8.6957  christie_61168:last-letters        off=   1485 fwd      rev
+   -8.7099  christie_72824:last-letters        off=  25429 from-end rev
+   -8.7133  faulkner_75170:last-letters        off=  37505 from-end rev
+   -8.7918  christie_61262:last-letters        off=  47069 fwd      fwd
+   -8.8395  christie_863:last-letters          off=  18962 from-end fwd
+   -8.8429  faulkner_75170:last-letters        off=  79717 fwd      fwd
+   -8.8663  christie_61262:last-letters        off=  33320 fwd      fwd
+   -8.8808  faulkner_75170:last-letters        off=  18652 from-end rev
+ALL DONE 559.1610240936279 s

@@ -1,0 +1,26 @@
+{
+  "_provenance": "Groups A/B/C transcribed 2026-10-05 from the printed Decipher III rulebook (page 6); previously believed hotline-only. Message-to-group assignment: #1 = B (printed initial clues, rulebook page 5). Messages #2/#3 clues were only released after #1 was solved, which never happened, so both remaining groups apply to both 3-2 and 3-3. Decipher II 2-4 list from Karen Puzzles' master doc.",
+  "decipher_iii": {
+    "group_A": ["Lawrence Sanders", "Joseph Heller", "William F. Buckley", "Aleksandr Solzhenitsyn", "Bill Cosby", "William Faulkner", "Tom Wolfe", "Agatha Christie", "George Orwell", "John Kenneth Galbraith", "Carl Sandburg"],
+    "group_B": ["Richard Nixon", "Bob Woodward", "Robert Ludlum", "Kurt Vonnegut Jr.", "Truman Capote", "Yoko Ono", "Isaac Asimov", "Leon Uris", "Edgar Allan Poe", "Boris Pasternak", "David Halberstam"],
+    "group_C": ["Henry Kissinger", "Thomas Wolfe", "Sylvia Plath", "Alex Haley", "Norman Mailer", "Eugene O'Neill", "e.e. cummings", "James Clavell", "Martin Cruz Smith", "Ken Follett", "Mario Puzo"],
+    "message_groups": {"3-1": ["group_B"], "3-2": ["group_A", "group_C"], "3-3": ["group_A", "group_C"]},
+    "initial_clues": {
+      "3-1": ["The author you seek to find the key is from the group that's labeled B.", "10", "End"],
+      "3-2": [],
+      "3-3": []
+    },
+    "constraints": "Key text must be a work published before 1987. Decipher, Inc. periodically eliminated names from the lists via the hotline and press; no elimination notices have been recovered."
+  },
+  "decipher_ii_2_4": {
+    "authors": ["John Updike", "Colleen McCullough", "Nathaniel Hawthorne", "Thomas Hardy", "Elizabeth Barrett Browning", "John Irving", "Jules Verne", "Walt Whitman", "Robert Ludlum", "Henry David Thoreau", "Louis L'Amour"],
+    "constraints": "Key text published before 1985.",
+    "eliminated_by_pd_sweep": ["Nathaniel Hawthorne", "Thomas Hardy", "Elizabeth Barrett Browning", "Jules Verne", "Walt Whitman", "Henry David Thoreau"],
+    "remaining": ["John Updike", "Colleen McCullough", "John Irving", "Robert Ludlum", "Louis L'Amour"]
+  },
+  "public_domain_sweep_eliminations": {
+    "3-1": ["Edgar Allan Poe"],
+    "3-2_3-3": ["William Faulkner (The Sound and the Fury, Soldiers' Pay, As I Lay Dying)", "Agatha Christie (10 pre-1931 titles)", "Carl Sandburg (Rootabaga)", "Eugene O'Neill (5 early plays)", "e.e. cummings (The Enormous Room)"],
+    "note": "Eliminations hold under the rule families in solver/rules.py; see results/ for the sweep logs and calibration."
+  }
+}
