@@ -114,3 +114,9 @@ with **VOL 149145**, the eagle, and the framed prices ($5537 / $16M / $334 / $61
 7. p28 garbled spine middles (SINSORS/SINUSES family; several "?" spines).
 8. Book-wide Braille sweep for STAFF S5_F (pages not yet checked: 1–9, 11, 12, 14, 15,
    17, 19–26, 29–32).
+9. **p18 mini-crossword** (added 2026-10-09 follow-up): its grid is drawn on the page
+   (read twice as 5×9, blacks at rows 2/7 edges + row 4 center) — a fact never before
+   recorded. The 12 transcribed clues are sensible and have clean candidate answers, but
+   they don't yet reconcile with the read grid (~16–18 slots), so the clue list likely
+   continues past 11D (the trailing "12"). Needs a full-list re-transcription from the
+   native images + one more geometry pass; then it is mechanically solvable.
