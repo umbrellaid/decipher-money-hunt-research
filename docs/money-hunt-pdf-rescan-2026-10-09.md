@@ -28,6 +28,9 @@ remains un-homed; pages checked negative for Braille so far: 10, 13, 16, 18, 27,
 Bonus confirmations on p18: jars CANDY / COOKIES / JELLY BEANS, bottle HOUSE WINE, milk
 cartons 7 OZ / 8 OZ / 16 OZ, vertical "Wea…" at top right, explosion letters W S N O I R
 plus a small B — consistent with the BROWNS anagram reading.
+*Correction 2026-10-09 evening:* the explosion letters re-read at 2× from the native
+extraction are **W R B N S O** (B printed small beside W) — there is **no I**. The
+BROWNS anagram stands on the six certain letters.
 
 ### 2. Page 5 — missing 4 confirmed on BOTH dials; 7:28 plausible but unpinned
 The pocket watch and the square wristwatch both carry Roman-numeral dials, **neither dial
@@ -114,9 +117,13 @@ with **VOL 149145**, the eagle, and the framed prices ($5537 / $16M / $334 / $61
 7. p28 garbled spine middles (SINSORS/SINUSES family; several "?" spines).
 8. Book-wide Braille sweep for STAFF S5_F (pages not yet checked: 1–9, 11, 12, 14, 15,
    17, 19–26, 29–32).
-9. **p18 mini-crossword** (added 2026-10-09 follow-up): its grid is drawn on the page
-   (read twice as 5×9, blacks at rows 2/7 edges + row 4 center) — a fact never before
-   recorded. The 12 transcribed clues are sensible and have clean candidate answers, but
-   they don't yet reconcile with the read grid (~16–18 slots), so the clue list likely
-   continues past 11D (the trailing "12"). Needs a full-list re-transcription from the
-   native images + one more geometry pass; then it is mechanically solvable.
+9. **p18 mini-crossword** (added 2026-10-09 follow-up; **closed out 2026-10-09 evening**):
+   the grid is drawn on the page and matches the owner's authoritative 20×16 ASCII
+   exactly (14 entries, 55 cells). The clue list is confirmed at exactly 12 lines — it
+   does **not** continue past 11D; the machine-read "tail clues" were scene labels.
+   An exhaustive crossing check gives: intended fill locks 1D SAFAR / 2A SCRAP / 3A AMORT
+   and the scene-clued chain 7D BASIC → 10A CAR → 11D RIVERHORSE (the hippopotamus
+   drawing) → 13A ICING (the Candy jar), with 5A DEAR — but 4D (O____) and 6A (__B__)
+   have no candidate, "prices & wrists" and "Nap" fit nothing, and the middle sub-chain
+   has several crossing-legal fills. **Not uniquely solvable as printed.** Full write-up:
+   [`data/money_hunt_pages/page_18.md`](../data/money_hunt_pages/page_18.md).

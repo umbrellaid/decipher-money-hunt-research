@@ -2,11 +2,11 @@
 
 **Scans:** [Karen Puzzles' Money Hunt folder](https://drive.google.com/drive/folders/1LgZD4G5UtxEaaQxZ0G3PL6Zj_DDDD3W3?usp=sharing). Crossword answer key: [her crossword folder](https://drive.google.com/drive/folders/1lFzlQ_kqHhT5BZka4xRlcVdksE7zPLea?usp=sharing). Solving notes: [Karen and Katie's Google Doc](https://docs.google.com/document/d/113Qhrs91h3E-vggWBtMERGeSxkfIhzSAGosdZtR6nX8/edit?usp=sharing).
 
-**Thirteen pages are still withdrawn** as transcriptions (9, 10, 11, 13, 19, 20, 21, 22, 23, 24, 25, 27, 28). Pages 5, 6, and 18 have a scene check only, not a full transcription. The defects are in [`docs/money-hunt-transcription-errata.md`](../../docs/money-hunt-transcription-errata.md). The image-based notes are in [`docs/money-hunt-state-analysis.md`](../../docs/money-hunt-state-analysis.md). Do not treat a withdrawn or scene-only page file as a transcription.
+**Thirteen pages are still withdrawn** as transcriptions (9, 10, 11, 13, 19, 20, 21, 22, 23, 24, 25, 27, 28). Pages 5 and 6 have a scene check only, not a full transcription. Page 18 was **fully transcribed on 2026-10-09** from the book PDF's native 300-dpi extraction and supersedes the state-analysis notes for that page. The defects are in [`docs/money-hunt-transcription-errata.md`](../../docs/money-hunt-transcription-errata.md). The image-based notes are in [`docs/money-hunt-state-analysis.md`](../../docs/money-hunt-state-analysis.md). Do not treat a withdrawn or scene-only page file as a transcription.
 
 Pages still transcribed here are unofficial research notes, not a substitute for the clue book. Karen's scans are the source. Check a spelling against the scan before relying on it.
 
-Pages 5, 6, and 18 were checked again against the scans at scene level. The other withdrawn pages were not re-transcribed. The artwork is dense, and an earlier vision pass invented whole scenes. Their image read remains the state analysis.
+Pages 5 and 6 were checked again against the scans at scene level. Page 18 was fully transcribed from the native 300-dpi extraction (see the page file and the state analysis). The other withdrawn pages were not re-transcribed. The artwork is dense, and an earlier vision pass invented whole scenes. Their image read remains the state analysis.
 
 ## Reading order (from the map poster's flow-chart)
 **15, 9, 18, 24, 14, 6, 17, 21, 23, 27, 19, 7, 5, 8, 10, 25, 20, 22, 28, 13, 16, 26, 12, 11** — page 11 (pool page) last.
@@ -31,7 +31,7 @@ Pages 5, 6, and 18 were checked again against the scans at scene level. The othe
 | 15 | [page_15](page_15.md) | Nursery: **Y=4X+1 (→ −3, 9)**, xylophone, Cantor register, train 1/2, balloon 5 | math solved |
 | 16 | [page_16](page_16.md) | "WORKOUT" rebuses; **W T F S S M T W T F S S M T W T / 1111112222222222** strip | rebuses solved |
 | 17 | [page_17](page_17.md) | Parlor; "Home S**V**eet Home"; coil→phone (p27) | unsolved |
-| 18 | [page_18](page_18.md) | Scene checked: kitchen counter, not the old fish-shop note | scene only |
+| 18 | [page_18](page_18.md) | **Fully transcribed 2026-10-09**: kitchen/fish counter; 12-line clue list; letter columns TTGO/HOAL/BRING/SGDG; HEAD strip; BROWNS explosion; crossword **not uniquely solvable as printed** (full write-up in file) | transcribed |
 | 19 | [page_19](page_19.md) | Withdrawn until re-read | withdrawn |
 | 20 | [page_20](page_20.md) | Withdrawn until re-read | withdrawn |
 | 21 | [page_21](page_21.md) | Withdrawn until re-read | withdrawn |

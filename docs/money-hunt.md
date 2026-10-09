@@ -70,12 +70,36 @@ it.
    resolve (p5's last two beads, p16's calculator display, p9's clock hands, p24's
    score-sheet fragments) is at the 300-dpi floor and needs 600 dpi of the physical book.
 
+## Notes from 2026-10-09 (evening) — page 18 closed out
+
+6. **Page 18 fully transcribed** from the book PDF's native 300-dpi extraction —
+   [`data/money_hunt_pages/page_18.md`](data/money_hunt_pages/page_18.md). This separated
+   real text from scene-art sketch lines, which had confused an earlier machine pass
+   (it read jar labels and the hippopotamus drawing as extra crossword clues). Corrections
+   of record: the clue list is **exactly 12 lines** and stops at 11D; line 4 is correctly
+   spelled **"Blackjack term"** (the "Blackjam" deliberate-misspelling hypothesis is
+   **refuted**); the letter columns are **TTGO / HOAL / BRING / SGDG** (col 3 = BRING);
+   the cabinet strip is phase-shifted **HEAD** tiling; the explosion letters are
+   **W R B N S O** = BROWNS with no I.
+7. **The p18 mini-crossword is not uniquely solvable as printed.** An exhaustive crossing
+   check on the owner's authoritative grid: the intended fill locks 1D SAFAR / 2A SCRAP /
+   3A AMORT and the scene-clued chain 7D BASIC → 10A CAR → 11D RIVERHORSE (the
+   hippopotamus: Greek *hippos*+*potamos* = river-horse) → 13A ICING (the Candy jar),
+   with 5A DEAR — the book's "more than one clue per page" warning demonstrated twice in
+   one grid. But 4D (forced O____) and 6A (forced __B__) have no candidate from any
+   clue, "prices & wrists" and "Nap" fit no entry, and the {6D, 8A, 9D, 12A} sub-chain
+   has several crossing-legal fills (8A = DECK/PORT/COVE/MOOR/NEAT…). Maximal fills place
+   10 of the 12 printed clues plus the two scene-clued entries. This is structural
+   under-specification, matching the standing objection that the book embeds incomplete
+   information — but the RIVERHORSE/ICING scene-clue mechanism is a genuine new insight
+   into how the book expects solvers to read its artwork.
+
 ## What would move it forward
 
-- **600-dpi re-renders** of the 17 regions listed in the state analysis (bead letters
-  on p5, clock hands on p9, the letter columns on p18, the suitcase glyphs on p10, the
-  three-card pips on p26 vs p11, the p28 spine titles, and others). These are the
-  carriers most likely to hold the remaining states.
+- **600-dpi re-renders** of the regions still listed in the state analysis (bead letters
+  on p5, clock hands on p9, the suitcase glyphs on p10, the three-card pips on p26 vs
+  p11, the p28 spine titles, and others; the p18 letter columns and HEAD strip are now
+  resolved at 300 dpi). These are the carriers most likely to hold the remaining states.
 - **Re-transcription** of the fifteen pages named in the errata, from high-resolution
   renders, before any further page-level reasoning.
 - **The three complete crossword clue lists** now transcribed (p11: 38–69, p22: 73–117,
