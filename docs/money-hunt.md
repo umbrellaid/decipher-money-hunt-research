@@ -53,6 +53,23 @@ it.
    not derived from the per-page states, or most per-page states are still wrong.
    This is flagged, not forced.
 
+## Notes from 2026-10-09 — native-resolution rescan of the book PDF
+
+5. The book PDF (`money-hunt-book.pdf`, all 32 pages at native 2492×3289 = true 300 dpi,
+   twice the earlier renders) was extracted and vision-re-read for the priority targets —
+   [`docs/money-hunt-pdf-rescan-2026-10-09.md`](money-hunt-pdf-rescan-2026-10-09.md).
+   Results: **no Braille exists on p18** (the STAFF S5_F note stays mis-filed; six pages
+   now checked negative); **the telescope is on p13**, a tripod spyglass aimed at the
+   inverted sky-building — the book's best "look at the building" image and the true home
+   of Karen's telescope memory (no airplane exists on p10/13/27); the **missing 4 is
+   confirmed on both p5 watch dials** and the wristwatch reads ≈7:25–7:35, keeping the
+   7:28 ↔ 28 July 1945 crash-date hypothesis plausible; the **p16 calculator** (second in
+   the book) and the deliberately truncated **MADE IN CAN** label are confirmed; p10's
+   suitcase glyphs are a fixed 2×4 grid; p10 clue 17 completes to "…wrote *Mighty Lak' a
+   Rose*" (→ NEVIN). The PDF is the best scanning source that exists; what it could not
+   resolve (p5's last two beads, p16's calculator display, p9's clock hands, p24's
+   score-sheet fragments) is at the 300-dpi floor and needs 600 dpi of the physical book.
+
 ## What would move it forward
 
 - **600-dpi re-renders** of the 17 regions listed in the state analysis (bead letters

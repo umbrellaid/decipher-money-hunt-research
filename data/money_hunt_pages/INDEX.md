@@ -50,12 +50,13 @@ Pages 5, 6, and 18 were checked again against the scans at scene level. The othe
 ## The working theory (as of Oct 2026)
 1. Each clue page hides **one US state or Canadian province** (proven on page 12 → WASHINGTON; answer form demands exactly "State/Province + specific place").
 2. Read in poster order, one letter per page can spell **EMPIRE STATE BUILDING NY US(A/L)** (Karen's acrostic; last letters uncertain).
-3. The creator's son says the solution involves the **July 28, 1945 B-25 crash into the Empire State Building** — the poem's "a sad story was told, of one not very old… with lives made to pay" fits; "find the place one did play" is the remaining riddle (a specific venue/floor?).
+3. The creator's son says the solution involves the **July 28, 1945 B-25 crash into the Empire State Building** — the poem's "a sad story was told, of one not very old… with lives made to pay" fits; "find the place one did play" is the remaining riddle (a specific venue/floor?). **2026-10-09 rescan:** the crash layer's best pictorial anchor is **p13's tripod spyglass aimed at the inverted sky-building**, and the **missing 4 on both p5 watch dials** is confirmed (wristwatch ≈ 7:25–7:35, so 7:28 ↔ July 28 stays plausible).
 4. **Deliberate misspellings** are part of the working theory. Several pages that were thought to carry them are withdrawn, so the spelling list has to be rebuilt from the scans.
 5. A bell assembled across pages, and several number clusters, are standing ideas. Pages 9 and 18 are withdrawn, so any assembly that uses them needs a re-read. Page 26 is still transcribed here.
 
 ## Next analysis steps
-- Re-transcribe the withdrawn pages from Karen's scans before using them.
-- The state analysis lists the regions that need a 600 dpi re-read.
+- **2026-10-09:** the book PDF's native 300 dpi pages were extracted and the priority targets re-read — see [`docs/money-hunt-pdf-rescan-2026-10-09.md`](../../docs/money-hunt-pdf-rescan-2026-10-09.md). p18 definitively has no Braille; the telescope is on p13; p16's calculator and MADE IN CAN truncation are confirmed; p10's glyph grid is 2×4; p10 clue 17 completes to "…wrote *Mighty Lak' a Rose*" (→ NEVIN).
+- Remaining true 600-dpi targets (300-dpi floor): p5's last two necklace beads, p16 calculator display, p9 clock hands, p24 score-sheet fragments, p10 glyph identities, p11/p26 card pips, p28 garbled spine middles — plus a **book-wide Braille sweep for STAFF S5_F** (unchecked: 1–9, 11, 12, 14, 15, 17, 19–26, 29–32).
+- Re-transcribe the withdrawn pages from the extracted native images before using them.
 - Reconcile the WASHINGTON page with the acrostic's "S" at position 23.
 - Page 21 is not a kiosk and has no "ANNUAL" booklet. That was the wrong scene.

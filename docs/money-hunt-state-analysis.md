@@ -1,6 +1,7 @@
 # The Money Hunt (1986) — Per-Page State/Province Analysis
 
 **Compiled:** 2026-10-05, from the scans in [Karen Puzzles' Money Hunt folder](https://drive.google.com/drive/folders/1LgZD4G5UtxEaaQxZ0G3PL6Zj_DDDD3W3?usp=sharing). Names such as `page_18_300dpi.jpg` and `book_pages\page_18.png` mean those renders (150 dpi for pages 1–12, 300 dpi for clue pages 13–28). They are not files in this repository. The reads were checked against the earlier page transcriptions. Sixteen of those page files are now stubs. This file is the image read for those pages.
+**2026-10-09 native-res rescan:** the book PDF (`money-hunt-book.pdf`) carries every page at native 2492×3289 (true 300 dpi, double the renders used below); the priority targets were re-read from it — see [`money-hunt-pdf-rescan-2026-10-09.md`](money-hunt-pdf-rescan-2026-10-09.md). Headlines: **no Braille exists on p18**; **the telescope is on p13**, aimed at the inverted building (not on p27, and no airplane anywhere on 10/13/27); the **missing 4 is confirmed on both p5 dials** (wristwatch ≈ 7:25–7:35, so Karen's 7:28 is plausible); the **p16 calculator** and the deliberately truncated **MADE IN CAN** label are confirmed.
 **Method note:** every micro-text verdict below is from the full-page render. Regions that could not be resolved are listed per page and collected at the end as 600-dpi re-render targets. Where text could not be read, the note says so.
 **Reading order (poster flow-chart):** 15, 9, 18, 24, 14, 6, 17, 21, 23, 27, 19, 7, 5, 8, 10, 25, 20, 22, 28, 13, 16, 26, 12, 11.
 **Acrostic (Karen):** positions 1–24 = E M P I R E S T A T E B U I L D I N G N Y U S A (trailing L uncertain).
@@ -76,7 +77,7 @@
 
 **(d) Contradictions:** the page is a dense letter-grid page (crossword clues + letter columns + scattered letters); a "state" may emerge only after those grids are solved, so the absence of a pictorial state signal is expected, not fatal.
 
-**Transcription check — major.** The earlier page-18 note describes a scene that is **not** this page: awning "FISH", window "FRIED", bull-moose-head keyhole, Braille cells spelling "STAFF S5_F", bowling/skate bag, motor truck with lock-box, gas pump, bugle, rolled umbrella, long spoon, bird shadow, streetlamp, pushcart, child with balloon, masked-ball poster, "P" sign board. None of these are in the page 18 scan. That note has been withdrawn. The Braille string and the moose keyhole belong to some other page, or to a note filed under the wrong folio. Parts of that note that match this scan: the B-S-N-O-W-R explosion, the O '3 fragment, the ribbon, and the four letter columns (partially). See the errata.
+**Transcription check — major.** The earlier page-18 note describes a scene that is **not** this page: awning "FISH", window "FRIED", bull-moose-head keyhole, Braille cells spelling "STAFF S5_F", bowling/skate bag, motor truck with lock-box, gas pump, bugle, rolled umbrella, long spoon, bird shadow, streetlamp, pushcart, child with balloon, masked-ball poster, "P" sign board. None of these are in the page 18 scan. That note has been withdrawn. The Braille string and the moose keyhole belong to some other page, or to a note filed under the wrong folio. **2026-10-09: all four quadrants of p18 were searched at native 300 dpi (plus 3× zooms on the only two candidate dot-rows — decorative stippling, no cell structure): no Braille exists on p18.** The video walkthrough's "braille on a baseboard" repeats the same mis-filing. STAFF S5_F remains un-homed; pages checked negative so far: 10, 13, 16, 18, 27, 28. Parts of the old note that match this scan: the B-S-N-O-W-R explosion, the O '3 fragment, the ribbon, and the four letter columns (partially). See the errata.
 
 ---
 
@@ -215,7 +216,7 @@
 - Piano labelled **STYNBANG** (Steinway misspelling); vertical banner **MUSIC ROOM**.
 - Candlestick telephone with **coiled cord** (matches p17 coil); headphones; turntable; microphone; computer monitor; keyring with two keys; couch.
 - No sheet-music titles resolvable (the earlier note's "Happy Landing / First Time" not seen — see transcription check).
-- Star/constellation ceiling patch (matches p15).
+- Star/constellation ceiling patch (matches p15). **2026-10-09 native-res: no telescope and no aircraft anywhere on this page** (all four quadrants checked) — the video transcript's "telescope showing an airplane" belongs to p13's spyglass + the cover airplane motif, not to the music room.
 
 **(b) Ranked candidates**
 1. **Louisiana** — medium-high: **JAZZ** sign; New Orleans is the canonical birthplace of jazz.
@@ -276,7 +277,7 @@
 **(a) State-signal inventory**
 - Calculator display **1000 000 000** (a billion — matches the cipher's "TURN IT INTO A BILLION").
 - Necklace beads with letters: partial read **H O O Y … P H …** — full string not resolvable at 1246 px (Karen: "H OO YIP SHIP") — re-render target.
-- Pocket watch (top left) and wristwatch with Roman numerals; hand positions/missing-4 not confirmable at this render (Karen's claim stands unverified here).
+- Pocket watch (top left) and wristwatch with Roman numerals; hand positions/missing-4 not confirmable at this render (Karen's claim stands unverified here). **2026-10-09 native-res:** no form of 4 on **either** dial (numerals also scrambled — e.g. II near 10 o'clock); wristwatch hands low-left, hour at VII/VIII and minute around V/VI, i.e. ≈ 7:25–7:35 — **Karen's 7:28 is plausible but unpinned**; pocket watch reads closer to X–XI. Necklace at 2× resolution: H O O Y I P ? S ? I H P (two beads unreadable).
 - Bill denominations visible: **2, 5, 10, 20** on stacks and in the open safe.
 - Script ribbon word **VAULT** across the bottom (the earlier note missed it).
 - Safe doors open with money; coins.
@@ -421,7 +422,7 @@
 **(a) State-signal inventory**
 - Luggage tags: **FIRST CLASS 2** (left tag), **FIRST CLASS 7** (mid tag on suitcase), **FIRST CLASS** with the digit area blank/hidden (right tag) — i.e. Karen's 2/7/_ reading **is** confirmed at 300 dpi.
 - Competition plate **01** on the nose; large letter card **P** at right.
-- Inverted house/hot-air-balloon form top-left (orientation device); artist at easel sketching a bird-like figure; two-arch stone bridge; waterfall at right; sun/moon disc.
+- Inverted house/hot-air-balloon form top-left (orientation device); artist at easel sketching a bird-like figure; two-arch stone bridge; waterfall at right; sun/moon disc. **2026-10-09 native-res: a brass tripod spyglass/telescope stands in the upper-left sky (~0.13 W, 0.09 H), aimed up at the inverted building** — this is the book's telescope (Karen's "telescope looking at a head-on airplane" is a composite of this + the cover's airplane motif; there is no aircraft on p10/13/27). No lens-image inset; the instrument's circle reads blank.
 - No geographic name.
 
 **(b) Ranked candidates**
@@ -441,7 +442,7 @@
 **(a) State-signal inventory**
 - Diagonal label **WORKOUT**; small label **GUY campus**; jersey **7**; board **OUIJA**; bike wheel **Ten Speed**; vertical text on a club shaft **Made in Can…** (truncated; presumably Canada) — re-render target to confirm the full word; trophy **SCHOOL CHAMPS** on base **Fe26-Worker**; duffel **WH…MA** (fragments); locker plates **7°** and **8°**; device **000000**; golf bag **WP**.
 - Day strip, right edge: **W T F S S M T W T F S S M T W T** over **1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2** (confirmed).
-- Curling stones, ski gear, goggles, boots, cheerleader, wrestlers, lacrosse stick, golf clubs.
+- Curling stones, ski gear, goggles, boots, cheerleader, wrestlers, lacrosse stick, golf clubs. **2026-10-09 native-res:** a **calculator lies at bottom-right (~0.80 W, 0.90 H) among the winter boots** (display unreadable even at 5× zoom — the book's second calculator after p5); the shaft label reads **MADE IN CAN with no continuation** — the truncation is deliberate, not a crop.
 
 **(b) Ranked candidates**
 1. **A Canadian province (unspecified)** — low-medium: "Made in Can(ada)" + curling stones point to Canada, but no province marker.
@@ -556,6 +557,8 @@
 - **Acrostic reconciliation:** NO rule found that maps page→state→acrostic letter consistently. The only rule reproducing p12's S (index = digit-sum of folio) fails on p14 (needs R, gives I) and p27 (needs T, gives A). First-letter rule fails everywhere tested (FLORIDA→F≠R, LOUISIANA→L≠T, WASHINGTON→W≠S). Postal-letter rule fails (WA→W/A≠S). **Conclusion: either the acrostic is not derived from the per-page states, or the per-page states for most pages are still wrong. Flagged, not forced.**
 
 # 600-dpi re-render targets
+
+**Status 2026-10-09:** the book PDF has now supplied true 300 dpi for all 32 pages (native 2492×3289), and the priority targets below were re-read from it — item **10** (p5 watch dials: missing-4 confirmed on both, hands ≈7:25–7:35; necklace two beads still unreadable), item **14** (p16 MADE IN CAN — confirmed deliberately truncated) and item **17** (p28 spines — re-confirmed; garbled middles remain) were resolved or advanced; see [`money-hunt-pdf-rescan-2026-10-09.md`](money-hunt-pdf-rescan-2026-10-09.md). The items still listed below are the ones that genuinely need 600 dpi (or the physical book), **plus a new book-wide Braille sweep for STAFF S5_F** (pages not yet checked: 1–9, 11, 12, 14, 15, 17, 19–26, 29–32). Items 2 (p9 clocks) and 4 (p24 score-sheet) were not re-scanned this pass.
 
 1. p15 easel alphabet cube letters (four cubes, mid-right shelf).
 2. p9 both clock faces (wall clock upper-left; tower clock in skyline) for hand positions.

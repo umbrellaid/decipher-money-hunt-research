@@ -15,11 +15,19 @@ from the images, until those pages are transcribed again.
    Braille "STAFF S5_F", truck, gas pump, bugle, pushcart, balloon child, masked-ball
    poster and "P" board. **None of these exist** on page 18 at 300 dpi. The Braille and
    moose items belong to some other folio and need re-attribution.
+   *Update 2026-10-09:* page 18 was searched quadrant-by-quadrant at native 300 dpi
+   (from the book PDF) with zooms on the only candidate dot-rows — **no Braille exists
+   on p18**. The video walkthrough's "braille on a baseboard = staff s 5 f" repeats the
+   same mis-filing. STAFF S5_F's true home is still unknown (pages checked negative:
+   10, 13, 16, 18, 27, 28).
 2. **page_21** — describes a street kiosk with an "ANNUAL …" booklet; the actual page
    is a saluting crowd with ONE WAY / BUS STOP signs and a circled-H building.
 3. **page_10** — describes an interior window/skyline/bridge/freighter scene; the
    actual page is a resort pool carrying the DOWN crossword list (clues 1–37) and the
-   glyph suitcase.
+   glyph suitcase. *Update 2026-10-09:* no telescope or aircraft exists on page 10
+   either (checked at native 300 dpi); the withdrawn note's "model airplane diving at a
+   building" is closest in spirit to **p13's tripod spyglass aimed at the inverted
+   sky-building** — see the rescan note.
 
 ## Wrong or invented text
 
@@ -60,4 +68,7 @@ The state hunt in `docs/money-hunt-state-analysis.md` was run against the **imag
 not against these transcriptions, precisely because of this errata. Anyone continuing
 should re-transcribe pages 5, 6, 9, 10, 11, 13, 18, 19, 20, 21, 22, 23, 24, 25, 27, and 28
 from high-resolution renders before trusting page-level conclusions, and should treat
-the 17 regions listed as 600-dpi re-render targets in that document as unread.
+the 17 regions listed as 600-dpi re-render targets in that document as unread — except
+where the 2026-10-09 native-res rescan of the book PDF has already advanced them (see
+[`money-hunt-pdf-rescan-2026-10-09.md`](money-hunt-pdf-rescan-2026-10-09.md) and the
+status note atop the target list).
