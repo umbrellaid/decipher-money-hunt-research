@@ -73,6 +73,17 @@ The Librarian** (Conan the Librarian), and "Gone Tmming" → **Hare Today – Go
 [errata](../docs/money-hunt-transcription-errata.md). Notably, "VA DERS" survived
 re-reading and remains the page's one clean subtraction (missing "IN" → I).
 
+### ❌ Two comment-sourced motif claims tested and falsified (survey, 2026-10-10)
+The full 24-page repeated-motif survey is recorded in
+[results/money_hunt_repeated_motif_survey.md](../results/money_hunt_repeated_motif_survey.md).
+Net: the 2 verified letters still hold, but —
+- **"milk box on 7 and 18"**: p7 shows "Whole Milk" as text only (no carton);
+  no milk reference exists anywhere on p18 at native res. Pair does not exist.
+- **"same armchair on 17 and 19"**: native-res crops show two *different*
+  striped chairs (wing-back suite + ottoman vs worn tub chair). Not a pair.
+Score after surveying all 24 pages: **2 verified, 2 tested claims false,
+~6 candidate pairs still open, no candidate found for 6 pages**.
+
 ### ❓ Pages 10 → T and 25 → E: not yet testable
 - Page 10 (resort pool; DOWN list 1–37; undecoded 2×4 glyph suitcase): no repeated-
   illustration partner identified yet.
