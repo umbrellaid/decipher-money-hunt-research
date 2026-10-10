@@ -124,6 +124,16 @@ it.
    matches our own transcription-errata work; and page-10 suitcase glyphs read as
    Devanagari **उ** + Greek **Δ**. No commenter claims a verified solution.
 
+10. **The wishkohaku mapping is now partially verified** — see
+    [`data/money_hunt_wishkohaku_mapping.md`](data/money_hunt_wishkohaku_mapping.md).
+    The "deduction = subtraction" mechanism's worked example **checks out at 300 dpi**:
+    page 13 has a plain parking-sign P, page 20 has the same P with a diagonal line
+    through it → "line" → L, and the mapping assigns 13→L. Page 28 → I is corroborated
+    by the spine **"VA DERS"** = INVADERS missing "IN". New errata surfaced on the same
+    pass: **"HUCKLEBERRY GRINS"** (a Finn→Grins misspelling not previously recorded) and
+    a FLAMINGCOES-vs-FLAMINGOES reading to settle. Pages 10→T and 25→E remain untested;
+    the full test is a systematic repeated-illustration diff across all 24 pages.
+
 ## What would move it forward
 
 - **600-dpi re-renders** of the regions still listed in the state analysis (bead letters

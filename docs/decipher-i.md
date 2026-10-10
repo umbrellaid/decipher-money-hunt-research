@@ -42,3 +42,14 @@ program had to tolerate edition variance; ours does so with a sliding numbering 
 but a revised or abridged edition can still defeat a sweep. If you scan your own copy
 of a suspect book (see `docs/check-your-own-book.md`), prefer a printing contemporary
 with the contest.
+
+## Notes from 2026-10-09 (night) — YouTube comment sweep of both Decipher videos
+
+All 688 top-level comments on the Decipher I video and all 297 on the Decipher II/III
+video were harvested (InnerTube API method) and digested in
+[`data/decipher_youtube_comments_digest.md`](../data/decipher_youtube_comments_digest.md).
+Two items of value: the **p. 17 referee footnote** in the Baldwin & Sherman paper
+("Cosmos is copyrighted… did Holland use 'in the public domain' colloquially?") and the
+**2009 Fight Klub "Decipher This" homage** — Holland's later card-game puzzle reused the
+original solution text as its key ("what was once one thing is now another"), confirming
+that Holland recycles his own material across puzzles.
