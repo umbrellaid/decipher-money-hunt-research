@@ -63,7 +63,7 @@ text**; it links to her folders and lets you supply your own books.
 
 ## What this repository adds
 
-1. **A solver with a regression suite.** `solver/validate.py` runs 93 checks: the
+1. **A solver with a regression suite.** `solver/validate.py` runs 98 checks: the
    Decipher III rulebook's worked example (three ciphers that must decode to CODES),
    puzzle 2-2 against the 42 *Catch-22* chapter titles, an encode→search→decode round
    trip for each of 21 rule families in all four direction combinations, and 3
@@ -95,7 +95,7 @@ Needs [uv](https://docs.astral.sh/uv/). From this directory:
 
 ```
 uv run python solver/fetch_texts.py     # public-domain corpus + scoring model
-uv run python solver/validate.py        # 93 checks; all must pass
+uv run python solver/validate.py        # 98 checks; all must pass
 uv run python solver/sweep.py BOOK.txt --cipher all --top 10
 ```
 

@@ -20,7 +20,47 @@ document). Prize: $100,000, split among 36 winners at about $3,251.71 each.
 - **Plaintext:** e.e. cummings, "A Poet's Advice" —
   "Almost anybody can learn to think or believe or know, but not a single human being
   can be taught to feel…"
-- **Paper:** Baldwin & Sherman, *Cryptologia* (1990); link in `docs/sources.md`.
+- **Paper:** Baldwin & Sherman, "How we solved the $100,000 Decipher Puzzle (16 hours
+  too late)", *Cryptologia* 14(3), July 1990, pp. 258–284. Full scanned PDF is free
+  at UMBC (link in `docs/sources.md`).
+
+## What the full paper adds (read 2026-10-10)
+
+The contest timeline (paper pp. 278–280): the original deadline of March 1, 1984
+passed unsolved; the contest was extended to February 28, 1985 and then month to
+month. From May 1, 1984 a recorded hotline eliminated **two authors per month** and
+added $1,000/month to the prize; the 21-author list included Woody Allen, William F.
+Buckley, Norman Mailer, **James Michener**, and Carl Sagan. By January 1985 the list
+had narrowed to Sagan plus one other. A massive final clue in February 1985 produced
+**36 correct solutions in March 1985** — each winner received $3,251.71 and a T-shirt.
+The winners included a farmer, two coal miners, a college math teacher, a biochemist,
+a psychologist, a medical student, and a 15-year-old girl. Holland received over
+1,000 solutions in total and roughly 250,000 hotline calls.
+
+The exact extraction spec (paper p. 279, Figure 8): the key stream is the first
+letters of **all** words of *Cosmos* chapter 6, starting at page 137 with "first ages
+of the world…"; hyphenated words count as one word; numerals, abbreviations,
+footnotes and captions are deleted. The plaintext is a passage from "A poet's advice
+to students" by **E.E. Cummings** — who is also on Decipher III's author list
+(Group C), a second instance of Holland re-using his own material (cf. the Fight
+Klub finding in `data/decipher_youtube_comments_digest.md`).
+
+The referee footnote quoted in the YouTube comments is **footnote 7, journal p. 278**
+(PDF page 21 of the UMBC scan), verbatim: *"An anonymous referee pointed out that
+Cosmos is copyrighted and hence not in the public domain. In clue 1 did Holland use
+the phrase 'in the public domain' for its colloquial meaning of 'publicly
+available'?"* (The commenter's "p. 17 footnote" was a misremembering of "footnote 7".)
+
+**The Holland-surname theory is dead.** In a July 6, 1989 phone call with Sherman
+(paper p. 280), Holland said the clues were designed with multiple levels of
+interpretation and the "obvious" reading is usually wrong (clue 5 = vowel vs.
+consonant, not alphabet position; clue 4's cube = chapter 6; "novel" meant both
+"book" and "new and unusual"). Crucially: *"The picture of a cube in Cosmos, chapter
+10 and the references to the country Holland in chapter 6 were simply coincidences.
+There is no relationship between Warren Holland and Colonel J. J. Holland."* So the
+author-centric "the key chapter points back at the creator" strategy articulated in
+the YouTube replies (@Chaotic_Pixie) is refuted by the creator himself. As of 1989
+Holland had no plans for a Decipher IV; he was focused on "How to Host a Murder".
 
 ## Why it matters here
 
@@ -48,8 +88,9 @@ with the contest.
 All 688 top-level comments on the Decipher I video and all 297 on the Decipher II/III
 video were harvested (InnerTube API method) and digested in
 [`data/decipher_youtube_comments_digest.md`](../data/decipher_youtube_comments_digest.md).
-Two items of value: the **p. 17 referee footnote** in the Baldwin & Sherman paper
-("Cosmos is copyrighted… did Holland use 'in the public domain' colloquially?") and the
+Two items of value: the **referee footnote** in the Baldwin & Sherman paper
+("Cosmos is copyrighted… did Holland use 'in the public domain' colloquially?" —
+located: footnote 7, journal p. 278, quoted above) and the
 **2009 Fight Klub "Decipher This" homage** — Holland's later card-game puzzle reused the
 original solution text as its key ("what was once one thing is now another"), confirming
 that Holland recycles his own material across puzzles.

@@ -61,29 +61,34 @@ threads (Decipher I) and **50 replies** across 22 threads (Decipher II/III),
    the book."* Practical consequence: anyone working Decipher III with a physical
    book must pin the **exact edition/printing**, not just the title; and the 1984
    solver pool was split by which printing they owned.
-2. **Author-centric search strategy, articulated** (@Chaotic_Pixie, replying under
-   Karen's pinned fairness comment): the Decipher I key text sat in the chapter whose
-   subject was named **Holland** — the creator's own surname — so "look at books that
-   somehow relate to the author" is a rational first move. Supports the existing
-   Holland-favouritism prior (cf. the Fight Klub re-use finding in item 2 above).
-3. **"The Source" theory for the lost 2-4, endorsed by Karen** (@jcortese3300
-   thread, Decipher II/III): the parent comment (already in the top-level sweep)
-   argues Michener's *The Source* was a Decipher II key text by its title alone
-   ("the source of the puzzle cipher"), possibly as a *pointer* layer — "like the
-   Swift novel pointed to the comic compilation" — that would then lead back to a
-   work by one of the eleven listed 2-4 authors. Since 2-2 is solved (*Catch-22*),
-   the only open Decipher II target is the lost 2-4. Karen's reply — *"That's a
-   solid theory! Be sure to let me know if you dig into it and come up with
-   anything!"* — upgrades it from drive-by comment to a lead she explicitly
-   blessed. Still untested. Note: with ~15 chapter titles, *The Source*'s title
-   chain (~250 letters) is arithmetically too short to supply 2-4's max index of
-   1053 (the 2-2 chain needed 484 letters for max 477), so a real test requires
-   passage text, not just the table of contents.
-4. **Milwaukee Journal Sentinel archive lead** (@Mintpuppy17 thread, Decipher
-   II/III): the 2-3 puzzle article is believed to be in the Milwaukee Journal
-   Sentinel; the commenter found candidate dates in the microfilm catalog but lacks
-   a Milwaukee County library card. Karen: *"I hope someone from that area sees this
-   and can dig into it!"* Still open — no reply reports success.
+2. **Author-centric search strategy, articulated but now refuted** (@Chaotic_Pixie,
+   replying under Karen's pinned fairness comment): the Decipher I key text sat in
+   the chapter whose subject was named **Holland** — the creator's own surname — so
+   "look at books that somehow relate to the author" is a rational first move.
+   **Refuted by the creator**: in his July 6, 1989 phone call with Alan Sherman
+   (Baldwin & Sherman, *Cryptologia* 14(3), p. 280), Holland stated that the
+   Holland-country references in *Cosmos* chapter 6 "were simply coincidences" and
+   that there is "no relationship between Warren Holland and Colonel J. J.
+   Holland." Do not weight creator-surname wordplay in Decipher III priors.
+3. **"The Source" theory for the lost 2-4 — ELIMINATED 2026-10-10** (@jcortese3300
+   thread, Decipher II/III): the parent comment argues Michener's *The Source* was a
+   Decipher II key text by its title alone ("the source of the puzzle cipher"),
+   possibly as a *pointer* layer. Karen's reply blessed it ("That's a solid
+   theory!"). It is now ruled out on three grounds — see `docs/decipher-ii.md`:
+   (a) the 17-chapter title chain is 258 letters, far short of 2-4's max index 1053;
+   (b) Michener is not one of the eleven printed 2-4 authors (he *was* on Decipher
+   I's 21-author list, the likely source of the association); (c) the theory's
+   origin is the Sharlet Brown winner photo, where the open *Source* was almost
+   certainly a photographer's prop — Karen's own solutions guide checked the visible
+   passage (p. 263) against the partial solution and found no match.
+4. **Milwaukee Journal Sentinel archive lead — RESOLVED 2026-10-10** (@Mintpuppy17
+   thread, Decipher II/III): the article exists in Karen's own Drive archive
+   ("Decipher II Articles" folder, `Sharlet_Brown-article-crop.jpg`): *"She cracks
+   code to win $25,000"*, by Thomas Collins, Milwaukee **Sentinel** (photo credit:
+   Sentinel photo by Piet Van Lier), dateline West Allis, c. November 1986. It
+   confirms the two hotline clues, the October 31 vault opening, and Brown as sole
+   winner of message three. Transcribed in `docs/decipher-ii.md`. No microfilm trip
+   needed.
 5. **Decipher 2 assumed solved** (@KaseyWynne ↔ Karen, Decipher I): both assume
    Decipher 2 must have been solved or Decipher 3 would not have sold. No evidence,
    but it is the community's standing assumption and Karen's own.
@@ -93,14 +98,12 @@ threads (Decipher I) and **50 replies** across 22 threads (Decipher II/III),
 
 ## Signal assessment
 
-Thin but not zero: item 1 gives a citable page number for the referee footnote, and
-item 2 is a new data point on Holland's puzzle-design habits. Neither changes the
-solver state; the Decipher III search-space problem stands exactly as documented in
-[decipher-iii.md](../docs/decipher-iii.md).
+Thin but not zero. The comment layer of both videos is now exhausted — top-level and
+replies — and further community signal would have to come from elsewhere (newspapers
+or the principals).
 
-The reply sweep adds two keeper facts (edition-dependence of the *Cosmos* epigraph;
-Karen's endorsement of the *The Source* theory) and one open archival lead
-(Milwaukee Journal Sentinel microfilm for the 2-3 article). The comment layer of
-both videos is now exhausted — top-level and replies — and further community signal
-would have to come from elsewhere (the archived Discord, newspapers, or the
-principals).
+Post-sweep resolutions (2026-10-10): the referee footnote is located at footnote 7,
+journal p. 278 of the UMBC scan; the *Cosmos*-epigraph edition-dependence caveat
+stands; the author-centric strategy (item 2) is refuted by Holland himself; the
+*The Source* theory (item 3) is eliminated; and the Milwaukee article (item 4)
+turned out to be sitting in Karen's Drive archive all along.

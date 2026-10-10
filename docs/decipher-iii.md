@@ -87,7 +87,13 @@ a recorded hotline, (804) 627-GOLD, which is 804-627-4653. That number is from
 is long defunct. Do not call it. The same clues also went to the media and to
 retailers. Those monthly newspaper
 clue columns (1987–1991) have never been recovered; finding even a few would cut the
-33-author pool to a handful per message. See `docs/sources.md` for the archives to
+33-author pool to a handful per message. Karen's own clipping archive (Drive,
+"Decipher III Articles" folder, cataloged in `docs/sources.md`) was checked on
+2026-10-10: it holds five 1987–1991 clippings, and **all five are retail ads or
+gift-guide mentions — none prints a monthly clue**. The ads do fix the sales
+window: Decipher III was still being sold new in November 1991 at $13.99. The clue
+hunt therefore has to go to the subscription newspaper archives.
+See `docs/sources.md` for the archives to
 search. Warren Holland, the creator, died in December 2017; the company collapsed by
 2008 after an internal embezzlement, so the family and any surviving company records
 are the only human lead left.

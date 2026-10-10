@@ -76,6 +76,20 @@ def test_puzzle_22():
           dec == PUZZLE_22_PLAIN, dec)
 
 
+def test_the_source_elimination():
+    """The 'Michener, The Source' theory for 2-4 fails on chain length alone."""
+    blob = json.loads((ROOT / "data" / "the_source_chapter_titles.json").read_text(encoding="utf-8"))
+    ciphers = json.loads((ROOT / "data" / "ciphers.json").read_text(encoding="utf-8"))
+    chain = rules.chapter_title_chain(blob["titles"])
+    check("The Source: 17 chapter titles", len(blob["titles"]) == 17,
+          f"got {len(blob['titles'])}")
+    for name in ("2-4", "3-1", "3-2", "3-3"):
+        ciph = [n for n in ciphers[name] if isinstance(n, int)]
+        check(f"The Source title chain too short for {name} "
+              f"(chain={len(chain)} < max={max(ciph)})",
+              len(chain) < max(ciph))
+
+
 def make_scorer():
     model = sorted((ROOT / "texts" / "model").glob("*.txt"))
     if not model:
@@ -184,6 +198,7 @@ def test_null_tolerance(scorer):
 def main():
     test_codes_example()
     test_puzzle_22()
+    test_the_source_elimination()
     scorer = make_scorer()
     test_round_trips(scorer)
     test_null_tolerance(scorer)
