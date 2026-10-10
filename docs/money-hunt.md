@@ -107,6 +107,23 @@ it.
    triangle composites, still undecoded; no telescope, no airplane, no bar signage —
    the pagoda's "letters" are scalloped shading).
 
+## Notes from 2026-10-09 (late evening) — full YouTube comment sweep
+
+9. **All 1,006 top-level comments** on the Karen Puzzles video were harvested (the
+   comment UI would not load in-browser; the sweep used the page's own InnerTube
+   continuation API) and digested in
+   [`data/money_hunt_youtube_comments_digest.md`](data/money_hunt_youtube_comments_digest.md).
+   Replies (~345) were not expanded; Karen's pinned Discord invite is reported dead by
+   later commenters and no subreddit consolidated the community. Highest-signal finds:
+   the only **complete 24-page letter assignment** found anywhere (a commenter's
+   "deduction = subtraction" mapping spelling US-NY-THE EMPIRE STATE BUILDING with
+   p10→T, p25→E, p28→I — unverified); the registration **P.O. Box 803878** vs the
+   18×20 ft crash hole (78th–80th floors); a page-18 rebus read of
+   **Muskegon + Chicago** positioned like the map cities on Lake Michigan; a
+   manufacturing-error caution (photocopy/shrink artifacts may fake "clues") that
+   matches our own transcription-errata work; and page-10 suitcase glyphs read as
+   Devanagari **उ** + Greek **Δ**. No commenter claims a verified solution.
+
 ## What would move it forward
 
 - **600-dpi re-renders** of the regions still listed in the state analysis (bead letters
