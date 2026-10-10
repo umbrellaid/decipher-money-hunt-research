@@ -94,6 +94,19 @@ it.
    information — but the RIVERHORSE/ICING scene-clue mechanism is a genuine new insight
    into how the book expects solvers to read its artwork.
 
+8. **Pages 25, 28 and 10 fully transcribed** from the native 300-dpi extraction —
+   [`page_25`](data/money_hunt_pages/page_25.md) (complete ACROSS list 1–156 for the
+   top-hat grid; **clues 95–97 are not printed** — a page-level defect), 
+   [`page_28`](data/money_hunt_pages/page_28.md) (library: all four spine shelves, the
+   volume row 23,19,21,20,22,18…9,DICTIONARY N-Z,7…2,DICTIONARY A-M, Vol 149145, the
+   $5537/$16M/$334/$618 prices — all confirmed; the deliberate-misspelling set on this
+   page is Cinderellow / Konnan The Immortan / Snsp / CALL OF THE MILD / FLAMINGCOES /
+   Gone Tmming / Cnocking), and
+   [`page_10`](data/money_hunt_pages/page_10.md) (resort pool: the DOWN list 1–37 in
+   full; the glyph suitcase confirmed as an exact **2×4 grid** of J-hook/curly +
+   triangle composites, still undecoded; no telescope, no airplane, no bar signage —
+   the pagoda's "letters" are scalloped shading).
+
 ## What would move it forward
 
 - **600-dpi re-renders** of the regions still listed in the state analysis (bead letters

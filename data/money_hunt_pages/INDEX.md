@@ -2,11 +2,11 @@
 
 **Scans:** [Karen Puzzles' Money Hunt folder](https://drive.google.com/drive/folders/1LgZD4G5UtxEaaQxZ0G3PL6Zj_DDDD3W3?usp=sharing). Crossword answer key: [her crossword folder](https://drive.google.com/drive/folders/1lFzlQ_kqHhT5BZka4xRlcVdksE7zPLea?usp=sharing). Solving notes: [Karen and Katie's Google Doc](https://docs.google.com/document/d/113Qhrs91h3E-vggWBtMERGeSxkfIhzSAGosdZtR6nX8/edit?usp=sharing).
 
-**Thirteen pages are still withdrawn** as transcriptions (9, 10, 11, 13, 19, 20, 21, 22, 23, 24, 25, 27, 28). Pages 5 and 6 have a scene check only, not a full transcription. Page 18 was **fully transcribed on 2026-10-09** from the book PDF's native 300-dpi extraction and supersedes the state-analysis notes for that page. The defects are in [`docs/money-hunt-transcription-errata.md`](../../docs/money-hunt-transcription-errata.md). The image-based notes are in [`docs/money-hunt-state-analysis.md`](../../docs/money-hunt-state-analysis.md). Do not treat a withdrawn or scene-only page file as a transcription.
+**Ten pages are still withdrawn** as transcriptions (9, 11, 13, 19, 20, 21, 22, 23, 24, 27). Pages 5 and 6 have a scene check only. Pages 10, 18, 25 and 28 were **fully transcribed on 2026-10-09** from the book PDF's native 300-dpi extraction and supersede the state-analysis notes for those pages. The defects are in [`docs/money-hunt-transcription-errata.md`](../../docs/money-hunt-transcription-errata.md). The image-based notes are in [`docs/money-hunt-state-analysis.md`](../../docs/money-hunt-state-analysis.md). Do not treat a withdrawn or scene-only page file as a transcription.
 
 Pages still transcribed here are unofficial research notes, not a substitute for the clue book. Karen's scans are the source. Check a spelling against the scan before relying on it.
 
-Pages 5 and 6 were checked again against the scans at scene level. Page 18 was fully transcribed from the native 300-dpi extraction (see the page file and the state analysis). The other withdrawn pages were not re-transcribed. The artwork is dense, and an earlier vision pass invented whole scenes. Their image read remains the state analysis.
+Pages 5 and 6 were checked again against the scans at scene level. Pages 10, 18, 25 and 28 were fully transcribed from the native 300-dpi extraction (see the page files and the state analysis). The other withdrawn pages were not re-transcribed. The artwork is dense, and an earlier vision pass invented whole scenes. Their image read remains the state analysis.
 
 ## Reading order (from the map poster's flow-chart)
 **15, 9, 18, 24, 14, 6, 17, 21, 23, 27, 19, 7, 5, 8, 10, 25, 20, 22, 28, 13, 16, 26, 12, 11** — page 11 (pool page) last.
@@ -23,7 +23,7 @@ Pages 5 and 6 were checked again against the scans at scene level. Page 18 was f
 | 7 | [page_07](page_07.md) | Knitting codes; chief/brume sentence; rebuses; **substitution cipher SOLVED** | mostly solved |
 | 8 | [page_08](page_08.md) | "Bus Company" (font link to p7) | unsolved |
 | 9 | [page_09](page_09.md) | Withdrawn until re-read | withdrawn |
-| 10 | [page_10](page_10.md) | Withdrawn until re-read | withdrawn |
+| 10 | [page_10](page_10.md) | **Fully transcribed 2026-10-09**: resort pool, DOWN list (1–37), 2×4 glyph suitcase, no telescope/airplane | transcribed |
 | 11 | [page_11](page_11.md) | Withdrawn until re-read | withdrawn |
 | 12 | [page_12](page_12.md) | Birds | ✅ **WASHINGTON** (Katie, 11/2021) |
 | 13 | [page_13](page_13.md) | Withdrawn until re-read | withdrawn |
@@ -38,10 +38,10 @@ Pages 5 and 6 were checked again against the scans at scene level. Page 18 was f
 | 22 | [page_22](page_22.md) | Withdrawn until re-read | withdrawn |
 | 23 | [page_23](page_23.md) | Withdrawn until re-read | withdrawn |
 | 24 | [page_24](page_24.md) | Withdrawn until re-read | withdrawn |
-| 25 | [page_25](page_25.md) | Withdrawn until re-read | withdrawn |
+| 25 | [page_25](page_25.md) | **Fully transcribed 2026-10-09**: ACROSS list 1–156 complete (95–97 not printed), top-hat grid | transcribed |
 | 26 | [page_26](page_26.md) | Ballroom: full bell, 3-card hand (=p11), ribbons | meta-object |
 | 27 | [page_27](page_27.md) | Withdrawn until re-read | withdrawn |
-| 28 | [page_28](page_28.md) | Withdrawn until re-read | withdrawn |
+| 28 | [page_28](page_28.md) | **Fully transcribed 2026-10-09**: library; spines + volume row + prices + Vol 149145 confirmed | transcribed |
 | 29 | [page_29](page_29.md) | **Answer forms: "State/Province" + "Specifically at ___"** | structural key |
 | 30 | [page_30](page_30.md) | Mailing instructions (Chicago registration / Seattle answers) | — |
 | 31 | [page_31](page_31.md) | Player's log | — |
