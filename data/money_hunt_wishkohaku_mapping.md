@@ -62,13 +62,16 @@ Missing element = "IN" → initial **I**, matching the mapping's 28→I (the I o
 the kind of alteration this mechanism needs, and "VA DERS" is a clean subtraction
 (unlike the substitution-type misspellings Konnan/K→C, MILD/W→M).
 
-### ⚠️ Errata items surfaced by the same 300-dpi pass
-- Top shelf shows **"HUCKLEBERRY GRINS"** (for *Huckleberry Finn*) — a misspelling
-  **not** in the recorded set (Finn→Grins is a substitution).
-- The spine recorded as **"FLAMINGCOES"** reads closer to **"FLAMINGOES"** at 300 dpi —
-  needs a dedicated crop to settle C-vs-O.
-- A spine recorded as **"Snsp"** may actually be read in context next to "…ngers" /
-  "…o Snap" on the top shelf — re-read required.
+### ⚠️ Errata items surfaced by the same 300-dpi pass — RESOLVED 2026-10-10
+4× crops from the native render settled all three: **"HUCKLEBERRY GRINS"** (for
+*Huckleberry Finn*) is confirmed and joins the misspelling set; **"FLAMINGCOES"** is
+actually **FLAMINGOES** (correctly spelled — out of the set); **"Snsp"** is **Snap**
+(correctly spelled — out). Two further corrections: "Konnan The Immortan" → **Konnan
+The Librarian** (Conan the Librarian), and "Gone Tmming" → **Hare Today – Gone Tamale**
+(correctly spelled pun). Full corrected set is recorded in
+[page_28](money_hunt_pages/page_28.md) and the
+[errata](../docs/money-hunt-transcription-errata.md). Notably, "VA DERS" survived
+re-reading and remains the page's one clean subtraction (missing "IN" → I).
 
 ### ❓ Pages 10 → T and 25 → E: not yet testable
 - Page 10 (resort pool; DOWN list 1–37; undecoded 2×4 glyph suitcase): no repeated-

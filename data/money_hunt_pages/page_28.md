@@ -15,18 +15,28 @@ number **28** at bottom center.
 
 ## Bookcase spines (all four shelves, at native resolution)
 
-**Shelf 1** (top): HUCKLEBERRY FINN (spelled **HUCKLEBERRY**), **Cinderellow** (for
-Cinderella), **Konnan The Immortan** (Conan the Immortal), 100 Ways to **Snsp** Your
-Fingers (Snap), **CALL OF THE MILD** (Call of the Wild), DREAMS, then a leaning cluster:
-**Awesome Monchments** (Monuments?), **Rare Today — Gone Tmming** (Tomming?/Tomorrow?),
-50 WAYS TO LEAVE YOUR MOTHER, CRASH DIETING — *The Stock Market*, DEEAH ( unclear),
-MEMOIRS OF A MONKEY, Family Faults, Tense Tranquility, GERMS.
+**Shelf 1** (top): **HUCKLEBERRY GRINS** (for *Huckleberry Finn* — Finn→Grins),
+**Cinderellow** (for Cinderella), **Konnan The Librarian** (for *Conan the Librarian*),
+100 Ways to Snap Your Fingers (correctly spelled), **CALL OF THE MILD** (Call of the
+Wild), DREAMS, then a leaning cluster: **Awesome Moonbeams** (correctly spelled),
+**Hare Today – Gone Tamale** (gag pun on "here today, gone tomorrow", correctly
+spelled), **50 WAYS TO LEAVE YOUR MOTHER** (for "…Your Lover" — Lover→Mother),
+CRASH DIETING — *The Stock Market*, DEEAH (unclear), MEMOIRS OF A MONKEY, Family
+Faults, Tense Tranquility, GERMS.
 
-**Shelf 2**: Christmas Castles, PLANETS, Europe on $5 a Min., WADERS, **Celebrated
-Sinuses** (Sinsors/Sinuses — garbled middle, leaning), FAKE ART, How to Paint Nails,
-**FLAMINGCOES TODAY** (Flamingos), JEEBORNO? (unclear), Born to Win, PRINCELY PASTA,
-MY MISTRESS, Electric Egos, Your Hippo's Health, Intelligent Idiots, **HASTY LANGUS**
+**Shelf 2**: Christmas Castles, PLANETS, Europe on $5 a Min., **VA DERS** (= INVADERS
+with "IN" missing — read at 4× from the native render; supports the subtraction
+mechanism and the 28→I mapping letter), **Celebrated Sinuses** (possibly *Celebrated
+Sins* + "ue"? leaning — ambiguous), FAKE ART, How to Paint Nails, **FLAMINGOES**
+(correctly spelled) + a separate TODAY spine, JEEORNO? (unclear), Born to Win,
+PRINCESS PASTA (or PRINCELY PASTA — reading differs between passes), MY MISTRESS,
+Electric Egos, Your Hippo's Health, Intelligent Idiots, **HASTY LANGUS**
 (Languages?, leaning), RETURN OF THE LITTLE YUPPIES.
+
+*Spine-reading corrections 2026-10-10 (4× crops from the native 300-dpi render):
+"Snsp" → "Snap" (correct); "Monchments" → "Moonbeams" (correct); "Rare Today — Gone
+Tmming" → "Hare Today – Gone Tamale" (pun, correctly spelled); "Konnan The Immortan" →
+"Konnan The Librarian"; "WADERS" → "VA DERS"; "FLAMINGCOES" → "FLAMINGOES" (correct).*
 
 **Shelf 3** (partly behind the sitter's head): a leaning **TAHG**, Early Law, Early
 Divorce, I-GO, T…, A…, The…, SEASONING, Book of Hugs, SAILING…
@@ -38,10 +48,15 @@ Love 1900 / Love 1910 / Love 19… (series), Ships & Shores, Marriage 1900 / 191
 **Left edge of the bookcase** (vertical partial column): The Case of Time, On,
 Biography of …, SE, **Cnocking with Winners** (Knocking), A.
 
-The deliberate-misspelling set on this page: **Cinderellow, Konnan The Immortan, Snsp,
-CALL OF THE MILD, FLAMINGCOES, Gone Tmming, Cnocking** — plus the garbled
-**Awesome Monchments / DEEAH / JEEBORNO / HASTY LANGUS** middles that remain ambiguous
-at 300 dpi (600-dpi targets).
+The deliberate-misspelling set on this page, **corrected 2026-10-10**:
+**Cinderellow** (Cinderella), **Konnan The Librarian** (Conan the Librarian),
+**HUCKLEBERRY GRINS** (Huckleberry Finn), **50 WAYS TO LEAVE YOUR MOTHER** (…Your
+Lover), **CALL OF THE MILD** (Call of the Wild), **Cnocking with Winners** (Knocking) —
+plus still-ambiguous **DEEAH / JEEORNO / HASTY LANGUS / Celebrated Sinuses**.
+"Snap", "Moonbeams", "Hare Today – Gone Tamale" and "FLAMINGOES" are all correctly
+spelled (removed from the set). Note the pattern: every confirmed case is a famous
+title with one word altered by a small letter-level change — the same alteration
+vocabulary the wishkohaku "deduction = subtraction" mechanism needs.
 
 ## Volume row (bottom of the bookcase — read left to right, confirmed exactly)
 

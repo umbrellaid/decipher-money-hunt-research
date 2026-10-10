@@ -59,6 +59,18 @@ from the images, until those pages are transcribed again.
     CALL OF THE MILD, FLAMINGCOES, Gone Tmming) and mis-states the volume row, which
     reads 23, 19, 21, 20, 22, … with DICTIONARY N–Z in volume 8's slot and DICTIONARY
     A–M in volume 1's slot.
+    **Second correction round, 2026-10-10** (4× crops of the native 300-dpi render):
+    "Snsp" reads **Snap** (correctly spelled — out of the misspelling set);
+    "Awesome Monchments" reads **Awesome Moonbeams** (correct — out);
+    "Rare Today — Gone Tmming" reads **Hare Today – Gone Tamale** (gag pun, correctly
+    spelled — out); "Konnan The Immortan" reads **Konnan The Librarian** (*Conan the
+    Librarian*); "WADERS" reads **VA DERS** (INVADERS missing "IN" — the page's one
+    clean subtraction, matching mapping letter 28→I); "FLAMINGCOES" reads
+    **FLAMINGOES** (correct — out); and **HUCKLEBERRY GRINS** (*Huckleberry Finn*) and
+    **50 WAYS TO LEAVE YOUR MOTHER** (…Your Lover) join the set as newly confirmed
+    deliberate misspellings. Corrected set: Cinderellow, Konnan The Librarian,
+    Huckleberry Grins, 50 Ways to Leave Your Mother, Call of the Mild, Cnocking —
+    plus ambiguous DEEAH / JEEORNO / HASTY LANGUS / Celebrated Sinuses.
 14. **page_09** — understates the clocks (two faces exist: wall and tower) and calls
     the wine labels unresolvable when "POUILLY FUME" is legible at 1246 px.
 
