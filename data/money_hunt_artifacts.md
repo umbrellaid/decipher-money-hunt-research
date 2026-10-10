@@ -147,6 +147,21 @@ details)". "©1988 Trivia Games, Inc."
 - UPC 0 25766 010… (partial).
 - Touche Ross letter (same text as book p.2, dated February 26, 1986).
 
+### Date verification (2026-10-10, re-check of the four box photos)
+
+- The **only date visible** on the photographed box faces is the Touche Ross
+  letter's **February 26, 1986** (verified at full resolution). The
+  "©1988 Trivia Games, Inc." line is **not visible** on the front, back, or
+  edges in these photos — it must sit on an unphotographed flap/edge or was
+  recorded from the video; treat as unverified.
+- Typographic curiosity consistent with the YouTube claim that the first
+  printing had **no jigsaw** (@5kmrunder15): the jigsaw sentence carries a
+  **leading asterisk** ("*Also included is a 150 piece, full color jigsaw
+  puzzle…") whose only footnote partner on the back resolves the other
+  asterisk ("$1,000,000*" → "*Payable Fifty Thousand dollars per year…").
+  The unmatched asterisk reads like a bolted-on addition to an existing
+  layout — exactly what adding a jigsaw to a second printing would look like.
+
 ---
 
 ## 5. Analysis — what the artifacts settle
