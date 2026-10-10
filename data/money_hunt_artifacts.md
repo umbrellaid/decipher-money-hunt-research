@@ -89,6 +89,24 @@ poster START (page 15); (b) the trail is walked arrow→flag. The fact that the
 flag→arrow order reproduces the mapping that yields a form-fitting answer
 supports (a) with the flag→arrow read.
 
+### Queen-of-spades check (native-res, 2026-10-10)
+
+Page 11's umbrella table carries: **one face card in spades (the queen of
+spades — confirming the jigsaw's claim)**, a **3 of spades**, one face-down
+card being held, and a fan of face-down cards in the woman's hand. Candidate
+meanings for "what does that mean?":
+- **Queen = 12 → page 12.** Simplest reading; page 12 is the poster-trail
+  neighbor of 11, supporting a visit chain jigsaw → 11 → 12 → … walked
+  arrow→flag, while the *letter* order remains flag→arrow (locked by the
+  verified letters 13→L, 28→I — letters are presumably assembled into the
+  answer form's order at the end).
+- Pallas/Athena → owl: **not supported** — the bottom-right of the (rotated)
+  page-12 collage is a hen and a cage with two parrots, no owl.
+- "Curse of Scotland" / Hearts' 13-point Black Lady: possible but point to
+  nothing checkable yet.
+So the queen of spades most plausibly demonstrates the method: object →
+association (queen = 12) → next page (12).
+
 ---
 
 ## 3. Poster — map side
