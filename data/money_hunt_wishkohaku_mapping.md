@@ -92,17 +92,32 @@ Score after surveying all 24 pages: **2 verified, 2 tested claims false,
   they probably do not serve as this page's "deduction".
 Both require a systematic repeated-illustration survey across all 24 pages (see plan).
 
-## Assessment
+## Assessment (revised 2026-10-10 after the artifact photos surfaced)
 
 - The hypothesis is **falsifiable and partially verified** — rare for this puzzle.
-- The mechanism fits the book's own vocabulary ("deduction"), fits the deliberate-
-  misspelling set, and its one worked example survives checking.
-- Weak points: (1) only 2 of 24 letters independently verified; (2) the "US NY" split
-  is convenient; (3) the method requires every page to have at least one duplicated
-  illustration with a one-element alteration — plausible for this artwork, unproven;
-  (4) it predicts the final answer is the Empire State Building in words, which the
-  "3 guesses" rule and the map's NYC-only resolution both argue against (see
-  [money-hunt.md](../docs/money-hunt.md)).
+- **The "poster path order" is real.** The box's flip-side clue poster shows all
+  24 page thumbnails along a winding trail from a START flag (at page 15) to an
+  arrow pointing at a money pile (at page 11). The flag→arrow order —
+  15, 9, 18, 24, 14, 6, 17, 21, 23, 27, 7, 19, 5, 8, 10, 25, 20, 22, 28, 13,
+  16, 26, 12, 11 — is *exactly* this mapping's page order (all 23 consecutive
+  pairs checked against the band connectivity in photos; only 19–5 is
+  photographically uncertain). See
+  [artifacts](money_hunt_artifacts.md).
+- The message "US NY THE EMPIRE STATE BUILDING" fits the registration form's
+  three blanks (COUNTRY / STATE / SPECIFICALLY AT) exactly, and the jigsaw poem
+  ("climb way up high, not quite to the sky / with lives made to pay…") is at
+  least partially consistent with that answer (King Kong climb; 1945 B-25
+  crash, 14 dead — cf. the p.5 clock at ~7:28).
+- The jigsaw explains the entry: assemble → poem → page 11 (queen of spades =
+  the worked example teaching the subtraction method) → follow the poster
+  trail taking one deduction per page.
+- Remaining weak points: (1) only 2 of 24 letter extractions independently
+  verified (13→L, 28→I); two comment-sourced motif pairs were falsified; (2)
+  the poem is ambiguous and could support a different final location; (3) the
+  direction question (jigsaw says start at 11, flag says start at 15) needs
+  one more look at p.11's queen of spades.
+- Cheapest decisive next checks: pages 15 and 9 should each yield TWO clean
+  subtractions (U,S / N,Y); page 11 should yield G.
 
 ## How to test it fully (the real project)
 

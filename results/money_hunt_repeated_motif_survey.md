@@ -120,6 +120,29 @@ bird pair is rejected, the horse pair remains untested, and the two tested
 comment-sourced claims were false. The worksheet's one-box-per-page layout is
 consistent with "one deduction per page" but says nothing about letters.
 
+## Second addendum: the artifacts change the picture (2026-10-10)
+
+The box's physical artifacts (photos in the private workspace; transcriptions
+in [money_hunt_artifacts.md](../data/money_hunt_artifacts.md)) resolve the
+"page sequencing" question and partially rehabilitate the mapping:
+
+- The **jigsaw poem** reads: "A SAD STORY WAS TOLD, OF ONE NOT VERY OLD. /
+  CLIMB WAY UP HIGH, NOT QUITE TO THE SKY. / WITH LIVES MADE TO PAY, FIND THE
+  PLACE ONE DID PLAY." Its border text sends solvers to **page 11** (queen of
+  spades = the worked example of the deduction method).
+- The **flip-side clue poster** places all 24 page thumbnails along a trail
+  from a START flag (page 15) to an arrow at a money pile (page 11). The
+  flag→arrow order is exactly the wishkohaku mapping's page order, verified
+  pair-by-pair against the band connectivity. The mapping's page sequence is
+  therefore a real physical order, not ad hoc.
+- The mapping's output "US NY THE EMPIRE STATE BUILDING" fits the registration
+  form's COUNTRY / STATE / SPECIFICALLY-AT blanks exactly, and the poem
+  supports an Empire-State-style answer (King Kong climb; 1945 B-25 crash).
+- Net: mapping score still **2/24 letters verified**, but the structural
+  evidence (trail order + answer format + poem) now points the same way. The
+  burden shifts back to the per-page letter extraction: test pages 15, 9
+  (should each give two subtractions) and 11 (should give G).
+
 ## What this means for the mapping
 
 - After surveying all 24 pages, **only the 2 previously verified letters hold**.
