@@ -79,6 +79,47 @@ in `survey_notes.md` under the money-hunt puzzle folder.
 - **p26** (ballroom/champagne) → L. Glasses overlap p9 generically.
 - **p27** ("MUSIC ROOM"; guitar, amp, telescope) → D. Telescope unique.
 
+## Addendum (same day, follow-up checks)
+
+**Page 12 orientation.** p12's artwork is landscape — the native render must be
+rotated 90° clockwise. Properly oriented, p12 is a "birds of the world" collage
+(cockatoo, toucan, pelican, parrots in niches, rooster, ducks, penguin, owl).
+These are large individual portrait birds, completely unrelated to p14's small
+flying-flock silhouettes — the p12/p14 "bird pair" is **rejected**, as the
+owner suspected.
+
+**Two crosswords, not one.** p22's bottom-right list (73–117) and p23's
+top-left list (121–147) are continuations of the SAME continuously numbered
+clue series as p10's list (1–37, header "DOWN") and p11's (38–69) — one
+crossword whose clues are distributed across the illustration pages. It is
+**not** the page-25 grid: direct native-res comparison shows conflicts at the
+same clue numbers (e.g. #88 "Of tones" on p22 vs "Ms. Grimes was the original
+Unsinkable Molly Brown on Broadway" on p25; #109 "Extreme" vs "She was the
+star of Leonard Bernstein's Broadway hit Wonderful Town"; #117 Gaynor/South
+Pacific vs "Radiation device"). The p25 giant grid is a second, self-contained
+crossword (across 1–67, down 68–156, all clues printed on p25). Both are
+Broadway/musical-themed. The distributed puzzle's grid is not in the 32-page
+book (pages 1–4 are cover/intro/rules/worksheet; 29–32 are registration forms,
+mailing instructions, player's log, box back) — it presumably lived on the
+"treasure hunt clue poster" flip side of the map poster, which is not in the
+scan. Numbering gaps (70–72, 118–120, end ~147 vs 156) may be survey-res
+misreads. p18 also carries its own tiny 11-clue mini-crossword (1A–11D).
+
+**Book-structure notes from pages 1–4.** The rules confirm: 3 guesses per
+purchase; location in the US or Canada; deadline March 31, 1988; official
+solution held by Touche Ross & Co.; answers to Seattle WA or Chicago IL P.O.
+boxes. Crucially, the introduction states the box includes "a 150 piece, full
+color jigsaw puzzle… we recommend completing the jigsaw first as it contains
+helpful clues and a poem" — **the jigsaw (and its poem) is not in the PDF**,
+and the p4 worksheet ("Summary of Notes & Calculations") provides exactly one
+box per page for pages 5–28, confirming those 24 pages are the intended
+solution path.
+
+**Impact on the mapping assessment.** Unchanged and if anything weaker: the
+bird pair is rejected, the horse pair remains untested, and the two tested
+comment-sourced claims were false. The worksheet's one-box-per-page layout is
+consistent with "one deduction per page" but says nothing about letters.
+
 ## What this means for the mapping
 
 - After surveying all 24 pages, **only the 2 previously verified letters hold**.
