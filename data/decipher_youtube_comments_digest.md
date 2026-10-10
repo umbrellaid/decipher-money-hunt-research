@@ -66,12 +66,19 @@ threads (Decipher I) and **50 replies** across 22 threads (Decipher II/III),
    subject was named **Holland** — the creator's own surname — so "look at books that
    somehow relate to the author" is a rational first move. Supports the existing
    Holland-favouritism prior (cf. the Fight Klub re-use finding in item 2 above).
-3. **"The Source" theory for 2-2, endorsed by Karen** (@jcortese3300 thread,
-   Decipher II/III): the parent comment (already in the top-level sweep) argues
-   Michener's *The Source* is the 2-2 key text by its title alone; Karen's reply —
-   *"That's a solid theory! Be sure to let me know if you dig into it and come up
-   with anything!"* — upgrades it from drive-by comment to a lead she explicitly
-   blessed. Still untested.
+3. **"The Source" theory for the lost 2-4, endorsed by Karen** (@jcortese3300
+   thread, Decipher II/III): the parent comment (already in the top-level sweep)
+   argues Michener's *The Source* was a Decipher II key text by its title alone
+   ("the source of the puzzle cipher"), possibly as a *pointer* layer — "like the
+   Swift novel pointed to the comic compilation" — that would then lead back to a
+   work by one of the eleven listed 2-4 authors. Since 2-2 is solved (*Catch-22*),
+   the only open Decipher II target is the lost 2-4. Karen's reply — *"That's a
+   solid theory! Be sure to let me know if you dig into it and come up with
+   anything!"* — upgrades it from drive-by comment to a lead she explicitly
+   blessed. Still untested. Note: with ~15 chapter titles, *The Source*'s title
+   chain (~250 letters) is arithmetically too short to supply 2-4's max index of
+   1053 (the 2-2 chain needed 484 letters for max 477), so a real test requires
+   passage text, not just the table of contents.
 4. **Milwaukee Journal Sentinel archive lead** (@Mintpuppy17 thread, Decipher
    II/III): the 2-3 puzzle article is believed to be in the Milwaukee Journal
    Sentinel; the commenter found candidate dates in the microfilm catalog but lacks
