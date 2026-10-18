@@ -101,6 +101,35 @@ capture numbers; convention `start_image,chapter,label`.
 Shakedown: ~30–40 min total. Each targeted batch: 10–20 min scanning +
 ~5 min agent processing. Cat's Cradle whole book: ~60–90 min at the scanner.
 
+## Field notes from the first real scan (2026-10-18 — non-project book, applies to ALL future sessions)
+David scanned a 277-page trade paperback ("Abundance Through Scarcity") as our
+first-ever CZUR session. Two real-world things happened that we must expect
+and handle in every future scan, including the cipher books:
+
+1. **Hand in frame.** A finger/hand landed in a few captures; David noticed
+   and re-shot those pages — so the RAW set contains BOTH the bad take and
+   the good retake.
+2. **Lost place → repeated pages.** He re-scanned some already-good pages.
+   Net effect: any real scan set WILL contain duplicate pages.
+   
+**Handling rule (bake into every session, cipher books included):**
+- Never assume image N = book page N. After OCR, extract the printed page
+  number from the bottom strip of each page and group captures by it.
+- Within a duplicate group keep ONE copy: highest OCR mean confidence wins
+  (hand-in-frame pages OCR worse); tie-break = keep the LATER capture
+  (retakes come after the mistake). List all groups in the QA report and
+  tell David which image was dropped and why before deleting anything —
+  move rejects to a `rejects\` subfolder, never hard-delete during the session.
+- Prevention at scan time (prompt David): glance at the file-list counter
+  after each capture and say the printed page number out loud; if a hand
+  gets in a shot, reshoot IMMEDIATELY using the software's Reproduce
+  function (manual §2.2.4) so the bad take is replaced at capture time
+  instead of deduped later.
+- Self-published/layout quirk seen: decorative drop caps can chop into the
+  first paragraph of a chapter — OCR breaks there. Fix = agent reads those
+  paragraphs from the image and hand-corrects the text. Check every
+  chapter-start page for this.
+
 ## Close-out (every session)
 1. Append results to repo `results/RUN_LOG.md`; commit + push (texts, maps, QA).
 2. Update this guide if any setting changed.
