@@ -95,3 +95,27 @@ Archival work instead:
   against the partial 2-3 solution by Karen with no match (a prop).
 - The five Decipher III newspaper clippings in Karen's archive contain **no monthly
   clue columns** — ads only. The clue-column hunt moves to subscription archives.
+
+## Campaign 3 — 2026-10-17 (Gemini-suggested ToC + clue hypotheses)
+
+External analysis from a Google Gemini thread read against this repo (full provenance
+and corrections in `results/gemini-toc-test-2026-10-17.md`). Tester:
+`solver/toc_and_clue_tester.py` with the full-ciphertext driver
+`solver/run_full_ciphertexts.py` (the Gemini original embedded truncated ciphertext
+prefixes; the driver substitutes this repo's complete `data/ciphers.json`).
+
+| Cipher | Key streams tested | Best result | Verdict |
+|---|---|---|---|
+| 2-4 | 9 ToCs × ~536 streams × 5 drift × 2 dirs (+ no-100s null variant) | gibberish | no ToC key |
+| 3-1 | same, incl. repeat-487 double-letter bonus | gibberish | no ToC key |
+| 3-2 | same | gibberish | no ToC key |
+| 3-3 | same | gibberish | no ToC key |
+| 2-2 control | Catch-22 chain, reversed | decodes (`IYMEMOJY...LENNON...`) | pipeline works; key list is 487 vs documented 478 letters |
+
+Corrections established while verifying: N_max is 1053 / 516 / 416 / 721 for
+2-4 / 3-1 / 3-2 / 3-3 (Gemini's truncated sets implied 1050 / 513 / 415 / 721).
+Full-ciphertext cribs: 3-1 = E,E,E,Z,E,E; 3-2 = E,Y,E,Y,E (repeating).
+
+Conclusion: ToC-only keys eliminated for the 9 embedded candidate books; body-text
+scanning per `docs/check-your-own-book.md` remains the path, with Chapter 10 /
+final-chapter priority per the 3-1 clues ("10" / "End.").
