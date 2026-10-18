@@ -273,20 +273,58 @@ def generate_toc_key_streams(book_name: str, titles: list[str]) -> dict[str, str
 
 
 def generate_body_text_streams(file_label: str, raw_text: str) -> dict[str, str]:
-    """Generates extraction streams for scanned OCR text files."""
+    """Generates extraction streams for scanned OCR text files.
+
+    Ordering follows the 2026-10-17 Q4 finding that both solved body-text
+    precedents (Decipher I = Cosmos Ch. 6; Puzzle 2-3 = Tai-Pan Ch. 5) were
+    WORD-LEVEL keys (1 codenumber = 1 word): word-level families are generated
+    first (Tier 1), word-stride variants second (Tier 2), and every-character
+    streams last (Tier 3 fallback). Stream IDs are unchanged for existing
+    families so downstream tools (zero_z_prefilter.py) keep working.
+    """
     streams: dict[str, str] = {}
     chars = clean_alpha(raw_text)
     words_j = tokenize_words(raw_text, split_hyphens=False)
     words_s = tokenize_words(raw_text, split_hyphens=True)
 
+    first_j = "".join(w[0] for w in words_j)
+    first_s = "".join(w[0] for w in words_s)
+    last_j = "".join(w[-1] for w in words_j)
+    last_s = "".join(w[-1] for w in words_s)
+
+    # --- Tier 1: word-level (solved-precedent families) ---
+    # First letter of each word (the Decipher I / Puzzle 2-3 rule)
+    streams[f"{file_label}|WordFirst_Joined|Fwd"] = first_j
+    streams[f"{file_label}|WordFirst_Joined|Rev"] = first_j[::-1]
+    streams[f"{file_label}|WordFirst_Split|Fwd"] = first_s
+    streams[f"{file_label}|WordFirst_Split|Rev"] = first_s[::-1]
+    # Last letter of each word (clue "End." read as the extraction rule)
+    streams[f"{file_label}|WordLast_Joined|Fwd"] = last_j
+    streams[f"{file_label}|WordLast_Joined|Rev"] = last_j[::-1]
+    streams[f"{file_label}|WordLast_Split|Fwd"] = last_s
+    streams[f"{file_label}|WordLast_Split|Rev"] = last_s[::-1]
+    # End-anchored: reverse the WORD ORDER, then take first/last letters
+    # ("start at the END of the chapter" reading of clue "End.")
+    rev_words_j = list(reversed(words_j))
+    streams[f"{file_label}|WordFirst_RevWordOrder|Fwd"] = "".join(w[0] for w in rev_words_j)
+    streams[f"{file_label}|WordLast_RevWordOrder|Fwd"] = "".join(w[-1] for w in rev_words_j)
+
+    # --- Tier 2: word-level strides (every 2nd / every 10th word) ---
+    for stride in (2, 10):
+        for off in range(stride):
+            sub = words_j[off::stride]
+            if len(sub) < 120:
+                continue
+            streams[f"{file_label}|WordFirst_Stride{stride}@{off}|Fwd"] = "".join(
+                w[0] for w in sub
+            )
+            streams[f"{file_label}|WordLast_Stride{stride}@{off}|Fwd"] = "".join(
+                w[-1] for w in sub
+            )
+
+    # --- Tier 3: character-level fallback ---
     streams[f"{file_label}|Chars|Fwd"] = chars
     streams[f"{file_label}|Chars|Rev"] = chars[::-1]
-    streams[f"{file_label}|WordFirst_Joined|Fwd"] = "".join(w[0] for w in words_j)
-    streams[f"{file_label}|WordFirst_Joined|Rev"] = "".join(w[0] for w in words_j)[::-1]
-    streams[f"{file_label}|WordFirst_Split|Fwd"] = "".join(w[0] for w in words_s)
-    streams[f"{file_label}|WordLast_Joined|Fwd"] = "".join(w[-1] for w in words_j)
-    streams[f"{file_label}|WordLast_Joined|Rev"] = "".join(w[-1] for w in words_j)[::-1]
-    streams[f"{file_label}|WordLast_Split|Fwd"] = "".join(w[-1] for w in words_s)
     return streams
 
 

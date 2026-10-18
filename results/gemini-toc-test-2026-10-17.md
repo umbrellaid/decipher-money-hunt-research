@@ -92,6 +92,54 @@ below are unverified against physical copies/primary sources unless noted).
    character-level as fallback. A 5-page window (~1,400–1,750 words) covers
    every word-level N_max.
 
+## Follow-up Q&A, round 2 (morning of 2026-10-18; Q5–Q8, all Argon High)
+
+Full texts: working copies `gemini-q5-answer.md` … `gemini-q8-answer.md`.
+Every claim below was cross-checked against the repo where possible;
+verification outcomes are stated inline.
+
+5. **Q5 — Cryptologia citations; Gemini self-corrects.** Gemini disclosed that
+   its Q4 "Cosmos = first letter of each word" quotation was a bracketed
+   stitch of three separate snippets. The local scan notes settle the
+   substance: `docs/decipher-i.md` records the verbatim spec (paper p. 279,
+   Figure 8) — first letters of all words of *Cosmos* Ch. 6, **skipping the
+   first 36 words** — so word-level stands, and skip-offset scanning is now a
+   `body_scan.py --skip` option. N_max = 1,252 verified for the abstract/§1
+   (p. 258); the 8 original Decipher I clues were supplied verbatim (Figure 3,
+   pp. 259–260); the paper covers NOTHING of Decipher II's extraction rules
+   (winner interviews are the only source).
+6. **Q6 — 2-1 mechanism undocumented; "halfway" stream family.** 2-1's exact
+   formula survives, if anywhere, only in two untranscribed JPEG scans of the
+   1986-03-25 Statesman Journal article in Karen's Drive (winner: EILEEN
+   Novak — name corrected). N_max 980 = 2×490 ⇒ two-pass streams
+   (forward-then-backward, odd-then-even, firsts-then-lasts) — implemented in
+   `body_scan.py`. Its 2-1 clue set and Group C author list matched
+   `docs/decipher-ii.md` verbatim. Key inference: 2-3's round numbers are
+   genuine homophones ("I AM BLIND"), so 2-4's multiples-of-100 run is likely
+   genuine plaintext, not nulls.
+7. **Q7 — 2-4 ranked candidates + corrected microstructure.** Candidate
+   ranking: McCullough *The Thorn Birds* 25%, Irving *Garp* 20%, Updike
+   *Rabbit Is Rich* 18%, L'Amour *The Walking Drum* 14%, Ludlum 10%
+   (decoy-carryover discount). The 2-4 author list in
+   `data/author_lists.json` matches Gemini's recitation. All claimed
+   ciphertext-anomaly VALUES verified against `data/ciphers.json`; all
+   POSITIONS were wrong (154-token transcription vs repo's 170) — corrected
+   table in `results/puzzle-2-4-microstructure-2026-10-18.md`. New ciphertext
+   variant proposed: X0Y-stripped (39/170 tokens, 22.9%).
+8. **Q8 — Union Club Mysteries ToC.** The 30-title list matches the tester's
+   embedded ToC exactly. Additions (unverified): Foreword + Afterword give
+   391/408/432-letter ToC variants ("1 to 999" stripped vs spelled out); story
+   10 "Gift" was originally titled **"Decipher Deception"** in *Gallery*
+   (June 1981) and is about solving a cipher note; stories run 6–7 pages
+   (~1,500–1,800 words — contradicts Q3's 3–5 pages; both unverified).
+
+**Tooling added this round:** `solver/body_scan.py` (word-level-first tiers,
+contiguous `--window` chapter concatenation, zero-Z flagging/`--strict`,
+`--skip` word offsets, halfway streams, S100 probe) and a word-level-first
+reordering of `generate_body_text_streams` in `solver/toc_and_clue_tester.py`
+(existing stream IDs unchanged; `run_full_ciphertexts.py` self-test and
+`zero_z_prefilter.py` re-verified clean).
+
 ## Files
 
 - `solver/toc_and_clue_tester.py` — Gemini's script, unmodified (embedded ToCs + scoring).

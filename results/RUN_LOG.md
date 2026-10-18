@@ -158,3 +158,43 @@ under a Flash-Lite fallback). Full texts: working copies `gemini-q1-answer.md` �
 - Solver re-verified after the comment edits:
   `uv run solver/run_full_ciphertexts.py --top 3` — self-test line and 0.741
   fit unchanged.
+
+## 2026-10-18 morning — Q&A round 2 (Q5–Q8) + body scanner tooling
+
+Four more Gemini follow-ups (Argon High; full texts in the working copies
+`gemini-q5-answer.md` … `gemini-q8-answer.md`; summaries and verification
+outcomes in `results/gemini-toc-test-2026-10-17.md`, "Follow-up Q&A, round 2").
+No sweep runs; tooling + verified-data artifacts instead.
+
+- **New tool `solver/body_scan.py`** — the scanning entry point: word-level-first
+  stream tiers (Tier 1 first/last-letter incl. reversed word order; Tier 2
+  strides + 2-1-style halfway patterns; Tier 3 character fallback), contiguous
+  chapter windows (`--window`, default 6 = the Ch. 10–15 advice), zero-Z
+  flagging for 3-1 (`--strict` skips decode runs on failing windows), `--skip`
+  word-offset variants (Decipher I skipped the first 36 words of Cosmos Ch. 6 —
+  paper p. 279 Fig. 8, per repo `docs/decipher-i.md`), and the S100 probe
+  printed under every 2-4 hit. Smoke-tested on a synthetic 7-chapter fixture
+  (693 streams, 27 windows).
+- **`generate_body_text_streams` reordered word-level-first** in
+  `solver/toc_and_clue_tester.py`; existing stream IDs untouched; added
+  Split|Rev variants, reversed-word-order streams, and 2nd/10th-word strides.
+  Regression-checked: `run_full_ciphertexts.py --top 3` self-test unchanged
+  (484-letter key, fit 0.741, INMEMORYOFJOHNLENNON…); `zero_z_prefilter.py
+  --scan-dir texts/pd` still flags 31/49.
+- **Q5 epistemic correction:** Gemini's Q4 "Cosmos word-level" quote was a
+  stitched reconstruction — but the substance is confirmed by the repo's own
+  2026-10-10 scan notes (p. 279, Fig. 8 spec + the skip-36-words detail).
+- **Q6:** 2-1's extraction formula is undocumented; the Statesman Journal
+  JPEGs in Karen's Drive are the only unchecked primary source. Halfway
+  streams implemented. 2-3's round numbers confirmed genuine homophones
+  ("I AM BLIND") ⇒ 2-4's 100s run treated as real plaintext under H1.
+- **Q7 microstructure audit:** every claimed 2-4 anomaly VALUE verified in
+  `data/ciphers.json`; every POSITION was off (Gemini used a 154-token
+  transcription; repo has 170). Corrected, repo-verified table committed as
+  `results/puzzle-2-4-microstructure-2026-10-18.md`. 2-4 candidate ranking:
+  Thorn Birds / Garp / Rabbit Is Rich / Walking Drum / Bourne.
+- **Q8:** Union Club 30-title ToC matches the embedded ToC exactly; "Gift" =
+  originally "Decipher Deception" (Gallery 1981, unverified) — a literal
+  cipher-puzzle story at the clued position 10.
+- Checklist updated (`results/scanning-checklist-2026-10-17.md` §D tooling
+  note + new §E 2-4 plan with candidate table and ciphertext variants).

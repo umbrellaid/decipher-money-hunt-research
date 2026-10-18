@@ -32,7 +32,7 @@ the physical copy when scanning.
 | *Foundation's Edge* (1982) | Ch. 10 **"Table"** | Ch. 20 **"Conclusion"** — matches "End." | 20 short chapters; strongest Asimov pick |
 | *Foundation* (1951) | Ch. 10 overall = Part III **"The Mayors"** ch. 2 † (chapters numbered continuously 1–19 across parts — earlier "Part II ch. 5" guess was wrong; Gemini Q3, unverified) | end of Part V "The Merchant Princes" | count across parts, not per-part restart |
 | *I, Robot* (1950) | 10th section = **"The Evitable Conflict"** (also the last) | same | "10" and "End." both satisfied by one scan |
-| *The Union Club Mysteries* (1983) | Ch. 10 **"Gift"** (a code/puzzle mystery) — scan Ch. 10–15 contiguously † (each story only 3–5 pages, too short alone for word-level N_max; Gemini Q3, unverified) | Ch. 30 "There Was a Young Lady" | 30 titled chapters |
+| *The Union Club Mysteries* (1983) | Ch. 10 **"Gift"** — a literal cipher-puzzle story; its original *Gallery* (June 1981) title was **"Decipher Deception"** † (Gemini Q8, unverified) — scan Ch. 10–15 contiguously † (story length disputed: 3–5 pp per Q3 vs 6–7 pp / ~1,500–1,800 words per Q8; either way below word-level N_max alone) | Ch. 30 "There Was a Young Lady" (+ 2-page Afterword) | 30 titled stories + Foreword/Afterword; bare ToC = 391 letters, +F/A = 408, "1 to 999" spelled out = 432 † |
 | *Asimov's New Guide to Science* (1984) | Ch. 10 †"The Reactor" | final chapter | ToC sub-headers already ≥1050 letters |
 | *The Naked Sun* (1957) | Ch. 10 **"A Culture Is Traced"** | Ch. 18 "A Question Is Answered" | formula titles, easy to spot-check |
 
@@ -78,3 +78,36 @@ test in this order (Gemini claims unverified against primary sources):
 
 Window sanity check: 5 paperback pages ≈ 1,400–1,750 words ≥ every word-level
 N_max (416/516/721/1053), and ≥ every character-level N_max in page 1 alone.
+
+Implemented 2026-10-18 in `solver/body_scan.py`: Tier 1 word-level streams
+(incl. reversed word order), Tier 2 strides + 2-1-style "halfway" patterns,
+Tier 3 character fallback; contiguous chapter windows (`--window`, default 6);
+zero-Z flagging for 3-1 (`--strict` to skip); `--skip` word-offset variants
+(solved precedent: Decipher I skipped the first 36 words of Cosmos Ch. 6 —
+paper p. 279, Figure 8, verified in repo `docs/decipher-i.md`); S100 probe on
+all 2-4 hits.
+
+## E. Puzzle 2-4 specific plan (from Gemini Q7, 2026-10-18 — claims unverified
+except where checked against `data/ciphers.json`)
+
+Candidates (author list survives in `data/author_lists.json`; the 6 PD authors
+are already sweep-eliminated under standard rules — retest only under the
+non-standard families below):
+
+| Rank | Book | Est. † | Why |
+|---|---|---|---|
+| 1 | McCullough, *The Thorn Birds* (1977) | 25% | runaway mega-bestseller; 7 named chronological Parts |
+| 2 | Irving, *The World According to Garp* (1978) / *The Hotel New Hampshire* (1981) | 20% | counterculture-literary sensibility matches Catch-22 / Bloom County picks |
+| 3 | Updike, *Rabbit Is Rich* (1981) / *The Witches of Eastwick* (1984) | 18% | author #1 on the 2-4 list; Rabbit books have almost no chapter divisions — trivial to test whole |
+| 4 | L'Amour, *The Walking Drum* (1984) / *The Lonesome Gods* (1983) | 14% | bestselling paperback author; 1984 historical-epic breakout |
+| 5 | Ludlum, *The Bourne Identity* (1980) | 10% | already on the 3-1 scan list (one scan tests both); discounted by Gemini's "unused-decoy carryover" argument |
+
+Ciphertext variants to test for 2-4 (full 170-token stream; multiples-of-100
+run VERIFIED at tokens 20–27 + 300 at token 31 in `data/ciphers.json`):
+
+1. Full ciphertext, unmodified — use the S100 pattern (X-A-X-B-C-X-D-E) and the
+   three ascending triples (737,738,739 @9; 154,155,156 @67; 544,545,546 @154 —
+   positions verified locally) as crib filters.
+2. Multiples-of-100 stripped (already implemented as `Puzzle_2-4_No100s`).
+3. X0Y-stripped (all n ≥ 100 with tens digit 0 removed — 39 of 170 tokens,
+   22.9% vs ~10% expected; tests the null-injection hypothesis).
