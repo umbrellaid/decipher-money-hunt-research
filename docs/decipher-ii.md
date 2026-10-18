@@ -21,7 +21,12 @@ Karen's Drive archive (`docs/sources.md`) holds the actual winner-article scans:
   1986; the $25,000 message prize was split among four correct entrants ($250 cash +
   $6,000 check, delivered inside a 400-lb ice sculpture of a dollar sign).
   *Statesman Journal* (Salem, OR), March 25, 1986, "Decipher II game pays off in
-  cold cash". At that date $75,000 remained.
+  cold cash". At that date $75,000 remained. **2026-10-18: both scans fully
+  transcribed** (`results/statesman-journal-1986-03-25-transcription.md`) —
+  winner confirmed as **Eileen** Novak; the article gives **no extraction-rule
+  detail** beyond "492" → a *Gulliver's Travels* passage and a Bloom County
+  poem plaintext, so the 2-1 mechanism remains undocumented in every known
+  public source.
 - **2-2**: Chirpich (Memphis State chemistry professor; also one of the 36 Decipher
   I winners) solved it by September 1986; AP wire story, e.g. *The Leaf-Chronicle*
   (Clarksville, TN), September 27, 1986. The AP piece gives a figure seen nowhere

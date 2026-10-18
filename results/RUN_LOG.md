@@ -198,3 +198,23 @@ No sweep runs; tooling + verified-data artifacts instead.
   cipher-puzzle story at the clued position 10.
 - Checklist updated (`results/scanning-checklist-2026-10-17.md` §D tooling
   note + new §E 2-4 plan with candidate table and ciphertext variants).
+
+## 2026-10-18 late morning — Statesman Journal scans transcribed (2-1 mechanism: negative)
+
+Pulled both crops of the 1986-03-25 *Statesman Journal* 2-1 winner article from
+Karen's public Drive folder "Decipher II Articles"
+(`1Hiet0dmMbgpqmo2j2FaNBc_-yUGwUijV`) and transcribed them in full:
+`results/statesman-journal-1986-03-25-transcription.md`.
+
+- **Negative headline:** the article documents NOTHING about the 2-1 extraction
+  mechanism (no "S.I.N.", no "halfway" rule, no counting detail). The 2-1
+  formula is now confirmed undocumented in every known public source; the
+  halfway stream family in `body_scan.py` remains hypothesis-driven
+  (N_max 980 = 2×490), not source-driven.
+- Confirmed: winner **Eileen** Novak (not "Barbara"); four winners at $6,250
+  ($250 cash + $6,000 check in a 400-lb ice dollar-sign); bought Aug 1985,
+  solved Valentine's Day 1986; $75,000/3 messages remaining; Decipher II had a
+  clue hotline; son's winning heuristic was "pick the least logical author"
+  (she was on a Steinbeck lead; true author Swift) — consistent with Holland's
+  "the obvious reading is usually wrong" design statement (paper p. 280).
+- `docs/decipher-ii.md` 2-1 bullet updated with the transcription pointer.
