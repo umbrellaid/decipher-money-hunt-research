@@ -145,7 +145,7 @@ EMBEDDED_TOCS: dict[str, list[str]] = {
         "Chief White Halfoat", "Hungry Joe", "McWatt",
         "Lieutenant Scheisskopf", "Major Major Major Major", "Wintergreen",
         "Captain Black", "Bologna", "Major de Coverley", "Kid Sampson",
-        "Piltchard and Wren", "Luciana", "The Soldier in White",
+        "Piltchard & Wren", "Luciana", "The Soldier in White",
         "The Soldier Who Saw Everything Twice", "Colonel Cathcart",
         "Corporal Whitcomb", "General Dreedle", "Milo the Mayor",
         "Nately's Old Man", "Milo", "The Chaplain", "Aarfy", "Nurse Duckett",

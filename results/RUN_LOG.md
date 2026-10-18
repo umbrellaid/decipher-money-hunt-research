@@ -119,3 +119,12 @@ Full-ciphertext cribs: 3-1 = E,E,E,Z,E,E; 3-2 = E,Y,E,Y,E (repeating).
 Conclusion: ToC-only keys eliminated for the 9 embedded candidate books; body-text
 scanning per `docs/check-your-own-book.md` remains the path, with Chapter 10 /
 final-chapter priority per the 3-1 clues ("10" / "End.").
+
+## 2026-10-17 evening — zero-Z crib pre-filter (from Gemini follow-up Q&A)
+
+New tool `solver/zero_z_prefilter.py`: the 3-1 literal Z cribs (E,E,E,Z,E,E) imply the
+keytext window holds no Z, so any scanned chapter with Z inside the first 516 chars or
+first 516 words is eliminated for 3-1 without a decode run. Demo on the existing corpus:
+31/49 PD texts and 8/9 Poe texts flagged — directionally consistent with the earlier
+PD/Poe eliminations. Ready for first real chapter scans: point `--scan-dir` at a folder
+of OCR'd `.txt` files. Full Q&A documentation lands with the evening commit.
