@@ -36,10 +36,14 @@ addendum with all corrections lives in the working copy
   (E,E,E,Z,E,E — a second Z near the end of the token stream); **3-2 has five
   (E,Y,E,Y,E — a repeating E…Y, E…Y, E pattern)**, a stronger structural crib than
   the truncated E,Y pair Gemini analyzed.
-- **Control-key caveat:** the embedded 42-title Catch-22 list concatenates to 487
-  letters; the documented 2-2 solution key is 478. The self-test still decodes
-  recognizably (`IYMEMOJYCFMAHNLENNON…` for "IN MEMORY OF JOHN LENNON…") but with
-  garbled mid-text indexes. The exact 478-letter title list is still to reconcile.
+- **Control key reconciled (2026-10-17 evening Q&A):** the Catch-22 chain is
+  **484 letters**, and the self-test now decodes exactly
+  (`INMEMORYOFJOHNLENNONNOBODYTOLDMETHEREDBEDAYSLIKETHESE`, bigram fit 0.741,
+  100% coverage). The earlier 487 came from "Piltchard and Wren" instead of the
+  printed "Piltchard & Wren" (Holland strips symbols/digits: & → nothing,
+  "Catch-22" → "Catch"); the documented **478** figure was erroneous — max
+  codenumber 477 maps to the final N of "The Texan", leaving the letters
+  A-X-E-T-E-H-T at reversed-key positions 478–484 unused by the ciphertext.
 
 ## Test outcome (both truncated and full-ciphertext runs)
 
@@ -54,6 +58,39 @@ readable decode either.
 is unchanged: body-text scans of Chapter 10 openings/endings and final chapters of
 the surviving candidates (`docs/check-your-own-book.md`), now with corrected
 N_max values and the full crib sets.
+
+## Follow-up Q&A (evening of 2026-10-17)
+
+Four follow-up questions were put to the same Gemini thread (full texts in the
+working copies `gemini-q1-answer.md` … `gemini-q4-answer.md`; Q4 answered with
+the Argon High model, Q1–Q3 under a Flash-Lite fallback. Gemini factual claims
+below are unverified against physical copies/primary sources unless noted).
+
+1. **Q1 — Catch-22 key length reconciled: 484 letters.** See the control-key
+   bullet above: 477 = final N of "The Texan", positions 478–484 (AXETEHT)
+   unused; "Piltchard & Wren", not "and"; the 478 figure was wrong. Also
+   confirms Holland's stripping rule is pure `[^A-Za-z]` removal (matters for
+   titles like "Secret Agent X-9" or "1 to 999").
+2. **Q2 — full-ciphertext cribs.** Literal letters = letters absent from the
+   keytext window. 3-1's Z cribs ⇒ zero-Z pre-filter (implemented:
+   `solver/zero_z_prefilter.py`); 3-2's alternating E,Y,E,Y,E is a strict
+   accept/reject filter at crib positions; priority tilts to Pasternak
+   (*Doctor Zhivago*) and Vonnegut (*Cat's Cradle*).
+3. **Q3 — chapter audit / scan-list corrections.** *Foundation*'s chapters run
+   continuously 1–19 (Ch. 10 = Part III "The Mayors" ch. 2); add *Zhivago*
+   Part 17 (poems); *Cat's Cradle* Ch. 10 (~400 words) and Union Club stories
+   (3–5 pages) are too short for word-level N_max ⇒ scan Ch. 10–15
+   contiguously; DROP *All the President's Men*; deprioritize *Shōgun* for
+   3-1/3-2 (keep for 3-3/2-4). Applied to `results/scanning-checklist-2026-10-17.md`.
+4. **Q4 — counting rule / extraction priority.** The booklets never fixed a
+   counting rule — the extraction rule lived in the hotline clues. Both solved
+   body-text precedents are word-level (Decipher I: first-letter-of-word,
+   *Cosmos* Ch. 6, 1,252 words; 2-3: first-letter-of-word, *Tai-Pan* Ch. 5,
+   2,420 words); only the ToC puzzle 2-2 was character-level. Test order for
+   body scans: word-level first (3-1 last-letter/end-anchored per "End.",
+   3-2/3-3/2-4 first-letter), then word-level variants (reversed, strides),
+   character-level as fallback. A 5-page window (~1,400–1,750 words) covers
+   every word-level N_max.
 
 ## Files
 

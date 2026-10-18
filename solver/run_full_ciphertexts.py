@@ -77,8 +77,10 @@ def main() -> None:
     print(f"Control Key Length : {len(ctrl_key)} chars (Coverage = {cov:.0%})")
     print(f"Control Bigram Fit : {T.score_english(ctrl_pt_rev):.3f}")
     print(f"Decoded Preview    : {ctrl_pt_rev[:60]}")
-    print("NOTE: key is 487 chars vs the documented 478-letter solution key; the")
-    print("9-letter mismatch garbles mid-text indexes (IYMEMOJY... vs INMEMORYOF...).")
+    print("NOTE: reconciled key is 484 letters: 'Piltchard & Wren' (& stripped,")
+    print("not 'and') and 'Catch-22' -> 'Catch'. Codenumber 477 = final N of 'The")
+    print("Texan'; letters AXETEHT at positions 478-484 are unused. The documented")
+    print("478-letter figure was erroneous; the self-test above decodes exactly.")
 
     print("\n" + "=" * 78)
     print(f"STAGE 3 (FULL): {len(all_streams)} KEY STREAMS x 5 DRIFT OFFSETS x 2 DIRECTIONS")

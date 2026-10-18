@@ -110,7 +110,7 @@ prefixes; the driver substitutes this repo's complete `data/ciphers.json`).
 | 3-1 | same, incl. repeat-487 double-letter bonus | gibberish | no ToC key |
 | 3-2 | same | gibberish | no ToC key |
 | 3-3 | same | gibberish | no ToC key |
-| 2-2 control | Catch-22 chain, reversed | decodes (`IYMEMOJY...LENNON...`) | pipeline works; key list is 487 vs documented 478 letters |
+| 2-2 control | Catch-22 chain, reversed | decodes (`IYMEMOJY...LENNON...`) | pipeline works; key list is 487 vs documented 478 letters *(superseded — reconciled to 484, see evening entry below)* |
 
 Corrections established while verifying: N_max is 1053 / 516 / 416 / 721 for
 2-4 / 3-1 / 3-2 / 3-3 (Gemini's truncated sets implied 1050 / 513 / 415 / 721).
@@ -128,3 +128,33 @@ first 516 words is eliminated for 3-1 without a decode run. Demo on the existing
 31/49 PD texts and 8/9 Poe texts flagged — directionally consistent with the earlier
 PD/Poe eliminations. Ready for first real chapter scans: point `--scan-dir` at a folder
 of OCR'd `.txt` files. Full Q&A documentation lands with the evening commit.
+
+## 2026-10-17 evening (cont.) — follow-up Q&A round, 484-letter key reconciled
+
+Four follow-up Q&As with the same Gemini thread (Q4 on the Argon High model; Q1–Q3
+under a Flash-Lite fallback). Full texts: working copies `gemini-q1-answer.md` …
+`gemini-q4-answer.md`; summaries in `results/gemini-toc-test-2026-10-17.md`
+("Follow-up Q&A"). No new sweep runs; strategy changes only.
+
+- **Catch-22 control key reconciled at 484 letters** (was: "487 vs documented
+  478"). Max codenumber 477 = final N of "The Texan"; letters AXETEHT at
+  reversed-key positions 478–484 unused; the fix was "Piltchard & Wren" (printed
+  title, & stripped) in place of "Piltchard and Wren". Self-test now decodes
+  exactly `INMEMORYOFJOHNLENNONNOBODYTOLDMETHEREDBEDAYSLIKETHESE`
+  (Control Bigram Fit 0.741, 100% coverage). Stale NOTEs in
+  `solver/run_full_ciphertexts.py` and the Campaign-3 row above corrected.
+- **Extraction-family priority flipped to word-level first** (Q4): both solved
+  body-text precedents (Decipher I / 2-3) were first-letter-of-word keys
+  (1 codenumber = 1 word); only ToC puzzle 2-2 was character-level. Body scans
+  now test word-level families before character-level, per-cipher order in
+  `results/scanning-checklist-2026-10-17.md` §D. (Gemini's hotline-clue
+  quotations unverified against primary sources.)
+- **Scan-list corrections applied** (Q3, unverified): Foundation Ch. 10 = Part
+  III "The Mayors" ch. 2 (continuous numbering 1–19); Zhivago gains Part 17
+  (poems); Cat's Cradle / Union Club Ch. 10 too short alone ⇒ scan Ch. 10–15
+  contiguously; All the President's Men DROPPED; Shōgun deprioritized for
+  3-1/3-2, kept for 3-3/2-4. Checklist copied to
+  `results/scanning-checklist-2026-10-17.md`.
+- Solver re-verified after the comment edits:
+  `uv run solver/run_full_ciphertexts.py --top 3` — self-test line and 0.741
+  fit unchanged.
