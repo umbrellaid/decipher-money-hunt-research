@@ -120,11 +120,21 @@ def ocr_page(tesseract: str, img: Path, psm: int, dehyphenate: bool) -> PageResu
         if r.get("text", "").strip() and float(r.get("conf", "-1")) >= 0
     ]
     # group into lines: (block, par, line) -> list of (left, text, conf)
-    lines: dict[tuple[int, int, int, int], list[tuple[int, str, float]]] = {}
+    # NOTE: do NOT include `top` in the key — Tesseract reports slightly
+    # different top-pixel values for words on the same physical line,
+    # which splits one line into many groups and scrambles word order.
+    lines: dict[tuple[int, int, int], list[tuple[int, str, float]]] = {}
+    line_top: dict[tuple[int, int, int], int] = {}
     for r in words:
-        key = (int(r["block_num"]), int(r["par_num"]), int(r["line_num"]), int(r["top"]))
-        lines.setdefault(key, []).append((int(r["left"]), r["text"].strip(), float(r["conf"])))
-    ordered_keys = sorted(lines, key=lambda k: (k[3], k[0], k[1], k[2]))
+        txt = r["text"].strip()
+        # skip pure-numeric tokens and TSV artifacts (coordinate strings)
+        if not txt or txt.isdigit() or re.match(r"^-?\d+$", txt):
+            continue
+        key = (int(r["block_num"]), int(r["par_num"]), int(r["line_num"]))
+        lines.setdefault(key, []).append((int(r["left"]), txt, float(r["conf"])))
+        if key not in line_top:
+            line_top[key] = int(r["top"])
+    ordered_keys = sorted(lines, key=lambda k: (line_top.get(k, 0), k[0], k[1], k[2]))
     out_lines: list[str] = []
     confs: list[float] = []
     low: list[str] = []

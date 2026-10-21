@@ -218,3 +218,26 @@ Karen's public Drive folder "Decipher II Articles"
   (she was on a Steinbeck lead; true author Swift) — consistent with Holland's
   "the obvious reading is usually wrong" design statement (paper p. 280).
 - `docs/decipher-ii.md` 2-1 bullet updated with the transcription pointer.
+
+## 2026-10-21 — Foundation body-text scan (3-1: ELIMINATED)
+
+First physical book scan + OCR + cipher run. Isaac Asimov, *Foundation* (Del Rey,
+July 1986, ISBN 0-345-33627-5). 329 CZUR Aura scans → Tesseract OCR → 9 chapter
+text files → body_scan.py word-level-first pipeline.
+
+**Targets:** Ch. 10 (global) = Part III section 2, page 109 (4,310 words);
+Final chapter = Part V section 6, page 275 (4,388 words).
+
+**3-1 result:** Top score 1.658 (ch17 WordLast_Split, drift 0, Fwd) = vowel-heavy
+gibberish (`EOEEDEEYDKHFDLGTUUTSTEEESDDY...`). Known letter-density artifact —
+NOT readable plaintext. No Tier 1/2/3 stream produced English.
+
+**Other ciphers:** 2-4, 3-2, 3-3 also tested — no matches.
+
+**Verdict: Foundation ELIMINATED as cipher 3-1 candidate.**
+
+**Bug found and fixed:** `ocr_ingest.py` line grouping included `top` pixel value,
+causing word-order scrambling. Fixed by removing `top` from grouping key.
+
+Full findings: `results/foundation_scan_findings_2026-10-21.md`
+Scan log: `results/scan_log.md`
