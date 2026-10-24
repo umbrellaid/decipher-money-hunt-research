@@ -241,3 +241,37 @@ causing word-order scrambling. Fixed by removing `top` from grouping key.
 
 Full findings: `results/foundation_scan_findings_2026-10-21.md`
 Scan log: `results/scan_log.md`
+
+## 2026-10-24 — The Thorn Birds body-text scan (2-4: INCONCLUSIVE)
+
+Colleen McCullough, *The Thorn Birds* (Avon, ISBN 0-380-01817-9). Candidate for
+Decipher II 2-4 (N_max=1053). Three scan attempts on the CZUR Aura:
+
+**Attempt 1 (auto-crop ON):** 742 images. Auto-crop destroyed left margins on 89%
+of pages — only 3 usable. 405 pages never captured. Total failure.
+
+**Attempt 2 (no-processing spreads):** 367 two-page spread images. Visual quality
+excellent but OCR confidence 64.7% (dark desk mat background + hand shadows).
+Simple cut-in-half splitting failed.
+
+**Attempt 2 + ScanTailor Advanced (GUI):** 734 clean single-page TIFs (split,
+dewarped, dark bg removed). OCR confidence improved to 77.6% (306 pages ≥85%).
+~195,000 words extracted (~97% of book). 63 blank pages rejected.
+
+**2-4 result:** Top score 1.808 (WordLast_Joined, drift -2, Rev) = vowel-heavy
+gibberish (`SBECEYEEEYTEERDNSTHATFNOEIENEYEEEED...`). All Tier 1/2/3 streams
+produced letter-density artifacts. No English plaintext detected.
+
+**3-1 result:** Also tested — no match. 3/6 windows flagged for zero-Z violation.
+
+**Verdict: The Thorn Birds INCONCLUSIVE for 2-4.** Cannot be eliminated but no
+positive signal. OCR quality (77.6% avg, 46% high-confidence) is borderline for
+reliable first-letter-of-word extraction. Needs cleaner OCR or rescan.
+
+**Bug found and fixed:** Custom `process_pipeline.py` TSV parser leaked Tesseract
+coordinate data into extracted text. Fixed with three-layer defense (field
+validation, pre-filter for concatenation artifacts, post-processing regex).
+
+**Pipeline established:** CZUR "no processing" → ScanTailor Advanced GUI →
+Tesseract OCR → body_scan.py. Documented in `scanning/docs/scanning-workflow-czur-2026-10-18.md` §8.
+Scan files: `scanning/book-scans/the-thorn-birds-scantailor/`.
