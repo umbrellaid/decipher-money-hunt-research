@@ -183,6 +183,9 @@ def main() -> None:
     ap.add_argument("--strip-header", action="append", default=[],
                     help="regex; drop the page's first line when it matches (running head). "
                          "Repeatable, e.g. --strip-header 'I,? ROBOT' --strip-header 'THE HIGHWAY'")
+    ap.add_argument("--dedup", action="store_true",
+                    help="drop duplicate re-scans: consecutive pages with word-set Jaccard "
+                         ">= 0.75 keep only the higher-confidence capture")
     args = ap.parse_args()
 
     tesseract = find_tesseract()
@@ -208,6 +211,31 @@ def main() -> None:
         print(f"OCR-ing {len(page_files)} page images (psm {args.psm}) ...")
         pages = [ocr_page(tesseract, p, args.psm, not args.keep_hyphens,
                           tuple(args.strip_header)) for p in page_files]
+
+    if args.dedup:
+        # duplicate re-scans: near-identical word sets among the last few
+        # pages; keep the higher-confidence capture (retakes usually follow
+        # the bad take, but confidence is the safer arbiter)
+        kept: list[PageResult] = []
+        dropped = []
+        for pr in pages:
+            words = {w.lower().strip(".,;:!?\"'") for w in pr.text.split()}
+            dup_of = None
+            if words and pr.n_words > 20:
+                for prev in kept[-3:]:
+                    pw = {w.lower().strip(".,;:!?\"'") for w in prev.text.split()}
+                    if pw and len(words & pw) / max(len(words | pw), 1) >= 0.75:
+                        dup_of = prev
+                        break
+            if dup_of is None:
+                kept.append(pr)
+            elif pr.mean_conf >= dup_of.mean_conf:
+                kept[kept.index(dup_of)] = pr  # better retake replaces the original
+                dropped.append(dup_of.image)
+            else:
+                dropped.append(pr.image)
+        print(f"dedup: dropped {len(dropped)} duplicate re-scans: {dropped}")
+        pages = kept
 
     # chapter assignment
     starts = load_map(args.map)

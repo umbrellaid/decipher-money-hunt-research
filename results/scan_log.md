@@ -114,3 +114,40 @@ The 2026-10-21 Foundation texts contain TSV-artifact strings and unstripped runn
 (both bugs are fixed in the current pipeline). Its 3-1 ELIMINATION is probably still valid (the
 pollution is sparse), but a re-ingest of the Foundation pages through `ingest_by_markers.py`
 would make it airtight. Recommended before treating Foundation as fully closed.
+
+---
+
+## 2026-10-27 — Foundation + The Thorn Birds re-processed through the fixed pipeline
+
+David asked to apply the 10-26 workflow to both earlier scan sets. No new scanning.
+
+### Foundation (re-ingest; elimination now airtight)
+- Source: the 329 pre-split page images from 2026-10-21 (Facing-Pages capture — no
+  preprocessing needed; the fix was all in the ingest).
+- **Corrected chapter map** (`scanning/book-scans/foundation/chapters_v2.csv`): 28 section
+  anchors (ch00-ch27) vs the old 9. The old map's ch12 had absorbed 70 pages (Part III s4
+  through all of Part IV). True structure: sections numbered WITHIN parts (Part III s1
+  epigraph at image00128, Part IV s1 epigraph at image00198, Part V at image00230).
+  Old ch10 (cipher target) = new ch07@image00140; old ch17 (final) = new ch27@image00116[316].
+- Running heads stripped ("FOUNDATION"/"ISAAC ASIMOV"); leading section numerals trimmed from
+  ch05/ch27. Both target openings verified ("There are many epigrams…" / "The senior lieutenant…").
+- QA: 26/329 flagged (unchanged — same images; mostly front/back matter).
+- **body_scan verdict: no readable plaintext for 3-1/3-2/3-3/2-4; 111/153 windows fail the
+  3-1 zero-Z condition. Foundation's 3-1 ELIMINATION is CONFIRMED on clean text — the
+  2026-10-26 caveat is closed.** Full output: `results/body_scan_2026-10-27_reingest_full.txt`.
+
+### The Thorn Birds (re-ingest; 2-4 negative, noise caveat)
+- Source: the 2026-10-24 "second try" 367 raw spreads (the first attempt remains unusable
+  per its own SCAN_REPORT — auto-crop destroyed margins on 89% of pages).
+- preprocess_spreads.py: 367 → 716 pages, 0 failures. 18 single-page captures: 13 are UNIQUE
+  fills (spread skips), NOT duplicates — kept; 11 true reshoot pages removed to
+  `pages-new/_dedup_rejects/` (228/229, 346/347, 357/358, 359/360, 137/138, 177/178, 223/224).
+- Structure: 7 parts, running heads "YEARS NAME" (1915-1917 MEGGIE → 1965-1969 JUSTINE).
+  Map: `scanning/book-scans/the-thorn-birds/chapters_v2.csv`; part starts content-verified.
+- QA: **471/705 pages flagged; mean conf 77.2** (vs ~85 for the 10-26 books) — the 692-page
+  paperback's gutter curve + hand shadows. 128 pages < conf 70, clustered in Part Two
+  (RALPH, 41) and Part Six (DANE, 41). Rescan list for David:
+  `scanning/book-scans/the-thorn-birds/RESCAN_LIST_2026-10-27.md`.
+- **body_scan verdict: no readable plaintext for 2-4 (or 3-1/3-2/3-3); 26/33 windows fail
+  zero-Z. Downgraded from INCONCLUSIVE to NEGATIVE-WITH-CAVEAT — if 2-4 ever narrows to
+  McCullough, rescan the flagged pages first.**

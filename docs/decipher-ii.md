@@ -129,3 +129,11 @@ from the front," and `Decipher-III-puzzle-back.jpg` is the side printed "continu
 on the back." For Decipher II, the file named `-front` holds Message 1 only, and
 the file named `-back` holds Messages 2, 3, and 4. Read the message numbers on the
 scan. The filenames are a poor guide to which physical side is which.
+
+### 2-4 candidate status after the 2026-10-24/27 Thorn Birds scans
+*The Thorn Birds* (Avon, ISBN 0380018179) body-scanned twice: 2026-10-24 (ScanTailor
+route, INCONCLUSIVE) and 2026-10-27 (fixed pipeline, 7 parts, dups removed). **No
+readable plaintext for 2-4 under any tested family — NEGATIVE, with an OCR-noise
+caveat** (mean conf 77; 128 pages under 70, clustered in Parts Two and Six; rescan
+list: `scanning/book-scans/the-thorn-birds/RESCAN_LIST_2026-10-27.md`). McCullough
+drops below the untested candidates (*Rabbit, Run* etc.) but is not eliminated.

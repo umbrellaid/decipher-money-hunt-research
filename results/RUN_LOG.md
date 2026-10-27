@@ -320,3 +320,19 @@ elimination as airtight (scan_log 2026-10-26).
 Zhivago strong-negative; Cat's Cradle negative. The 3-1 Group-B pool is now down to Heller /
 Vonnegut / Ludlum / Capote / Uris / Pasternak(care) / Halberstam / Ono + the in-copyright A/C
 authors.
+
+## 2026-10-27 — Foundation + Thorn Birds re-ingest through the fixed pipeline
+
+Both older scan sets re-processed with the 10-26 tooling (no new scans). Details in
+`results/scan_log.md` 2026-10-27 entry; full solver output in
+`results/body_scan_2026-10-27_reingest_full.txt`.
+
+- **Foundation (Del Rey 1986): 3-1 ELIMINATION CONFIRMED on clean text.** 28 section
+  anchors (old map merged 70 pages into ch12), running heads stripped, both cipher-target
+  chapters verified at true openings. No readable plaintext under any family; 111/153
+  windows fail the 3-1 zero-Z condition. The 10-26 caveat is closed.
+- **The Thorn Birds (Avon): 2-4 NEGATIVE (was: INCONCLUSIVE).** 7 parts, 11 duplicate
+  reshoots removed, 13 unique single-page fills kept. No readable plaintext for 2-4/3-1/3-2/3-3.
+  Caveat: mean OCR conf 77 (128 pages < 70, clustered in Parts Two and Six) — rescan list
+  delivered (`scanning/book-scans/the-thorn-birds/RESCAN_LIST_2026-10-27.md`). McCullough
+  stays on the 2-4 board but below Thorn-Birds-first-printing-verified alternatives.
