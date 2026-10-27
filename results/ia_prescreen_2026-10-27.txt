@@ -1,0 +1,65 @@
+############ ia-prescreen: in-cold-blood
+Tier 1 = word-level (first/last letter, incl. reversed word order) | Tier 2 = word strides + halfway patterns | Tier 3 = every character
+150/183 windows flagged for 3-1 (Z inside the first 516 chars/words).
+  Tier 1 (word-level):
+   Score |  Cov | Drf | Dir | Stream ID
+   Score |  Cov | Drf | Dir | Stream ID
+   Score |  Cov | Drf | Dir | Stream ID
+   0.706 | 100% |  +0 | Rev | ch001|Chars|Rev
+   0.703 | 100% |  +0 | Fwd | ch001|Chars|Rev
+   0.669 | 100% |  +1 | Rev | ch024..ch029|Chars|Rev
+   0.669 | 100% |  +1 | Rev | ch025..ch029|Chars|Rev
+   0.669 | 100% |  +1 | Rev | ch026..ch029|Chars|Rev
+   0.669 | 100% |  +1 | Rev | ch027..ch029|Chars|Rev
+############ ia-prescreen: exodus
+Tier 1 = word-level (first/last letter, incl. reversed word order) | Tier 2 = word strides + halfway patterns | Tier 3 = every character
+309/357 windows flagged for 3-1 (Z inside the first 516 chars/words).
+  Tier 1 (word-level):
+   Score |  Cov | Drf | Dir | Stream ID
+   Score |  Cov | Drf | Dir | Stream ID
+   Score |  Cov | Drf | Dir | Stream ID
+   0.718 | 100% |  +1 | Rev | ch032..ch037|Chars|Rev
+   0.718 | 100% |  +1 | Rev | ch033..ch037|Chars|Rev
+   0.718 | 100% |  +1 | Rev | ch034..ch037|Chars|Rev
+   0.718 | 100% |  +1 | Rev | ch035..ch037|Chars|Rev
+   0.718 | 100% |  +1 | Rev | ch036..ch037|Chars|Rev
+   0.718 | 100% |  +1 | Rev | ch037|Chars|Rev
+############ ia-prescreen: trinity
+Tier 1 = word-level (first/last letter, incl. reversed word order) | Tier 2 = word strides + halfway patterns | Tier 3 = every character
+322/429 windows flagged for 3-1 (Z inside the first 516 chars/words).
+  Tier 1 (word-level):
+   Score |  Cov | Drf | Dir | Stream ID
+   Score |  Cov | Drf | Dir | Stream ID
+   Score |  Cov | Drf | Dir | Stream ID
+   0.735 | 100% |  +0 | Fwd | ch040..ch045|Chars|Rev
+   0.735 | 100% |  +0 | Fwd | ch041..ch045|Chars|Rev
+   0.735 | 100% |  +0 | Fwd | ch042..ch045|Chars|Rev
+   0.735 | 100% |  +0 | Fwd | ch043..ch045|Chars|Rev
+   0.735 | 100% |  +0 | Fwd | ch044..ch045|Chars|Rev
+   0.735 | 100% |  +0 | Fwd | ch045|Chars|Rev
+############ ia-prescreen: bell-jar
+Tier 1 = word-level (first/last letter, incl. reversed word order) | Tier 2 = word strides + halfway patterns | Tier 3 = every character
+76/99 windows flagged for 3-1 (Z inside the first 516 chars/words).
+  Tier 1 (word-level):
+   Score |  Cov | Drf | Dir | Stream ID
+   Score |  Cov | Drf | Dir | Stream ID
+   Score |  Cov | Drf | Dir | Stream ID
+   0.725 | 100% |  +2 | Fwd | ch002..ch007|Chars|Rev
+   0.725 | 100% |  +2 | Fwd | ch003..ch007|Chars|Rev
+   0.725 | 100% |  +2 | Fwd | ch004..ch007|Chars|Rev
+   0.725 | 100% |  +2 | Fwd | ch005..ch007|Chars|Rev
+   0.725 | 100% |  +2 | Fwd | ch006..ch007|Chars|Rev
+   0.725 | 100% |  +2 | Fwd | ch007|Chars|Rev
+############ ia-prescreen: pillars
+Tier 1 = word-level (first/last letter, incl. reversed word order) | Tier 2 = word strides + halfway patterns | Tier 3 = every character
+465/609 windows flagged for 3-1 (Z inside the first 516 chars/words).
+  Tier 1 (word-level):
+   Score |  Cov | Drf | Dir | Stream ID
+   Score |  Cov | Drf | Dir | Stream ID
+   Score |  Cov | Drf | Dir | Stream ID
+   0.754 | 100% |  +0 | Rev | ch054|Chars|Fwd
+   0.754 | 100% |  +0 | Rev | ch054..ch055|Chars|Fwd
+   0.754 | 100% |  +0 | Rev | ch054..ch056|Chars|Fwd
+   0.754 | 100% |  +0 | Rev | ch054..ch057|Chars|Fwd
+   0.754 | 100% |  +0 | Rev | ch054..ch058|Chars|Fwd
+   0.754 | 100% |  +0 | Rev | ch054..ch059|Chars|Fwd

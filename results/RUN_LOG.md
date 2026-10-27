@@ -351,3 +351,18 @@ overall 0.772→0.844; Part Two 0.596→0.867; conf mean 77.2→84.0; low-conf p
 128→27; word recovery +49k. body_scan on the clean text: **no readable plaintext for
 2-4 or any other cipher — Thorn Birds downgraded to NEGATIVE with only a mid-book
 (Parts 5-6, 0.77) caveat.** Full numbers in scan_log 2026-10-27 rescan entry.
+
+## 2026-10-27 (final) — IA pre-screen of 5 unrestricted reference texts: no hits
+
+Ran the full cipher scan over the five unrestricted IA novel texts (Capote *In Cold Blood*,
+Uris *Exodus* + *Trinity*, Plath *The Bell Jar*, Follett *Pillars of the Earth*), split into
+section files by heading detection (running-head title changes, chapter lines, date headers,
+4k-word fallback chunks). **No readable plaintext for 2-4/3-1/3-2/3-3 in any of them**; all
+top scores are in the noise band (0.70-0.75, character-level). Results:
+`results/ia_prescreen_2026-10-27.txt`.
+
+**Standing interpretation rule for these pre-screens:** a POSITIVE would have been an
+immediate escalation signal (buy era-correct copy, scan, confirm); a NEGATIVE carries ZERO
+elimination weight — different edition, IA OCR noise, and approximate section anchoring
+would all mask a real key. These five authors remain untested at elimination grade. The
+texts' ongoing value is QA comparison against David's own scans.
