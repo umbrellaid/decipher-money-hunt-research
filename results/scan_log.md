@@ -151,3 +151,40 @@ David asked to apply the 10-26 workflow to both earlier scan sets. No new scanni
 - **body_scan verdict: no readable plaintext for 2-4 (or 3-1/3-2/3-3); 26/33 windows fail
   zero-Z. Downgraded from INCONCLUSIVE to NEGATIVE-WITH-CAVEAT — if 2-4 ever narrows to
   McCullough, rescan the flagged pages first.**
+
+---
+
+## 2026-10-27 — The Thorn Birds FULL RESCAN (third capture pass) — 2-4 ELIMINATED-grade negative
+
+David rescanned the entire book (369 spreads, session 2026_10_27_15_13_33) with the
+checklist: top-down Aura light, hands on outer edges only, slower captures, immediate
+reshoots when unsure. The pipeline (preprocess → page_heads → map → ingest --dedup)
+ran unchanged; David's "insurance" reshoots were auto-deduped (9 pages).
+
+**Quality vs the 10-24 scan (diff against the IA 1977 Harper text, same method):**
+
+| Part | 10-24 scan | rescan | |
+|---|---|---|---|
+| One (Meggie) | 0.812 | **0.920** | |
+| Two (Ralph) | 0.596 | **0.867** | +0.27 |
+| Three (Paddy) | 0.791 | **0.906** | |
+| Four (Luke) | 0.766 | 0.856 | |
+| Five (Fee) | 0.766 | 0.771 | thick-book middle, diffuse 70-78 band |
+| Six (Dane) | 0.739 | 0.765 | same |
+| Seven (Justine) | 0.875 | 0.826 | Part-7 opener pages OCR'd worst (conf 27-54) |
+| **Overall** | **0.772** | **0.844** | conf mean 77.2→84.0; <70 pages 128→27 |
+
+Word recovery: 515k → 564k normalized words (old scan lost ~50k words in Parts 5/7).
+
+**body_scan (results/body_scan_2026-10-27_rescan.txt): no readable plaintext for 2-4,
+3-1, 3-2 or 3-3 under any tested family; 26/33 windows fail 3-1 zero-Z.** With Parts
+1-4 now at 0.86-0.92 match, the negative is strong through the book's first two-thirds.
+Parts 5-6 (0.77) still carry a diffuse mid-band — a theoretical hit there remains
+harder to see, but at this quality the book is recorded as **2-4: NEGATIVE (near
+elimination; Parts 5-6 caveat noted)**.
+
+Reference texts used for comparison (local only, never committed): IA item
+colleenmcculloug0000coll djvu.txt + PDF text layer (verified word-identical, 235,025
+words both). Scans remain in scanning/book-scans/the-thorn-birds/pages-rescan;
+texts/the-thorn-birds now points at the rescan ingest (old kept as
+texts/the-thorn-birds-old-2026-10-24).

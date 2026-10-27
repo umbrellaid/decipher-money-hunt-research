@@ -343,3 +343,11 @@ first edition (reference only; different edition, itself OCR — combined-error 
 Sampled word-level match: **0.77 overall; Part Two 0.60, Part Six 0.74** — independently
 corroborating the QA confidence clusters. Implication recorded in the rescan list: a real
 2-4 keytext inside Parts Two/Six would be nearly invisible at this noise level.
+
+## 2026-10-27 (later) — Thorn Birds rescan: quality jump, still negative
+
+Full-book rescan per the checklist (lighting/hands/slower). Diff vs IA reference:
+overall 0.772→0.844; Part Two 0.596→0.867; conf mean 77.2→84.0; low-conf pages
+128→27; word recovery +49k. body_scan on the clean text: **no readable plaintext for
+2-4 or any other cipher — Thorn Birds downgraded to NEGATIVE with only a mid-book
+(Parts 5-6, 0.77) caveat.** Full numbers in scan_log 2026-10-27 rescan entry.
