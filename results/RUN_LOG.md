@@ -336,3 +336,10 @@ Both older scan sets re-processed with the 10-26 tooling (no new scans). Details
   Caveat: mean OCR conf 77 (128 pages < 70, clustered in Parts Two and Six) — rescan list
   delivered (`scanning/book-scans/the-thorn-birds/RESCAN_LIST_2026-10-27.md`). McCullough
   stays on the 2-4 board but below Thorn-Birds-first-printing-verified alternatives.
+
+### 2026-10-27 addendum — Thorn Birds OCR quality indicator (IA diff)
+Diffed our Avon scan's text against the Internet Archive's plain text of the 1977 Harper
+first edition (reference only; different edition, itself OCR — combined-error floor).
+Sampled word-level match: **0.77 overall; Part Two 0.60, Part Six 0.74** — independently
+corroborating the QA confidence clusters. Implication recorded in the rescan list: a real
+2-4 keytext inside Parts Two/Six would be nearly invisible at this noise level.
