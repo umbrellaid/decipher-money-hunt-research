@@ -188,3 +188,24 @@ colleenmcculloug0000coll djvu.txt + PDF text layer (verified word-identical, 235
 words both). Scans remain in scanning/book-scans/the-thorn-birds/pages-rescan;
 texts/the-thorn-birds now points at the rescan ingest (old kept as
 texts/the-thorn-birds-old-2026-10-24).
+
+### 2026-10-27 addendum — reference-aligned correction attempt + IA unrestricted sweep
+
+**Alignment correction (Thorn Birds ch05/ch06):** applied the IA-reference corrector
+(guardrails: replace only junk-token→known-word, drop only junk runs ≤3, insert ≤2,
+never touch real words — edition variants preserved). Result honest but small:
+ch05 0.789→0.805, ch06 0.765→0.769 (same-seed diff). The residual loss is structural
+(unreadable patches), not local garble; rebuilding patches from IA would substitute the
+Harper edition's wording, so the corrector correctly refuses. Final body_scan
+(results/body_scan_2026-10-27_final.txt): still no readable plaintext for 2-4 —
+**Thorn Birds stands as NEGATIVE** (Parts 5-6 mid-book caveat retained). The remaining
+real fix, if ever needed: a ~27-page touch-up rescan of the conf<70 captures.
+
+**IA unrestricted sweep (32 candidate-title searches):** five genuine novel texts found
+and downloaded to `puzzle_work/downloaded/` (reference-only, never committed):
+In Cold Blood (Capote, 3-1 Group B), Exodus + Trinity (Uris, 3-1 Group B),
+The Bell Jar (Plath, Group C), Pillars of the Earth (Follett, Group C).
+Decoys skipped: Bourne Identity item = 1988 TV miniseries; Godfather item = Part II
+screenplay; Shogun item = an essay. All 22 other candidate titles are access-restricted
+lending items (no plain text). Use of these references: QA calibration and weak
+pre-screens only — elimination-grade results still require era-correct paper copies.
