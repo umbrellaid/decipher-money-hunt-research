@@ -105,8 +105,14 @@ def split_spread(img_path: Path, tmpdir: Path) -> list[Path]:
     return [lp, rp]
 
 
-def ocr_page(tesseract: str, img: Path, psm: int, dehyphenate: bool) -> PageResult:
-    """Run tesseract TSV on one page image; rebuild text in reading order."""
+def ocr_page(tesseract: str, img: Path, psm: int, dehyphenate: bool,
+             strip_header: tuple[str, ...] = ()) -> PageResult:
+    """Run tesseract TSV on one page image; rebuild text in reading order.
+
+    strip_header: regexes; if the FIRST rebuilt line matches any of them and
+    is short (<= 8 tokens) it is dropped as a running header ("I, ROBOT",
+    "THE HIGHWAY", "cat's cradle" after page numbers were filtered).
+    """
     proc = subprocess.run(
         [tesseract, str(img), "stdout", "--psm", str(psm), "tsv"],
         capture_output=True, text=True, encoding="utf-8", errors="replace",
@@ -140,9 +146,13 @@ def ocr_page(tesseract: str, img: Path, psm: int, dehyphenate: bool) -> PageResu
     low: list[str] = []
     for k in ordered_keys:
         toks = sorted(lines[k])
+        line_text = " ".join(t for _, t, _ in toks)
+        if (strip_header and not out_lines and len(toks) <= 8
+                and any(re.search(rx, line_text) for rx in strip_header)):
+            continue  # running header line: drop entirely
         confs.extend(c for _, _, c in toks)
         low.extend(t for _, t, c in toks if c < 60 and len(t) > 2)
-        out_lines.append(" ".join(t for _, t, _ in toks))
+        out_lines.append(line_text)
     text = "\n".join(out_lines)
     if dehyphenate:
         # join words broken across lines: "encyclo-\npedia" -> "encyclopedia"
@@ -170,6 +180,9 @@ def main() -> None:
     ap.add_argument("--psm", type=int, default=6, help="tesseract page segmentation mode (default 6)")
     ap.add_argument("--split-spreads", action="store_true", help="cut each image into left/right pages")
     ap.add_argument("--keep-hyphens", action="store_true", help="do not join line-broken words")
+    ap.add_argument("--strip-header", action="append", default=[],
+                    help="regex; drop the page's first line when it matches (running head). "
+                         "Repeatable, e.g. --strip-header 'I,? ROBOT' --strip-header 'THE HIGHWAY'")
     args = ap.parse_args()
 
     tesseract = find_tesseract()
@@ -193,7 +206,8 @@ def main() -> None:
                 page_files.append(img)
 
         print(f"OCR-ing {len(page_files)} page images (psm {args.psm}) ...")
-        pages = [ocr_page(tesseract, p, args.psm, not args.keep_hyphens) for p in page_files]
+        pages = [ocr_page(tesseract, p, args.psm, not args.keep_hyphens,
+                          tuple(args.strip_header)) for p in page_files]
 
     # chapter assignment
     starts = load_map(args.map)

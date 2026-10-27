@@ -275,3 +275,48 @@ validation, pre-filter for concatenation artifacts, post-processing regex).
 **Pipeline established:** CZUR "no processing" → ScanTailor Advanced GUI →
 Tesseract OCR → body_scan.py. Documented in `scanning/docs/scanning-workflow-czur-2026-10-18.md` §8.
 Scan files: `scanning/book-scans/the-thorn-birds-scantailor/`.
+
+## 2026-10-26 — I, Robot / Doctor Zhivago / Cat's Cradle body-text scan (three-book session)
+
+David's second scanner session, three books in one mixed folder (separated during processing;
+pipeline details in `results/scan_log.md` 2026-10-26 entry). All editions era-verified from
+copyright-page scans (I Robot = Fawcett Crest ©1950/1968 → 1970 printing; Zhivago = **Signet
+First Printing February 1960**; Cat's Cradle = Dell ISBN 0-440-11149-8, ©1963 plates).
+
+New tooling this session: `solver/preprocess_spreads.py` (replaces ScanTailor — see workflow doc
+§8), `solver/ingest_by_markers.py` (marker-chasing ingest; chapter files start at the first body
+word), `ocr_ingest.py --strip-header`. Full outputs:
+`results/body_scan_2026-10-26_3books_full.txt`.
+
+### I, Robot (3-1: ELIMINATED)
+11 chapter files (front matter + Introduction + 9 stories, each verified to open at its true
+first line; "The Evitable Conflict" = ch10). **51/51 windows fail the 3-1 zero-Z necessary
+condition** (every window contains Z within its first 516 chars/words — Asimov's prose is
+Z-dense). No readable plaintext for 2-4, 3-2 or 3-3 either; all top hits are the known
+WordLast vowel-density artifact. **I, Robot ELIMINATED as cipher 3-1 candidate** (Group B,
+Asimov). Asimov's *Foundation's Edge* / *Union Club* / *Naked Sun* remain untested on paper.
+
+### Doctor Zhivago (3-1: no match — not fully eliminated)
+All 17 parts anchored (ch10 The Highway trimmed to its true opening; ch17 poems from HAMLET).
+87/93 windows fail zero-Z; the 6 passing windows (incl. ch09/ch010-anchored) produced nothing.
+No readable plaintext under any tested family for 3-1/3-2/3-3/2-4. Negative under the current
+rule families — but OCR noise is heavier than Foundation's (Zhivago's inner margins are tight;
+poems are italic), so this is recorded as **strong negative, not elimination**. If 3-x ever
+narrows to Pasternak, re-scan the target parts with more care before closing it.
+
+### Cat's Cradle (multi: no match)
+49 anchored micro-chapter files + ch127 split by hand; the ch10-15 target window is contiguous
+and zero-Z-clean at its anchors. 241/261 windows zero-Z flagged, 20 pass — including the
+ch009/ch010/ch013-anchored target windows — none decode. No readable plaintext for any cipher.
+**Negative for 2-4 / 3-1 / 3-2 / 3-3** under tested families. Vonnegut stays open only in the
+untested titles (Slaughterhouse-Five etc. — not on the scan list).
+
+### Foundation caveat
+The 2026-10-21 Foundation texts contain TSV artifacts + unstripped running heads; both bugs are
+now fixed in the pipeline. Recommend re-ingesting the Foundation pages before treating its 3-1
+elimination as airtight (scan_log 2026-10-26).
+
+**Scan log:** `results/scan_log.md` 2026-10-26 entry. **Verdicts:** I Robot OUT for 3-1;
+Zhivago strong-negative; Cat's Cradle negative. The 3-1 Group-B pool is now down to Heller /
+Vonnegut / Ludlum / Capote / Uris / Pasternak(care) / Halberstam / Ono + the in-copyright A/C
+authors.

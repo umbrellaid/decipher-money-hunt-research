@@ -67,8 +67,10 @@ Full logs: `results/RUN_LOG.md`.
 2. **Kurt Vonnegut** for 3-1 — *Slaughterhouse-Five* matches Holland's taste for
    thematically resonant keys (war, memory); the "10" and "End" clues fit a
    chapter/word-10 or every-10th reading.
-3. **Isaac Asimov** for 3-1 — *Foundation*, *I, Robot*; short, structured, numbered
-   sections make plausible key streams.
+3. ~~**Isaac Asimov** for 3-1~~ — *Foundation* eliminated 2026-10-21; *I, Robot*
+   (Fawcett Crest 1970) eliminated 2026-10-26: **51/51 windows fail the 3-1 zero-Z
+   necessary condition** and no family decoded (RUN_LOG 2026-10-26). Remaining Asimov
+   scan-list titles: *Foundation's Edge*, *Union Club Mysteries*, *The Naked Sun*.
 4. The rest of Group B for 3-1 (Nixon, Woodward, Ludlum, Capote, Uris, Pasternak,
    Halberstam, Ono) and the in-copyright members of A and C for 3-2/3-3 (Sanders,
    Buckley, Solzhenitsyn, Cosby, Wolfe; Kissinger, Plath, Haley, Mailer, Smith,
