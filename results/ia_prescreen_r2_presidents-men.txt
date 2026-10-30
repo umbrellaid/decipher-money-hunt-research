@@ -1,0 +1,591 @@
+================================================================================================
+BODY SCAN — word-level-first streams x contiguous chapter windows
+scan-dir: texts\ia-prescreen-2026-10-30-r2\presidents-men-chapters  (25 chapter files, 135 windows of 1-6 chapters)
+Tier 1 = word-level (first/last letter, incl. reversed word order) | Tier 2 = word strides + halfway patterns | Tier 3 = every character
+================================================================================================
+
+Window                                   | Ch |  Words |  Chars | Z@516c | Z@516w | 3-1
+------------------------------------------------------------------------------------------------
+ch00                                     |  1 |   5050 |  24723 |      0 |      0 | pass
+ch00..ch01                               |  2 |  10101 |  48687 |      0 |      0 | pass
+ch00..ch02                               |  3 |  15108 |  73140 |      0 |      0 | pass
+ch00..ch03                               |  4 |  20136 |  96045 |      0 |      0 | pass
+ch00..ch04                               |  5 |  25200 | 119309 |      0 |      0 | pass
+ch00..ch05                               |  6 |  30275 | 143597 |      0 |      0 | pass
+ch01                                     |  1 |   5051 |  23964 |      0 |      0 | pass
+ch01..ch02                               |  2 |  10058 |  48417 |      0 |      0 | pass
+ch01..ch03                               |  3 |  15086 |  71322 |      0 |      0 | pass
+ch01..ch04                               |  4 |  20150 |  94586 |      0 |      0 | pass
+ch01..ch05                               |  5 |  25225 | 118874 |      0 |      0 | pass
+ch01..ch06                               |  6 |  30281 | 142672 |      0 |      0 | pass
+ch02                                     |  1 |   5007 |  24453 |      0 |      1 | FLAG
+ch02..ch03                               |  2 |  10035 |  47358 |      0 |      1 | FLAG
+ch02..ch04                               |  3 |  15099 |  70622 |      0 |      1 | FLAG
+ch02..ch05                               |  4 |  20174 |  94910 |      0 |      1 | FLAG
+ch02..ch06                               |  5 |  25230 | 118708 |      0 |      1 | FLAG
+ch02..ch07                               |  6 |  30278 | 141759 |      0 |      1 | FLAG
+ch03                                     |  1 |   5028 |  22905 |      0 |      2 | FLAG
+ch03..ch04                               |  2 |  10092 |  46169 |      0 |      2 | FLAG
+ch03..ch05                               |  3 |  15167 |  70457 |      0 |      2 | FLAG
+ch03..ch06                               |  4 |  20223 |  94255 |      0 |      2 | FLAG
+ch03..ch07                               |  5 |  25271 | 117306 |      0 |      2 | FLAG
+ch03..ch08                               |  6 |  30333 | 141590 |      0 |      2 | FLAG
+ch04                                     |  1 |   5064 |  23264 |      0 |      1 | FLAG
+ch04..ch05                               |  2 |  10139 |  47552 |      0 |      1 | FLAG
+ch04..ch06                               |  3 |  15195 |  71350 |      0 |      1 | FLAG
+ch04..ch07                               |  4 |  20243 |  94401 |      0 |      1 | FLAG
+ch04..ch08                               |  5 |  25305 | 118685 |      0 |      1 | FLAG
+ch04..ch09                               |  6 |  30341 | 142950 |      0 |      1 | FLAG
+ch05                                     |  1 |   5075 |  24288 |      0 |      0 | pass
+ch05..ch06                               |  2 |  10131 |  48086 |      0 |      0 | pass
+ch05..ch07                               |  3 |  15179 |  71137 |      0 |      0 | pass
+ch05..ch08                               |  4 |  20241 |  95421 |      0 |      0 | pass
+ch05..ch09                               |  5 |  25277 | 119686 |      0 |      0 | pass
+ch05..ch10                               |  6 |  30301 | 144390 |      0 |      0 | pass
+ch06                                     |  1 |   5056 |  23798 |      0 |      8 | FLAG
+ch06..ch07                               |  2 |  10104 |  46849 |      0 |      8 | FLAG
+ch06..ch08                               |  3 |  15166 |  71133 |      0 |      8 | FLAG
+ch06..ch09                               |  4 |  20202 |  95398 |      0 |      8 | FLAG
+ch06..ch10                               |  5 |  25226 | 120102 |      0 |      8 | FLAG
+ch06..ch11                               |  6 |  30272 | 143899 |      0 |      8 | FLAG
+ch07                                     |  1 |   5048 |  23051 |      0 |      1 | FLAG
+ch07..ch08                               |  2 |  10110 |  47335 |      0 |      1 | FLAG
+ch07..ch09                               |  3 |  15146 |  71600 |      0 |      1 | FLAG
+ch07..ch10                               |  4 |  20170 |  96304 |      0 |      1 | FLAG
+ch07..ch11                               |  5 |  25216 | 120101 |      0 |      1 | FLAG
+ch07..ch12                               |  6 |  30221 | 143731 |      0 |      1 | FLAG
+ch08                                     |  1 |   5062 |  24284 |      2 |      7 | FLAG
+ch08..ch09                               |  2 |  10098 |  48549 |      2 |      7 | FLAG
+ch08..ch10                               |  3 |  15122 |  73253 |      2 |      7 | FLAG
+ch08..ch11                               |  4 |  20168 |  97050 |      2 |      7 | FLAG
+ch08..ch12                               |  5 |  25173 | 120680 |      2 |      7 | FLAG
+ch08..ch13                               |  6 |  30189 | 144635 |      2 |      7 | FLAG
+ch09                                     |  1 |   5036 |  24265 |      0 |      2 | FLAG
+ch09..ch10                               |  2 |  10060 |  48969 |      0 |      2 | FLAG
+ch09..ch11                               |  3 |  15106 |  72766 |      0 |      2 | FLAG
+ch09..ch12                               |  4 |  20111 |  96396 |      0 |      2 | FLAG
+ch09..ch13                               |  5 |  25127 | 120351 |      0 |      2 | FLAG
+ch09..ch14                               |  6 |  30148 | 144367 |      0 |      2 | FLAG
+ch10                                     |  1 |   5024 |  24704 |      0 |      1 | FLAG
+ch10..ch11                               |  2 |  10070 |  48501 |      0 |      1 | FLAG
+ch10..ch12                               |  3 |  15075 |  72131 |      0 |      1 | FLAG
+ch10..ch13                               |  4 |  20091 |  96086 |      0 |      1 | FLAG
+ch10..ch14                               |  5 |  25112 | 120102 |      0 |      1 | FLAG
+ch10..ch15                               |  6 |  30182 | 144005 |      0 |      1 | FLAG
+ch11                                     |  1 |   5046 |  23797 |      1 |      4 | FLAG
+ch11..ch12                               |  2 |  10051 |  47427 |      1 |      4 | FLAG
+ch11..ch13                               |  3 |  15067 |  71382 |      1 |      4 | FLAG
+ch11..ch14                               |  4 |  20088 |  95398 |      1 |      4 | FLAG
+ch11..ch15                               |  5 |  25158 | 119301 |      1 |      4 | FLAG
+ch11..ch16                               |  6 |  30226 | 143595 |      1 |      4 | FLAG
+ch12                                     |  1 |   5005 |  23630 |      0 |      0 | pass
+ch12..ch13                               |  2 |  10021 |  47585 |      0 |      0 | pass
+ch12..ch14                               |  3 |  15042 |  71601 |      0 |      0 | pass
+ch12..ch15                               |  4 |  20112 |  95504 |      0 |      0 | pass
+ch12..ch16                               |  5 |  25180 | 119798 |      0 |      0 | pass
+ch12..ch17                               |  6 |  30216 | 143438 |      0 |      0 | pass
+ch13                                     |  1 |   5016 |  23955 |      0 |      3 | FLAG
+ch13..ch14                               |  2 |  10037 |  47971 |      0 |      3 | FLAG
+ch13..ch15                               |  3 |  15107 |  71874 |      0 |      3 | FLAG
+ch13..ch16                               |  4 |  20175 |  96168 |      0 |      3 | FLAG
+ch13..ch17                               |  5 |  25211 | 119808 |      0 |      3 | FLAG
+ch13..ch18                               |  6 |  30240 | 143635 |      0 |      3 | FLAG
+ch14                                     |  1 |   5021 |  24016 |      0 |      1 | FLAG
+ch14..ch15                               |  2 |  10091 |  47919 |      0 |      1 | FLAG
+ch14..ch16                               |  3 |  15159 |  72213 |      0 |      1 | FLAG
+ch14..ch17                               |  4 |  20195 |  95853 |      0 |      1 | FLAG
+ch14..ch18                               |  5 |  25224 | 119680 |      0 |      1 | FLAG
+ch14..ch19                               |  6 |  30276 | 143861 |      0 |      1 | FLAG
+ch15                                     |  1 |   5070 |  23903 |      1 |      3 | FLAG
+ch15..ch16                               |  2 |  10138 |  48197 |      1 |      3 | FLAG
+ch15..ch17                               |  3 |  15174 |  71837 |      1 |      3 | FLAG
+ch15..ch18                               |  4 |  20203 |  95664 |      1 |      3 | FLAG
+ch15..ch19                               |  5 |  25255 | 119845 |      1 |      3 | FLAG
+ch15..ch20                               |  6 |  30294 | 143210 |      1 |      3 | FLAG
+ch16                                     |  1 |   5068 |  24294 |      0 |      0 | pass
+ch16..ch17                               |  2 |  10104 |  47934 |      0 |      0 | pass
+ch16..ch18                               |  3 |  15133 |  71761 |      0 |      0 | pass
+ch16..ch19                               |  4 |  20185 |  95942 |      0 |      0 | pass
+ch16..ch20                               |  5 |  25224 | 119307 |      0 |      0 | pass
+ch16..ch21                               |  6 |  30178 | 142752 |      0 |      0 | pass
+ch17                                     |  1 |   5036 |  23640 |      1 |      2 | FLAG
+ch17..ch18                               |  2 |  10065 |  47467 |      1 |      2 | FLAG
+ch17..ch19                               |  3 |  15117 |  71648 |      1 |      2 | FLAG
+ch17..ch20                               |  4 |  20156 |  95013 |      1 |      2 | FLAG
+ch17..ch21                               |  5 |  25110 | 118458 |      1 |      2 | FLAG
+ch17..ch22                               |  6 |  30150 | 142785 |      1 |      2 | FLAG
+ch18                                     |  1 |   5029 |  23827 |      0 |      5 | FLAG
+ch18..ch19                               |  2 |  10081 |  48008 |      0 |      5 | FLAG
+ch18..ch20                               |  3 |  15120 |  71373 |      0 |      5 | FLAG
+ch18..ch21                               |  4 |  20074 |  94818 |      0 |      5 | FLAG
+ch18..ch22                               |  5 |  25114 | 119145 |      0 |      5 | FLAG
+ch18..ch23                               |  6 |  29950 | 142675 |      0 |      5 | FLAG
+ch19                                     |  1 |   5052 |  24181 |      1 |      2 | FLAG
+ch19..ch20                               |  2 |  10091 |  47546 |      1 |      2 | FLAG
+ch19..ch21                               |  3 |  15045 |  70991 |      1 |      2 | FLAG
+ch19..ch22                               |  4 |  20085 |  95318 |      1 |      2 | FLAG
+ch19..ch23                               |  5 |  24921 | 118848 |      1 |      2 | FLAG
+ch19..ch24                               |  6 |  27626 | 133945 |      1 |      2 | FLAG
+ch20                                     |  1 |   5039 |  23365 |      2 |      2 | FLAG
+ch20..ch21                               |  2 |   9993 |  46810 |      2 |      2 | FLAG
+ch20..ch22                               |  3 |  15033 |  71137 |      2 |      2 | FLAG
+ch20..ch23                               |  4 |  19869 |  94667 |      2 |      2 | FLAG
+ch20..ch24                               |  5 |  22574 | 109764 |      2 |      2 | FLAG
+ch21                                     |  1 |   4954 |  23445 |      1 |      1 | FLAG
+ch21..ch22                               |  2 |   9994 |  47772 |      1 |      1 | FLAG
+ch21..ch23                               |  3 |  14830 |  71302 |      1 |      1 | FLAG
+ch21..ch24                               |  4 |  17535 |  86399 |      1 |      1 | FLAG
+ch22                                     |  1 |   5040 |  24327 |      0 |      1 | FLAG
+ch22..ch23                               |  2 |   9876 |  47857 |      0 |      1 | FLAG
+ch22..ch24                               |  3 |  12581 |  62954 |      0 |      1 | FLAG
+ch23                                     |  1 |   4836 |  23530 |      1 |      3 | FLAG
+ch23..ch24                               |  2 |   7541 |  38627 |      1 |      3 | FLAG
+ch24                                     |  1 |   2705 |  15097 |      1 |      7 | FLAG
+------------------------------------------------------------------------------------------------
+105/135 windows flagged for 3-1 (Z inside the first 516 chars/words).
+
+Scoring 5265 streams x 5 drift offsets x 2 directions against 5 ciphertexts...
+
+================================================================================================
+TOP HITS — Puzzle_2-4 (N_max = 1053)
+================================================================================================
+
+  Tier 1 (word-level):
+   Score |  Cov | Drf | Dir | Stream ID
+  ------------------------------------------------------------------------------------------
+   1.747 | 100% |  -1 | Fwd | ch10|WordLast_Split|Fwd
+         -> NYYDENSTSSERDSHEGGDEDESSESNDERSSODDEGDEASNBEOTDEDESSEEDNDADSOYDDR
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): NANYSNTE  (XAXBCXDE pattern; X=key[400])
+   1.747 | 100% |  -1 | Fwd | ch10..ch11|WordLast_Split|Fwd
+         -> NYYDENSTSSERDSHEGGDEDESSESNDERSSODDEGDEASNBEOTDEDESSEEDNDADSOYDDR
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): NANYSNTE  (XAXBCXDE pattern; X=key[400])
+   1.747 | 100% |  -1 | Fwd | ch10..ch12|WordLast_Split|Fwd
+         -> NYYDENSTSSERDSHEGGDEDESSESNDERSSODDEGDEASNBEOTDEDESSEEDNDADSOYDDR
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): NANYSNTE  (XAXBCXDE pattern; X=key[400])
+   1.747 | 100% |  -1 | Fwd | ch10..ch13|WordLast_Split|Fwd
+         -> NYYDENSTSSERDSHEGGDEDESSESNDERSSODDEGDEASNBEOTDEDESSEEDNDADSOYDDR
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): NANYSNTE  (XAXBCXDE pattern; X=key[400])
+   1.747 | 100% |  -1 | Fwd | ch10..ch14|WordLast_Split|Fwd
+         -> NYYDENSTSSERDSHEGGDEDESSESNDERSSODDEGDEASNBEOTDEDESSEEDNDADSOYDDR
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): NANYSNTE  (XAXBCXDE pattern; X=key[400])
+   1.747 | 100% |  -1 | Fwd | ch10..ch15|WordLast_Split|Fwd
+         -> NYYDENSTSSERDSHEGGDEDESSESNDERSSODDEGDEASNBEOTDEDESSEEDNDADSOYDDR
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): NANYSNTE  (XAXBCXDE pattern; X=key[400])
+   1.743 | 100% |  -1 | Rev | ch10|WordLast_Split|Fwd
+         -> EEDTNNARENESYGSFSTYETESEDDEOTEEEMGADSEEDFENYDSDTDFENEYREOSEDDEETL
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): NANYSNTE  (XAXBCXDE pattern; X=key[400])
+   1.743 | 100% |  -1 | Rev | ch10..ch11|WordLast_Split|Fwd
+         -> EEDTNNARENESYGSFSTYETESEDDEOTEEEMGADSEEDFENYDSDTDFENEYREOSEDDEETL
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): NANYSNTE  (XAXBCXDE pattern; X=key[400])
+   1.743 | 100% |  -1 | Rev | ch10..ch12|WordLast_Split|Fwd
+         -> EEDTNNARENESYGSFSTYETESEDDEOTEEEMGADSEEDFENYDSDTDFENEYREOSEDDEETL
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): NANYSNTE  (XAXBCXDE pattern; X=key[400])
+   1.743 | 100% |  -1 | Rev | ch10..ch13|WordLast_Split|Fwd
+         -> EEDTNNARENESYGSFSTYETESEDDEOTEEEMGADSEEDFENYDSDTDFENEYREOSEDDEETL
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): NANYSNTE  (XAXBCXDE pattern; X=key[400])
+
+  Tier 2 (word strides / halfway patterns):
+   Score |  Cov | Drf | Dir | Stream ID
+  ------------------------------------------------------------------------------------------
+   2.101 | 52% |  -2 | Fwd | ch13|WordLast_Stride10@4|Fwd
+         -> T?????EE???ETYY??E?TOTEDT???TDTEE?GE?EEI????E?E?EEETY?????TFEYDED
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): ENEYYE??  (XAXBCXDE pattern; X=key[400])
+   2.095 | 52% |  -2 | Rev | ch13|WordLast_Stride10@4|Fwd
+         -> TEETYYD??LNG?????S???TN??E???DNENTST?????????NONSNEEN????NE?S????
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): ENEYYE??  (XAXBCXDE pattern; X=key[400])
+   2.094 | 100% |  +2 | Fwd | ch05|WordLast_Stride2@0|Fwd
+         -> YSEONMSEEENEENDNDMLEGEDHEEREEWEEEXENDETEEENEENESTNTDFNYESNEYEESYW
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): NMNSWNLE  (XAXBCXDE pattern; X=key[400])
+   2.094 | 100% |  +2 | Fwd | ch05..ch06|WordLast_Stride2@0|Fwd
+         -> YSEONMSEEENEENDNDMLEGEDHEEREEWEEEXENDETEEENEENESTNTDFNYESNEYEESYW
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): NMNSWNLE  (XAXBCXDE pattern; X=key[400])
+   2.094 | 100% |  +2 | Fwd | ch05..ch07|WordLast_Stride2@0|Fwd
+         -> YSEONMSEEENEENDNDMLEGEDHEEREEWEEEXENDETEEENEENESTNTDFNYESNEYEESYW
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): NMNSWNLE  (XAXBCXDE pattern; X=key[400])
+   2.094 | 100% |  +2 | Fwd | ch05..ch08|WordLast_Stride2@0|Fwd
+         -> YSEONMSEEENEENDNDMLEGEDHEEREEWEEEXENDETEEENEENESTNTDFNYESNEYEESYW
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): NMNSWNLE  (XAXBCXDE pattern; X=key[400])
+   2.094 | 100% |  +2 | Fwd | ch05..ch09|WordLast_Stride2@0|Fwd
+         -> YSEONMSEEENEENDNDMLEGEDHEEREEWEEEXENDETEEENEENESTNTDFNYESNEYEESYW
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): NMNSWNLE  (XAXBCXDE pattern; X=key[400])
+   2.094 | 100% |  +2 | Fwd | ch05..ch10|WordLast_Stride2@0|Fwd
+         -> YSEONMSEEENEENDNDMLEGEDHEEREEWEEEXENDETEEENEENESTNTDFNYESNEYEESYW
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): NMNSWNLE  (XAXBCXDE pattern; X=key[400])
+   2.046 | 52% |  +0 | Fwd | ch14|WordLast_Stride10@0|Fwd
+         -> D?????EM???YDET??S?ESENDE???DEEDS?ON?ELE????S?E?ENEEE?????NENEDDE
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): ESENDE??  (XAXBCXDE pattern; X=key[400])
+   1.997 | 52% |  -2 | Fwd | ch14|WordLast_Stride10@0|Fwd
+         -> S?????YT???DELE??F?EEESEE???PWNYE?EP?TES????E?G?TETDD?????ENFGEEW
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): ESENDE??  (XAXBCXDE pattern; X=key[400])
+
+  Tier 3 (character-level):
+   Score |  Cov | Drf | Dir | Stream ID
+  ------------------------------------------------------------------------------------------
+   0.703 | 100% |  +1 | Fwd | ch15|Chars|Fwd
+         -> WTHRTETLINGEDEKPOLPEYERTEPERWOMEAEDRHHTOESPOALREEUKHOWOSTHTLNTTNO
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): RTRERRSH  (XAXBCXDE pattern; X=key[400])
+   0.703 | 100% |  +1 | Fwd | ch15..ch16|Chars|Fwd
+         -> WTHRTETLINGEDEKPOLPEYERTEPERWOMEAEDRHHTOESPOALREEUKHOWOSTHTLNTTNO
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): RTRERRSH  (XAXBCXDE pattern; X=key[400])
+   0.703 | 100% |  +1 | Fwd | ch15..ch17|Chars|Fwd
+         -> WTHRTETLINGEDEKPOLPEYERTEPERWOMEAEDRHHTOESPOALREEUKHOWOSTHTLNTTNO
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): RTRERRSH  (XAXBCXDE pattern; X=key[400])
+   0.703 | 100% |  +1 | Fwd | ch15..ch18|Chars|Fwd
+         -> WTHRTETLINGEDEKPOLPEYERTEPERWOMEAEDRHHTOESPOALREEUKHOWOSTHTLNTTNO
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): RTRERRSH  (XAXBCXDE pattern; X=key[400])
+   0.703 | 100% |  +1 | Fwd | ch15..ch19|Chars|Fwd
+         -> WTHRTETLINGEDEKPOLPEYERTEPERWOMEAEDRHHTOESPOALREEUKHOWOSTHTLNTTNO
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): RTRERRSH  (XAXBCXDE pattern; X=key[400])
+   0.703 | 100% |  +1 | Fwd | ch15..ch20|Chars|Fwd
+         -> WTHRTETLINGEDEKPOLPEYERTEPERWOMEAEDRHHTOESPOALREEUKHOWOSTHTLNTTNO
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): RTRERRSH  (XAXBCXDE pattern; X=key[400])
+   0.668 | 100% |  +0 | Rev | ch10|Chars|Fwd
+         -> HECAHENDWHAAWENRODANOWHNFHHHSADMWEIUTRAUSTNLEASIALYNDSRRHHYDEAEAI
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): AHAENADI  (XAXBCXDE pattern; X=key[400])
+   0.668 | 100% |  +0 | Rev | ch10..ch11|Chars|Fwd
+         -> HECAHENDWHAAWENRODANOWHNFHHHSADMWEIUTRAUSTNLEASIALYNDSRRHHYDEAEAI
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): AHAENADI  (XAXBCXDE pattern; X=key[400])
+   0.668 | 100% |  +0 | Rev | ch10..ch12|Chars|Fwd
+         -> HECAHENDWHAAWENRODANOWHNFHHHSADMWEIUTRAUSTNLEASIALYNDSRRHHYDEAEAI
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): AHAENADI  (XAXBCXDE pattern; X=key[400])
+   0.668 | 100% |  +0 | Rev | ch10..ch13|Chars|Fwd
+         -> HECAHENDWHAAWENRODANOWHNFHHHSADMWEIUTRAUSTNLEASIALYNDSRRHHYDEAEAI
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): AHAENADI  (XAXBCXDE pattern; X=key[400])
+
+================================================================================================
+TOP HITS — Puzzle_3-1 (N_max = 516)
+================================================================================================
+
+  Tier 1 (word-level):
+   Score |  Cov | Drf | Dir | Stream ID
+  ------------------------------------------------------------------------------------------
+   1.840 | 100% |  -2 | Fwd | ch00..ch03|WordLast_Split|Rev
+         -> YOEEDDSFTESESYHEDNXOERGDEEESDEENNESDLDDAUENEDDEDEEHNESTENDTDRNETY
+   1.840 | 100% |  -2 | Fwd | ch01..ch03|WordLast_Split|Rev
+         -> YOEEDDSFTESESYHEDNXOERGDEEESDEENNESDLDDAUENEDDEDEEHNESTENDTDRNETY
+   1.840 | 100% |  -2 | Fwd | ch02..ch03|WordLast_Split|Rev
+         -> YOEEDDSFTESESYHEDNXOERGDEEESDEENNESDLDDAUENEDDEDEEHNESTENDTDRNETY
+   1.840 | 100% |  -2 | Fwd | ch03|WordLast_Split|Rev
+         -> YOEEDDSFTESESYHEDNXOERGDEEESDEENNESDLDDAUENEDDEDEEHNESTENDTDRNETY
+   1.748 | 100% |  -1 | Fwd | ch11..ch16|WordLast_Split|Rev
+         -> EEEEENREENTMREODFYSAFYSESFFESMRDATNDEETDAENDNEEEEREYNYSEEESTMYTEE
+   1.748 | 100% |  -1 | Fwd | ch12..ch16|WordLast_Split|Rev
+         -> EEEEENREENTMREODFYSAFYSESFFESMRDATNDEETDAENDNEEEEREYNYSEEESTMYTEE
+   1.748 | 100% |  -1 | Fwd | ch13..ch16|WordLast_Split|Rev
+         -> EEEEENREENTMREODFYSAFYSESFFESMRDATNDEETDAENDNEEEEREYNYSEEESTMYTEE
+   1.748 | 100% |  -1 | Fwd | ch14..ch16|WordLast_Split|Rev
+         -> EEEEENREENTMREODFYSAFYSESFFESMRDATNDEETDAENDNEEEEREYNYSEEESTMYTEE
+   1.748 | 100% |  -1 | Fwd | ch15..ch16|WordLast_Split|Rev
+         -> EEEEENREENTMREODFYSAFYSESFFESMRDATNDEETDAENDNEEEEREYNYSEEESTMYTEE
+   1.748 | 100% |  -1 | Fwd | ch16|WordLast_Split|Rev
+         -> EEEEENREENTMREODFYSAFYSESFFESMRDATNDEETDAENDNEEEEREYNYSEEESTMYTEE
+
+  Tier 2 (word strides / halfway patterns):
+   Score |  Cov | Drf | Dir | Stream ID
+  ------------------------------------------------------------------------------------------
+   2.028 | 96% |  +1 | Rev | ch21|WordLast_Stride10@7|Fwd
+         -> R?ETYDOETEDDDSRDNNYESNN?DSRESTREDSDNNOEENTENEENEEEEKNSRTNDDENSGEU
+   1.930 | 96% |  +1 | Fwd | ch21|WordLast_Stride10@7|Fwd
+         -> TYNNAE?ESMO?EORSOTNESDTDTSSDEDEEEDENA?TSEE?DFREESSESEMAESRREEDDOS
+   1.924 | 100% |  +1 | Rev | ch21..ch22|WordLast_Stride10@7|Fwd
+         -> RNETYDOETEDDDSRDNNYESNNADSRESTREDSDNNOEENTENEENEEEEKNSRTNDDENSGEU
+   1.924 | 100% |  +1 | Rev | ch21..ch23|WordLast_Stride10@7|Fwd
+         -> RNETYDOETEDDDSRDNNYESNNADSRESTREDSDNNOEENTENEENEEEEKNSRTNDDENSGEU
+   1.924 | 100% |  +1 | Rev | ch21..ch24|WordLast_Stride10@7|Fwd
+         -> RNETYDOETEDDDSRDNNYESNNADSRESTREDSDNNOEENTENEENEEEEKNSRTNDDENSGEU
+   1.888 | 96% |  +0 | Rev | ch21|WordLast_Stride10@7|Fwd
+         -> O?WEETEATEDSTEYHESREYEO?EESNETSLNTERSSDREREEDDEEISEESYYSNLDETNSAM
+   1.865 | 100% |  +0 | Rev | ch21..ch22|WordLast_Stride10@7|Fwd
+         -> OEWEETEATEDSTEYHESREYEOFEESNETSLNTERSSDREREEDDEEISEESYYSNLDETNSAM
+   1.865 | 100% |  +0 | Rev | ch21..ch23|WordLast_Stride10@7|Fwd
+         -> OEWEETEATEDSTEYHESREYEOFEESNETSLNTERSSDREREEDDEEISEESYYSNLDETNSAM
+   1.865 | 100% |  +0 | Rev | ch21..ch24|WordLast_Stride10@7|Fwd
+         -> OEWEETEATEDSTEYHESREYEOFEESNETSLNTERSSDREREEDDEEISEESYYSNLDETNSAM
+   1.853 | 100% |  +1 | Fwd | ch21..ch22|WordLast_Stride10@7|Fwd
+         -> TYNNAESESMOAEORSOTNESDTDTSSDEDEEEDENADTSEENDFREESSESEMAESRREEDDOS
+
+  Tier 3 (character-level):
+   Score |  Cov | Drf | Dir | Stream ID
+  ------------------------------------------------------------------------------------------
+   0.864 | 100% |  +2 | Rev | ch14..ch19|Chars|Rev
+         -> TEMOREARNEBAIWGONTEONEHRTEHIUCMINLTERTYWEEEEDOANEISLIEEMIRMAERTNN
+   0.864 | 100% |  +2 | Rev | ch15..ch19|Chars|Rev
+         -> TEMOREARNEBAIWGONTEONEHRTEHIUCMINLTERTYWEEEEDOANEISLIEEMIRMAERTNN
+   0.864 | 100% |  +2 | Rev | ch16..ch19|Chars|Rev
+         -> TEMOREARNEBAIWGONTEONEHRTEHIUCMINLTERTYWEEEEDOANEISLIEEMIRMAERTNN
+   0.864 | 100% |  +2 | Rev | ch17..ch19|Chars|Rev
+         -> TEMOREARNEBAIWGONTEONEHRTEHIUCMINLTERTYWEEEEDOANEISLIEEMIRMAERTNN
+   0.864 | 100% |  +2 | Rev | ch18..ch19|Chars|Rev
+         -> TEMOREARNEBAIWGONTEONEHRTEHIUCMINLTERTYWEEEEDOANEISLIEEMIRMAERTNN
+   0.864 | 100% |  +2 | Rev | ch19|Chars|Rev
+         -> TEMOREARNEBAIWGONTEONEHRTEHIUCMINLTERTYWEEEEDOANEISLIEEMIRMAERTNN
+   0.838 | 100% |  +2 | Fwd | ch14..ch19|Chars|Rev
+         -> NRRHEEIBLOEREEGSHAHLEREEAEERTGEETEAEHSATRETEOIMOIOESNTRENDTOKGOTE
+   0.838 | 100% |  +2 | Fwd | ch15..ch19|Chars|Rev
+         -> NRRHEEIBLOEREEGSHAHLEREEAEERTGEETEAEHSATRETEOIMOIOESNTRENDTOKGOTE
+   0.838 | 100% |  +2 | Fwd | ch16..ch19|Chars|Rev
+         -> NRRHEEIBLOEREEGSHAHLEREEAEERTGEETEAEHSATRETEOIMOIOESNTRENDTOKGOTE
+   0.838 | 100% |  +2 | Fwd | ch17..ch19|Chars|Rev
+         -> NRRHEEIBLOEREEGSHAHLEREEAEERTGEETEAEHSATRETEOIMOIOESNTRENDTOKGOTE
+
+================================================================================================
+TOP HITS — Puzzle_3-2 (N_max = 416)
+================================================================================================
+
+  Tier 1 (word-level):
+   Score |  Cov | Drf | Dir | Stream ID
+  ------------------------------------------------------------------------------------------
+   1.923 | 100% |  +1 | Rev | ch05|WordLast_Joined|Fwd
+         -> DEEDDEEGOSYOYDREEESHSEEENSYYSNREDEDEEORSEDSDYEEAYHDEEEYDEDGADGFEY
+   1.923 | 100% |  +1 | Rev | ch05..ch06|WordLast_Joined|Fwd
+         -> DEEDDEEGOSYOYDREEESHSEEENSYYSNREDEDEEORSEDSDYEEAYHDEEEYDEDGADGFEY
+   1.923 | 100% |  +1 | Rev | ch05..ch07|WordLast_Joined|Fwd
+         -> DEEDDEEGOSYOYDREEESHSEEENSYYSNREDEDEEORSEDSDYEEAYHDEEEYDEDGADGFEY
+   1.923 | 100% |  +1 | Rev | ch05..ch08|WordLast_Joined|Fwd
+         -> DEEDDEEGOSYOYDREEESHSEEENSYYSNREDEDEEORSEDSDYEEAYHDEEEYDEDGADGFEY
+   1.923 | 100% |  +1 | Rev | ch05..ch09|WordLast_Joined|Fwd
+         -> DEEDDEEGOSYOYDREEESHSEEENSYYSNREDEDEEORSEDSDYEEAYHDEEEYDEDGADGFEY
+   1.923 | 100% |  +1 | Rev | ch05..ch10|WordLast_Joined|Fwd
+         -> DEEDDEEGOSYOYDREEESHSEEENSYYSNREDEDEEORSEDSDYEEAYHDEEEYDEDGADGFEY
+   1.901 | 100% |  +2 | Fwd | ch17|WordLast_Split|Fwd
+         -> ENDSEEREDFDYMDETOSESTEDTEETYEOTEEYENAENSGEERERDTESETYDRHYNEEOFERM
+   1.901 | 100% |  +2 | Fwd | ch17..ch18|WordLast_Split|Fwd
+         -> ENDSEEREDFDYMDETOSESTEDTEETYEOTEEYENAENSGEERERDTESETYDRHYNEEOFERM
+   1.901 | 100% |  +2 | Fwd | ch17..ch19|WordLast_Split|Fwd
+         -> ENDSEEREDFDYMDETOSESTEDTEETYEOTEEYENAENSGEERERDTESETYDRHYNEEOFERM
+   1.901 | 100% |  +2 | Fwd | ch17..ch20|WordLast_Split|Fwd
+         -> ENDSEEREDFDYMDETOSESTEDTEETYEOTEEYENAENSGEERERDTESETYDRHYNEEOFERM
+
+  Tier 2 (word strides / halfway patterns):
+   Score |  Cov | Drf | Dir | Stream ID
+  ------------------------------------------------------------------------------------------
+   2.240 | 100% |  -1 | Fwd | ch18|WordLast_Stride10@9|Fwd
+         -> HSFEITTEAYFTEDSEEOTTSNEEEEASEDWHETEEEEDYEKTNHDNTODSEYEEDNENSYTEDE
+   2.240 | 100% |  -1 | Fwd | ch18..ch19|WordLast_Stride10@9|Fwd
+         -> HSFEITTEAYFTEDSEEOTTSNEEEEASEDWHETEEEEDYEKTNHDNTODSEYEEDNENSYTEDE
+   2.240 | 100% |  -1 | Fwd | ch18..ch20|WordLast_Stride10@9|Fwd
+         -> HSFEITTEAYFTEDSEEOTTSNEEEEASEDWHETEEEEDYEKTNHDNTODSEYEEDNENSYTEDE
+   2.240 | 100% |  -1 | Fwd | ch18..ch21|WordLast_Stride10@9|Fwd
+         -> HSFEITTEAYFTEDSEEOTTSNEEEEASEDWHETEEEEDYEKTNHDNTODSEYEEDNENSYTEDE
+   2.240 | 100% |  -1 | Fwd | ch18..ch22|WordLast_Stride10@9|Fwd
+         -> HSFEITTEAYFTEDSEEOTTSNEEEEASEDWHETEEEEDYEKTNHDNTODSEYEEDNENSYTEDE
+   2.240 | 100% |  -1 | Fwd | ch18..ch23|WordLast_Stride10@9|Fwd
+         -> HSFEITTEAYFTEDSEEOTTSNEEEEASEDWHETEEEEDYEKTNHDNTODSEYEEDNENSYTEDE
+   2.189 | 100% |  -1 | Rev | ch18|WordLast_Stride10@9|Fwd
+         -> TTEDIETEKTTEHDNTEDYETEREYEYETEEETETESDMTENEOTREEETDEEDETYSNENDEEY
+   2.189 | 100% |  -1 | Rev | ch18..ch19|WordLast_Stride10@9|Fwd
+         -> TTEDIETEKTTEHDNTEDYETEREYEYETEEETETESDMTENEOTREEETDEEDETYSNENDEEY
+   2.189 | 100% |  -1 | Rev | ch18..ch20|WordLast_Stride10@9|Fwd
+         -> TTEDIETEKTTEHDNTEDYETEREYEYETEEETETESDMTENEOTREEETDEEDETYSNENDEEY
+   2.189 | 100% |  -1 | Rev | ch18..ch21|WordLast_Stride10@9|Fwd
+         -> TTEDIETEKTTEHDNTEDYETEREYEYETEEETETESDMTENEOTREEETDEEDETYSNENDEEY
+
+  Tier 3 (character-level):
+   Score |  Cov | Drf | Dir | Stream ID
+  ------------------------------------------------------------------------------------------
+   0.918 | 100% |  -1 | Rev | ch20|Chars|Fwd
+         -> STLIUHATEHEEMRITENENHEENOOYZEIDINNAELHEATTAAEWONPNTAWOTREETWVYNNY
+   0.918 | 100% |  -1 | Rev | ch20..ch21|Chars|Fwd
+         -> STLIUHATEHEEMRITENENHEENOOYZEIDINNAELHEATTAAEWONPNTAWOTREETWVYNNY
+   0.918 | 100% |  -1 | Rev | ch20..ch22|Chars|Fwd
+         -> STLIUHATEHEEMRITENENHEENOOYZEIDINNAELHEATTAAEWONPNTAWOTREETWVYNNY
+   0.918 | 100% |  -1 | Rev | ch20..ch23|Chars|Fwd
+         -> STLIUHATEHEEMRITENENHEENOOYZEIDINNAELHEATTAAEWONPNTAWOTREETWVYNNY
+   0.918 | 100% |  -1 | Rev | ch20..ch24|Chars|Fwd
+         -> STLIUHATEHEEMRITENENHEENOOYZEIDINNAELHEATTAAEWONPNTAWOTREETWVYNNY
+   0.904 | 100% |  +0 | Fwd | ch09..ch14|Chars|Rev
+         -> CETEIAOEWTDOTEIECHNTIAHEASERETPUTODEDSADAOLLTUATNLTAYTHGAAAAAECTT
+   0.904 | 100% |  +0 | Fwd | ch10..ch14|Chars|Rev
+         -> CETEIAOEWTDOTEIECHNTIAHEASERETPUTODEDSADAOLLTUATNLTAYTHGAAAAAECTT
+   0.904 | 100% |  +0 | Fwd | ch11..ch14|Chars|Rev
+         -> CETEIAOEWTDOTEIECHNTIAHEASERETPUTODEDSADAOLLTUATNLTAYTHGAAAAAECTT
+   0.904 | 100% |  +0 | Fwd | ch12..ch14|Chars|Rev
+         -> CETEIAOEWTDOTEIECHNTIAHEASERETPUTODEDSADAOLLTUATNLTAYTHGAAAAAECTT
+   0.904 | 100% |  +0 | Fwd | ch13..ch14|Chars|Rev
+         -> CETEIAOEWTDOTEIECHNTIAHEASERETPUTODEDSADAOLLTUATNLTAYTHGAAAAAECTT
+
+================================================================================================
+TOP HITS — Puzzle_3-3 (N_max = 721)
+================================================================================================
+
+  Tier 1 (word-level):
+   Score |  Cov | Drf | Dir | Stream ID
+  ------------------------------------------------------------------------------------------
+   1.728 | 99% |  -2 | Rev | ch08..ch13|WordLast_Split|Rev
+         -> RSDYEEEEFKNNEENDAETENGGYFAOESERSEEENSEYKTFTEEBEEEEERMEDEYEOSNENGA
+   1.728 | 99% |  -2 | Rev | ch09..ch13|WordLast_Split|Rev
+         -> RSDYEEEEFKNNEENDAETENGGYFAOESERSEEENSEYKTFTEEBEEEEERMEDEYEOSNENGA
+   1.728 | 99% |  -2 | Rev | ch10..ch13|WordLast_Split|Rev
+         -> RSDYEEEEFKNNEENDAETENGGYFAOESERSEEENSEYKTFTEEBEEEEERMEDEYEOSNENGA
+   1.728 | 99% |  -2 | Rev | ch11..ch13|WordLast_Split|Rev
+         -> RSDYEEEEFKNNEENDAETENGGYFAOESERSEEENSEYKTFTEEBEEEEERMEDEYEOSNENGA
+   1.728 | 99% |  -2 | Rev | ch12..ch13|WordLast_Split|Rev
+         -> RSDYEEEEFKNNEENDAETENGGYFAOESERSEEENSEYKTFTEEBEEEEERMEDEYEOSNENGA
+   1.728 | 99% |  -2 | Rev | ch13|WordLast_Split|Rev
+         -> RSDYEEEEFKNNEENDAETENGGYFAOESERSEEENSEYKTFTEEBEEEEERMEDEYEOSNENGA
+   1.713 | 99% |  -1 | Fwd | ch11..ch16|WordLast_Split|Rev
+         -> EDSENDDEREDENETTEEEDEENLHREAETESREYFNYDEESTSEERDAETODEDONEFYANNLR
+   1.713 | 99% |  -1 | Fwd | ch12..ch16|WordLast_Split|Rev
+         -> EDSENDDEREDENETTEEEDEENLHREAETESREYFNYDEESTSEERDAETODEDONEFYANNLR
+   1.713 | 99% |  -1 | Fwd | ch13..ch16|WordLast_Split|Rev
+         -> EDSENDDEREDENETTEEEDEENLHREAETESREYFNYDEESTSEERDAETODEDONEFYANNLR
+   1.713 | 99% |  -1 | Fwd | ch14..ch16|WordLast_Split|Rev
+         -> EDSENDDEREDENETTEEEDEENLHREAETESREYFNYDEESTSEERDAETODEDONEFYANNLR
+
+  Tier 2 (word strides / halfway patterns):
+   Score |  Cov | Drf | Dir | Stream ID
+  ------------------------------------------------------------------------------------------
+   1.847 | 71% |  +2 | Rev | ch08|WordLast_Stride10@4|Fwd
+         -> RAHSR?EDINPE????ET?RDEYNTRNEENDESS?D?E?ENDE????TDTTFS??DTE???ENDO
+   1.797 | 71% |  +1 | Rev | ch06|WordLast_Stride10@0|Fwd
+         -> ODTEE?DDENAE????YD?SDESNDFEDDFEDEY?D?E?INKY????SDMUIE??HHY???SEAT
+   1.789 | 71% |  +0 | Rev | ch18|WordLast_Stride10@9|Fwd
+         -> THEEY?DTEKDO????TE?ETEDYEDDENSEEDE?S?E?EDTT????DDYEYT??GNE???PSDE
+   1.789 | 71% |  +2 | Fwd | ch08|WordLast_Stride10@4|Fwd
+         -> T?EEEE?FNDF??E?OYEER?EW?E?RTTSD??EE????EWF?EEENEDEE???D?KSDETESET
+   1.787 | 71% |  -2 | Rev | ch17|WordLast_Stride10@5|Fwd
+         -> TRDRT?HRNTEG????EE?NDTDHSDEAENDRTR?E?E?TNDS????ENEESDI?SPE???EDEN
+   1.779 | 71% |  -2 | Fwd | ch04|WordLast_Stride10@1|Fwd
+         -> F?TTGO?TETE??E?DONET?ES?D?DNTEE??ED????DDD?REDYRDRF???T?ETNEYEEET
+   1.770 | 71% |  +0 | Fwd | ch20|WordLast_Stride10@2|Fwd
+         -> S?ESTE?EDSN??E?DERDD?ED?D?ERTER??ET????NDD?DDENHEEE???E?DNRNSDESN
+   1.765 | 71% |  +0 | Rev | ch20|WordLast_Stride10@2|Fwd
+         -> ONEST?EHOOEA????HD?DONADOTEDTNNOME?S?E?STYE????GNSDHE??ROS???TSKD
+   1.761 | 71% |  +1 | Fwd | ch06|WordLast_Stride10@0|Fwd
+         -> D?GEES?EDEE??E?RESTS?EE?O?EDDOS??DN????DDS?EOEETYSO???D?DEAEEEEHE
+   1.743 | 71% |  +1 | Fwd | ch20|WordLast_Stride10@8|Fwd
+         -> T?HMTN?GTYE??D?ERNDK?ET?E?EEDOD??NT????KSI?NENESHEE???N?EEEEEEOEG
+
+  Tier 3 (character-level):
+   Score |  Cov | Drf | Dir | Stream ID
+  ------------------------------------------------------------------------------------------
+   0.776 | 100% |  +2 | Fwd | ch00..ch03|Chars|Rev
+         -> EITPANOATDTHTINTHTTEEEBDTLEIAFNCSNNTGTETHTTTTPLGCHTMNTEESRIPDEAOI
+   0.776 | 100% |  +2 | Fwd | ch01..ch03|Chars|Rev
+         -> EITPANOATDTHTINTHTTEEEBDTLEIAFNCSNNTGTETHTTTTPLGCHTMNTEESRIPDEAOI
+   0.776 | 100% |  +2 | Fwd | ch02..ch03|Chars|Rev
+         -> EITPANOATDTHTINTHTTEEEBDTLEIAFNCSNNTGTETHTTTTPLGCHTMNTEESRIPDEAOI
+   0.776 | 100% |  +2 | Fwd | ch03|Chars|Rev
+         -> EITPANOATDTHTINTHTTEEEBDTLEIAFNCSNNTGTETHTTTTPLGCHTMNTEESRIPDEAOI
+   0.752 | 100% |  +2 | Rev | ch14..ch19|Chars|Rev
+         -> CRTEFHRPEIEDDTSEWETMHEEDRMFFTEDRNCEREEESNLBFRRRTHNSROEISTTTHNBTSD
+   0.752 | 100% |  +2 | Rev | ch15..ch19|Chars|Rev
+         -> CRTEFHRPEIEDDTSEWETMHEEDRMFFTEDRNCEREEESNLBFRRRTHNSROEISTTTHNBTSD
+   0.752 | 100% |  +2 | Rev | ch16..ch19|Chars|Rev
+         -> CRTEFHRPEIEDDTSEWETMHEEDRMFFTEDRNCEREEESNLBFRRRTHNSROEISTTTHNBTSD
+   0.752 | 100% |  +2 | Rev | ch17..ch19|Chars|Rev
+         -> CRTEFHRPEIEDDTSEWETMHEEDRMFFTEDRNCEREEESNLBFRRRTHNSROEISTTTHNBTSD
+   0.752 | 100% |  +2 | Rev | ch18..ch19|Chars|Rev
+         -> CRTEFHRPEIEDDTSEWETMHEEDRMFFTEDRNCEREEESNLBFRRRTHNSROEISTTTHNBTSD
+   0.752 | 100% |  +2 | Rev | ch19|Chars|Rev
+         -> CRTEFHRPEIEDDTSEWETMHEEDRMFFTEDRNCEREEESNLBFRRRTHNSROEISTTTHNBTSD
+
+================================================================================================
+TOP HITS — Puzzle_2-4_No100s (N_max = 1053)
+================================================================================================
+
+  Tier 1 (word-level):
+   Score |  Cov | Drf | Dir | Stream ID
+  ------------------------------------------------------------------------------------------
+   1.863 | 100% |  +2 | Fwd | ch00..ch03|WordLast_Joined|Rev
+         -> EFEEEOTTSTEROELEEEEEENEEGEENTDDDESDETDDDDGYENEERODONYSNNHETSDAESD
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): KRKYNKNO  (XAXBCXDE pattern; X=key[400])
+   1.863 | 100% |  +2 | Fwd | ch00..ch03|WordLast_RevWordOrder|Fwd
+         -> EFEEEOTTSTEROELEEEEEENEEGEENTDDDESDETDDDDGYENEERODONYSNNHETSDAESD
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): KRKYNKNO  (XAXBCXDE pattern; X=key[400])
+   1.863 | 100% |  +2 | Fwd | ch01..ch03|WordLast_Joined|Rev
+         -> EFEEEOTTSTEROELEEEEEENEEGEENTDDDESDETDDDDGYENEERODONYSNNHETSDAESD
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): KRKYNKNO  (XAXBCXDE pattern; X=key[400])
+   1.863 | 100% |  +2 | Fwd | ch01..ch03|WordLast_RevWordOrder|Fwd
+         -> EFEEEOTTSTEROELEEEEEENEEGEENTDDDESDETDDDDGYENEERODONYSNNHETSDAESD
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): KRKYNKNO  (XAXBCXDE pattern; X=key[400])
+   1.863 | 100% |  +2 | Fwd | ch02..ch03|WordLast_Joined|Rev
+         -> EFEEEOTTSTEROELEEEEEENEEGEENTDDDESDETDDDDGYENEERODONYSNNHETSDAESD
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): KRKYNKNO  (XAXBCXDE pattern; X=key[400])
+   1.863 | 100% |  +2 | Fwd | ch02..ch03|WordLast_RevWordOrder|Fwd
+         -> EFEEEOTTSTEROELEEEEEENEEGEENTDDDESDETDDDDGYENEERODONYSNNHETSDAESD
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): KRKYNKNO  (XAXBCXDE pattern; X=key[400])
+   1.863 | 100% |  +2 | Fwd | ch03|WordLast_Joined|Rev
+         -> EFEEEOTTSTEROELEEEEEENEEGEENTDDDESDETDDDDGYENEERODONYSNNHETSDAESD
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): KRKYNKNO  (XAXBCXDE pattern; X=key[400])
+   1.863 | 100% |  +2 | Fwd | ch03|WordLast_RevWordOrder|Fwd
+         -> EFEEEOTTSTEROELEEEEEENEEGEENTDDDESDETDDDDGYENEERODONYSNNHETSDAESD
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): KRKYNKNO  (XAXBCXDE pattern; X=key[400])
+   1.862 | 100% |  +2 | Rev | ch00..ch03|WordLast_Joined|Rev
+         -> DEDDHDEGDENFEWXDYEEHTEDERRTHHTTHDDDFYEYKTDGDDEEOTGENTEEEHEYESESSE
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): KRKYNKNO  (XAXBCXDE pattern; X=key[400])
+   1.862 | 100% |  +2 | Rev | ch00..ch03|WordLast_RevWordOrder|Fwd
+         -> DEDDHDEGDENFEWXDYEEHTEDERRTHHTTHDDDFYEYKTDGDDEEOTGENTEEEHEYESESSE
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): KRKYNKNO  (XAXBCXDE pattern; X=key[400])
+
+  Tier 2 (word strides / halfway patterns):
+   Score |  Cov | Drf | Dir | Stream ID
+  ------------------------------------------------------------------------------------------
+   2.229 | 50% |  -2 | Rev | ch13|WordLast_Stride10@4|Fwd
+         -> TEETYYD??LNG?????S???TN??E???DNENTST?????????NONSNEEN????NE?S????
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): ENEYYE??  (XAXBCXDE pattern; X=key[400])
+   2.187 | 50% |  -2 | Fwd | ch13|WordLast_Stride10@4|Fwd
+         -> T?????EE???ETYY??E??TDEE?GE?EEI????E?E?EEETY?????TFEYDEDENNED??SD
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): ENEYYE??  (XAXBCXDE pattern; X=key[400])
+   2.023 | 100% |  +2 | Fwd | ch05|WordLast_Stride2@0|Fwd
+         -> YSEONMSEEENEENDNDMLEEWEEXENDETEEENEENESTNTDFNYESNEYEESYWETTEESNFE
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): NMNSWNLE  (XAXBCXDE pattern; X=key[400])
+   2.023 | 100% |  +2 | Fwd | ch05..ch06|WordLast_Stride2@0|Fwd
+         -> YSEONMSEEENEENDNDMLEEWEEXENDETEEENEENESTNTDFNYESNEYEESYWETTEESNFE
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): NMNSWNLE  (XAXBCXDE pattern; X=key[400])
+   2.023 | 100% |  +2 | Fwd | ch05..ch07|WordLast_Stride2@0|Fwd
+         -> YSEONMSEEENEENDNDMLEEWEEXENDETEEENEENESTNTDFNYESNEYEESYWETTEESNFE
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): NMNSWNLE  (XAXBCXDE pattern; X=key[400])
+   2.023 | 100% |  +2 | Fwd | ch05..ch08|WordLast_Stride2@0|Fwd
+         -> YSEONMSEEENEENDNDMLEEWEEXENDETEEENEENESTNTDFNYESNEYEESYWETTEESNFE
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): NMNSWNLE  (XAXBCXDE pattern; X=key[400])
+   2.023 | 100% |  +2 | Fwd | ch05..ch09|WordLast_Stride2@0|Fwd
+         -> YSEONMSEEENEENDNDMLEEWEEXENDETEEENEENESTNTDFNYESNEYEESYWETTEESNFE
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): NMNSWNLE  (XAXBCXDE pattern; X=key[400])
+   2.023 | 100% |  +2 | Fwd | ch05..ch10|WordLast_Stride2@0|Fwd
+         -> YSEONMSEEENEENDNDMLEEWEEXENDETEEENEENESTNTDFNYESNEYEESYWETTEESNFE
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): NMNSWNLE  (XAXBCXDE pattern; X=key[400])
+   1.932 | 100% |  +2 | Rev | ch05|WordLast_Stride2@0|Fwd
+         -> NKSNDEGEETRASSRDFEEDWERFETSEENSEESTASOEDROESDEOEDCNSSDMOEFEEENEDD
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): NMNSWNLE  (XAXBCXDE pattern; X=key[400])
+   1.932 | 100% |  +2 | Rev | ch05..ch06|WordLast_Stride2@0|Fwd
+         -> NKSNDEGEETRASSRDFEEDWERFETSEENSEESTASOEDROESDEOEDCNSSDMOEFEEENEDD
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): NMNSWNLE  (XAXBCXDE pattern; X=key[400])
+
+  Tier 3 (character-level):
+   Score |  Cov | Drf | Dir | Stream ID
+  ------------------------------------------------------------------------------------------
+   0.695 | 100% |  +2 | Fwd | ch15|Chars|Fwd
+         -> HHTEHSEYNGGRIRNEVIAEARIGDENEOHFMTENGISGSTNENATEHEEEDHALRSSTEEAYCL
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): RTRERRSH  (XAXBCXDE pattern; X=key[400])
+   0.695 | 100% |  +2 | Fwd | ch15..ch16|Chars|Fwd
+         -> HHTEHSEYNGGRIRNEVIAEARIGDENEOHFMTENGISGSTNENATEHEEEDHALRSSTEEAYCL
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): RTRERRSH  (XAXBCXDE pattern; X=key[400])
+   0.695 | 100% |  +2 | Fwd | ch15..ch17|Chars|Fwd
+         -> HHTEHSEYNGGRIRNEVIAEARIGDENEOHFMTENGISGSTNENATEHEEEDHALRSSTEEAYCL
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): RTRERRSH  (XAXBCXDE pattern; X=key[400])
+   0.695 | 100% |  +2 | Fwd | ch15..ch18|Chars|Fwd
+         -> HHTEHSEYNGGRIRNEVIAEARIGDENEOHFMTENGISGSTNENATEHEEEDHALRSSTEEAYCL
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): RTRERRSH  (XAXBCXDE pattern; X=key[400])
+   0.695 | 100% |  +2 | Fwd | ch15..ch19|Chars|Fwd
+         -> HHTEHSEYNGGRIRNEVIAEARIGDENEOHFMTENGISGSTNENATEHEEEDHALRSSTEEAYCL
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): RTRERRSH  (XAXBCXDE pattern; X=key[400])
+   0.695 | 100% |  +2 | Fwd | ch15..ch20|Chars|Fwd
+         -> HHTEHSEYNGGRIRNEVIAEARIGDENEOHFMTENGISGSTNENATEHEEEDHALRSSTEEAYCL
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): RTRERRSH  (XAXBCXDE pattern; X=key[400])
+   0.667 | 100% |  -2 | Fwd | ch21|Chars|Fwd
+         -> FDOAACNAIERTYNUEBEAEDECERCTDETEONDBEIEASRROOTWCARHAITMTENHEYEOCGF
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): LNLLDLST  (XAXBCXDE pattern; X=key[400])
+   0.667 | 100% |  -2 | Fwd | ch21..ch22|Chars|Fwd
+         -> FDOAACNAIERTYNUEBEAEDECERCTDETEONDBEIEASRROOTWCARHAITMTENHEYEOCGF
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): LNLLDLST  (XAXBCXDE pattern; X=key[400])
+   0.667 | 100% |  -2 | Fwd | ch21..ch23|Chars|Fwd
+         -> FDOAACNAIERTYNUEBEAEDECERCTDETEONDBEIEASRROOTWCARHAITMTENHEYEOCGF
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): LNLLDLST  (XAXBCXDE pattern; X=key[400])
+   0.667 | 100% |  -2 | Fwd | ch21..ch24|Chars|Fwd
+         -> FDOAACNAIERTYNUEBEAEDECERCTDETEONDBEIEASRROOTWCARHAITMTENHEYEOCGF
+         S100 probe (K[400]K[500]K[400]K[100]K[200]K[400]K[800]K[600]): LNLLDLST  (XAXBCXDE pattern; X=key[400])
+
+Reminder: English-like bigram scores near the top are necessary, not
+sufficient — eyeball every preview; vowel-heavy gibberish is a known
+letter-density artifact of *-wordlast / LastLetter streams (RUN_LOG).

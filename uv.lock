@@ -8,7 +8,7 @@ resolution-markers = [
 ]
 
 [[package]]
-name = "karen-puzzles-unsolved"
+name = "decipher-money-hunt-research"
 version = "1.0.0"
 source = { virtual = "." }
 dependencies = [

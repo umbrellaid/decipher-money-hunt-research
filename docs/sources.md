@@ -89,3 +89,39 @@ the media, with periodic author eliminations. No such column has been recovered 
   5-text scoring model; exact IDs in `data/pg_manifest.json`)
 - Standard Ebooks — https://standardebooks.org (three Faulkner texts, listed in
   `data/pg_manifest.json` under `manual_standard_ebooks`)
+
+## 2026-10-30 addendum — free-archive sweep results (WebBridge, live)
+
+**Google News Archive (news.google.com/newspapers) is free and full-text searchable** —
+the best no-cost option found. It surfaces scanned newspaper pages hosted on
+books.google.com ("Found inside", full view for these papers). Verified hits:
+
+| Paper | Date | Page | What it is |
+|---|---|---|---|
+| Toledo Blade | 1988-03-30 | 23 | Mail-order ad: "DECIPHER III GOLD EDITION $16.95 ... 100,000 in solid gold ... Youth Beat/Decipher $100,000 Solid Gold Contest! Details are..." — NEW promo detail (Youth Beat tie-in contest) |
+| Toledo Blade | 1988-04-06 | 24 | Mail-order ad, Gold Edition $16.95 |
+| Toledo Blade | 1988-04-24 | 18 | Ad, Gold Edition $16.95 |
+| The Hour (Norwalk CT) | 1986-03-31 | 6 | "Weston Man Earns $6,250" — 2-1 Novak coverage (known timeline) |
+| Lakeland Ledger | 1984-05-31 | 33 | "Decipher Puzzle Still Has Nation Stumped" (Decipher I era) |
+| St. Petersburg Times | 1983-10-24 | 44 | "New Jigsaw Puzzle Carries Valuable Message" (Decipher I era) |
+| AP/Knight-Ridder cluster | 1985-04-17/18 | — | 4 papers, Decipher I winners' story (already known) |
+
+No monthly clue column surfaced on any query ("decipher III", "decipher III clue",
+"decipher puzzle hotline"). Coverage of 1987-91 dailies in this archive is thin
+(Toledo Blade, Lakeland Ledger, St. Petersburg Times and similar) — the Virginian-Pilot
+and most big dailies are NOT in it.
+
+**Dead ends (verified today):** Google Books has no hits for "627-GOLD"/"627-4653";
+Virginia Tech VA-Pilot archive URL returns HTTP 410 (dead); The Tech (MIT) site search
+indexes nothing from 1987-91; newspapers.com hides match counts behind login (shows "0"
+logged out) and the previously matched page newspapers.com/newspage/640735315 is
+**Fort Worth Star-Telegram, Sunday 1988-04-24, page 523, a Publisher Extra (paywalled)
+page** — a live Decipher lead worth reading with a subscription or 7-day trial.
+
+**Cheapest paths forward:** (1) newspapers.com 7-day free trial logged in via the
+browser — read the Fort Worth page, then search "decipher" site-wide 1987-1992;
+(2) local-library NewsBank/Newspapers.com Library Edition access — the Virginian-Pilot
+(Newspapers.com paper 30397) is the home paper and most likely to have run the clue
+column monthly; (3) Palm Beach Post Dec 1990 (already in hand as a clipping) printed
+the (800) 654-3939 line — if PBP is in Google News Archive, browsing Sundays Dec 1989-
+Dec 1991 around its style/gift pages may find the recurring column.
