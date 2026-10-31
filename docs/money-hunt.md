@@ -9,6 +9,9 @@ answer and held it ransom; the answer was never published. Karen Puzzles' 2021 v
 and her shared scans (links in `docs/sources.md`) are the reason anyone still works on
 it.
 
+**Current status: [`docs/money-hunt-status-2026-10-30.md`](money-hunt-status-2026-10-30.md)** —
+consolidated state of every open thread as of 2026-10-30.
+
 ## What is established
 
 - **Page 12 = WASHINGTON**, solved by Karen's sister Katie in November 2021 by
