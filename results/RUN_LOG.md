@@ -470,3 +470,24 @@ Both Mailer keytexts now screened at text grade. Ebook/IA source texts relocated
 (Downloads/text_ebooks* consolidated and removed; the 934MB colleenmccullough IA item moved
 to `private/ia-archives/mccullough-ia-item/` — deletion not done, David to decide).
 Working copies remain in the repo's gitignored `texts/` folders for the solver pipeline.
+
+## 2026-10-31 — 'group B / 10 / End' anchor sweep on the 35 private ebooks: all negative
+
+New tool `solver/anchor_sweep.py`: anchors the book-cipher numbering origin at the
+structural points implied by the Decipher III initial clue ("The author you seek to
+find the key is from the group that's labeled B. / 10 / End") — ch10 slice,
+part2-ch10, epilogue/afterword ("End"), tenth sentence from book end, chapter-(N-10)
+to end — with +-30 window for OCR slop, engine from-end direction covering
+backward-from-anchor reading, and five streams per slice (letters; word-first and
+word-last letters under split and merge tokenization). All four open ciphers
+(2-4, 3-1, 3-2, 3-3), 827,422 scored decodes across 35 books.
+
+**Result: no decode approaches English — global max -8.7294 (Hotel New Hampshire
+epilogue, wl-split, 3-2); genuine-English band is -7.9..-8.0 and the look threshold
+is -8.2.** Coverage caveats: several books expose only sent10end (Slaughterhouse-Five
+has no chapter heads; Naked Sun / Capote / Plath / Updike / Mailer-biography OCR did
+not yield parseable chapter 10); White House Years yielded no anchor. Group B's Poe
+and Pasternak have no text in the corpus, so they remain unscreened at anchor grade.
+Residual interpretations of '10 / End' not covered here: hotline-message numbering
+(clue recordings lost) and print-edition-only anchors (OCR edition differences).
+Output `results/anchor_sweep_2026-10-31.txt`.
