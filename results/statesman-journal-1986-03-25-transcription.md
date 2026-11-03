@@ -14,9 +14,21 @@ These were the last untranscribed primary sources for the Puzzle 2-1 mechanism
 Nothing on "S.I.N.", "One way gets you half way there", or any counting rule.
 The only mechanical content: the numbers "represent letters, much like in
 cryptograms"; one clue "involved 11 authors"; and "492" referred to a passage
-in *Gulliver's Travels*. The 2-1 extraction formula remains undocumented in
-every known public source. (Negative results matter: this closes the last
+in *Gulliver's Travels*. (Negative results matter: this closes the last
 unchecked newspaper scan.)
+
+**Update 2026-11-03.** This transcription originally concluded that "the 2-1
+extraction formula remains undocumented in every known public source." That
+claim is now false and is scoped to the article above. The mechanism was
+reconstructed and published on 2026-10-31 by Christopher A. Eckman
+([doi:10.5281/zenodo.23844582](https://doi.org/10.5281/zenodo.23844582)); see
+`docs/decipher-ii.md` § "2-1: Published technical reconstruction (2026)". The
+"492" clue in this article is the letter-count of the normalized source
+passage, and the key is that passage concatenated with its own reversal
+(984 positions) — which is why this newspaper scan, correctly read, still
+contains no counting rule. The 1986 reporting remains a negative for
+*contemporary* disclosure of the mechanism; it is no longer a negative for the
+mechanism being knowable.
 
 ## Page 1B — "Decipher II game pays off in cold cash"
 

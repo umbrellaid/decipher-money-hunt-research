@@ -13,7 +13,7 @@ The four solved precedents fix the rule families the creator actually used:
 | Puzzle | Key stream rule | Key text |
 |---|---|---|
 | Decipher I (1983) | first letter of every word, numbered consecutively from a start word, continuous across lines | Carl Sagan, *Cosmos*, ch. 6 (skip first 36 words) |
-| Decipher II 2-1 | continuous letters of a passage | Swift, *Gulliver's Travels* |
+| Decipher II 2-1 | continuous letters of a passage, normalized to 492 letters, **then that sequence concatenated with its own reversal** to give a 984-position palindromic key (published reconstruction 2026-10-31, `docs/decipher-ii.md`) | Swift, *Gulliver's Travels*, Part III ch. 2 (the tailor paragraph) |
 | Decipher II 2-2 | chapter titles concatenated, then the whole string **reversed** | Heller, *Catch-22* |
 | Decipher II 2-3 | first letter of every word of one chapter | Clavell, *Tai-Pan*, ch. 5 |
 
@@ -67,8 +67,21 @@ any numbering start, in either direction, this exact text does not contain the k
 stream.* It does **not** prove the book is innocent, because of three known gaps:
 
 1. **Edition variance.** The MIT paper on Decipher I stresses that different printings
-   shift numbering. The sliding offset absorbs small shifts; a revised or abridged
-   edition can still miss.
+   shift numbering. The sliding offset absorbs small shifts **only when the variant is
+   outside the keyed passage**; a variant *inside* the passage is not absorbed, because
+   it displaces every position after it and no single global offset can repair both
+   sides of the gap. This is no longer a theoretical worry. Eckman's 2-1 reconstruction
+   (`docs/decipher-ii.md`, 2026-11-03) measured it: the Alden (1911) witness of the
+   tailor paragraph reads "take **my** measure" and normalizes to **492** letters, which
+   is the printed clue; the Wikisource transcription attributed to an 1801 edition omits
+   "my" and gives **490**. Two 492-letter windows cut from the shorter text then agree
+   with the true decoding at **55/314** and **260/314** observations respectively — each
+   aligned on a different side of the two-letter gap. **A two-letter variant between
+   printings of the correct book is enough to make the correct book score as noise.**
+   Practical consequence: a sweep may only use a text whose witness is pinned to a
+   specific printing, and a negative obtained from a single unspecified e-text does not
+   reach the book. `260/314` is the number to remember — a near-miss that high is
+   evidence of a textual variant, not evidence against the book.
 2. **OCR/typing errors** in the supplied text corrupt the key region.
 3. **Rule families still missing.** Page-level numbering, and nulls interleaved
    with the key itself. Chapter-title chains, the reversed *Catch-22* rule that
@@ -79,6 +92,34 @@ stream.* It does **not** prove the book is innocent, because of three known gaps
    PART, or SECTION. Titles that are only a name have to be written in by hand.
    The 21 families in `solver/rules.py` are the body-text rules. Puzzle 2-2 is
    checked from `data/catch22_chapter_titles.json` inside `solver/validate.py`.
+
+   **Confirmed missing family (2026-11-03): the palindromic key `S || reverse(S)`.**
+   Eckman's 2-1 reconstruction establishes that Holland built a 984-position key by
+   appending a 492-letter passage's reversal to itself, so that slots `n` and `985−n`
+   address the same letter. `solver/rules.py` implements no such family, and the sweep's
+   `direction="from-end"` option is whole-stream reversal, which preserves length — it
+   produces `reverse(S)`, not `S || reverse(S)`. Measured against our own
+   `data/ciphers.json`, 2-1 has 314 integers with max **980**, and **152 of 314 (48 %)
+   exceed 492**. Under the plain `letters` family the sweep slides a window over the
+   whole book, so a window starting at the tailor paragraph decodes indices 1–492
+   correctly — but indices 493–980 belong to the *reversal*, not to text continuing
+   forward past the passage, and no offset of a forward stream reproduces them. Those
+   152 observations would decode wrong: **had we swept the correct *Gulliver's Travels*
+   text at the correct paragraph, roughly half the message would have come out right and
+   the mean trigram score would still have landed in the noise band — a false negative on
+   the right book, the right passage and the right starting offset.** This is the
+   strongest evidence yet that gap 3 is not hypothetical, and it retroactively weakens
+   every negative in `results/` for the open ciphers — 2-4 (max index 1053), 3-1 (516),
+   3-2 (416) and 3-3 (721) were all swept without this family. Note that `260/314`-style
+   partial agreement (gap 1) and a ~50 %-correct decode (this gap) are distinguishable:
+   the former is a textual-variant signature, the latter a wrong-construction signature.
+   Adding the family is the highest-value *cheap* change available here — unlike the
+   scattered-null back-solving called the most valuable unimplemented idea above, it needs
+   no new search machinery, only a longer stream (build `S + S[::-1]`, then index `n` and
+   `2*len(S)+1−n`). It also halves the source length a candidate passage must supply to
+   cover a given max index, which widens the candidate set for 2-4 and the Decipher III
+   messages. Until it lands, treat "no hit under the 21 families" as covering one fewer
+   construction than the solved precedents actually use.
 
 ## Reproducing everything
 
