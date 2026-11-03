@@ -165,9 +165,12 @@ consolidated state of every open thread as of 2026-10-30.
   an address in **Washington** by **March 31, 1988**; **Touche Ross & Co.** was the
   escrow agent holding registrations, correspondence and "the keys to the prize
   money"; ties split the award among exactly-matching entries. Development attributed
-  to "Canadian John Power" (repo holds the creator as **John Poser** — likely a
-  newspaper misprint) and his two sons, **Shawn (18) and Matt (10)**, over two
-  years; the family had previously made Junior Trivia.
+  to "Canadian John **Pozer**" (repo holds the creator as **John Poser**; the
+  newspaper spelling, verified at 4× on 2026-11-03, is **Pozer** — an earlier note
+  had it as "Power", which is a misread; search people-records under all three
+  spellings) and his two sons, **Shawn (18) and Matt (10)**, over two years; the
+  article names the family's other products as **Junior Trivia, Teen Trivia and
+  Tot Trivia** — additional search handles for locating them.
   **Company initials corrected 2026-11-03:** the name is **T.G.I.**, not "T&L" as
   first recorded. Verified at 8× on two independent unhighlighted instances: the
   Herald-Times illustration credit ("T.G.I. Games Inc. illustration") and the Chicago
