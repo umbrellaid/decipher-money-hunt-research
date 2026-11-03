@@ -100,6 +100,23 @@ search. Warren Holland, the creator, died in December 2017; the company collapse
 2008 after an internal embezzlement, so the family and any surviving company records
 are the only human lead left.
 
+**2026-11-01 — the newspaper route is closed (trial run, consumer + Publisher Extra).**
+Full method and results in `docs/newspapers-com-sweep-2026-10-31.md`. Summary: the
+calibration gate passed 4/6 and both misses were coverage gaps, not search blindness —
+the Virginian-Pilot holds **nothing from 1964–2025** on newspapers.com (its advertised
+1899–2026 span is marketing), and the Milwaukee archive has no 1986, so kit Group A
+was impossible on this archive from the start. Site-wide and paper-scoped queries for
+1987–1991 produced no recurring clue column; the apparent 1988-04-22..28 "Decipher
+hotline" cluster across five papers resolves to a **single national Sunday ad campaign**
+(Youth Beat mail-order), not syndicated editorial. The Palm Beach Post 1990-12-20
+gift-guide item states the mechanism plainly: the puzzles "can be solved in sequence
+from **monthly clues available on the Decipher III Hotline**". Working conclusion: the
+monthly clues were a **hotline product, not a newspaper column**; newspapers carried
+launch coverage, gift guides and ads. The hotline recordings are lost, so the
+elimination notices that would have collapsed the author pool are now best regarded as
+unrecoverable except through a human lead. One search handle remains untested outside
+1984 Detroit: the column title **"Deciphering clues"** (see `docs/decipher-i.md`).
+
 ## Two honest caveats
 
 - **Nulls.** The rulebook teases that messages may contain inserted meaningless

@@ -62,6 +62,27 @@ author-centric "the key chapter points back at the creator" strategy articulated
 the YouTube replies (@Chaotic_Pixie) is refuted by the creator himself. As of 1989
 Holland had no plans for a Decipher IV; he was focused on "How to Host a Murder".
 
+## Contemporary newspaper corroboration (newspapers.com trial, 2026-10-31)
+
+**Detroit Free Press, Sunday 1984-03-25, p. 71 (3G), column "Deciphering clues"**
+(clipping images in `private/karen-puzzles/newspaper-clips-2026-10-31/`; findings
+logged in `docs/newspapers-com-sweep-2026-10-31.md`). A contemporary print source
+independent of the Cryptologia paper, confirming the elimination mechanic and adding
+two facts the paper does not give:
+
+- The **1984 hotline number: 1-800-623-CLUE**, open from May 1, 1984 for "authors
+  dropped from the list or other clues that may be released". (Distinct from the
+  1987 (804) 627-GOLD and the 1990 (800) 654-3939 numbers in `docs/decipher-iii.md`.)
+- The promise as reported in March 1984 was **$10,000 to the first solver**, with
+  $1,000/month added to the pot and an extension to March 1, 1985 — i.e. the
+  $100,000/36-way split of March 1985 was the end state of an escalating pot, not
+  the advertised prize at this date. Treat the $10,000 figure as the article's claim.
+- **"Deciphering clues" is a column title.** If it recurred in other papers or years
+  it is the single best full-text search handle for the lost elimination notices —
+  better than any keyword combination tried so far. Not yet tested outside this
+  paper; the 2026-11-01 trial found no 1987–91 equivalent (see
+  `docs/newspapers-com-sweep-2026-10-31.md`).
+
 ## Why it matters here
 
 1. The Decipher III rulebook reprints this exact construction with a 56-word worked
