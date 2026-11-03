@@ -157,31 +157,43 @@ consolidated state of every open thread as of 2026-10-30.
 
 - **The Herald-Times (Bloomington, Indiana), 1986-11-27, p.47** — full editorial
   article "Game offers player chance at $1 million" (Linda Delroy Weger, H-T Staff
-  Writer). Key facts: Money Hunt was marketed by **T&L Games Inc. of Bloomington,
-  Indiana** (VP Roger Dean); $19.95 in the Sears catalog; the $1M prize was held in a
-  **trust fund** and structured as **20 yearly installments of $50,000**; players got
-  **three chances** to guess the treasure location; answer forms went to an address
-  in **Washington** by **March 31, 1988**; **Touche Ross & Co.** was the escrow
-  agent holding registrations, correspondence and "the keys to the prize money";
-  ties split the award among exactly-matching entries. Development attributed to
-  "Canadian John Power" (repo holds the creator as **John Poser** — likely a
+  Writer). Key facts: Money Hunt was marketed by **T.G.I. Games Inc.** (VP Roger
+  Dean; Bloomington, Indiana is where the article says the games were retailing —
+  Viewpoint, Osco Drug, Wal-Books); $19.95 in the Sears catalog; the $1M prize was
+  held in a **trust fund** and structured as **20 yearly installments of $50,000**;
+  players got **three chances** to guess the treasure location; answer forms went to
+  an address in **Washington** by **March 31, 1988**; **Touche Ross & Co.** was the
+  escrow agent holding registrations, correspondence and "the keys to the prize
+  money"; ties split the award among exactly-matching entries. Development attributed
+  to "Canadian John Power" (repo holds the creator as **John Poser** — likely a
   newspaper misprint) and his two sons, **Shawn (18) and Matt (10)**, over two
   years; the family had previously made Junior Trivia.
-- **Chicago Tribune, 1986-11-28, p.128** — gift-guide capsule: "The Money Hunt, T&L
-  Games Inc., $20... An audience-participation game. First person to solve [the
-  puzzle] wins a real million dollars."
+  **Company initials corrected 2026-11-03:** the name is **T.G.I.**, not "T&L" as
+  first recorded. Verified at 8× on two independent unhighlighted instances: the
+  Herald-Times illustration credit ("T.G.I. Games Inc. illustration") and the Chicago
+  Tribune capsule ("The Money Hunt, T.G.I. Games Inc., $20."); crops in
+  `private/karen-puzzles/newspaper-clips-2026-10-31/zoom-heraldtimes-illustration-credit.png`
+  and `zoom-tribune-company-line.png`.
+- **Chicago Tribune, 1986-11-28, p.128** — gift-guide capsule in a holiday games
+  roundup: "The Money Hunt, T.G.I. Games Inc., $20. Moderately difficult, 1-6
+  players, unlimited time. An audience-participation game. First person to solve
+  [the puzzle] wins a real million dollars [instructions on how company will hold
+  drawing for this are in the game]." The bracketed drawing note is the Tribune's
+  phrasing of the tie-handling the Herald-Times states as an equal split.
 - Los Angeles Herald Examiner 1988-04-28 p.12 was checked for post-deadline winner
   coverage and is a false positive (tax-page copy).
-- Unopened leads: Alabama Journal 1988-04-12 p.1 (7 matches, around the answer
-  deadline — best remaining candidate for winner/outcome coverage), The Orange
-  Leader 1988-06-06 p.5, The Huntsville Times 1988-06-11 p.2, Alabama Journal
-  1988-11-11 p.1.
+- Unopened leads: **Alabama Journal 1988-11-11 p.1** only (no clip on file; needs
+  archive access). Every other 1986–1989 hit from the trial has now been opened and
+  cleared — see the next two bullets.
 - Decipher cipher newspaper hunt closed on the same day: the 1990 Palm Beach Post
   clipping confirms Decipher III monthly clues were delivered **by hotline**
   ((800) 654-3939), not newspapers; no winner retrospective was ever found in
   newspapers. Details in `docs/newspapers-com-sweep-2026-10-31.md`.
-- Post-deadline sweep (same day): Alabama Journal 1988-04-12 p.1, Orange Leader
-  1988-06-06 p.5, Huntsville Times 1988-06-11 p.2 all opened and cleared as false
-  positives (Gov. Guy Hunt budget copy, consumer-advice page, TV listing). No
-  winner-announcement coverage found anywhere in the 1986–1989 trial hits; the
-  prize's 1988-03-31 expiry passed without newspaper notice.
+- Post-deadline sweep: Alabama Journal 1988-04-12 p.1, Orange Leader 1988-06-06 p.5
+  and Huntsville Times 1988-06-11 p.2 all opened and cleared as false positives.
+  Re-verified independently 2026-11-03 from the clips on file: the two Alabama/Huntsville
+  pages are Gov. **Guy Hunt** budget copy (highlights on "money" / "Hunt"), the Orange
+  Leader page is the "Accent" home-economics section, and the Los Angeles Herald
+  Examiner page is tax/insurance copy ("puzzles IRS"). No winner-announcement coverage
+  found anywhere in the 1986–1989 trial hits; the prize's 1988-03-31 expiry passed
+  without newspaper notice.
