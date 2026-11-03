@@ -13,6 +13,29 @@ puzzles were solved, though the solution to the last puzzle has since been lost.
 | 2-3 | Sharlet Brown (sole correct entrant, full $25,000) | Clavell, *Tai-Pan*, ch. 5 | first letter of every word | "I am paralyzed… it is nuclear war." |
 | 2-4 | unknown | **unknown** | unknown | **unknown** |
 
+## 2-1: Published technical reconstruction (2026)
+
+On October 31, 2026, Christopher A. Eckman published a [non-peer-reviewed
+technical reconstruction of Decipher II, Message 1](https://doi.org/10.5281/zenodo.23844582),
+with [reproducible Python software](https://github.com/chriseckman/decipher-ii1-reconstruction).
+The reconstruction uses the tailor paragraph from Part III, Chapter 2 of
+Jonathan Swift's *Gulliver's Travels*. Normalizing the passage produces 492
+letters; appending its reversal gives a 984-position numerical key. Applied
+to the documented corrected working ciphertext transcription, that key
+reproduces the complete 314-character message about *Bloom County*.
+
+Eckman's investigation independently identified the correction at observation
+306 (`338` to `388`) through decoding analysis and inspection of the puzzle
+photograph. During prepublication attribution review, the team found that
+this repository had publicly documented the same correction earlier, in
+October 2026; the paper explicitly credits that prior contribution.
+
+The separate correction at observation 169 (`330` to probable `830`) remains
+uncertain from the original image. The reconstruction does not establish the
+original designer's exact physical edition or procedure for choosing among
+eligible numerical positions. Historical solution credit remains with Eileen
+Novak and the three other successful 1986 contestants.
+
 ## Contest timeline, rebuilt from the winner articles (2026-10-10)
 
 Karen's Drive archive (`docs/sources.md`) holds the actual winner-article scans:
@@ -25,8 +48,8 @@ Karen's Drive archive (`docs/sources.md`) holds the actual winner-article scans:
   transcribed** (`results/statesman-journal-1986-03-25-transcription.md`) —
   winner confirmed as **Eileen** Novak; the article gives **no extraction-rule
   detail** beyond "492" → a *Gulliver's Travels* passage and a Bloom County
-  poem plaintext, so the 2-1 mechanism remains undocumented in every known
-  public source.
+  poem plaintext. That contemporary article did not describe the 2-1
+  extraction rule; a modern technical reconstruction is linked above.
 - **2-2**: Chirpich (Memphis State chemistry professor; also one of the 36 Decipher
   I winners) solved it by September 1986; AP wire story, e.g. *The Leaf-Chronicle*
   (Clarksville, TN), September 27, 1986. The AP piece gives a figure seen nowhere
