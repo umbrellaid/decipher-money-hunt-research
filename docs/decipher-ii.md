@@ -8,7 +8,7 @@ puzzles were solved, though the solution to the last puzzle has since been lost.
 
 | # | Winner | Key text | Key rule | Plaintext |
 |---|---|---|---|---|
-| 2-1 | Eileen Novak (+3 others; prize split 4 ways, $6,250 each) | Swift, *Gulliver's Travels* | continuous letters of a passage | a poem about *Bloom County* |
+| 2-1 | Eileen Novak (+3 others; prize split 4 ways, $6,250 each) | Swift, *Gulliver's Travels* | continuous letters of a 492-letter passage, doubled with its own reversal into a 984-position palindromic key | a poem about *Bloom County* |
 | 2-2 | Tom Chirpich | Heller, *Catch-22* | chapter titles concatenated, string **reversed** | "In memory of John Lennon…" |
 | 2-3 | Sharlet Brown (sole correct entrant, full $25,000) | Clavell, *Tai-Pan*, ch. 5 | first letter of every word | "I am paralyzed… it is nuclear war." |
 | 2-4 | unknown | **unknown** | unknown | **unknown** |
@@ -72,6 +72,29 @@ pattern to create the key"* · *"One way gets you half way there"* · *"S.I.N."*
 The 2-1 author list from the same guide: Emily Dickinson, Ernest Hemingway, Sylvia
 Plath, Jonathan Swift, Herman Wouk, Victor Hugo, John Steinbeck, Margaret Mitchell,
 William Shakespeare, T.S. Eliot, Abraham Lincoln.
+
+### The 2-1 clues, read against the now-known mechanism (2026-11-03)
+
+Three of the five were sitting in this repository unexplained. Eckman's
+reconstruction (linked above) decodes them:
+
+| Clue | Reading now supported |
+|---|---|
+| *"492"* | Not a passage locator — the **letter count of the normalized source passage** `S`, i.e. the *half*-length. The key is 984 positions. |
+| *"A single place has a certain pattern to create the key"* | One passage ("a single place"), and the "certain pattern" is the doubling. |
+| *"One way gets you half way there"* | **The palindromic construction, stated outright.** Reading one direction covers 492 of 984 positions — exactly half. The reversal half covers the rest. |
+| *"…from the authors in group C"* | Swift is in the Group C list above. Consistent, and already known. |
+| *"S.I.N."* | **Still unexplained.** With the mechanism now known this is the top open 2-1 question, and it may be tractable: candidates worth testing are a reversal/direction indicator, an initials acrostic over the passage or its source, or a numbering convention. No reading is asserted here. |
+
+`solver/body_scan.py` has inferred the doubling since 2026-10-17 from "N_max 980 =
+2 x 490" and the "half way there" clue, and implements `HalfFwdRev`; it was built on
+word-initials over chapter windows rather than continuous letters over a paragraph,
+so it could not reach this key. See `docs/methodology.md`, gap 3.
+
+**Carry-over to Decipher III.** 3-1's printed clue *"End"* has until now been read
+only as "test reversed streams" (`docs/methodology.md`). It has a second reading:
+the **reversal half of a palindromic key**. Both readings should be tested for 3-1,
+and the palindromic one is not currently covered by the sweep path.
 
 The full 2-3 plaintext (per Karen's guide, which transcribed the winner's sheet):
 *"I am paralyzed. If I let it touch me I cry. I can comprehend but I cannot act on

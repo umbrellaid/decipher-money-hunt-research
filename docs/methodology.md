@@ -93,33 +93,65 @@ stream.* It does **not** prove the book is innocent, because of three known gaps
    The 21 families in `solver/rules.py` are the body-text rules. Puzzle 2-2 is
    checked from `data/catch22_chapter_titles.json` inside `solver/validate.py`.
 
-   **Confirmed missing family (2026-11-03): the palindromic key `S || reverse(S)`.**
-   Eckman's 2-1 reconstruction establishes that Holland built a 984-position key by
-   appending a 492-letter passage's reversal to itself, so that slots `n` and `985−n`
-   address the same letter. `solver/rules.py` implements no such family, and the sweep's
-   `direction="from-end"` option is whole-stream reversal, which preserves length — it
-   produces `reverse(S)`, not `S || reverse(S)`. Measured against our own
+   **The palindromic key `S || reverse(S)`: anticipated here, implemented against the
+   wrong granularity (corrected 2026-11-03).** Eckman's 2-1 reconstruction establishes
+   that Holland built a 984-position key by appending a 492-letter passage's reversal to
+   itself, so that slots `n` and `985−n` address the same letter.
+
+   *This repository already had the shape.* `solver/body_scan.py:157-168` has carried
+   three "halfway / out-and-back" streams since 2026-10-17 — `HalfFirstLast`,
+   **`HalfFwdRev = firsts + firsts[::-1]`** and `HalfOddEven` — under a code comment
+   quoting the 2-1 clue *"One way gets you half way there"* and reasoning that
+   "N_max 980 = 2 x 490 implies a single place read two ways". The doubling inference was
+   right two weeks before the reconstruction was published. Eckman completed it; this
+   repository did not, and no priority is claimed here.
+
+   *Why it still could not have found 2-1* — four concrete defects, all verified against
+   the current source:
+   1. `HalfFwdRev` is built from `firsts = [w[0] for w in words]`, i.e. the first letter
+      of every **word**. 2-1's key is the continuous **letters** of a passage, doubled.
+      `chars = T.clean_alpha(text)` is computed at `body_scan.py:137` and used only for
+      the zero-Z count; no half-stream is ever built from it.
+   2. The unit is a **chapter window**. `body_scan.py` enumerates concatenated chapter
+      windows and never anchors on paragraphs, so it cannot produce a 492-letter passage
+      key at any setting. The gate `if len(words) >= 240` is a window-level word count,
+      not a passage length.
+   3. None of it is reachable from `solver/rules.py` or `solver/sweep.py`. `all_rules` is
+      21 families, none palindromic, and the sweep's `direction="from-end"` is
+      whole-stream reversal — it preserves length, producing `reverse(S)`, not
+      `S || reverse(S)`. Every corpus elimination in `docs/decipher-iii.md` (Poe,
+      Faulkner, the pre-1931 Christies, Sandburg, O'Neill, cummings, the chapter-title
+      chains) was produced by that path and is logged as "21 rule families".
+   4. `sweep.py`'s `if len(stream) <= max_n: continue` guard tests the *undoubled*
+      length, so even a correctly built palindromic stream would be filtered on the
+      wrong quantity.
+
+   The false negative survives all four corrections. Measured against our own
    `data/ciphers.json`, 2-1 has 314 integers with max **980**, and **152 of 314 (48 %)
-   exceed 492**. Under the plain `letters` family the sweep slides a window over the
-   whole book, so a window starting at the tailor paragraph decodes indices 1–492
-   correctly — but indices 493–980 belong to the *reversal*, not to text continuing
-   forward past the passage, and no offset of a forward stream reproduces them. Those
-   152 observations would decode wrong: **had we swept the correct *Gulliver's Travels*
-   text at the correct paragraph, roughly half the message would have come out right and
-   the mean trigram score would still have landed in the noise band — a false negative on
-   the right book, the right passage and the right starting offset.** This is the
-   strongest evidence yet that gap 3 is not hypothetical, and it retroactively weakens
-   every negative in `results/` for the open ciphers — 2-4 (max index 1053), 3-1 (516),
-   3-2 (416) and 3-3 (721) were all swept without this family. Note that `260/314`-style
-   partial agreement (gap 1) and a ~50 %-correct decode (this gap) are distinguishable:
-   the former is a textual-variant signature, the latter a wrong-construction signature.
-   Adding the family is the highest-value *cheap* change available here — unlike the
-   scattered-null back-solving called the most valuable unimplemented idea above, it needs
-   no new search machinery, only a longer stream (build `S + S[::-1]`, then index `n` and
-   `2*len(S)+1−n`). It also halves the source length a candidate passage must supply to
-   cover a given max index, which widens the candidate set for 2-4 and the Decipher III
-   messages. Until it lands, treat "no hit under the 21 families" as covering one fewer
-   construction than the solved precedents actually use.
+   exceed 492**. Under the plain `letters` family the sweep slides a window over the whole
+   book, so a window starting at the tailor paragraph decodes indices 1–492 correctly —
+   but indices 493–980 belong to the *reversal*, not to text continuing forward past the
+   passage, and no offset of a forward stream reproduces them. **Had we swept the correct
+   *Gulliver's Travels* text at the correct paragraph, roughly half the message would have
+   come out right and the mean trigram score would still have landed in the noise band — a
+   false negative on the right book, the right passage and the right starting offset.**
+   That retroactively weakens every negative in `results/` for the open ciphers — 2-4
+   (max index 1053), 3-1 (516), 3-2 (416) and 3-3 (721) were all swept without a
+   palindromic family on continuous letters. Those eliminations need re-earning or
+   explicit re-qualification.
+
+   Note that `260/314`-style partial agreement (gap 1) and a ~50 %-correct decode (this
+   gap) are distinguishable: the former is a textual-variant signature, the latter a
+   wrong-construction signature. Building the family properly needs (a) every base family
+   emitted in doubled form, (b) paragraph- and chapter-level anchoring rather than
+   sliding offsets, since the σ mapping is not expressible as `start + n − 1`, and (c) a
+   length gate derived from the cipher — only `L` in `[ceil(max_n/2), max_n]` is worth
+   testing, because above `max_n` the construction degenerates to plain forward and is
+   already covered. That gate replaces `len(words) >= 240` and keeps cost tractable
+   (2-4 → L∈[527,1052], 3-1 → [258,515], 3-2 → [208,415], 3-3 → [361,720]). It also
+   halves the source length a candidate passage must supply to cover a given max index,
+   which widens the candidate set. Until it lands, treat "no hit under the 21 families" as
+   covering one fewer construction than the solved precedents actually use.
 
 ## Reproducing everything
 
