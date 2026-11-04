@@ -44,6 +44,28 @@ so **3-2 and 3-3 must be searched against both Group A and Group C**.
 
 ## What has been eliminated
 
+**Qualification added 2026-11-03 — read before relying on any elimination below.**
+Every elimination in this section was produced by the 21-family *sliding* sweep, which
+contains no `S || reverse(S)` palindromic construction. Eckman's reconstruction of 2-1
+([doi:10.5281/zenodo.23844582](https://doi.org/10.5281/zenodo.23844582)) establishes that
+Holland *did* use that construction, and 153 of 2-1's 314 integers exceed its 492-letter
+source — so a sliding-only sweep returns a noise-band negative even on the correct book
+and passage. `engine.search_anchored` now covers the construction (`docs/methodology.md`
+gap 3). Status of the re-earning:
+
+- **Re-tested under both search shapes** (198 M anchored pairs, all negative,
+  `results/RUN_LOG.md` 2026-11-03 later entry): *Doctor Zhivago*, *Foundation*,
+  *I, Robot*, *The Thorn Birds* — the four era-verified whole-book scans.
+- **NOT yet re-tested**: Poe, Faulkner, the pre-1931 Christies, Sandburg, O'Neill and
+  cummings below, and the chapter-title chains. Those eliminations stand on the sliding
+  sweep alone and must be treated as provisional.
+- **Cannot be tested at whole-book grade**: *Cat's Cradle* (Vonnegut), ranked #2 for 3-1
+  below — `texts/cats-cradle` is missing 82 chapters, so its numbering is wrong past the
+  first gap. That is a scanning task, not a compute task.
+- The anchored scan covers only `letters`, `first-letters` and `last-letters`. The
+  every-Nth and word-Nth-letter families in palindromic form remain untested for
+  everything, so no elimination below is complete with respect to this mechanism.
+
 - **Edgar Allan Poe for 3-1**: complete works, 21 rule families, every numbering start,
   both directions (best −8.84, noise). Poe is not in the answer.
 - **The public-domain members of Groups A and C for 3-2/3-3**: Faulkner (*The Sound and

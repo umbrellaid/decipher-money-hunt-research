@@ -599,3 +599,79 @@ his procedure for choosing among eligible numerical positions remain unestablish
 
 No decoded plaintext is stored anywhere in this repository; `verify_ii1.py` reports its
 length and SHA-256 only.
+
+## 2026-11-03 (later) — anchored palindromic re-sweep of the 4 era-verified scans: all negative
+
+**Purpose.** Every negative recorded above for 2-4, 3-1, 3-2 and 3-3 was produced by the
+21-family sliding sweep, which contains no `S || reverse(S)` construction — the one
+Holland is now *known* to have used on 2-1. This re-earns those negatives for the new
+family. Run: `solver/sweep.py` over the same four `texts/wholebooks/*.clean.txt` files as
+the 2026-10-31 campaign, `--cipher all`, output
+`results/palindromic_sweep_2026-11-03.txt`.
+
+**Result: no readable plaintext in any of the 16 book × cipher combinations.**
+**197,924,977 anchored (start, length) pairs** were searched and **zero** candidates
+cleared the −8.2 mean threshold. No search space was empty — `sweep.py` reports the pair
+count per family and warns when it is zero, and it never fired.
+
+| Book | Cipher | Anchored pairs | Best mean | 2026-10-31 baseline | Δ |
+|---|---|---:|---:|---:|---:|
+| doctor-zhivago | 2-4 | 19.13 M | −8.7425 | −8.7425 | **+0.0000** |
+| doctor-zhivago | 3-1 | 9.39 M | −8.8585 | −8.9155 | +0.0570 |
+| doctor-zhivago | 3-2 | 7.57 M | −8.5048 | −8.5048 | **+0.0000** |
+| doctor-zhivago | 3-3 | 13.10 M | −8.6955 | −8.7935 | +0.0980 |
+| foundation2 | 2-4 | 12.42 M | −8.7341 | −8.9522 | +0.2181 |
+| foundation2 | 3-1 | 6.11 M | −8.8937 | −9.0193 | +0.1256 |
+| foundation2 | 3-2 | 4.93 M | −8.4293 | −8.6936 | +0.2643 |
+| foundation2 | 3-3 | 8.52 M | −8.8632 | −8.8716 | +0.0084 |
+| i-robot | 2-4 | 9.28 M | −8.8505 | −8.9094 | +0.0589 |
+| i-robot | 3-1 | 4.57 M | −8.8424 | −9.0252 | +0.1828 |
+| i-robot | 3-2 | 3.68 M | −8.5275 | −8.6663 | +0.1388 |
+| i-robot | 3-3 | 6.36 M | −8.7032 | −8.7983 | +0.0951 |
+| the-thorn-birds | 2-4 | 36.11 M | −8.5375 | −8.5396 | +0.0021 |
+| the-thorn-birds | 3-1 | 17.73 M | −8.5923 | −8.8842 | +0.2919 |
+| the-thorn-birds | 3-2 | 14.30 M | **−8.2702** | −8.5141 | +0.2439 |
+| the-thorn-birds | 3-3 | 24.73 M | −8.5145 | −8.5145 | **+0.0000** |
+
+Global best mean is **−8.2702** (Thorn Birds / 3-2 / `last-letters-palindrome`), still
+below the −8.2 look threshold and on a known letter-density artifact family. Three cells
+reproduce the 2026-10-31 baseline to four decimal places (**Δ = +0.0000**), which is the
+regression proof that the `_cipher_layout` refactor and the `sweep.py` rewrite did not
+perturb the validated sliding path; a separate `--sliding-only` run on foundation2 / 3-1
+reproduced −9.0193 / win −9.0380 / `letters` / start 340069 exactly as logged.
+
+**Two calibration findings that change how every score in this file should be read.**
+
+1. **The windowed statistic's −8.1 noise floor does not survive a book-length search.**
+   It was calibrated in `validate.py` on 120 letters of uniform random noise. Over 198 M
+   real candidates, the best window score on a decode that is plainly not English reached
+   **−8.078** (`letters`, Thorn Birds / 3-2, reversed) and **−7.7448** on the artifact
+   families — the latter inside the genuine-English band. The **true 2-1 plaintext windows
+   at −8.077**. Taking a maximum over ~10⁸ windows finds the distribution's tail whatever
+   the text is, so signal and noise collapse. `sweep.py` now requires the mean to clear
+   −8.6 before a window-band flag is raised; the mean still separates them (−8.144 true vs
+   −8.7465 false).
+2. **The −7.9…−8.0 "genuine English" band was calibrated on prose.** The true 2-1 message
+   is verse and scores **−8.144**, below the band and only 0.056 above the look threshold.
+   A correct decode of a poetic plaintext will not look like the calibration table says a
+   correct decode looks. Asserted in `validate.py::test_puzzle_21` so it cannot drift.
+
+**Grade of these negatives.** These four books are now negative under both search shapes —
+sliding (21 families, both directions, every offset) and anchored palindromic (3 families,
+every sentence start, every exact length in the gate). That is materially stronger than the
+2026-10-31 grade. Still not hard eliminations, for three reasons recorded in
+`docs/methodology.md`: the OCR-noise caveat on Zhivago's inner margins persists; the
+standing edition rule means a miss on a printing that is not Holland's proves nothing; and
+the anchored scan covers only `letters`, `first-letters` and `last-letters`, so **it says
+nothing about the other 18 families in palindromic form** — the every-Nth and
+word-Nth-letter constructions remain untested against this mechanism.
+
+**Not swept: `texts/cats-cradle`.** `build_whole_books.py --list` reports it **NOT
+SWEEP-ABLE — 82 missing chapters** (2, 6, 12, 15, 16, 18, 19, 20, 21, 24, 25, 26, …). A
+book cipher's indices address the complete text, so a concatenation with gaps yields wrong
+numbering past the first gap and any negative from it would be meaningless. Vonnegut is
+ranked #2 for 3-1 in `docs/decipher-iii.md`; closing that gap is a scanning task, not a
+compute task.
+
+Runtime ≈ 75 min wall, ≈ 68 min CPU. No decoded plaintext from any open cipher is stored;
+the previews above are the noise-band strings the sweep itself printed.

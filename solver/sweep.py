@@ -51,14 +51,15 @@ OPEN_CIPHERS = ("2-4", "3-1", "3-2", "3-3")
 # band for the statistic being read. Flagging on the mean alone hid edition-drift
 # near-misses, whose mean sits in the noise band while their best window is English.
 MEAN_LOOK = -8.2        # mean above this deserves a look; -8.0..-7.9 is genuine English
-WINDOW_NOISE = -8.1     # score_best_window noise floor
+MEAN_NOISE = -8.6       # mean at or below this is noise, whatever the window says
+WINDOW_NOISE = -8.1     # score_best_window floor from validate.py's uniform-noise test
 
 # Families whose window score is inflated by letter-density artifacts rather than by
 # English. Established in the 2026-10-31 whole-book campaign (results/RUN_LOG.md):
 # the four highest `win` values across 16 book x cipher combinations were all on
-# `*-wordlast` / `last-letters`, and every preview was vowel salad. They are still
-# worth printing - a real hit would have to beat the artifact - but they must not
-# read as a lead, or the window-band flag just generates work.
+# `*-wordlast` / `last-letters`, and every preview was vowel salad. Re-confirmed
+# 2026-11-03: over 198M anchored pairs, `last-letters-palindrome` reached win
+# -7.7448, inside the genuine-English band, on a decode that is not English.
 WINDOW_ARTIFACT_TOKENS = ("last-letters", "wordlast")
 
 
@@ -67,10 +68,20 @@ def is_window_artifact(rule: str) -> bool:
 
 
 def look_flag(hit) -> str:
-    """The reporting flag for one candidate, or '' if it clears neither band."""
+    """The reporting flag for one candidate, or '' if it is not worth stopping for.
+
+    A window-band-only flag ALSO requires the mean to be above MEAN_NOISE. Measured
+    on the 2026-11-03 campaign: over real book-length decodes the window statistic
+    reaches about -8.078 on pure noise, and the TRUE 2-1 plaintext windows at
+    -8.077. The two are indistinguishable, so the window score cannot flag on its
+    own - the -8.1 floor in validate.py was calibrated on 120 letters of uniform
+    random noise, not on a 314-letter decode drawn from a novel. The mean still
+    separates them cleanly (-8.144 for the true answer, -8.75 for that false
+    positive), so it gates the window signal.
+    """
     if hit["score"] > MEAN_LOOK:
         return "  <-- CHECK THIS"
-    if hit["windowed"] > WINDOW_NOISE:
+    if hit["windowed"] > WINDOW_NOISE and hit["score"] > MEAN_NOISE:
         if is_window_artifact(hit["rule"]):
             return "  <-- window band, known letter-density artifact family"
         return "  <-- CHECK THIS (window band only)"

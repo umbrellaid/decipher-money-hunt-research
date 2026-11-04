@@ -51,6 +51,25 @@ letters ("nulls"). One null-tolerant statistic survived testing:
 rescues **clustered** nulls and still rejects uniform noise (both properties are
 asserted in `solver/validate.py`; treat −8.1 as its noise floor).
 
+**That −8.1 floor is calibrated on 120 letters of uniform random noise and does not
+hold for a book-length search (measured 2026-11-03).** Over 198 M anchored
+(start, length) pairs on four real novels, the best window score reached by a decode
+that is plainly not English was **−8.078** (`letters`, *The Thorn Birds* vs 3-2,
+reversed), and on the known letter-density artifact families it reached **−7.7448**
+— inside the genuine-English band. The **true** 2-1 plaintext windows at **−8.077**.
+Signal and noise are indistinguishable on that statistic at this scale, because the
+maximum over ~10⁸ candidate windows finds the tail of the distribution no matter what
+the underlying text is. Two consequences, both now enforced in `solver/sweep.py`:
+
+- A window-band flag additionally requires the **mean** to be above the −8.6 noise
+  floor. The mean still separates cleanly: −8.144 for the true 2-1 answer against
+  −8.7465 for that false positive.
+- The genuine-English band of −7.9…−8.0 was calibrated on **prose**. The true 2-1
+  plaintext is **verse** and scores **−8.144**, below the band and only 0.056 above
+  the −8.2 look threshold. A correct decode of a poetic message will not look like
+  the calibration table says a correct decode looks. `validate.py` asserts the actual
+  value so this cannot be forgotten.
+
 A trimmed-mean variant (average of the best 60–70 % of trigram logs) was implemented,
 tested and **removed on 2026-10-05**: pure-noise decodes score ≈ −7.3 under it, inside
 the genuine-English band, so it cannot separate signal from noise and would have
