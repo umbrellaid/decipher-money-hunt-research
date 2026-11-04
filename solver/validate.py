@@ -1,6 +1,6 @@
 """Regression tests for the Decipher solver.
 
-Three kinds of check, all must pass before any sweep result is trusted:
+Five kinds of check, all must pass before any sweep result is trusted:
 
 1. decipher-I-example — the real worked example printed in the Decipher III
    rulebook (pages 3-4): the 56 keyed words of Cosmos ch.6 and the three sample
@@ -8,7 +8,17 @@ Three kinds of check, all must pass before any sweep result is trusted:
 2. puzzle 2-2 — the 42 Catch-22 chapter titles in data/catch22_chapter_titles.json,
    concatenated, reversed, then the decode read backwards. The book text is not
    required.
-3. round-trip per rule family — encode a genuine English plaintext into cipher
+3. puzzle 2-1 — the 492-letter Gulliver's Travels passage in
+   data/gulliver_ii1_passage.txt, doubled into a 984-position palindromic key, with
+   the two working corrections from data/ii1_corrections.json. Asserted against the
+   source, key and plaintext SHA-256 values published by Eckman (2026,
+   doi:10.5281/zenodo.23844582) and independently reproduced by solver/verify_ii1.py.
+   The decoded message is never printed or stored, only hashed.
+4. palindromic gate and positive control — the length gate must admit the real 2-1
+   source, and the anchored search must actually LOCATE that passage inside a larger
+   text and outrank every other paragraph in it. Wiring a family up is not the same
+   as it firing.
+5. round-trip per rule family — encode a genuine English plaintext into cipher
    numbers against a stream built by that family, then require search_stream to
    rank the true numbering start #1 and reproduce the plaintext exactly, in both
    stream directions and both plaintext directions.
@@ -17,11 +27,13 @@ Run from the repository root, or from anywhere:
 
     uv run python solver/validate.py
 
-The round trips need texts/model/*.txt and texts/pd/hardy_110.txt from
+Checks 3-5 need texts/model/*.txt and texts/pd/hardy_110.txt from
 solver/fetch_texts.py. The CODES example and puzzle 2-2 do not.
 """
+import hashlib
 import json
 import sys
+import unicodedata
 from pathlib import Path
 
 import engine
@@ -88,6 +100,164 @@ def test_the_source_elimination():
         check(f"The Source title chain too short for {name} "
               f"(chain={len(chain)} < max={max(ciph)})",
               len(chain) < max(ciph))
+
+
+II1_SOURCE_SHA = "9eeff566fe707e39486c1bb119d5c82f19566772706342c44803d6079faef29d"
+II1_KEY_SHA = "571b2327a0ef55d6fc74394b228ffc59e24a00f2ef6f670beb1fa08879eb5466"
+II1_PLAIN_SHA = "859f2c3458025e03ad8a425b8e9b9e16f152927b8b34e33300ad1d49d065ee1f"
+
+
+def sha_letters(s):
+    """SHA-256 over uppercase ASCII letters, no trailing newline."""
+    return hashlib.sha256(s.encode("ascii")).hexdigest()
+
+
+def ii1_working_cipher():
+    """2-1 as printed, with the two documented working corrections applied.
+
+    data/ciphers.json deliberately keeps the ORIGINAL transcription - observation
+    169 is still 330 there - because the 830 reading is graded probable, not
+    verified. The corrections live in their own file, mirroring the published
+    reconstruction's own separation.
+    """
+    ciphers = json.loads((ROOT / "data" / "ciphers.json").read_text(encoding="utf-8"))
+    spec = json.loads((ROOT / "data" / "ii1_corrections.json").read_text(encoding="utf-8"))
+    working = list(ciphers["2-1"])
+    for c in spec["corrections"]:
+        working[c["position"] - 1] = c["corrected"]
+    return working
+
+
+def test_puzzle_21(scorer):
+    """Solved puzzle 2-1: a 492-letter passage doubled into a 984-position key.
+
+    Eckman (2026, doi:10.5281/zenodo.23844582) reconstructed this; solver/
+    verify_ii1.py verifies it independently against his published hashes. These
+    checks keep the result wired into the regression suite so the palindromic
+    family cannot silently rot.
+
+    The decoded message is never printed or stored here - only its SHA-256. It is
+    third-party expression that the author does not redistribute, and neither do we.
+    """
+    path = ROOT / "data" / "gulliver_ii1_passage.txt"
+    if not path.is_file():
+        sys.exit(f"Missing {path}. See docs/decipher-ii.md for provenance.")
+    raw = path.read_text(encoding="utf-8")
+
+    source = engine.letters_only(raw)
+    nfkd = "".join(c for c in unicodedata.normalize("NFKD", raw).upper() if "A" <= c <= "Z")
+    check("2-1: engine.letters_only agrees with the paper's NFKD normalization "
+          "on this witness", source == nfkd,
+          "differs - an accented witness would need the NFKD path")
+    check("2-1: passage normalizes to 492 letters", len(source) == 492,
+          f"got {len(source)}")
+    check("2-1: source SHA-256 matches the published value",
+          sha_letters(source) == II1_SOURCE_SHA, sha_letters(source)[:16])
+
+    key = engine.palindromic_key(source)
+    check("2-1: doubled key has 984 positions", len(key) == 984, f"got {len(key)}")
+    check("2-1: key SHA-256 matches the published value",
+          sha_letters(key) == II1_KEY_SHA, sha_letters(key)[:16])
+    check("2-1: slots n and 985-n address the same letter",
+          all(key[n - 1] == key[985 - n - 1] for n in range(1, 493)))
+
+    working = ii1_working_cipher()
+    dec = engine.decode_palindromic(source, working)
+    check("2-1: doubled key resolves all 314 observations",
+          len(dec) == 314 and "?" not in dec, f"len={len(dec)}")
+    check("2-1: plaintext SHA-256 matches the published value",
+          sha_letters(dec) == II1_PLAIN_SHA, sha_letters(dec)[:16])
+
+    # CALIBRATION CAVEAT, asserted so it cannot silently drift. The true 2-1
+    # plaintext scores about -8.14, which is BELOW the -7.9..-8.0 prose band the
+    # thresholds were calibrated on and only ~0.06 above the -8.2 look threshold.
+    # The message is verse, and the model is built from five prose novels. Any
+    # threshold reasoning that assumes a correct decode lands at -7.9 is wrong by
+    # a fifth of the entire signal-to-noise gap. See docs/methodology.md.
+    score = scorer.score(dec)
+    check("2-1: true plaintext clears the look threshold but sits BELOW the prose "
+          "English band (verse, not prose)", -8.2 < score < -8.0, f"score={score:.3f}")
+    windowed = scorer.score_best_window(dec)
+    check("2-1: window score clears its own -8.1 floor by less than 0.05",
+          -8.1 < windowed < -8.0, f"win={windowed:.3f}")
+
+
+def test_palindromic_gate():
+    """The length gate must admit the real 2-1 source and reject what cannot work."""
+    lo, hi = rules.palindromic_length_gate(980)
+    check("gate: 2-1 admits the true 492-letter source", lo <= 492 <= hi, f"[{lo},{hi}]")
+    check("gate: 2-1 also admits the 490-letter Wikisource variant, so the "
+          "near-miss can be scored rather than silently skipped", lo <= 490 <= hi)
+    check("gate: lower bound is the tightest length whose doubling reaches max_n",
+          2 * lo >= 980 and 2 * (lo - 1) < 980, f"lo={lo}")
+    check("gate: upper bound excludes the degenerate forward-only case",
+          hi == 979 and 2 * hi >= 980, f"hi={hi}")
+    for name, max_n in (("2-4", 1053), ("3-1", 516), ("3-2", 416), ("3-3", 721)):
+        lo_n, hi_n = rules.palindromic_length_gate(max_n)
+        check(f"gate: {name} range is non-empty and reaches max_n",
+              lo_n <= hi_n and 2 * lo_n >= max_n, f"[{lo_n},{hi_n}] max={max_n}")
+
+
+def test_palindromic_positive_control(scorer):
+    """The anchored search must LOCATE the 2-1 passage among real competitors.
+
+    Wiring a family up is not the same as it firing. The passage has to be found at
+    the exact length 492 out of every (sentence start, length) pair in the gate, and
+    outrank all of them.
+
+    Two earlier versions of this control were wrong and are recorded here so the
+    mistake is not repeated. The first used texts/pd/hardy_110.txt as filler and
+    passed vacuously: that file is verse, its 2,933 "paragraphs" are 54-67 letter
+    stanzas, and exactly one unit in 180k characters fell inside the [490,979] gate
+    - the answer itself. The second anchored on paragraph runs, which measurement
+    showed yields ZERO candidates for the 2-1 and 2-4 gates across three texts,
+    because these books average ~48 letters per paragraph. A control with no
+    competitors proves nothing, so the size of the search space is asserted too.
+    """
+    passage = (ROOT / "data" / "gulliver_ii1_passage.txt").read_text(encoding="utf-8")
+    prose = ROOT / "texts" / "model" / "pride_1342.txt"
+    if not prose.is_file():
+        sys.exit(f"Missing {prose}. Run: uv run python solver/fetch_texts.py")
+    filler = prose.read_text(encoding="utf-8", errors="replace")
+    text = filler[:40000] + "\n\n" + passage + "\n\n" + filler[40000:90000]
+
+    working = ii1_working_cipher()
+    max_n = max(working)
+    lo, hi = rules.palindromic_length_gate(max_n)
+    lengths = list(range(lo, hi + 1))
+
+    stream = engine.letters_only(text)
+    starts = [s[0] for s in rules.sentence_boundary_starts(text)]
+    check("positive control: the sentence-start anchor set is non-trivial",
+          len(starts) >= 100, f"{len(starts)} starts over {len(stream)} letters")
+
+    by_mean, by_window = engine.search_anchored(
+        stream, working, scorer, starts, lengths, top_k=25)
+    pairs = by_mean[0]["pairs"] if by_mean else 0
+    check("positive control: the search space is large, not vacuous",
+          pairs >= 10000, f"{pairs} (start,length) pairs")
+
+    best = by_mean[0]
+    target = engine.letters_only(passage)
+    got = stream[best["start"]:best["start"] + best["length"]]
+    check("positive control: the top-ranked pair recovers L=492 exactly",
+          best["length"] == 492, f"L={best['length']} start={best['start']}")
+    check("positive control: the top-ranked passage IS the Swift source",
+          got == target, f"len={len(got)}")
+    runner_up = by_mean[1]["score"] if len(by_mean) > 1 else float("-inf")
+    check("positive control: the winner separates from the runner-up",
+          best["score"] > runner_up, f"best={best['score']:.3f} next={runner_up:.3f}")
+    check("positive control: the winner clears the -8.2 look threshold",
+          best["score"] > -8.2,
+          f"mean={best['score']:.3f} win={best['windowed']:.3f}")
+    dec = engine.decode_stream(engine.palindromic_key(got), working, offset=1)
+    check("positive control: recovered plaintext hash matches the published value",
+          sha_letters(dec) == II1_PLAIN_SHA, sha_letters(dec)[:16])
+    win_best = by_window[0]
+    check("positive control: the window-ranked list also surfaces the true passage",
+          win_best["length"] == 492 and win_best["start"] == best["start"],
+          f"win top: start={win_best['start']} L={win_best['length']} "
+          f"win={win_best['windowed']:.3f}")
 
 
 def make_scorer():
@@ -199,7 +369,10 @@ def main():
     test_codes_example()
     test_puzzle_22()
     test_the_source_elimination()
+    test_palindromic_gate()
     scorer = make_scorer()
+    test_puzzle_21(scorer)
+    test_palindromic_positive_control(scorer)
     test_round_trips(scorer)
     test_null_tolerance(scorer)
     print()

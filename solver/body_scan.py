@@ -157,6 +157,17 @@ def main() -> None:
         # "Halfway / out-and-back" patterned streams (Gemini Q6: Puzzle 2-1's
         # "One way gets you half way there" — N_max 980 = 2 x 490 implies a
         # single place read two ways; candidate family for 2-4's N_max 1053)
+        #
+        # NOTE 2026-11-03: these three streams anticipated the right SHAPE but are
+        # not the construction Eckman's 2-1 reconstruction established, and they
+        # cannot reach it. They are built from `firsts` (word-initials) over chapter
+        # windows, whereas 2-1's key is the continuous LETTERS of a single 492-letter
+        # paragraph doubled. The `len(words) >= 240` gate is a window-level word
+        # count, not a passage length. The real implementation is
+        # engine.search_anchored, driven from sweep.py: an exact vectorized scan over
+        # (sentence start, passage length) pairs with the length gated per cipher.
+        # These streams are kept as a separate, narrower net. See docs/methodology.md
+        # gap 3, which records why paragraph anchoring was tried and rejected.
         if len(words) >= 240:
             firsts = [w[0] for w in words]
             lasts = [w[-1] for w in words]

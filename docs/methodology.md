@@ -171,16 +171,47 @@ stream.* It does **not** prove the book is innocent, because of three known gaps
 
    Note that `260/314`-style partial agreement (gap 1) and a ~50 %-correct decode (this
    gap) are distinguishable: the former is a textual-variant signature, the latter a
-   wrong-construction signature. Building the family properly needs (a) every base family
-   emitted in doubled form, (b) paragraph- and chapter-level anchoring rather than
-   sliding offsets, since the σ mapping is not expressible as `start + n − 1`, and (c) a
-   length gate derived from the cipher — only `L` in `[ceil(max_n/2), max_n]` is worth
-   testing, because above `max_n` the construction degenerates to plain forward and is
-   already covered. That gate replaces `len(words) >= 240` and keeps cost tractable
-   (2-4 → L∈[527,1052], 3-1 → [258,515], 3-2 → [208,415], 3-3 → [361,720]). It also
-   halves the source length a candidate passage must supply to cover a given max index,
-   which widens the candidate set. Until it lands, treat "no hit under the 21 families" as
-   covering one fewer construction than the solved precedents actually use.
+   wrong-construction signature.
+
+   **Implemented 2026-11-03** as `engine.search_anchored`, driven from `sweep.py`. The
+   design that shipped is not the obvious one, and the reason is measured:
+
+   - *Paragraph anchoring was tried first and rejected.* Enumerating paragraphs, and then
+     runs of 1..8 consecutive paragraphs, produced **zero** candidates for the 2-1 gate
+     `[490,979]` and the 2-4 gate `[527,1052]` across three different texts (Austen,
+     Melville, Hardy verse). These books average ~48 letters per paragraph — they are
+     dialogue-heavy — so reaching 490 letters needs a run of roughly fifteen paragraphs.
+     A search space of zero candidates still prints a confident negative, which is the
+     worst possible failure mode. `sweep.py` now prints the pair count per family and
+     warns loudly when it is zero.
+   - *What ships instead* is an exact scan over (sentence start, passage length) pairs,
+     fully vectorized: no key string is materialized, the `(batch, N)` index matrix is
+     built directly from `sigma(c, L) = c if c <= L else 2L + 1 - c`. Sentence starts are
+     the anchoring granularity because 2-1's passage opens on one.
+   - **`L` cannot be subsampled.** Gap 1 shows a single letter's difference in the source
+     destroys alignment, so every integer length in the gate is tried. Only the *starts*
+     are restricted.
+   - The gate is `[ceil(max_n/2), max_n - 1]`: at `L = max_n` every observation maps into
+     the forward half and the construction degenerates to a plain forward stream the
+     sliding sweep already covers. For 2-1 that is `[490, 979]`, which deliberately
+     admits the 490-letter Wikisource variant as well as the true 492, so the near-miss
+     gets scored instead of silently skipped.
+   - **Coverage is three families, not 21** (`rules.anchored_scan_families`): `letters`,
+     `first-letters`, `last-letters`. Those are the only ones whose stream coordinates map
+     exactly onto a sentence start. The every-Nth and word-Nth-letter families stride
+     through the text, so a sentence start does not land on a stream index without a
+     separate mapping, and guessing it would produce a misaligned search that still looks
+     like a negative. **An anchored-scan negative does not speak to those 18 families.**
+     `letters` is the family 2-1 actually used.
+   - Measured cost on a 579k-letter book (Austen, 7,544 sentence starts), one family,
+     four open ciphers: ~147 s, ~4.0 M pairs total. `sweep.py` runs three families, so
+     budget roughly 7–8 minutes per full-size book for the anchored scan alone, on top of
+     the sliding sweep.
+   - Positive control (`validate.py::test_palindromic_positive_control`): with the Swift
+     passage embedded in Austen, the scan searches **411,918** pairs and returns the true
+     passage at exactly `L=492`, ranked #1 by both the mean and the window statistic,
+     separating from the runner-up by 1.2 (−8.144 vs −9.367). Two earlier versions of this
+     control passed vacuously and are documented in its docstring.
 
 ## Reproducing everything
 
