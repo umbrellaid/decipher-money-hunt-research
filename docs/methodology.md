@@ -82,7 +82,36 @@ stream.* It does **not** prove the book is innocent, because of three known gaps
    specific printing, and a negative obtained from a single unspecified e-text does not
    reach the book. `260/314` is the number to remember — a near-miss that high is
    evidence of a textual variant, not evidence against the book.
-2. **OCR/typing errors** in the supplied text corrupt the key region.
+
+   **Measured on our own download, 2026-11-03: there is a third witness, and it is the
+   default one.** `solver/check_ii1_witness.py` fetches Project Gutenberg #829 and
+   normalizes the same paragraph to **491** letters — neither Eckman's 492 (Alden 1911)
+   nor his 490 (Wikisource/1801). It differs from Alden at two independent places:
+   `take my measure` → `take measure` (−2) at normalized position 94, and `with rule and
+   compasses` → `with a rule and compasses` (+1) at 232. The first divergence is at
+   position **95**, so most of the forward half misaligns. The e-text anyone would reach
+   for first fails the printed "492" clue, which makes that clue a usable *witness
+   discriminator* **for 2-1**: a candidate source whose passage does not normalize to
+   exactly 492 letters is the wrong printing and can be rejected before any sweep is
+   attempted. The unsolved messages have **no** length clue that this repository holds:
+   no clue set for 2-4 is recorded anywhere in `docs/` or `results/` (only its numeric
+   microstructure, `results/puzzle-2-4-microstructure-2026-10-18.md`), and 3-1's printed
+   clues are "group B" / "10" / "End", none of which is a length. 3-2 and 3-3 had no
+   clues released at all, because clues for messages 2 and 3 were only issued after
+   message 1 was solved and it never was. So this free pre-filter is available for 2-1
+   and *not* for the four open ciphers. That asymmetry is why gap 1 bites harder on the
+   open ciphers than on the solved one: for them we cannot even screen witnesses cheaply,
+   and a negative stays unattributable between "wrong book", "wrong printing" and "wrong
+   construction". Recovering any 2-4 clue text is therefore worth more than more sweep
+   time.
+2. **OCR/typing errors** in the supplied text corrupt the key region. **Closed for 2-1
+   as of 2026-11-03**, and open for everything else. Our 2-1 sequence was read from the
+   printed surface at 3× on 2026-10-05; Eckman's came independently via Kavett's public
+   compilation. The canonical fingerprint of our original 314 values reproduces his
+   published input hash `1e60d5d6…` exactly, so two independent readings agree on every
+   value (`solver/verify_ii1.py`). The four unsolved ciphers have no second witness, so
+   for 2-4, 3-1, 3-2 and 3-3 a single misread digit remains live and would produce
+   exactly the same noise-band negative as a wrong book.
 3. **Rule families still missing.** Page-level numbering, and nulls interleaved
    with the key itself. Chapter-title chains, the reversed *Catch-22* rule that
    solved puzzle 2-2, are tested when a `.chapters.json` file sits beside the

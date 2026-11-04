@@ -1,0 +1,18 @@
+{
+  "corrections": [
+    {
+      "position": 169,
+      "transcribed": 330,
+      "corrected": 830
+    },
+    {
+      "position": 306,
+      "transcribed": 338,
+      "corrected": 388
+    }
+  ],
+  "confidence": {
+    "169": "Probable 830; competing 330 retained; candidate-aware readings",
+    "306": "Photographically supported 388; earlier public correction credited to umbrellaid"
+  }
+}

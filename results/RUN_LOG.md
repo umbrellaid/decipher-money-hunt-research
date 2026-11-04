@@ -551,3 +551,51 @@ zero-Z necessary condition (51/51 and 111/153 windows fail); this run adds cover
 for 2-4/3-2/3-3 on those two.
 
 Runtime ~572 s for all 16 combinations. Output `results/wholebook_sweep_2026-10-31.txt`.
+
+## 2026-11-03 — Eckman's 2-1 reconstruction verified independently: PASS, plus a third witness at 491 letters
+
+**Not a sweep — a verification.** Christopher A. Eckman published a technical
+reconstruction of Decipher II Message 1 on 2026-10-31
+([doi:10.5281/zenodo.23844582](https://doi.org/10.5281/zenodo.23844582)) and opened
+issue #1 / PR #2 on this repository; the PR was merged as `33d5517`. 2-1's mechanism
+is therefore no longer undocumented, which retires the 2026-10-18 negative above it.
+
+`solver/verify_ii1.py` reimplements the construction from the paper's §3.1
+specification and compares against the paper's published SHA-256 values. **No
+third-party code was imported or executed** — a match is two independent
+implementations agreeing. **19/19 checks pass.** Full write-up:
+`results/eckman-ii1-verification-2026-11-03.md`.
+
+Two results matter beyond confirming his work:
+
+1. **Our 2-1 ciphertext transcription is independently confirmed.** The canonical
+   fingerprint of our original 314 values (observation 306 reverted to its as-printed
+   `338`) reproduces his published input hash `1e60d5d6…` exactly. Ours was read from
+   the printed surface at 3× on 2026-10-05; his came via Karen Kavett's public
+   compilation. Two independent readings agree on all 314 values, so
+   `docs/methodology.md` gap 2 (OCR/typing error) is **closed for 2-1** — and remains
+   open for the four unsolved ciphers, which have no second witness.
+2. **A third textual witness exists, and it is the default free e-text.** The paper
+   compares Alden 1911 (492 normalized letters) against a Wikisource/1801 transcription
+   (490). Project Gutenberg #829 gives **491**, differing from Alden at two independent
+   places: `take my measure` → `take measure` (−2) at normalized position 94, and
+   `with rule and compasses` → `with a rule and compasses` (+1) at 232. The first
+   divergence is at position **95**, so most of the forward half misaligns. Reproduce
+   with `uv run solver/check_ii1_witness.py` (exits 1: the witness fails the 492 clue).
+   This is a harder demonstration of gap 1 than the paper's own comparison, because it
+   lands on the e-text anyone would reach for first.
+
+One figure we published is corrected here: **152** of 314 observations exceed 492 in the
+*original* transcription; under the working corrections observation 169 becomes `830` and
+crosses the halfway point, giving **153**. Both are now asserted in `verify_ii1.py`.
+Neither figure changes the gap-3 false-negative conclusion.
+
+**Grade.** The 2-1 reconstruction is confirmed and can be relied on downstream, with one
+stated condition: the complete 314-character decode is conditional on the `330→830`
+reading at observation 169, which the author grades *probable* rather than verified (his
+supporting readings were candidate-aware, not blind). Our decode reproduces his published
+plaintext hash, so it inherits that conditionality. The designer's physical edition and
+his procedure for choosing among eligible numerical positions remain unestablished.
+
+No decoded plaintext is stored anywhere in this repository; `verify_ii1.py` reports its
+length and SHA-256 only.
