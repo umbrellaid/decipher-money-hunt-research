@@ -656,6 +656,14 @@ reproduced −9.0193 / win −9.0380 / `letters` / start 340069 exactly as logge
    A correct decode of a poetic plaintext will not look like the calibration table says a
    correct decode looks. Asserted in `validate.py::test_puzzle_21` so it cannot drift.
 
+**Provenance note on the log file.** `results/palindromic_sweep_2026-11-03.txt` was
+written by `sweep.py` *before* correction 1 was applied, so it still contains two
+`<-- CHECK THIS (window band only)` flags — `first-letters-palindrome` at mean −9.5932
+(Zhivago / 3-2) and `letters` at mean −8.7465 (Thorn Birds / 3-2), both vowel salad on
+inspection. Current `sweep.py` raises no flag for either, because both means are below
+−8.6. The scores, rankings and pair counts in the log are unaffected; only the flag text
+differs. Re-running would change those two lines and nothing else.
+
 **Grade of these negatives.** These four books are now negative under both search shapes —
 sliding (21 families, both directions, every offset) and anchored palindromic (3 families,
 every sentence start, every exact length in the gate). That is materially stronger than the
