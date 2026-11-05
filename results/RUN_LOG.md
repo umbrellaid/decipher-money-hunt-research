@@ -683,3 +683,43 @@ compute task.
 
 Runtime ≈ 75 min wall, ≈ 68 min CPU. No decoded plaintext from any open cipher is stored;
 the previews above are the noise-band strings the sweep itself printed.
+
+## 2026-11-04 — cats-cradle: the "82 missing chapters" were a bad split, not missing scans
+
+**Root cause found, and it was not the scanner.** `texts/cats-cradle` (v1) was OCR'd from
+`scanning/book-scans/cats-cradle-2026-10-26/pages_v1/`, which is **ScanTailor Advanced's
+mangled output**: each half-image crop is roughly twice a page wide (pre-scale ~1,977–2,017
+px where a real page is ~1,040), so every crop held most of *both* pages. Line structure
+collapsed, the ingest's Jaccard ≥ 0.75 dedup silently dropped the redundant halves, and
+chapters 90–126 landed in `ch090.txt` as a single 15,690-word line. The 82 "missing"
+chapters were a filing artifact.
+
+The correct split — `preprocess_spreads.py` output, page widths ~1,020–1,040 px — was
+already on disk in `pages/` and had **never been OCR'd**. Verified visually:
+`pages/image00114_1L.jpg` is a complete, sharp page 174 with every line end intact, while
+the raw spread `raw/image00114.jpg` shows the book fully in frame with hands only at the
+edges. **The raw scans are fine; no re-scan is needed for text recovery.**
+
+**Re-ingest** (`ingest_by_markers.py --mode cc` against `pages/`, output
+`texts/cats-cradle-v2`): 97 chapter files, missing chapters **82 → 31**
+(3, 5, 12, 25, 29, 40, 41, 46, 49, 54, 55, 59, 65, 67, 71, 78, 79, 81, 83, 85, 90, 92,
+96, 100, 103, 106, 107, 109, 114, 118, 120). `build_whole_books.py` now marks v1
+SUPERSEDED by v2. **Still NOT SWEEP-ABLE.**
+
+**Why not push the last 31.** Their text IS present in the OCR (probe-matched 14/31), just
+merged into the preceding chapter. Anchoring them from a clean reference text recovers at
+best ~half and risks mis-anchors, because the OCR is only ~85–90 % accurate at word level —
+the same probe matches only 11/41 on chapters known to be present. A book cipher needs
+exact letters, so a 10–15 % word-error text cannot carry a sweep regardless of how it is
+split. Closing this needs a re-scan with flatter pages and more light, or a better OCR
+pass, not better splitting.
+
+**One fix tried and reverted.** A colour-based hand exclusion in `preprocess_spreads.py`
+(paper reads R−B −8…−12, skin +8…+21; grayscale cannot separate them, both ≈ 200) collapsed
+every spread to a ~700 px "single" region, because the cool test fragmented the column
+profile. The hand-inflated span (~2,530 px vs ~2,080) only adds a sliver of the facing
+page, which the gutter-noise stripping already tolerates. The attempt is documented in the
+function's docstring so it is not re-debugged.
+
+**Consequence for 3-1.** Vonnegut remains untestable at whole-book grade from our own
+scan. *Cat's Cradle* stays ranked but un-swept; the gap is a scanning/OCR-quality task.

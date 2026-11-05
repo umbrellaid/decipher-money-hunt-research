@@ -77,6 +77,15 @@ def find_book_span(gray: np.ndarray) -> tuple[int, int, int] | None:
     0.3 column-bright-fraction; that separates the book cleanly on body-text
     spreads. Fallback (dark covers, title pages): >100 with a 0.15 fraction,
     which is noisier but only ever runs on single-page captures.
+
+    KNOWN LIMIT (session 2026-10-26, cats-cradle): a hand entering the frame is
+    bright in grayscale and widens the span by ~450 px (span_w ~2530 vs ~2080),
+    so each page crop carries a sliver of the facing page. The resulting pages
+    are still complete and OCR-able, so this is tolerable. A colour-based
+    exclusion (paper reads R-B -8..-12, skin +8..+21) was tried on 2026-11-04
+    and REVERTED: the cool test fragmented the column profile and collapsed
+    every spread to a ~700 px "single" region. If this is ever fixed, test it
+    against pages_v1/pages manifests for cats-cradle first.
     """
     for thr, frac in ((160, 0.3), (100, 0.15)):
         col = smooth((gray > thr).mean(axis=0), 25)
