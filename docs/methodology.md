@@ -156,7 +156,13 @@ stream.* It does **not** prove the book is innocent, because of three known gaps
      origin**, so its independence from Kavett's *typed* text rests on our own account and is
      not checkable by anyone else.
    - Two readings agreeing shows neither that the printed puzzle is error-free nor that
-     observation 169 is resolved.
+     observation 169 is resolved. The second half of that sentence aged badly: on
+     2026-11-05 a **blind** reading of the sheet resolved 169 to `830` unanimously across
+     four fresh contexts (`results/RUN_LOG.md`, 2026-11-05), with the genuine `330` at
+     position 148 read correctly in the same crop. Our stored `330` was the error — and it
+     is exactly the error the fingerprint agreement hid, because Kavett's compilation
+     carries the same `330`. The first half stands: agreement between readings of one image
+     says nothing about the printed puzzle's own correctness.
 
    The four unsolved ciphers have no second reading of any kind, so for 2-4, 3-1, 3-2 and
    3-3 a single misread digit remains live and would produce exactly the same noise-band

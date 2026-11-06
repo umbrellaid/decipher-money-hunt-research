@@ -116,9 +116,12 @@ def ii1_working_cipher():
     """2-1 as printed, with the two documented working corrections applied.
 
     data/ciphers.json deliberately keeps the ORIGINAL transcription - observation
-    169 is still 330 there - because the 830 reading is graded probable, not
-    verified. The corrections live in their own file, mirroring the published
-    reconstruction's own separation.
+    169 is still 330 there - so the historical record and the fingerprint test stay
+    honest about what was typed at the time. The 830 reading was graded probable by
+    the published reconstruction and was blind-verified from the puzzle image on
+    2026-11-05 (results/RUN_LOG.md): four fresh contexts, unanimous 830, with the
+    genuine 330 at position 148 read correctly in the same crop. The corrections
+    live in their own file, mirroring the published reconstruction's separation.
     """
     ciphers = json.loads((ROOT / "data" / "ciphers.json").read_text(encoding="utf-8"))
     spec = json.loads((ROOT / "data" / "ii1_corrections.json").read_text(encoding="utf-8"))

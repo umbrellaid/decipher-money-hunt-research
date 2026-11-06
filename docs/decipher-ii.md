@@ -40,11 +40,18 @@ photograph. During prepublication attribution review, the team found that
 this repository had publicly documented the same correction earlier, in
 October 2026; the paper explicitly credits that prior contribution.
 
-The separate correction at observation 169 (`330` to probable `830`) remains
-uncertain from the original image. The reconstruction does not establish the
-original designer's exact physical edition or procedure for choosing among
-eligible numerical positions. Historical solution credit remains with Eileen
-Novak and the three other successful 1986 contestants.
+The correction at observation 169 (`330` to `830`) was graded *probable* by the
+original report and by Addendum 1, because every supporting reading until then was
+candidate-aware. On 2026-11-05 it was **blind-verified from the puzzle image**: four
+fresh contexts with no knowledge of either candidate read the band covering positions
+137–197 and all four returned `830` at 169 while correctly reading the genuine `330`
+at 148 in the same crop (`results/RUN_LOG.md`, 2026-11-05). The `330` in
+`data/ciphers.json` is therefore a transcription error shared with Kavett's
+compilation, and the 2-1 decode is no longer conditional on an unverified reading. A
+human inspection of the physical piece remains the only stronger check. The
+reconstruction does not establish the original designer's exact physical edition or
+procedure for choosing among eligible numerical positions. Historical solution credit
+remains with Eileen Novak and the three other successful 1986 contestants.
 
 ## Contest timeline, rebuilt from the winner articles (2026-10-10)
 
@@ -192,6 +199,17 @@ printed puzzle reads 388 (confirmed at 3× magnification). It is corrected in th
 repository. 2-1 is a solved puzzle, so nothing downstream depended on it, but any
 future re-validation of 2-1 against the Swift key would otherwise have failed for a
 non-mechanical reason.
+
+**That re-transcription was incomplete, and this paragraph said so too confidently.**
+On 2026-11-05 a blind reading of the Message 1 sheet (`results/RUN_LOG.md`,
+2026-11-05) found a **second** error the 2026-10-05 pass missed: index 168 (observation
+169) is stored as `330` but the sheet shows `830`. Four blind readers returned `830`
+unanimously and correctly read the genuine `330` two rows above in the same crop, so
+this is not a glyph-confusion artifact. The `330` is shared with Kavett's compilation,
+which is why the fingerprint cross-check matched exactly — a shared error cancels.
+Lesson recorded: a re-transcription diffed against the sequence it was meant to check
+confirms agreement, not correctness; and a diff that finds exactly one error in 314
+values should have prompted a second look at the values that matched.
 
 In the shared scans, `Decipher-III-puzzle-front.jpg` is the side printed "continued
 from the front," and `Decipher-III-puzzle-back.jpg` is the side printed "continued

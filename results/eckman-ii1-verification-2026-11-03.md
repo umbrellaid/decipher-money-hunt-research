@@ -90,9 +90,13 @@ accepted:
    sequence of **undocumented origin**, so independence from Kavett's typed
    transcription rests on our own account, not on anything a third party can check.
 3. Two readings agreeing shows neither that the printed puzzle is free of error nor
-   that observation 169 is resolved. Our reading supports `330` as the transcribed
-   value there; `830` remains a *probable* working reading based on candidate-aware
-   rather than blind verification.
+   that observation 169 is resolved. As written on 2026-11-03 this was correct: our
+   reading supported `330` and `830` was only *probable*. **Superseded 2026-11-05:**
+   a blind reading of the sheet by four fresh contexts returned `830` unanimously,
+   with the genuine `330` at position 148 read correctly in the same crop as an
+   in-image control (`results/RUN_LOG.md`, 2026-11-05). Our stored `330` was the
+   error, and point 1 above — that a shared error cancels in a fingerprint
+   comparison — is precisely how it hid.
 
 Consequently this cross-check **reduces** the concern of a typing error peculiar to
 Kavett's compilation, and it corroborates the `388` reading at observation 306 —
@@ -152,11 +156,14 @@ textual variant exists in the standard free e-text.
 
 **Not established:** that this is the designer's actual procedure. The author is
 explicit that the reconstruction does not identify Holland's physical edition or
-his rule for choosing among eligible numerical positions, and the `330→830`
-reading at observation 169 remains *probable* — his supporting readings were
-candidate-aware rather than blind. Our decode reproduces his published hash, so it
-inherits that conditionality: **the complete 314-character result is conditional on
-the 830 reading.** A `330` reading leaves one character differing.
+his rule for choosing among eligible numerical positions. The `330→830` reading at
+observation 169 was graded *probable* here on 2026-11-03 because every supporting
+reading was candidate-aware; **that conditionality was discharged on 2026-11-05** by a
+blind reading of the sheet — four fresh contexts, no candidate values, unanimous
+`830`, with an in-crop `330` control read correctly (`results/RUN_LOG.md`,
+2026-11-05). The complete 314-character result is therefore no longer conditional on
+an unverified reading, though it rests on image evidence from one model family rather
+than on human inspection of the physical piece.
 
 ## Rights
 

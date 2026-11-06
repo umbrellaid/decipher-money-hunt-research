@@ -593,12 +593,13 @@ One figure we published is corrected here: **152** of 314 observations exceed 49
 crosses the halfway point, giving **153**. Both are now asserted in `verify_ii1.py`.
 Neither figure changes the gap-3 false-negative conclusion.
 
-**Grade.** The 2-1 reconstruction is confirmed and can be relied on downstream, with one
-stated condition: the complete 314-character decode is conditional on the `330→830`
-reading at observation 169, which the author grades *probable* rather than verified (his
-supporting readings were candidate-aware, not blind). Our decode reproduces his published
-plaintext hash, so it inherits that conditionality. The designer's physical edition and
-his procedure for choosing among eligible numerical positions remain unestablished.
+**Grade.** The 2-1 reconstruction is confirmed and can be relied on downstream. The one
+condition stated at the time — that the complete 314-character decode depends on the
+`330→830` reading at observation 169, which the author graded *probable* because his
+supporting readings were candidate-aware — was **discharged on 2026-11-05** by a blind
+reading of the sheet (see the 2026-11-05 entry below): four fresh contexts, unanimous
+`830`, in-crop `330` control correct. The designer's physical edition and his procedure
+for choosing among eligible numerical positions remain unestablished.
 
 No decoded plaintext is stored anywhere in this repository; `verify_ii1.py` reports its
 length and SHA-256 only.
@@ -773,15 +774,68 @@ text rests on our own account and is not checkable by anyone else. And two readi
 shows neither that the printed puzzle is error-free nor that observation 169 is resolved.
 Gap 2 is therefore recorded as **substantially reduced for 2-1, not closed**.
 
-**Still open on both sides.** Observation 169 (`330` transcribed, `830` probable, not
-independently established — the whole 314-character decode is conditional on it);
-**"S.I.N."**, unexplained by both projects; the designer's edition and his procedure for
-choosing among eligible numerical positions. The cheapest decisive next step is a **blind**
-reading of observation 169 from the puzzle photograph, with no knowledge of the expected
-value — his `830` rests on candidate-aware readings, ours on the same image.
+**Still open on both sides.** ~~Observation 169~~ — **resolved 2026-11-05 by the blind
+reading in the entry below**: the sheet shows `830`, our stored `330` was a transcription
+error shared with Kavett's compilation, and the decode is no longer conditional. What
+remains open: **"S.I.N."**, unexplained by both projects, and the designer's edition and
+his procedure for choosing among eligible numerical positions.
 
 Addendum 1 discloses that Claude Code (Anthropic) inspected the sources, ran the verification
 computations and drafted the text under the author's direction; our own repository makes the
 equivalent disclosure. Per `AGENTS.md`, AI-authored factual claims from either side are
 unverified until cross-checked against primary sources. The addendum has not been peer
 reviewed, and neither has the original report.
+
+## 2026-11-05 — observation 169 blind-verified from the puzzle image: the sheet shows 830
+
+**Not a sweep.** The last open condition on the 2-1 decode was observation 169: both
+transcriptions hold `330`, Eckman's working value is `830`, and both papers graded `830`
+*probable* because every supporting reading so far was candidate-aware. A blind reading was
+the only way to settle it without contamination — anyone who has read either project's
+documents already knows both candidates.
+
+**Protocol.** The Message 1 sheet (`private/karen-puzzles/…/Decipher-II-puzzle-front.jpg`,
+the side holding Message 1 only) was copied to a neutral filename and the band covering
+positions 137–197 cropped at 2×. Four fresh subagent contexts received only that crop and a
+neutral transcription instruction — no project name, no candidate values, no position
+numbers, and an explicit prohibition on opening any other file or exploring the filesystem.
+One read right-to-left and reversed, as an order control; one was primed on 3-vs-8 glyph
+shapes; two were plain.
+
+**Result.** All four returned identical rows across the band. At position 169 all four read
+**830**. At position 148 — a genuine `330` in the same crop — all four read `330`, so the
+readers discriminate the two glyphs in both directions within one image. One reader flagged
+position 169 as ambiguous (a puzzle seam crosses the digit's left edge) and resolved it to 8
+on closed-left-bowls evidence; the 3-vs-8-primed reader reported no ambiguity anywhere in
+the band. Diffing the band against `data/ciphers.json`: **60 of 61 values agree; the single
+difference is position 169** (stored `330`, blind `830`).
+
+**Consequences.**
+
+1. The `330` at position 169 in `data/ciphers.json` is a **transcription error**, not the
+   printed value. It is shared with Kavett's compilation, which is exactly why our
+   fingerprint matched his input hash — a shared error cancels in a comparison, and this is
+   the concrete instance of the limitation Addendum 1 flagged.
+2. The 2026-10-05 re-transcription claim ("Six matched exactly; 2-1 had one error") is
+   **wrong**: it missed this error. `docs/decipher-ii.md` corrected accordingly.
+3. Eckman's `330→830` is not a probable inference; it is what the sheet shows. It is now
+   supported by four blind readings, his separate photograph examination, and one
+   contaminated reading here. The 2-1 decode is therefore **no longer conditional** in the
+   way both the original report and Addendum 1 stated.
+4. `data/ciphers.json` keeps `330` as the historical transcription and
+   `data/ii1_corrections.json` already carries `330→830`, so the working cipher was correct
+   all along. **No solver change is needed**; `verify_ii1.py` and `validate.py` already
+   apply it.
+
+**Caveat, stated plainly.** Four contexts of one model family are not four independent
+observers; if that family misreads this glyph shape, all four misread it together. And a
+puzzle seam does cross the target digit's left edge — the same artifact that made two other
+seam-crossed digits 3-vs-8 ambiguous to the order-control reader. Those two were resolved
+*toward 3*, and the primed reader saw no ambiguity at 169, so a systematic seam-toward-8
+bias is not supported by the evidence in this crop. A human inspection of the physical
+piece remains the only check that would close this beyond image evidence.
+
+**Grade.** `830` at observation 169: image-verified by four blind AI readings with an
+in-crop control, corroborated by two prior independent examinations. This is the strongest
+evidence the repository holds for any single digit in any cipher.
+
