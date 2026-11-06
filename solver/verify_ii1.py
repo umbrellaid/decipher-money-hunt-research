@@ -148,9 +148,15 @@ def main() -> int:
           f"got {len(set(working))}")
 
     # --- 4. Cross-check against the author's input fingerprint -------------
-    # This is the substantive independent test: our 2-1 was transcribed from the
-    # printed puzzle surface at 3x on 2026-10-05; his came via Kavett's public
-    # compilation. A shared fingerprint means all 314 values agree.
+    # Our 2-1 was transcribed from the printed puzzle surface at 3x on 2026-10-05;
+    # his came via Kavett's public compilation. The fingerprint is over the
+    # PRE-correction sequence, so observation 306 is reverted from our 388 to the
+    # compilation's 338 before hashing. A shared fingerprint therefore means the two
+    # records agree on 313 of 314 observations, and differ at 306 only because this
+    # repository applies the photograph-supported correction there. Do not describe
+    # this as "all 314 agree" - see Addendum 1,
+    # doi:10.5281/zenodo.23963541, and results/eckman-ii1-verification-2026-11-03.md
+    # for the three qualifications on calling our reading independent at all.
     canonical = ", ".join(str(n) for n in original) + ".\n"
     check(f"fingerprint: canonical form is {EXPECT_INPUT_BYTES} ASCII bytes",
           len(canonical.encode("ascii")) == EXPECT_INPUT_BYTES,

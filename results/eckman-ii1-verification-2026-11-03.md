@@ -8,6 +8,14 @@ Eckman, C. A. (2026). *An Independent Reconstruction of Decipher II, Message 1
 (1985–86).* Zenodo, 31 Oct 2026. https://doi.org/10.5281/zenodo.23844582
 Software: https://github.com/chriseckman/decipher-ii1-reconstruction (v1.0.0, MIT).
 
+> **This document was revised on 2026-11-05** after the author published
+> **Addendum 1: Independent Replication, Textual Witnesses, and Clue Interpretation**,
+> Zenodo, 4 Nov 2026, https://doi.org/10.5281/zenodo.23963541. The addendum confirmed
+> every check below and corrected four claims this document originally made. The
+> corrections are applied inline and flagged; see `results/RUN_LOG.md`, 2026-11-05, for
+> the full list. Where this document and the addendum differ, the addendum is the more
+> carefully qualified source.
+
 ## Method — no third-party code was executed
 
 `solver/verify_ii1.py` reimplements the construction from the paper's own
@@ -52,16 +60,41 @@ above is recorded as download provenance only, not as an assertion.
 
 ### The transcription cross-check is the substantive result
 
-Two independent transcriptions of the 2-1 ciphertext now exist: ours, read from
-the printed puzzle surface at 3× magnification on 2026-10-05, and his, taken via
-Karen Kavett's public compilation. **They agree on all 314 values** — the
-canonical fingerprint of our original sequence, with observation 306 reverted to
-its as-printed `338`, reproduces his published input hash exactly.
+Two transcriptions of the 2-1 ciphertext now exist: ours, read from the printed
+puzzle surface at 3× magnification on 2026-10-05, and his, taken via Karen
+Kavett's public compilation. **They agree on 313 of the 314 values.** The one
+difference is observation 306, where we hold `388` and Kavett's compilation holds
+`338`; the puzzle photograph supports `388`, which is what this repository recorded
+on 2026-10-05.
 
-This is the first time the 2-1 numerical ciphertext has been confirmed by a
-second independent reading. It retires the `338`/`388` question entirely and it
-means `docs/methodology.md` gap 2 (OCR/typing errors) is closed *for 2-1*. It does
-not close gap 2 for the four unsolved ciphers, which have no second witness.
+The fingerprint test compares the *pre-correction* sequences, so it reverts
+observation 306 to Kavett's `338` before hashing; that reproduces his published
+input hash `1e60d5d6…` exactly. Saying "all 314 agree" — as the first version of
+this document did — is true only of that reverted comparison and is misleading
+about the two records as they stand.
+
+**Corrections made 2026-11-05 after Addendum 1**
+([doi:10.5281/zenodo.23963541](https://doi.org/10.5281/zenodo.23963541)), which
+reviewed this document. Three qualifications on the word "independent" above, all
+accepted:
+
+1. This repository never records the **image source** of the 2026-10-05
+   re-transcription. It says "printed puzzle surfaces" but elsewhere calls Kavett's
+   images "the shared scans" and states that multimodal models read them. So the
+   second reading is **not documented as a reading of a separate physical copy**.
+2. The re-transcription was compared token by token against a previously stored
+   sequence of **undocumented origin**, so independence from Kavett's typed
+   transcription rests on our own account, not on anything a third party can check.
+3. Two readings agreeing shows neither that the printed puzzle is free of error nor
+   that observation 169 is resolved. Our reading supports `330` as the transcribed
+   value there; `830` remains a *probable* working reading based on candidate-aware
+   rather than blind verification.
+
+Consequently this cross-check **reduces** the concern of a typing error peculiar to
+Kavett's compilation, and it corroborates the `388` reading at observation 306 —
+but it does not close `docs/methodology.md` gap 2 for 2-1 as firmly as the first
+version of this document claimed, and it does not close gap 2 at all for the four
+unsolved ciphers, which have no second reading of any kind.
 
 ## New finding: a third witness at 491 letters
 
@@ -70,10 +103,16 @@ normalized letters, and a Wikisource transcription attributed to an 1801 edition
 at 490. **Project Gutenberg #829, the e-text most likely to be swept, gives 491**,
 and differs from Alden at *two* independent places:
 
-| Position | Alden (492) | Gutenberg 829 (491) | Effect |
+| Divergence | Alden (492) | Gutenberg 829 (491) | Effect |
 |---|---|---|---|
-| 94 | `take my measure` | `take measure` | −2 letters |
-| 232 | `with rule and compasses` | `with a rule and compasses` | +1 letter |
+| Alden position **94–95** (one-based) | `take my measure` | `take measure` | −2 letters |
+| Gutenberg position **232** (zero-based) = Alden 234/235 (one-based) | `with rule and compasses` | `with a rule and compasses` | +1 letter |
+
+The two position columns above use **different bases**, which the first version of
+this table presented as if they were comparable. They are stated explicitly here.
+Addendum 1 confirms the substance: the deletion of MY removes Alden positions 94–95,
+and because the next word MEASURE also begins with M the first *differing* letter is
+at position 95; the inserted A occupies Gutenberg position 232 (zero-based).
 
 Net −1 → 491. The first divergence is at normalized position **95**, so every
 observation above 94 in the forward half misaligns — which is most of the

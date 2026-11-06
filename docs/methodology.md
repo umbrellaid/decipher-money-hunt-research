@@ -106,11 +106,21 @@ stream.* It does **not** prove the book is innocent, because of three known gaps
    default one.** `solver/check_ii1_witness.py` fetches Project Gutenberg #829 and
    normalizes the same paragraph to **491** letters — neither Eckman's 492 (Alden 1911)
    nor his 490 (Wikisource/1801). It differs from Alden at two independent places:
-   `take my measure` → `take measure` (−2) at normalized position 94, and `with rule and
-   compasses` → `with a rule and compasses` (+1) at 232. The first divergence is at
-   position **95**, so most of the forward half misaligns. The e-text anyone would reach
-   for first fails the printed "492" clue, which makes that clue a usable *witness
-   discriminator* **for 2-1**: a candidate source whose passage does not normalize to
+   `take my measure` → `take measure` (−2) at Alden positions **94–95 (one-based)**, and
+   `with rule and compasses` → `with a rule and compasses` (+1) at Gutenberg position
+   **232 (zero-based)**, i.e. Alden 234/235. Those two positions use different bases and
+   must not be quoted as if comparable; `results/eckman-ii1-verification-2026-11-03.md`
+   states both explicitly. Because MEASURE also begins with M, the first *differing* letter
+   is at position **95**, so most of the forward half misaligns.
+
+   Eckman's Addendum 1 ([doi:10.5281/zenodo.23963541](https://doi.org/10.5281/zenodo.23963541))
+   quantifies this further, and the numbers are worse than the original paper's: retaining
+   Alden addressing, the Gutenberg witness reproduces **63/314** letters and Wikisource
+   **55/314**; applying the construction at each witness's own length (982 and 980 slots),
+   Gutenberg reproduces **72/314** and Wikisource **40/314**. A two-letter wording variant
+   therefore destroys roughly four fifths of the message under any addressing. The e-text
+   anyone would reach for first fails the printed "492" clue, which makes that clue a usable
+   *witness discriminator* **for 2-1**: a candidate source whose passage does not normalize to
    exactly 492 letters is the wrong printing and can be rejected before any sweep is
    attempted. The unsolved messages have **no** length clue that this repository holds:
    no clue set for 2-4 is recorded anywhere in `docs/` or `results/` (only its numeric
@@ -123,14 +133,27 @@ stream.* It does **not** prove the book is innocent, because of three known gaps
    and a negative stays unattributable between "wrong book", "wrong printing" and "wrong
    construction". Recovering any 2-4 clue text is therefore worth more than more sweep
    time.
-2. **OCR/typing errors** in the supplied text corrupt the key region. **Closed for 2-1
-   as of 2026-11-03**, and open for everything else. Our 2-1 sequence was read from the
-   printed surface at 3× on 2026-10-05; Eckman's came independently via Kavett's public
-   compilation. The canonical fingerprint of our original 314 values reproduces his
-   published input hash `1e60d5d6…` exactly, so two independent readings agree on every
-   value (`solver/verify_ii1.py`). The four unsolved ciphers have no second witness, so
-   for 2-4, 3-1, 3-2 and 3-3 a single misread digit remains live and would produce
-   exactly the same noise-band negative as a wrong book.
+2. **OCR/typing errors** in the supplied text corrupt the key region. **Substantially
+   reduced for 2-1 as of 2026-11-03 — not closed**, and fully open for everything else.
+   Our 2-1 sequence was read from the printed surface at 3× on 2026-10-05; Eckman's came
+   via Kavett's public compilation. The canonical fingerprint of our *pre-correction*
+   sequence reproduces his published input hash `1e60d5d6…` exactly, so the two records
+   agree on **313 of 314** observations, differing only at observation 306 where we hold
+   the photograph-supported `388` and the compilation holds `338`
+   (`solver/verify_ii1.py`).
+
+   Addendum 1 records three qualifications that this repository accepts, and that are why
+   the wording is "reduced" rather than "closed": the image source of our re-transcription
+   is **not documented** anywhere here (the repo says "printed puzzle surfaces" but also
+   calls Kavett's images "the shared scans" and states that multimodal models read them),
+   so it is not evidenced as a reading of a separate physical copy; it was compared against
+   a previously stored sequence of **undocumented origin**, so its independence from
+   Kavett's typed text rests on our own account; and two readings agreeing shows neither
+   that the printed puzzle is error-free nor that observation 169 is resolved.
+
+   The four unsolved ciphers have no second reading of any kind, so for 2-4, 3-1, 3-2 and
+   3-3 a single misread digit remains live and would produce exactly the same noise-band
+   negative as a wrong book.
 3. **Rule families still missing.** Page-level numbering, and nulls interleaved
    with the key itself. Chapter-title chains, the reversed *Catch-22* rule that
    solved puzzle 2-2, are tested when a `.chapters.json` file sits beside the
@@ -147,7 +170,8 @@ stream.* It does **not** prove the book is innocent, because of three known gaps
    itself, so that slots `n` and `985−n` address the same letter.
 
    *This repository already had the shape.* `solver/body_scan.py:157-168` has carried
-   three "halfway / out-and-back" streams since 2026-10-17 — `HalfFirstLast`,
+   three "halfway / out-and-back" streams since **2026-10-18** (commit `7ac346b`; the
+   Gemini Q&A that prompted them was the evening of 2026-10-17) — `HalfFirstLast`,
    **`HalfFwdRev = firsts + firsts[::-1]`** and `HalfOddEven` — under a code comment
    quoting the 2-1 clue *"One way gets you half way there"* and reasoning that
    "N_max 980 = 2 x 490 implies a single place read two ways". The doubling inference was

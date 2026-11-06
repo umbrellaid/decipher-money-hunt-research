@@ -568,22 +568,25 @@ implementations agreeing. **19/19 checks pass.** Full write-up:
 
 Two results matter beyond confirming his work:
 
-1. **Our 2-1 ciphertext transcription is independently confirmed.** The canonical
-   fingerprint of our original 314 values (observation 306 reverted to its as-printed
-   `338`) reproduces his published input hash `1e60d5d6…` exactly. Ours was read from
-   the printed surface at 3× on 2026-10-05; his came via Karen Kavett's public
-   compilation. Two independent readings agree on all 314 values, so
-   `docs/methodology.md` gap 2 (OCR/typing error) is **closed for 2-1** — and remains
-   open for the four unsolved ciphers, which have no second witness.
+1. **Our 2-1 ciphertext transcription is corroborated — corrected wording, see below.**
+   The canonical fingerprint of our *pre-correction* sequence (observation 306 reverted
+   from our `388` to the `338` recorded in Kavett's compilation) reproduces his published
+   input hash `1e60d5d6…` exactly. Ours was read from the printed surface at 3× on
+   2026-10-05; his came via Karen Kavett's public compilation. As records they stand, the
+   two agree on **313 of 314** observations. `docs/methodology.md` gap 2 (OCR/typing
+   error) is therefore **substantially reduced for 2-1, not closed**, and remains fully
+   open for the four unsolved ciphers, which have no second reading of any kind.
 2. **A third textual witness exists, and it is the default free e-text.** The paper
    compares Alden 1911 (492 normalized letters) against a Wikisource/1801 transcription
    (490). Project Gutenberg #829 gives **491**, differing from Alden at two independent
-   places: `take my measure` → `take measure` (−2) at normalized position 94, and
-   `with rule and compasses` → `with a rule and compasses` (+1) at 232. The first
-   divergence is at position **95**, so most of the forward half misaligns. Reproduce
-   with `uv run solver/check_ii1_witness.py` (exits 1: the witness fails the 492 clue).
-   This is a harder demonstration of gap 1 than the paper's own comparison, because it
-   lands on the e-text anyone would reach for first.
+   places: `take my measure` → `take measure` (−2) at **Alden positions 94–95
+   (one-based)**, and `with rule and compasses` → `with a rule and compasses` (+1) at
+   **Gutenberg position 232 (zero-based)** = Alden 234/235. Those two positions use
+   different bases; an earlier version of this entry quoted "94" and "232" side by side
+   as if comparable. The first *differing* letter is at position **95**, so most of the
+   forward half misaligns. Reproduce with `uv run solver/check_ii1_witness.py` (exits 1:
+   the witness fails the 492 clue). This is a harder demonstration of gap 1 than the
+   paper's own comparison, because it lands on the e-text anyone would reach for first.
 
 One figure we published is corrected here: **152** of 314 observations exceed 492 in the
 *original* transcription; under the working corrections observation 169 becomes `830` and
@@ -723,3 +726,60 @@ function's docstring so it is not re-debugged.
 
 **Consequence for 3-1.** Vonnegut remains untestable at whole-book grade from our own
 scan. *Cat's Cradle* stays ranked but un-swept; the gap is a scanning/OCR-quality task.
+
+## 2026-11-05 — Addendum 1 published in response to our verification; four of our claims corrected
+
+**Not a sweep.** Eckman published **Addendum 1: Independent Replication, Textual Witnesses,
+and Clue Interpretation**, Zenodo, 4 Nov 2026, CC-BY-4.0,
+[doi:10.5281/zenodo.23963541](https://doi.org/10.5281/zenodo.23963541)
+(`paper/addenda/ADDENDUM_01.md` in his repository). It responds directly to our
+2026-11-03 verification and to the comments on issue #1.
+
+**What it confirms about our work.** He reran `solver/verify_ii1.py` and
+`solver/check_ii1_witness.py` at commit `d0f7d83` **without modification and confirmed all
+19 checks**; confirmed the Gutenberg #829 witness at 491 letters and both wording
+differences; confirmed our 152-original / 153-corrected reachability figures. He also
+classifies every claim by evidential basis — **"Supported"** (visible in our public code,
+data or commit history) versus **"Reported"** (our account, not reproduced) — which is a
+discipline worth adopting here.
+
+**Stronger edition-drift numbers than the original paper.** Retaining Alden addressing, the
+Gutenberg witness reproduces **63/314** letters and Wikisource **55/314**; applying the
+construction at each witness's own length (982 and 980 slots respectively), Gutenberg
+reproduces **72/314** and Wikisource **40/314**. A two-letter wording variant destroys
+roughly four fifths of the message under either addressing. `docs/methodology.md` gap 1
+updated.
+
+**Four of our published claims were wrong and are corrected in this commit.**
+
+| # | We said | Correction |
+|---|---|---|
+| 1 | `HalfFwdRev` present "since 2026-10-17" | Commit `7ac346b` is dated **2026-10-18**; the Gemini Q&A prompting it was the evening of the 17th |
+| 2 | The two transcriptions "agree on all 314 values" | **313 of 314.** Observation 306 differs: we hold the photograph-supported `388`, Kavett's compilation holds `338`. "All 314" was true only of the fingerprint test, which reverts 306 to `338` first |
+| 3 | `338` is the "**as-printed**" value at observation 306 | The print shows **388** — our own 2026-10-05 finding. `338` is the value recorded in **Kavett's compilation**. Our wording contradicted our own documentation |
+| 4 | The clue readings are "contemporaneous **corroboration**" of the mechanism | His experiment records show "492" and "One way gets you half way there" **influenced the construction's discovery**. They are clue-*consistent* interpretations, not independent confirmation. Framing withdrawn in `docs/decipher-ii.md` |
+
+Also corrected: divergence positions were quoted as "94" (one-based Alden) and "232"
+(zero-based Gutenberg) side by side, as if the bases matched.
+
+**His three qualifications on our transcription, all accepted.** This repository never
+records the image source of the 2026-10-05 re-transcription — it says "printed puzzle
+surfaces" but also calls Kavett's images "the shared scans" and states that multimodal
+models read them — so it is not evidenced as a reading of a separate physical copy; it was
+compared token by token against a previously stored sequence of **undocumented origin**, so
+independence from Kavett's typed text rests on our own account; and two readings agreeing
+shows neither that the printed puzzle is error-free nor that observation 169 is resolved.
+Gap 2 is therefore recorded as **substantially reduced for 2-1, not closed**.
+
+**Still open on both sides.** Observation 169 (`330` transcribed, `830` probable, not
+independently established — the whole 314-character decode is conditional on it);
+**"S.I.N."**, unexplained by both projects; the designer's edition and his procedure for
+choosing among eligible numerical positions. The cheapest decisive next step is a **blind**
+reading of observation 169 from the puzzle photograph, with no knowledge of the expected
+value — his `830` rests on candidate-aware readings, ours on the same image.
+
+Addendum 1 discloses that Claude Code (Anthropic) inspected the sources, ran the verification
+computations and drafted the text under the author's direction; our own repository makes the
+equivalent disclosure. Per `AGENTS.md`, AI-authored factual claims from either side are
+unverified until cross-checked against primary sources. The addendum has not been peer
+reviewed, and neither has the original report.

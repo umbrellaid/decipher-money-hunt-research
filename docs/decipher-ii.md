@@ -24,6 +24,16 @@ letters; appending its reversal gives a 984-position numerical key. Applied
 to the documented corrected working ciphertext transcription, that key
 reproduces the complete 314-character message about *Bloom County*.
 
+On November 4, 2026 he published [**Addendum 1: Independent Replication, Textual
+Witnesses, and Clue Interpretation**](https://doi.org/10.5281/zenodo.23963541),
+written in response to this repository's own verification
+(`solver/verify_ii1.py`, `results/eckman-ii1-verification-2026-11-03.md`). It
+confirms all 19 of our checks, confirms the third textual witness we identified,
+quantifies edition drift more sharply than the original report, and corrects four
+claims we had published. Read both documents together; the addendum is where the
+evidential limits of the reconstruction are stated most carefully. See
+`results/RUN_LOG.md`, 2026-11-05.
+
 Eckman's investigation independently identified the correction at observation
 306 (`338` to `388`) through decoding analysis and inspection of the puzzle
 photograph. During prepublication attribution review, the team found that
@@ -86,10 +96,23 @@ reconstruction (linked above) decodes them:
 | *"…from the authors in group C"* | Swift is in the Group C list above. Consistent, and already known. |
 | *"S.I.N."* | **Still unexplained.** With the mechanism now known this is the top open 2-1 question, and it may be tractable: candidates worth testing are a reversal/direction indicator, an initials acrostic over the passage or its source, or a numbering convention. No reading is asserted here. |
 
-`solver/body_scan.py` has inferred the doubling since 2026-10-17 from "N_max 980 =
-2 x 490" and the "half way there" clue, and implements `HalfFwdRev`; it was built on
-word-initials over chapter windows rather than continuous letters over a paragraph,
-so it could not reach this key. See `docs/methodology.md`, gap 3.
+`solver/body_scan.py` has inferred the doubling since **2026-10-18** (commit
+`7ac346b`; the Gemini Q&A prompting it was the evening of 2026-10-17) from
+"N_max 980 = 2 x 490" and the "half way there" clue, and implements `HalfFwdRev`;
+it was built on word-initials over chapter windows rather than continuous letters
+over a paragraph, so it could not reach this key. See `docs/methodology.md`, gap 3.
+
+**Qualification added 2026-11-05, from Addendum 1
+([doi:10.5281/zenodo.23963541](https://doi.org/10.5281/zenodo.23963541)).** These
+readings are *clue-consistent interpretations*, **not independent confirmation of the
+mechanism**. Eckman's own experiment records show that "492" and "One way gets you
+half way there" **influenced the development of the bidirectional construction**, so
+they were inputs to it rather than external evidence for it. Three of the five clues
+are consistent with a key drawn from one contiguous passage and extended symmetrically
+by its reversal; the first clue concerns author choice and was already compatible with
+the 1986 identification of the book; **none of them establishes the designer's intent.**
+An earlier version of this section, and our public comment on issue #1, called the clue
+readings "contemporaneous corroboration" — that framing is withdrawn.
 
 **Carry-over to Decipher III.** 3-1's printed clue *"End"* has until now been read
 only as "test reversed streams" (`docs/methodology.md`). It has a second reading:
