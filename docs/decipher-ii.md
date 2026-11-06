@@ -34,6 +34,28 @@ claims we had published. Read both documents together; the addendum is where the
 evidential limits of the reconstruction are stated most carefully. See
 `results/RUN_LOG.md`, 2026-11-05.
 
+**Source witness, independently verified 2026-11-06.** The 492-letter passage comes from
+Alden's *Readings in English Prose of the Eighteenth Century* (1911), printed page 97.
+Eckman identified three separate digitizations that all carry the identical paragraph and
+reproduce the published source SHA-256 `9eeff566…f29d`:
+
+- Library of Congress scan, Internet Archive —
+  <https://archive.org/details/readingsinenglis00alde/page/97/mode/1up> (PDF page 115)
+- Cornell University Library, Internet Archive —
+  <https://archive.org/details/cu31924013335579/page/97/mode/1up>
+- Harvard University via Google Books —
+  <https://books.google.com/books?id=oLMQAAAAYAAJ&pg=PA97>
+
+We downloaded the djvu text of the first two ourselves and confirmed both: the passage
+normalizes to exactly **492 letters** with SHA-256 `9eeff566fe707e39486c1bb119d5c82f19566772706342c44803d6079faef29d`,
+byte-identical to `data/gulliver_ii1_passage.txt`. That fixture was originally copied from
+the author's repository; its provenance is now primary-source verified rather than
+third-party derived, and the 492 reading is confirmed across **three independently
+digitized copies** of the same 1911 edition. This does not establish which physical
+edition the designer used — only that the 492-letter witness is stable across
+digitizations of Alden, while the Gutenberg #829 and Wikisource/1801 witnesses give 491
+and 490 (`docs/methodology.md` gap 1).
+
 Eckman's investigation independently identified the correction at observation
 306 (`338` to `388`) through decoding analysis and inspection of the puzzle
 photograph. During prepublication attribution review, the team found that

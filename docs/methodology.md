@@ -118,7 +118,18 @@ stream.* It does **not** prove the book is innocent, because of three known gaps
    Alden addressing, the Gutenberg witness reproduces **63/314** letters and Wikisource
    **55/314**; applying the construction at each witness's own length (982 and 980 slots),
    Gutenberg reproduces **72/314** and Wikisource **40/314**. A two-letter wording variant
-   therefore destroys roughly four fifths of the message under any addressing. The e-text
+   therefore destroys roughly four fifths of the message under any addressing.
+
+   **Refinement, verified 2026-11-06: edition drift is a property of the text tradition, not of
+   scan quality.** The Alden (1911) witness was checked across three separately digitized copies
+   — the Library of Congress scan and the Cornell copy, both on Internet Archive, plus Harvard via
+   Google Books — and all three normalize the passage to exactly **492 letters** with the same
+   SHA-256. We downloaded and verified the two Internet Archive djvu texts ourselves
+   (`results/RUN_LOG.md`, 2026-11-06), so `data/gulliver_ii1_passage.txt` is primary-source
+   verified rather than third-party derived. Practical consequence: once a *printing* is pinned,
+   its witness is reliable across digitizations, and the whole risk collapses onto the question of
+   which printing the designer used. Re-scanning or re-OCR'ing a correctly identified edition buys
+   nothing; identifying the right edition buys everything. The e-text
    anyone would reach for first fails the printed "492" clue, which makes that clue a usable
    *witness discriminator* **for 2-1**: a candidate source whose passage does not normalize to
    exactly 492 letters is the wrong printing and can be rejected before any sweep is
