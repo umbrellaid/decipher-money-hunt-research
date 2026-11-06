@@ -143,13 +143,20 @@ stream.* It does **not** prove the book is innocent, because of three known gaps
    (`solver/verify_ii1.py`).
 
    Addendum 1 records three qualifications that this repository accepts, and that are why
-   the wording is "reduced" rather than "closed": the image source of our re-transcription
-   is **not documented** anywhere here (the repo says "printed puzzle surfaces" but also
-   calls Kavett's images "the shared scans" and states that multimodal models read them),
-   so it is not evidenced as a reading of a separate physical copy; it was compared against
-   a previously stored sequence of **undocumented origin**, so its independence from
-   Kavett's typed text rests on our own account; and two readings agreeing shows neither
-   that the printed puzzle is error-free nor that observation 169 is resolved.
+   the wording is "reduced" rather than "closed":
+
+   - **The reading is independent; the source is not.** Our 2026-10-05 re-transcription was
+     made from the Decipher II puzzle front/back images in Kavett's shared archive — the
+     files and their mapping are documented in `docs/decipher-ii.md` ("A transcription
+     correction made here") and linked in `docs/sources.md`. Eckman's photograph comes from
+     the same compilation. So this is a second *reading* of the same images, not a reading of
+     a separate physical copy, and it corroborates the transcription rather than the printed
+     puzzle. Saying "two independent transcriptions" without that qualifier overstates it.
+   - It was compared token by token against a previously stored sequence of **undocumented
+     origin**, so its independence from Kavett's *typed* text rests on our own account and is
+     not checkable by anyone else.
+   - Two readings agreeing shows neither that the printed puzzle is error-free nor that
+     observation 169 is resolved.
 
    The four unsolved ciphers have no second reading of any kind, so for 2-4, 3-1, 3-2 and
    3-3 a single misread digit remains live and would produce exactly the same noise-band

@@ -78,10 +78,14 @@ about the two records as they stand.
 reviewed this document. Three qualifications on the word "independent" above, all
 accepted:
 
-1. This repository never records the **image source** of the 2026-10-05
-   re-transcription. It says "printed puzzle surfaces" but elsewhere calls Kavett's
-   images "the shared scans" and states that multimodal models read them. So the
-   second reading is **not documented as a reading of a separate physical copy**.
+1. **The reading is independent; the source is not.** Our 2026-10-05 re-transcription was
+   made from the Decipher II puzzle front/back images in Kavett's shared archive — those
+   files and their message mapping are documented in `docs/decipher-ii.md` ("A
+   transcription correction made here") and linked from `docs/sources.md`. Eckman's
+   photograph comes from the same compilation. So this is a second *reading* of the same
+   images, not a reading of a separate physical copy, and it corroborates the
+   transcription rather than the printed puzzle. Our earlier phrase "two independent
+   transcriptions" needed that qualifier.
 2. The re-transcription was compared token by token against a previously stored
    sequence of **undocumented origin**, so independence from Kavett's typed
    transcription rests on our own account, not on anything a third party can check.

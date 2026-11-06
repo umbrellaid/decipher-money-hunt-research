@@ -762,12 +762,14 @@ updated.
 Also corrected: divergence positions were quoted as "94" (one-based Alden) and "232"
 (zero-based Gutenberg) side by side, as if the bases matched.
 
-**His three qualifications on our transcription, all accepted.** This repository never
-records the image source of the 2026-10-05 re-transcription — it says "printed puzzle
-surfaces" but also calls Kavett's images "the shared scans" and states that multimodal
-models read them — so it is not evidenced as a reading of a separate physical copy; it was
-compared token by token against a previously stored sequence of **undocumented origin**, so
-independence from Kavett's typed text rests on our own account; and two readings agreeing
+**His three qualifications on our transcription, all accepted.** The *reading* is
+independent but the *source* is not: our 2026-10-05 re-transcription was made from the
+Decipher II puzzle front/back images in Kavett's shared archive, documented in
+`docs/decipher-ii.md` and linked from `docs/sources.md`, and his photograph comes from the
+same compilation — so this is a second reading of the same images, corroborating the
+transcription rather than the printed puzzle. It was compared token by token against a
+previously stored sequence of **undocumented origin**, so independence from Kavett's typed
+text rests on our own account and is not checkable by anyone else. And two readings agreeing
 shows neither that the printed puzzle is error-free nor that observation 169 is resolved.
 Gap 2 is therefore recorded as **substantially reduced for 2-1, not closed**.
 
