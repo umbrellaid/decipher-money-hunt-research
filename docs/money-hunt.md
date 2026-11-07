@@ -21,8 +21,8 @@ consolidated state of every open thread as of 2026-10-30.
   bomber crash into the Empire State Building**.
 - **Karen's acrostic**, one letter per page in poster reading order, reads
   **EMPIRE STATE BUILDING NY USA** (24 letters; a trailing L is uncertain).
-- Reading order (poster flow chart): 15, 9, 18, 24, 14, 6, 17, 21, 23, 27, 19, 7, 5,
-  8, 10, 25, 20, 22, 28, 13, 16, 26, 12, 11.
+- Reading order (poster flow chart, verified against the artifact record): 15, 9, 18,
+  24, 14, 6, 17, 21, 23, 27, 7, 19, 5, 8, 10, 25, 20, 22, 28, 13, 16, 26, 12, 11.
 - The working theory: each of the 24 reading-order pages hides one US state or
   Canadian province.
 
@@ -69,9 +69,12 @@ consolidated state of every open thread as of 2026-10-30.
    7:28 ↔ 28 July 1945 crash-date hypothesis plausible; the **p16 calculator** (second in
    the book) and the deliberately truncated **MADE IN CAN** label are confirmed; p10's
    suitcase glyphs are a fixed 2×4 grid; p10 clue 17 completes to "…wrote *Mighty Lak' a
-   Rose*" (→ NEVIN). The PDF is the best scanning source that exists; what it could not
-   resolve (p5's last two beads, p16's calculator display, p9's clock hands, p24's
-   score-sheet fragments) is at the 300-dpi floor and needs 600 dpi of the physical book.
+   Rose*" (→ NEVIN). The PDF is the best scanning source that exists. Some targets
+   (p5's last two beads, p16's calculator display, p9's clock hands, p24's score-sheet
+   fragments) remain unresolved at 300 dpi. **Updated 2026-11-07:** analyze the native
+   images first; a selective physical-book rescan is worthwhile only when a named
+   hypothesis depends on a specific feature and existing pixels are the real limitation.
+   A blanket 600-dpi pass cannot restore detail absent from the original artwork.
 
 ## Notes from 2026-10-09 (evening) — page 18 closed out
 
@@ -99,7 +102,8 @@ consolidated state of every open thread as of 2026-10-30.
 
 8. **Pages 25, 28 and 10 fully transcribed** from the native 300-dpi extraction —
    [`page_25`](data/money_hunt_pages/page_25.md) (complete ACROSS list 1–156 for the
-   top-hat grid; **clues 95–97 are not printed** — a page-level defect), 
+   top-hat grid; **clues 95–97 are DOWN-only entries printed on page 22**, not a
+   page-level defect — corrected 2026-10-31),
    [`page_28`](data/money_hunt_pages/page_28.md) (library: all four spine shelves, the
    volume row 23,19,21,20,22,18…9,DICTIONARY N-Z,7…2,DICTIONARY A-M, Vol 149145, the
    $5537/$16M/$334/$618 prices — all confirmed; the deliberate-misspelling set on this
@@ -139,15 +143,20 @@ consolidated state of every open thread as of 2026-10-30.
 
 ## What would move it forward
 
-- **600-dpi re-renders** of the regions still listed in the state analysis (bead letters
-  on p5, clock hands on p9, the suitcase glyphs on p10, the three-card pips on p26 vs
-  p11, the p28 spine titles, and others; the p18 letter columns and HEAD strip are now
-  resolved at 300 dpi). These are the carriers most likely to hold the remaining states.
-- **Re-transcription** of the fifteen pages named in the errata, from high-resolution
-  renders, before any further page-level reasoning.
-- **The three complete crossword clue lists** now transcribed (p11: 38–69, p22: 73–117,
-  p23: 121–147) solved as crosswords; their grids are the top-hat shape on p25 and the
-  answers may index into the states.
+- **A bounded native-resolution subtraction test:** pages 15 and 9 should each yield
+  two clean subtractions (U,S / N,Y), then page 11 should yield G. Use the existing
+  300-dpi images and stop if these predictions do not survive strict visual checks;
+  do not default to another full 24-page repeated-motif sweep.
+- **Analysis of named micro-targets before any rescanning.** Bead letters on p5,
+  clock hands on p9, suitcase glyphs on p10, card pips on p26/p11, and p28 spine
+  titles remain unresolved, but are not established as the most likely state
+  carriers. A selective physical-book rescan is reasonable only when a concrete
+  hypothesis depends on one feature and the existing pixels are the limiting factor.
+- **Re-transcription** of the fifteen pages named in the errata, from the native
+  images, before any further page-level reasoning that depends on them.
+- **The large top-hat crossword is closed as a solving task.** Page 25 carries ACROSS;
+  pages 10/11/22/23 carry DOWN for the same grid. Karen's family answer key found no
+  additional meta, and clues 95–97 are present as DOWN-only entries on page 22.
 - Honest framing: the r/themoneyhunt community's objection stands — if Mr. S embedded
   incomplete information, no amount of analysis yields a unique answer. The 1945 crash
   theme and the ESB acrostic are the strongest structural leads; the per-page states

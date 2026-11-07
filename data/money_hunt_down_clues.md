@@ -99,7 +99,8 @@ from A Chorus Line · 145 Tennessee State University (abbr.) · 146 Unfold (poet
   joins the set.
 - **Page 10's scene** also carries the 2×4 glyph suitcase (the A6 target). Its grid
   shape is already settled as exactly 2×4 at 4× in `page_10.md`; only the glyph
-  identities remain undecoded (a 600-dpi target). Not re-adjudicated here.
+  identities remain undecoded. Test readings against the native image before
+  considering a selective rescan. Not re-adjudicated here.
 
 Scans: `private/karen-puzzles/money hunt puzzle/pdf_extract_300dpi/page_{10,11,22,23}.jpeg`
 (copyrighted; never publish). Confirmation crops: `private/.../crops_banded/p{10,22,23}_cluelist_3x.png`.

@@ -75,10 +75,12 @@ transcription artifact (verified at 2.5× on the native scan).
 
 ## Grid
 
-Numbered per standard rules; every number present in the grid has a clue except the
-95/96/97 slots left without text. The grid outline (square with a flat wide brim) is
-the "top hat" noted in the state analysis. The companion DOWN list is on page 10, and
-the answer key is in [Karen's crossword folder](https://drive.google.com/drive/folders/1lFzlQ_kqHhT5BZka4xRlcVdksE7zPLea?usp=sharing).
+Numbered per standard rules. **Corrected 2026-10-31:** 95/96/97 are DOWN-only
+numbers, not slots left without text; their clues are printed on page 22. The grid
+outline (square with a flat wide brim) is the "top hat" noted in the state analysis.
+The companion DOWN list is split across pages 10, 11, 22 and 23 — see
+[`money_hunt_down_clues.md`](../money_hunt_down_clues.md) — and the answer key is in
+[Karen's crossword folder](https://drive.google.com/drive/folders/1lFzlQ_kqHhT5BZka4xRlcVdksE7zPLea?usp=sharing).
 
 ## State-bearing clues (for the state hunt)
 

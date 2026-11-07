@@ -87,9 +87,10 @@ Score after surveying all 24 pages: **2 verified, 2 tested claims false,
 ### ❓ Pages 10 → T and 25 → E: not yet testable
 - Page 10 (resort pool; DOWN list 1–37; undecoded 2×4 glyph suitcase): no repeated-
   illustration partner identified yet.
-- Page 25 (top-hat ACROSS grid 1–156, clues 95–97 unprinted): likewise. Note the
-  unprinted clues 95–97 are a *printing* defect, not an illustration subtraction, so
-  they probably do not serve as this page's "deduction".
+- Page 25 (top-hat grid with ACROSS list 1–156): likewise. **Corrected
+  2026-10-31:** clues 95–97 are DOWN-only entries printed on page 22, not a
+  printing defect or an illustration subtraction; see
+  [the DOWN transcription](money_hunt_down_clues.md).
 Both require a systematic repeated-illustration survey across all 24 pages (see plan).
 
 ## Assessment (revised 2026-10-10 after the artifact photos surfaced)

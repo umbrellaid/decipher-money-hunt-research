@@ -9,7 +9,7 @@ Pages still transcribed here are unofficial research notes, not a substitute for
 Pages 5 and 6 were checked again against the scans at scene level. Pages 10, 18, 25 and 28 were fully transcribed from the native 300-dpi extraction (see the page files and the state analysis). The other withdrawn pages were not re-transcribed. The artwork is dense, and an earlier vision pass invented whole scenes. Their image read remains the state analysis.
 
 ## Reading order (from the map poster's flow-chart)
-**15, 9, 18, 24, 14, 6, 17, 21, 23, 27, 19, 7, 5, 8, 10, 25, 20, 22, 28, 13, 16, 26, 12, 11** — page 11 (pool page) last.
+**15, 9, 18, 24, 14, 6, 17, 21, 23, 27, 7, 19, 5, 8, 10, 25, 20, 22, 28, 13, 16, 26, 12, 11** — page 11 (pool page) last. This order follows the verified artifact record in [`data/money_hunt_artifacts.md`](../money_hunt_artifacts.md).
 
 ## Page-by-page index
 | Page | File | Scene / content | Status |
@@ -38,7 +38,7 @@ Pages 5 and 6 were checked again against the scans at scene level. Pages 10, 18,
 | 22 | [page_22](page_22.md) | Withdrawn until re-read | withdrawn |
 | 23 | [page_23](page_23.md) | Withdrawn until re-read | withdrawn |
 | 24 | [page_24](page_24.md) | Withdrawn until re-read | withdrawn |
-| 25 | [page_25](page_25.md) | **Fully transcribed 2026-10-09**: ACROSS list 1–156 complete (95–97 not printed), top-hat grid | transcribed |
+| 25 | [page_25](page_25.md) | **Fully transcribed 2026-10-09**: ACROSS list 1–156 complete; 95–97 are DOWN-only entries on p22, not a defect; top-hat grid | transcribed |
 | 26 | [page_26](page_26.md) | Ballroom: full bell, 3-card hand (=p11), ribbons | meta-object |
 | 27 | [page_27](page_27.md) | Withdrawn until re-read | withdrawn |
 | 28 | [page_28](page_28.md) | **Fully transcribed 2026-10-09**: library; spines + volume row + prices + Vol 149145 confirmed | transcribed |
@@ -56,7 +56,7 @@ Pages 5 and 6 were checked again against the scans at scene level. Pages 10, 18,
 
 ## Next analysis steps
 - **2026-10-09:** the book PDF's native 300 dpi pages were extracted and the priority targets re-read — see [`docs/money-hunt-pdf-rescan-2026-10-09.md`](../../docs/money-hunt-pdf-rescan-2026-10-09.md). p18 definitively has no Braille; the telescope is on p13; p16's calculator and MADE IN CAN truncation are confirmed; p10's glyph grid is 2×4; p10 clue 17 completes to "…wrote *Mighty Lak' a Rose*" (→ NEVIN).
-- Remaining true 600-dpi targets (300-dpi floor): p5's last two necklace beads, p16 calculator display, p9 clock hands, p24 score-sheet fragments, p10 glyph identities, p11/p26 card pips, p28 garbled spine middles — plus a **book-wide Braille sweep for STAFF S5_F** (unchecked: 1–9, 11, 12, 14, 15, 17, 19–26, 29–32).
+- Analyze unresolved micro-targets from the native images first: p5's last two necklace beads, p16 calculator display, p9 clock hands, p24 score-sheet fragments, p10 glyph identities, p11/p26 card pips, and p28 garbled spine middles. A selective physical-book rescan is justified only by a named hypothesis and a genuine pixel limitation, not as a blanket 600-dpi pass. Do not launch a book-wide STAFF S5_F Braille sweep without first establishing the string and its provenance.
 - Re-transcribe the withdrawn pages from the extracted native images before using them.
 - Reconcile the WASHINGTON page with the acrostic's "S" at position 23.
 - Page 21 is not a kiosk and has no "ANNUAL" booklet. That was the wrong scene.

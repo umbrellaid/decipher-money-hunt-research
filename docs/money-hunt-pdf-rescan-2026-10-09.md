@@ -11,10 +11,13 @@ the private `karen_puzzles/money hunt puzzle/pdf_extract_300dpi/` folder, with w
 and zoom crops in its `crops/` folder — they are Karen's scans, not ours to republish.)
 
 **Verdict on "is the PDF worth scanning":** yes — it is the best available source and it
-settled several standing unknowns below. But it is 300 dpi, not 600: hand-drawn micro-text
-(necklace beads, the p16 calculator display) still hits the resolution floor. The remaining
-open micro-targets are listed at the end; only those still justify a 600-dpi pass, and only
-a re-scan of the physical book can provide it.
+settled several standing unknowns below. Some hand-drawn micro-text (necklace beads, the
+p16 calculator display) remains unresolved at its native 300 dpi. **Assessment updated
+2026-11-07:** this does not justify a blanket 600-dpi pass. Analyze the native images first;
+a selective physical-book rescan is worthwhile only when a named hypothesis depends on a
+specific feature and the existing pixels—not imprecise original artwork—are the limiting
+factor. The remaining micro-targets are listed at the end as candidates, not automatic
+rescan requests.
 
 ## Findings
 
@@ -106,7 +109,7 @@ with **VOL 149145**, the eagle, and the framed prices ($5537 / $16M / $334 / $61
 - **Unchanged:** the per-page state candidates, the acrostic reconciliation failure, and
   every negative result in the state analysis — nothing in this pass contradicts them.
 
-## Still open at the 300-dpi floor (true 600-dpi targets)
+## Still open at the 300-dpi floor (selective, hypothesis-driven rescan candidates)
 
 1. p5 necklace beads — two cells unreadable (HOOYIP?S?IHP).
 2. p16 calculator display — occluded/blank at 5× zoom.
@@ -115,8 +118,9 @@ with **VOL 149145**, the eagle, and the framed prices ($5537 / $16M / $334 / $61
 5. p10 suitcase glyph identities (2×4 grid shape now fixed).
 6. p11 wall clock + bookshelf spines; p26 vs p11 card pips.
 7. p28 garbled spine middles (SINSORS/SINUSES family; several "?" spines).
-8. Book-wide Braille sweep for STAFF S5_F (pages not yet checked: 1–9, 11, 12, 14, 15,
-   17, 19–26, 29–32).
+8. **Separate provenance question, not a rescan target:** the STAFF S5_F Braille
+   string remains un-homed. Establish that the string and its page attribution are
+   real before considering another book-wide visual sweep.
 9. **p18 mini-crossword** (added 2026-10-09 follow-up; **closed out 2026-10-09 evening**):
    the grid is drawn on the page and matches the owner's authoritative 20×16 ASCII
    exactly (14 entries, 55 cells). The clue list is confirmed at exactly 12 lines — it

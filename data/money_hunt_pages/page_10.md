@@ -53,8 +53,8 @@ A suitcase whose face carries a **2-row × 4-column grid of 8 composite glyphs**
 (grid shape confirmed at 4×). Each cell pairs a left element with a right element:
 the left element alternates between a **"3"-/J-hook form** and a **curly
 Devanagari-like / M-Σ-like form**; the right element is one or two **triangles**.
-Exact glyph identities remain undecoded (a 600-dpi target), but the grid is exactly
-2×4 — it is not a longer string. The two forms alternate across the row:
+Exact glyph identities remain undecoded, but the grid is exactly 2×4 — it is not
+a longer string. The two forms alternate across the row:
 [J-hook + triangles] [curly + triangle] [J-hook] [curly + triangle], with the
 second row continuing the same alternation with fewer triangles.
 
@@ -73,7 +73,9 @@ second row continuing the same alternation with fewer triangles.
 
 - The state's best lead remains **clue 8 (A Connecticut Yankee)** → CONNECTICUT,
   held at medium confidence in the state analysis.
-- The 2×4 glyph grid is the page's main unsolved carrier; solving it (or matching it
-  to a known alphabet/substitution) is the top follow-up, ideally from a 600-dpi scan.
+- The 2×4 glyph grid is the page's main unsolved carrier; test alphabet/substitution
+  readings against the existing native image first. A selective physical-book rescan
+  is reasonable only if a concrete reading depends on a feature genuinely limited by
+  the current pixels rather than by the original artwork.
 
 Scans: [Karen Puzzles' Money Hunt folder](https://drive.google.com/drive/folders/1LgZD4G5UtxEaaQxZ0G3PL6Zj_DDDD3W3?usp=sharing).

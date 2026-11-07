@@ -88,22 +88,16 @@ These are large individual portrait birds, completely unrelated to p14's small
 flying-flock silhouettes — the p12/p14 "bird pair" is **rejected**, as the
 owner suspected.
 
-**Two crosswords, not one.** p22's bottom-right list (73–117) and p23's
-top-left list (121–147) are continuations of the SAME continuously numbered
-clue series as p10's list (1–37, header "DOWN") and p11's (38–69) — one
-crossword whose clues are distributed across the illustration pages. It is
-**not** the page-25 grid: direct native-res comparison shows conflicts at the
-same clue numbers (e.g. #88 "Of tones" on p22 vs "Ms. Grimes was the original
-Unsinkable Molly Brown on Broadway" on p25; #109 "Extreme" vs "She was the
-star of Leonard Bernstein's Broadway hit Wonderful Town"; #117 Gaynor/South
-Pacific vs "Radiation device"). The p25 giant grid is a second, self-contained
-crossword (across 1–67, down 68–156, all clues printed on p25). Both are
-Broadway/musical-themed. The distributed puzzle's grid is not in the 32-page
-book (pages 1–4 are cover/intro/rules/worksheet; 29–32 are registration forms,
-mailing instructions, player's log, box back) — it presumably lived on the
-"treasure hunt clue poster" flip side of the map poster, which is not in the
-scan. Numbering gaps (70–72, 118–120, end ~147 vs 156) may be survey-res
-misreads. p18 also carries its own tiny 11-clue mini-crossword (1A–11D).
+**Superseded 2026-10-31 — one top-hat crossword, not two.** The earlier
+interpretation here confused different clue directions with different puzzles.
+Page 25 prints the **ACROSS** list (1–156) for its top-hat grid. The same grid's
+**DOWN** list is distributed across pages 10 (1–37), 11 (38–69), 22 (73–117),
+and 23 (121–147). Matching numbers can therefore carry different clue text
+without indicating separate crosswords. Numbering gaps are ACROSS-only entries,
+not transcription omissions. Clues 95–97 are DOWN-only entries printed on page
+22, not a page-25 defect. See
+[the consolidated DOWN transcription](../data/money_hunt_down_clues.md). Page 18
+still carries its own separate mini-crossword.
 
 **Book-structure notes from pages 1–4.** The rules confirm: 3 guesses per
 purchase; location in the US or Canada; deadline March 31, 1988; official

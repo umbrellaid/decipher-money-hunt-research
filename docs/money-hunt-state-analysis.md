@@ -2,8 +2,8 @@
 
 **Compiled:** 2026-10-05, from the scans in [Karen Puzzles' Money Hunt folder](https://drive.google.com/drive/folders/1LgZD4G5UtxEaaQxZ0G3PL6Zj_DDDD3W3?usp=sharing). Names such as `page_18_300dpi.jpg` and `book_pages\page_18.png` mean those renders (150 dpi for pages 1–12, 300 dpi for clue pages 13–28). They are not files in this repository. The reads were checked against the earlier page transcriptions. Sixteen of those page files are now stubs. This file is the image read for those pages.
 **2026-10-09 native-res rescan:** the book PDF (`money-hunt-book.pdf`) carries every page at native 2492×3289 (true 300 dpi, double the renders used below); the priority targets were re-read from it — see [`money-hunt-pdf-rescan-2026-10-09.md`](money-hunt-pdf-rescan-2026-10-09.md). Headlines: **no Braille exists on p18**; **the telescope is on p13**, aimed at the inverted building (not on p27, and no airplane anywhere on 10/13/27); the **missing 4 is confirmed on both p5 dials** (wristwatch ≈ 7:25–7:35, so Karen's 7:28 is plausible); the **p16 calculator** and the deliberately truncated **MADE IN CAN** label are confirmed.
-**Method note:** every micro-text verdict below is from the full-page render. Regions that could not be resolved are listed per page and collected at the end as 600-dpi re-render targets. Where text could not be read, the note says so.
-**Reading order (poster flow-chart):** 15, 9, 18, 24, 14, 6, 17, 21, 23, 27, 19, 7, 5, 8, 10, 25, 20, 22, 28, 13, 16, 26, 12, 11.
+**Method note:** every micro-text verdict below is from the full-page render. Regions that could not be resolved are listed per page and collected at the end as unresolved micro-targets. Where text could not be read, the note says so. These targets require analysis first, not automatic higher-resolution rescanning.
+**Reading order (poster flow-chart, verified against the artifact record):** 15, 9, 18, 24, 14, 6, 17, 21, 23, 27, 7, 19, 5, 8, 10, 25, 20, 22, 28, 13, 16, 26, 12, 11.
 **Acrostic (Karen):** positions 1–24 = E M P I R E S T A T E B U I L D I N G N Y U S A (trailing L uncertain).
 
 ---
@@ -565,9 +565,21 @@
 - **Open (no signal):** 15, 17, 21, 7, 5, 8, 20, 28, 13, 16, 26, 9.
 - **Acrostic reconciliation:** NO rule found that maps page→state→acrostic letter consistently. The only rule reproducing p12's S (index = digit-sum of folio) fails on p14 (needs R, gives I) and p27 (needs T, gives A). First-letter rule fails everywhere tested (FLORIDA→F≠R, LOUISIANA→L≠T, WASHINGTON→W≠S). Postal-letter rule fails (WA→W/A≠S). **Conclusion: either the acrostic is not derived from the per-page states, or the per-page states for most pages are still wrong. Flagged, not forced.**
 
-# 600-dpi re-render targets
+# Micro-targets unresolved at native 300 dpi
 
-**Status 2026-10-09:** the book PDF has now supplied true 300 dpi for all 32 pages (native 2492×3289), and the priority targets below were re-read from it — item **10** (p5 watch dials: missing-4 confirmed on both, hands ≈7:25–7:35; necklace two beads still unreadable), item **14** (p16 MADE IN CAN — confirmed deliberately truncated) and item **17** (p28 spines — re-confirmed; garbled middles remain) were resolved or advanced; see [`money-hunt-pdf-rescan-2026-10-09.md`](money-hunt-pdf-rescan-2026-10-09.md). The items still listed below are the ones that genuinely need 600 dpi (or the physical book), **plus a new book-wide Braille sweep for STAFF S5_F** (pages not yet checked: 1–9, 11, 12, 14, 15, 17, 19–26, 29–32). Items 2 (p9 clocks) and 4 (p24 score-sheet) were not re-scanned this pass.
+**Status updated 2026-11-07:** the book PDF supplied true 300 dpi for all 32 pages
+(native 2492×3289), and the priority targets below were re-read from it — item **10**
+(p5 watch dials: missing-4 confirmed on both, hands ≈7:25–7:35; necklace two beads
+still unreadable), item **14** (p16 MADE IN CAN — confirmed deliberately truncated),
+and item **17** (p28 spines — re-confirmed; garbled middles remain); see
+[`money-hunt-pdf-rescan-2026-10-09.md`](money-hunt-pdf-rescan-2026-10-09.md). The
+remaining items are analysis targets, **not automatic 600-dpi rescan requests**. Read
+the native image as a whole and in detail first. Consider a selective physical-book
+rescan only for a named feature on which a specific hypothesis depends; higher
+resolution cannot restore detail absent from the original artwork. Items 2 (p9 clocks)
+and 4 (p24 score-sheet) were not re-scanned in the 2026-10-09 pass. The old proposal
+for a book-wide STAFF S5_F Braille sweep is not a scanning priority without first
+establishing the string's provenance.
 
 1. p15 easel alphabet cube letters (four cubes, mid-right shelf).
 2. p9 both clock faces (wall clock upper-left; tower clock in skyline) for hand positions.

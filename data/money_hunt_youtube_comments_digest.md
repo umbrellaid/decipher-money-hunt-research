@@ -183,11 +183,10 @@ Gorilla suit = King Kong → ESB confirmation bias cluster (very common take).
    'Lines' because that's one of the answers in the crossword"*; and page 15's
    clown *"is missing its hat or 'Cap' which is also in the crossword. But that
    would make the answer in Canada somewhere and not the empire state building."*
-   Two implications: (a) the missing element's name may have to **be a crossword
-   answer** — a validation rule the repo has not used; (b) an alternative p15
-   extraction (CAP) yields letters pointing to Canada — a live competing variant.
-   Check LINES and CAP against the transcribed clue lists (p11/p22/p23) and the
-   p18 mini-crossword.
+   **Checked 2026-10-31:** DOWN 46 "Queues" = **LINES**, supporting the p13/p20
+   subtraction. Neither the complete ACROSS nor DOWN list supports **CAP**, so the
+   CAP/Canada variant has lost its claimed textual basis and is no longer an open
+   cross-check. See `money_hunt_down_clues.md`.
 6. **Independent VA DERS corroboration** (@kaimcmanus9608, 4 months ago — the most
    recent substantive commenter): *"'va ders' … seems like one of those wordplay
    things looking for 'invaders'"* — matches the repo's verified 28→I subtraction

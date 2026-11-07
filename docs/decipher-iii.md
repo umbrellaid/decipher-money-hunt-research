@@ -60,8 +60,11 @@ gap 3). Status of the re-earning:
   cummings below, and the chapter-title chains. Those eliminations stand on the sliding
   sweep alone and must be treated as provisional.
 - **Cannot be tested at whole-book grade**: *Cat's Cradle* (Vonnegut), ranked #2 for 3-1
-  below — `texts/cats-cradle` is missing 82 chapters, so its numbering is wrong past the
-  first gap. That is a scanning task, not a compute task.
+  below. **Corrected 2026-11-04:** the old "82 missing chapters" diagnosis was a bad
+  split, not missing scans. Re-ingest reduced the boundary gap to **31 chapters**, but
+  the OCR remains only about **85–90% accurate at word level**, so the text still cannot
+  support an exact whole-book cipher sweep. The remaining limitation is OCR/text quality,
+  not the superseded 82-chapter split diagnosis; see `results/RUN_LOG.md`.
 - The anchored scan covers only `letters`, `first-letters` and `last-letters`. The
   every-Nth and word-Nth-letter families in palindromic form remain untested for
   everything, so no elimination below is complete with respect to this mechanism.
