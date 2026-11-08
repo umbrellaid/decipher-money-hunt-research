@@ -887,4 +887,43 @@ Note the crop is never committed — it derives from a copyrighted scan under `p
 parameters that regenerate it are recorded, which is also what makes the test reproducible by
 anyone holding the same shared scans.
 
+## 2026-11-07 — anchored palindromic re-sweep: every public-domain and Poe text
+
+The three implemented sentence-anchored palindromic families (`letters`, `first-letters`,
+`last-letters`) were run over the whole public corpus: `texts/poe/*.txt` (9 files) and
+`texts/pd/*.txt` (49 files), each with `--cipher all` (2-4 incidental plus 3-1, 3-2, 3-3) and
+`--top 10`, using the current `sweep.py`. Pre-flight: clean tree at `86587bc`; `validate.py`
+fully green including the non-vacuous palindromic positive control; smoke test on
+`texts/poe/poe_1065.txt --cipher 3-1` showed non-zero anchored pairs in all three families and
+no empty-search warning.
+
+Run layout: five parallel batch processes (one Poe batch plus four pd batches; the shell does
+not expand globs, so all 58 files were enumerated explicitly — none omitted). Logs:
+`results/palindromic_sweep_poe_2026-11-07.txt` and
+`results/palindromic_sweep_pd_2026-11-07_batch1..4.txt`. Wall span 14:39–18:31 local, ≈15.5
+CPU-hours.
+
+Coverage ledger: `results/palindromic_sweep_ledger_2026-11-07.tsv` — 232 rows = 58 texts × 4
+ciphers (174 Decipher III sections plus 58 incidental 2-4). Zero empty-search warnings, zero
+zero-pair sections; the smallest anchored search space anywhere is 47,405 (start,length) pairs,
+so no negative below rests on an empty space.
+
+Outcome: no candidate survived review. Twelve flagged hit lines in total, every one inspected:
+ten window-band flags on the known letter-density artifact families (`last-letters`,
+`every5-wordlast`, `last-letters-palindrome`), one window-band-only `letters` flag, and the
+run's single mean-band `CHECK THIS` (thoreau_57393 vs 3-2, `last-letters-palindrome`, mean
+−8.1873 / window −7.9469 — the only candidate above the −8.2 look threshold in the whole run).
+Every flagged preview is unreadable vowel salad, matching the 2026-11-03 calibration that the
+artifact families reach into and past the English band on non-English decodes. Best window
+overall: −7.8558 (christie_72824 vs 3-2, same family, also salad).
+
+Calibrated reading: these are provisional negatives for the tested files and constructions.
+They re-earn the Poe eliminations (2026-10-04/05) and the pre-1931 Christie / Faulkner /
+Sandburg / O'Neill / cummings eliminations under both search shapes. They are not hard
+eliminations: the other 18 palindromic families, the chapter-title chains, and the exact
+designer editions remain unresolved.
+
+A same-day bounded Money Hunt subtraction test on pages 15, 9 and 11 added no verified letter;
+the wishkohaku page-letter mapping stands at 2 of 24 verified.
+
 

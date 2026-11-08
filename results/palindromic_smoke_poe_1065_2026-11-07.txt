@@ -1,0 +1,14 @@
+== texts/poe/poe_1065.txt vs cipher 3-1  (pool=228, anchored palindromic=28)
+   anchored (start,length) pairs searched: letters=58423, first-letters=52004, last-letters=52004
+   -9.3639 win= -9.3483 every3-letter              start=   1445 L=    - from-end rev
+      TDERTNSDUETONEIONEENREOTREYRISOODUOPENFEWNEWEMRHFTUNCSPELDEARDATCONIPE
+   -9.4324 win= -9.2884 letters-palindrome         start=   5654 L=  273 anchored fwd
+      PSOPPDITEGOTCEFOONRSTCRIHEELSAITYYSLUNLSSEGITTITSLSWIENEITEAWPAURTANAD
+   -9.4332 win= -9.1270 letters                    start=   4179 L=    - fwd      rev
+      MDQLIILIMENDTHRTTLPODOPESEEBUMLERTSEHNTIENEELETAFADEASTRAESHREEYSLYLLI
+   -9.4811 win= -9.3079 word3th-letter             start=    942 L=    - fwd      rev
+      TARTSURUCEOIRERORAREOANPRTUTCCAETPINCSDETIETYTEYOWEROTTRIWEUISRATEDTRI
+   -9.4827 win= -8.9430 letters-palindrome         start=   4429 L=  270 anchored fwd
+      TSERNAILDRSREMESEERDEEREIEEINTATHHRRELOTOETTIMUNOTERLDNELLPENHELEIREVH
+
+No candidate reached the genuine-English band on either statistic. Under the tested rule families - now including the anchored palindromic construction unless --sliding-only was given - this text does not contain the key stream.

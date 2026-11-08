@@ -1,0 +1,1148 @@
+BATCH-START 2026-11-07 14:39:28
+== texts/pd/browning_2002.txt vs cipher 2-4  (pool=250, anchored palindromic=50)
+   anchored (start,length) pairs searched: letters=227529, first-letters=206749, last-letters=206749
+   -9.0620 win= -8.7470 last-letters               start=   7029 L=    - from-end rev
+      EDHSESHIFISHYSDDEENEFETSEYESNYRDEFTEDREESDOLYOTIFNDDREERSRSEEIMPTESTTY
+   -9.1114 win= -8.9752 last-letters               start=   7089 L=    - from-end fwd
+      TDGEEEEWDRANEOGSFIRIDIDEIRSDEEPSEYETRSEEANYDERTESITTTSEDEFFFYIMEEGDEYA
+   -9.1875 win= -8.7632 last-letters-palindrome    start=   1600 L=  536 anchored rev
+      SXEELTEOETEGIDYIEIWNEYTEEHREDYANEYASWHONYEKRNONEEDNOATNHEILDIRSDETEEST
+   -9.1987 win= -8.7556 last-letters-palindrome    start=   3049 L=  591 anchored rev
+      GNAYERIURDRESERSRETEEORKGFRATREWRSLDEGDENCENODVATDMEEYGGASSYOUERSTHSST
+   -9.2007 win= -8.8406 every2-wordlast            start=    320 L=    - fwd      fwd
+      SSMUSEDTTETETUYDROEELERSEITWLAIRERIRYLSSHEOFETESOOEEESFISEGETHEDATHESU
+   -9.2065 win= -9.0533 last-letters-palindrome    start=   1033 L=  550 anchored rev
+      IROEFFESOEOFLESEOSESTMASFETTHTONLHEDIDROMENOESSETDIKODEDTEWDDYEDERDEYF
+   -9.2213 win= -9.0784 last-letters-palindrome    start=   3885 L=  593 anchored fwd
+      DREEDTKYGADLSRESTESTETEETGITETDOSEDDTSOEERNTSADEETEMSEEITERNREDHTSEDYS
+   -9.2359 win= -8.8762 last-letters               start=   1477 L=    - fwd      rev
+      TTINYSDETOTSSITTODDSNANENYGEDSYNFKEIUSMSRETHTSTTOGSEYERSETFOLDERSEFDES
+   -9.2361 win= -8.8334 last-letters-palindrome    start=    768 L=  538 anchored rev
+      DHDWEEMENSEDTAELHYESNTEGSDETDESVEAESESTDHRELYLEIMENTSDISTSYOAEEDDANERE
+   -9.2697 win= -9.2215 last-letters               start=   3984 L=    - from-end fwd
+      ERYDESSEHEESDEADYYTSOSTTSSHENTEDNIEDESEDDOSGNEDDFOEFDSETDYESTNESTLYYDD
+== texts/pd/browning_2002.txt vs cipher 3-1  (pool=255, anchored palindromic=55)
+   anchored (start,length) pairs searched: letters=113377, first-letters=106958, last-letters=106958
+   -9.1411 win= -8.9704 last-letters-palindrome    start=   1600 L=  346 anchored fwd
+      ETETFIFFHEHETTTEDESDEYONHEEEDNTEETLYTNEEEENTSDOSSTFMEEYENWEMYNSHIGEFEN
+   -9.1883 win= -9.1566 last-letters-palindrome    start=   1383 L=  330 anchored rev
+      YTSTENSSDERDILEEKTOHESSESLSLIFEREREEIDETNHENTERENTGDNEEELIDSYIOTEDNERD
+   -9.2380 win= -8.7225 last-letters-palindrome    start=   1600 L=  446 anchored fwd
+      ETETFTEFTEHITTTEYESDEITNHSSTDNSEETLYITEEFENSSDTITIFMEEGENWETONSHIGEDEN
+   -9.2428 win= -8.9108 last-letters-palindrome    start=   1990 L=  371 anchored fwd
+      NEDGEREEFNNNETYESEETEONMEAATSDEDADSRUSEDEEHOFANTITHESVFETEDEENGNEEDSWE
+   -9.2555 win= -8.8866 every3-wordlast            start=   2011 L=    - from-end rev
+      BLTFEENTTEDEESITTITNAEEEHOEEYDEEMEFTTEDOEGEEREODOUHHEETEDESEDSISEIGEEN
+   -9.2588 win= -9.2713 word3th-letter             start=   2888 L=    - fwd      fwd
+      EAITSOIDKEIESYEERYETIRDILOOFMAIITSAISAENTEMNYYORRINATEIETTAYVCORTESSOV
+   -9.2654 win= -8.8698 last-letters-palindrome    start=   1571 L=  333 anchored rev
+      YEWOHITMLEEWDSESTEYTEOTFESBIDERSSESGEEWENMENIAENITTOUIYFTIENVEDETESSEY
+   -9.2907 win= -9.1774 last-letters-palindrome    start=   1383 L=  333 anchored rev
+      YFSTEEHEDEREILSTKTOHESTESLEEIFEREREEIDEETHETTERENTGDNEYELSISYIOTEDNEED
+   -9.2911 win= -9.1313 last-letters               start=   6806 L=    - from-end fwd
+      YTONEEDTESTDHERRETDERSTETHHSSDMTSMEHTLTESEDSTEAYEYMOFYTESOLRETDEEOYTDT
+   -9.2965 win= -8.9042 every3-wordlast            start=   1403 L=    - from-end rev
+      NEHEREHEEETTTWEERFWILSEREEEFETMEENTEMSSTDREDEGSDUOSSEEDNEESEDINPDETNEH
+== texts/pd/browning_2002.txt vs cipher 3-2  (pool=255, anchored palindromic=55)
+   anchored (start,length) pairs searched: letters=91709, first-letters=87213, last-letters=87213
+   -8.9070 win= -8.4046 last-letters               start=   6904 L=    - from-end rev
+      DODESEERSLOSTSEHENEYLYNWSLYEIOIIOWTETDEELESESTOHISYTESLEMSSENREEYOONEN
+   -8.9091 win= -8.9577 last-letters               start=   7880 L=    - from-end rev
+      SESSEENEREEITREDEDEDEEDDEAYEDEVHEDFEEDEETHNENRDEEDEHTDRENNOFFNRSYDSNED
+   -8.9326 win= -8.5846 last-letters-palindrome    start=   1220 L=  383 anchored fwd
+      SDYEEYEDPHREETTEEDTEENYEETOHEEESLESFEETTLNDSTHEERIODYESSTEDESDEREHSSTE
+   -8.9452 win= -8.5267 last-letters               start=   6055 L=    - from-end fwd
+      LTENESUFEAMENGADFETTSTSDAEPIELTIYEDYSHEEWTTRESHTSHETYARNSTREDREKNETYSN
+   -8.9728 win= -8.3108 last-letters-palindrome    start=   4159 L=  386 anchored fwd
+      TTREDTRDDESEETOTEETYSDETHEELEELDEEDENSLNEEEDONSEOWNLYENDESAPEDDEENAYHE
+   -8.9795 win= -8.7714 every5-wordlast            start=   1263 L=    - from-end rev
+      EDEMEHTYEELEDROKELTSELNEDSYRDENDEETELSRFSISSEOETENENTGETITHFTETSYEOYEE
+   -8.9966 win= -9.0595 letters-palindrome         start=  23153 L=  350 anchored rev
+      EEDONSSRITINUITMEERSTTEPENYSEATCOPLEDEHHWREROREEGHOESOWBEMHSDALNYESCEE
+   -9.0039 win= -8.7396 every2-wordlast            start=    663 L=    - fwd      fwd
+      ADYFANFUSAHTENTUTSPEISTUSSTTELETSTELESDIDTLEDSESNTNTYELDTESEEDDEEEYMTE
+   -9.0053 win= -8.7352 last-letters               start=   2848 L=    - from-end rev
+      DITDIEEDELEOEESDESIELFLESFYTEEDEDETEVENETEYTITSTEEDEEDASHTTHEKESYOYEYS
+   -9.0198 win= -8.6534 last-letters-palindrome    start=   1220 L=  366 anchored fwd
+      SDYSEYEDPHREETREEDTSENYEOTOHEEESLESFEETTLNDDTHEERIEDYESSTEDESDEREHSSTE
+== texts/pd/browning_2002.txt vs cipher 3-3  (pool=256, anchored palindromic=56)
+   anchored (start,length) pairs searched: letters=157391, first-letters=145857, last-letters=145857
+   -9.1074 win= -8.9598 last-letters-palindrome    start=   1401 L=  419 anchored rev
+      SIEETENWEEMELYEYODEIEERHETTMITFESEEDYELOGSEEEENNEDSTHTTHOSRSTETOTLYEIS
+   -9.1245 win= -8.8530 last-letters               start=   3915 L=    - from-end rev
+      FOSNDREERDLEHSESDDNYRASTDEDHINONNNEYEETYLEDADSESOESEHSASSYTYTONONLOSET
+   -9.1526 win= -8.7572 last-letters-palindrome    start=   1982 L=  374 anchored rev
+      KYHOFURYREIERRVEYIFTPHSENMMOOEETKETDEETORFROTEREEAEEHYEEFOHYTREFESTHST
+   -9.1861 win= -8.9221 last-letters-palindrome    start=   1401 L=  411 anchored rev
+      TIEETTNDEEMEEIRSODSIEERHETTMIFFESENDYEHOGSEELSENEDSTEEEHOSESEELOTEYEIE
+   -9.1948 win= -8.8311 last-letters-palindrome    start=   1724 L=  367 anchored fwd
+      SGELEHEHTEASASYEDNNDDEKEDTODKTDHINNETHOTMNLEYSRTNECOSDETODTOSNTTONEYEY
+   -9.2280 win= -8.6425 word3th-letter             start=   3304 L=    - from-end rev
+      COTEONHYAROMTKRELEFOWSROWETNSNEAROEAFEOUIESIENWEMTIYDADEOINEMELOYTOOME
+   -9.2325 win= -8.9632 last-letters-palindrome    start=   2916 L=  411 anchored rev
+      KLTLTRERNEENDSEEEDEREEPETEEYNEDSVRDOREDSEENSPSDEEORYSFETKGOTSOEDRENSSE
+   -9.2363 win= -9.1682 last-letters-palindrome    start=   1046 L=  574 anchored fwd
+      DRETEYDDDEDRRESTDEDTEEETNNSEDESEIRSTETSDERTYTEDSEEPYERTTFTYRWOTONELYES
+   -9.2455 win= -8.6758 last-letters               start=   6653 L=    - from-end rev
+      KNNNDDEODSWDREETNEETTTENITEVFSFLSWSISEEFFSDTHSELESFTTESHEEEYDEDSTHTEYE
+   -9.2521 win= -8.7334 last-letters-palindrome    start=   1401 L=  414 anchored rev
+      SIEEETNREEMEESSTODLIEERHETTMWDFESESDEEEOGSEYRRYNEDSTLOSHOSSHTETOTOYEIT
+== texts/pd/browning_33363.txt vs cipher 2-4  (pool=257, anchored palindromic=57)
+   anchored (start,length) pairs searched: letters=1301095, first-letters=1280315, last-letters=1280315
+   -8.8171 win= -8.3273 last-letters-palindrome    start=   9560 L=  682 anchored rev
+      NSTOEEORSSEHSEFRRRSGESEONEETESEEDDDTEEORDEDDOTEEESTEEYEETEDDDDNHTEEDEE
+   -8.8471 win= -8.2236 last-letters-palindrome    start=  10919 L=  882 anchored rev
+      TSYTORDEDERMELTINELENEARSEEDYTERSNRENEYLELSEATSSEGFEENEEDETETSSETEDYEH
+   -8.8612 win= -8.4079 last-letters-palindrome    start=   3309 L=  592 anchored rev
+      WTDDESEEREENKNTGNNOREGSSSENESEENGSRHEMERNDEDDEREMSHEEDDMEDSEEEMMANYSSO
+   -8.8867 win= -8.5650 last-letters-palindrome    start=   9560 L=  529 anchored rev
+      NSTOEEOYDSEHRRRSNRTSESEETEDSOSEEDDDTHEEMSETRSTEEESTEESTESEDSDREERREUNS
+   -8.8985 win= -8.6130 last-letters-palindrome    start=   5698 L=  664 anchored rev
+      TAVINSNEEESREGETESEDDETRETYETLNSYEDIESNEYEENEEMERTRSNESSEDETEEFERRYEDD
+   -8.9166 win= -8.6314 last-letters-palindrome    start=   7296 L=  811 anchored rev
+      OSHTESNESNNNDSTINTTERLSETESDYRTTSAHESORAAPSTHEWETSTGTTTODSDRIETREHEDER
+   -8.9175 win= -8.2886 last-letters-palindrome    start=  10919 L=  878 anchored rev
+      TSYTORDEDERMESTINELENEADSESDYTERSNRESEYLELSEATSSEGFEENEEDETETSEETEDYSO
+   -8.9401 win= -8.2151 last-letters-palindrome    start=  10919 L=  947 anchored rev
+      TSYTORDEDERMGETINELENEADRERDYTERSNRESEYLELSEATSSEGFEENEEDETETSEETEDYEH
+   -8.9454 win= -8.4789 last-letters-palindrome    start=  10919 L=  941 anchored rev
+      TSYTORDEDERMEITINELENEADLERDYTERSNREDEYLELSEATSSEGFEENEEDETETSEETYDYHO
+   -8.9503 win= -8.3879 last-letters-palindrome    start=  10919 L=  871 anchored rev
+      TSYTORDEDERMINTINELENEATTEEDYTERSNREDEYLELSEATSSEGFEENEEDETETSTETEDYET
+== texts/pd/browning_33363.txt vs cipher 3-1  (pool=259, anchored palindromic=59)
+   anchored (start,length) pairs searched: letters=639955, first-letters=633536, last-letters=633536
+   -8.9547 win= -8.6025 last-letters-palindrome    start=   9537 L=  411 anchored rev
+      TESDREISEEESTLEEHDDOGNENRTEEEEMESSYSHNSENDENEHEYHSNDESMYTESRSMREESEMEL
+   -8.9601 win= -8.8087 last-letters-palindrome    start=   9641 L=  356 anchored rev
+      NTSSHRSHEEOETVETDLANEESNSEEDRREHEYNDESEEDEEDTHETRHYETESOYETDYSTESIEDEM
+   -8.9731 win= -8.7191 last-letters-palindrome    start=  18622 L=  428 anchored fwd
+      NRSTESEGSYAYSEOEWEENSSSESAAREEDENRDSERIDEERETOSSTENEDEEEDINERMNOSDENRE
+   -8.9868 win= -8.7712 last-letters-palindrome    start=  16983 L=  275 anchored rev
+      GETYTTETHEGFRSSNEETDETEENTYODDLENRNTDONEFTEFTETIMEITETOYEDSAYINETHETSD
+   -8.9911 win= -8.9919 last-letters-palindrome    start=   6149 L=  327 anchored fwd
+      NOEHEOVETEDEEYEDDDHEETDDESSTRYTTSNESVERLEESETTURDYORKEDEREYDFERDEDTEEF
+   -8.9937 win= -8.9367 last-letters-palindrome    start=  18622 L=  433 anchored fwd
+      NRSTESEGSYASSEOEWEENSSSESOOREEFENRDSSWIDLETETOESTENEDEEEDIRERMNOSDENRE
+   -8.9953 win= -8.9747 last-letters-palindrome    start=   9560 L=  368 anchored rev
+      IRETTESTHELIRGERYTTHEDVRASEEEDREYERHESETEYEETNEEDRNOHEERDOASRSGRREDRRV
+   -9.0017 win= -8.8537 last-letters-palindrome    start=  18622 L=  438 anchored fwd
+      NRSTESTGSYARSEOEWEENSSSESIIREETENRDSESIDEELETOESTENEDEEEDISSRMNOSDENRE
+   -9.0040 win= -9.0021 last-letters-palindrome    start=  18749 L=  344 anchored rev
+      SEEFRESTIESSTIRSREENRSOREDRSYENDSWRNEETSTRETSEDSSENSRSETEDEERFYSISERRN
+   -9.0096 win= -8.8091 last-letters-palindrome    start=   7346 L=  277 anchored rev
+      DSTTLFEEDEERTHNSEEGSGTDEEDEEAEEDRERHERWEHWEHTWSSTDRETSEEHTESEETETHSEED
+== texts/pd/browning_33363.txt vs cipher 3-2  (pool=253, anchored palindromic=53)
+   anchored (start,length) pairs searched: letters=516237, first-letters=511741, last-letters=511741
+   -8.4706 win= -8.0636 last-letters-palindrome    start=   9493 L=  291 anchored rev  <-- window band, known letter-density artifact family
+      SERASEENEEERDLMSETENERSDOEYETHEHDDRENEYSETOHYRERASEOLEILESSHORERYETHTL
+   -8.6233 win= -8.4338 last-letters-palindrome    start=   9537 L=  221 anchored rev
+      HTEDTHERSENESEEDESEEEDHRESYHMETSERTEDOEADINETERTSTTTRMESYDAYESHEYEETDD
+   -8.6341 win= -8.1647 last-letters-palindrome    start=  18924 L=  225 anchored fwd
+      AYDRERSTNESTREENEDTYEENNESEDEDMLOTDSTEEFRINRESSASAYSYRREESEYETHERCESER
+   -8.6421 win= -8.3619 every3-wordlast            start=   9687 L=    - from-end fwd
+      EDERENSEEYTEISTEDNTOSESESTEGEKETREDASYONYDEHEEPEHESYYEEESEYEIDTNISSTER
+   -8.6716 win= -8.4437 last-letters-palindrome    start=  11213 L=  272 anchored rev
+      EOSEDRNTESSEEDRTEEEESESEERYHEEDLEEDEFHEEYENMENTSTHYEYRTOHTTETEODYETEEE
+   -8.6930 win= -8.7140 last-letters-palindrome    start=   6291 L=  229 anchored fwd
+      EEIEDEYSEEREDTERRSSSSTDREIEEEDREYETSENDEORERONTYUTEHYLTMRESDYESEDEYEER
+   -8.6984 win= -8.5593 last-letters               start=  11199 L=    - fwd      fwd
+      GESEEDEDTREHEEDEEDETRANENTSSEHDDTHSTYSEOGAENPTEFTOEEYTTTROTTTTEDESRDYH
+   -8.6995 win= -8.2922 last-letters-palindrome    start=  11213 L=  317 anchored rev
+      EOSEHRDREEEHEDRTEEDEEESEERYHESELEEDEFHEEYENREOTSTHYEFRTORTTETHODYSHEEE
+   -8.7028 win= -8.4340 last-letters-palindrome    start=  11213 L=  226 anchored rev
+      ERSEERTDERDHEDRTEEEERESEERYHESDLEEDEFDDEOENTEOTSTHYEORTORTTEETODYDDEFE
+   -8.7075 win= -8.3354 last-letters-palindrome    start=  32740 L=  275 anchored fwd
+      YMENRIEYFEREDEIFETEESSRFEENSERMHSEFTETORIRNENDREESESYDGTRRISREDEDYESTE
+== texts/pd/browning_33363.txt vs cipher 3-3  (pool=258, anchored palindromic=58)
+   anchored (start,length) pairs searched: letters=892151, first-letters=880617, last-letters=880617
+   -8.6736 win= -8.5222 last-letters-palindrome    start=   6728 L=  539 anchored fwd
+      YHITENGMGEENDOEEDMRDDEDDTERTESDEYNORGRADDDERTDEDREETERESOSGSHEDIESESEI
+   -8.7311 win= -8.5807 last-letters-palindrome    start=  17984 L=  455 anchored fwd
+      NESITTIEDEDMEDDENTWETEGEATEDSYORENONSIEIEFLSSFDOYYNEESSNTSRODOUREDEDES
+   -8.7355 win= -8.4717 every5-wordlast            start=    672 L=    - fwd      rev
+      SEYTTEELSSEHETITKEDIDETSHTLELESEYONNEEREDEDRESEEENMEDDRSSYEMEERHEGEOTE
+   -8.7704 win= -8.4799 last-letters-palindrome    start=   5913 L=  627 anchored fwd
+      ENEENUNTEENREORMNOEROEDTENDETHDTERTEDDETTTEDFTSDTESYEESRESEEHENSEEELEI
+   -8.7854 win= -8.3837 last-letters-palindrome    start=   5913 L=  622 anchored fwd
+      EDEENUTTEENREOEMNOEROEDTETDETHDTERTRYDETTTEDFTSDTESTRESEESEEHENSEEELEI
+   -8.8420 win= -8.3142 last-letters-palindrome    start=   5913 L=  515 anchored fwd
+      EREENUSTEENREOYMNOERFEDNEEDETHDEERTDRDDTTTSDFTSDTESTETSTESEEHENSEYELEI
+   -8.8528 win= -8.4830 last-letters-palindrome    start=   5913 L=  626 anchored fwd
+      EDEENUETEENREOTMNOEROEDTENDETHDTERTKEDETTTEDFTSDTESLYESRESEEHENSEEELEI
+   -8.8616 win= -8.7294 last-letters-palindrome    start=   9511 L=  511 anchored rev
+      EDEEAERSSSYTEETREDDALELISEENNNIGEDEESEETGSRSSTOSTTENDEEHRHEEENHNETRHIS
+   -8.8630 win= -8.5975 last-letters-palindrome    start=   5913 L=  634 anchored fwd
+      ELEENURTEENREORMNOEROEDTESDETHDTERTOLDETTTEDFTSDTESMEESEESEEHENSEEELEI
+   -8.8785 win= -8.5890 last-letters-palindrome    start=   5891 L=  411 anchored fwd
+      DENDEDEEIRIFSNYTHETSMENNEETTDERUEGESESEEEXHENSEEDTHSSYYDEEDHERSERTRREE
+== texts/pd/browning_56621.txt vs cipher 2-4  (pool=256, anchored palindromic=56)
+   anchored (start,length) pairs searched: letters=2373083, first-letters=2352303, last-letters=2352303
+   -8.8039 win= -8.6448 last-letters-palindrome    start=  65132 L=  584 anchored fwd
+      DREDEREGUTEDFHNHESEETEEDELUNESOOTHELENTRELRSTTEPISTIFAFASERRTDEYSESEDE
+   -8.9348 win= -8.4970 last-letters-palindrome    start=  44614 L=  591 anchored rev
+      YYSEOTENSSHOHSODOSESOSERNYESEESSHANNEDYIGENSYEDNYSESSETDSEEPENDASTSTES
+   -8.9535 win= -8.5380 last-letters-palindrome    start=  29103 L=  615 anchored rev
+      RRDFMDETEDSGRTHNSELYYSEIETTEDEDHEHERAMEESERETERIRTUEDYDMERTTOSTYREEETS
+   -8.9703 win= -8.6975 last-letters-palindrome    start=  86830 L=  555 anchored fwd
+      LDFSDOARPSEEEESTEENSTSDESASANEITESRESSRETNYDETENEIYOROESSDTASSSDERSDOD
+   -8.9716 win= -8.8227 last-letters-palindrome    start=  81572 L=  608 anchored rev
+      DEEDTOHSUTYUSERMESEETNRENENEHEEEDERININSTTETDSYLTSGHEYDIELSSTHIDESHESN
+   -8.9777 win= -8.6621 last-letters-palindrome    start=  53651 L=  713 anchored fwd
+      LENYITTEINTSNDDENTOESEFFEPEDALEOEDITNDEOSERYEFTEYINDNPDENDTUESTELOSETO
+   -8.9907 win= -8.4828 last-letters-palindrome    start=  41887 L=  595 anchored fwd
+      FEESEYNDTEYCSETSEYDEDEESEERGERTEDYOSTEENTOETDESEEFEEPEREYREDCERORETERS
+   -9.0060 win= -8.3301 last-letters               start=  13511 L=    - fwd      rev
+      INMEOADDPWYEEEASSHGEEOTRREBEFTSRESNDKEEIFEMERETHELEESYMEEFOESTKYDEEYED
+   -9.0290 win= -8.7340 last-letters-palindrome    start=  60623 L=  719 anchored rev
+      YDDEEEEYEKEEEDSSTEWELDYLYETHLAGONYTOHSEOIKEDONDEDTDIGHRSHETKHORFYSEENR
+   -9.0336 win= -8.3778 last-letters-palindrome    start=  13606 L=  576 anchored fwd
+      IRHNFEDESEREDLREDSSRTREAREEONTSREEKSRHEHAHETEYNIEAEFUEEHPIYYNSSHTWEEOE
+== texts/pd/browning_56621.txt vs cipher 3-1  (pool=258, anchored palindromic=58)
+   anchored (start,length) pairs searched: letters=1165759, first-letters=1159340, last-letters=1159340
+   -8.8969 win= -8.7832 last-letters-palindrome    start=  69212 L=  310 anchored rev
+      EEDEENSLEEMESUDGRTEEGTHNSWUESREATMTEDGEDTHETSEOFSRSERSEEANEHODNDRTEEEN
+   -8.9242 win= -8.6174 every5-wordlast            start=   6595 L=    - fwd      rev
+      DISDEEEOFEIDNYOEOUIETESDESSSYEDEETSYONTENTENMNSTNOEDKINPYOHEDTEEESETES
+   -8.9572 win= -8.4145 last-letters-palindrome    start=  41735 L=  315 anchored fwd
+      OESUNSTRBETOREOENKESYTELRFFLSDSOESESENASOETDESRGSOSGENREDYEEETESYEENSF
+   -8.9593 win= -8.6696 last-letters-palindrome    start=  24530 L=  411 anchored rev
+      AETEENOSEEESEINKTTOTUEDOWKRETLODTENEIEETETEEENFTEYSRESEASDADULSDSMETDU
+   -8.9912 win= -8.6456 last-letters-palindrome    start=  41808 L=  265 anchored rev
+      TLENSTSEEERSTEEFDONDSTSMFTERTRHELSASETEEEREETUYSEESERETDEEEELEENTNETEE
+   -9.0205 win= -8.7376 last-letters-palindrome    start=  47250 L=  283 anchored rev
+      YTESRDEHGERDEDENHEREEEHRETERETNFESEFEYREEYEEYEDESNHEIGUNDMRTUEDYTHRDEE
+   -9.0286 win= -8.9087 last-letters-palindrome    start=  41808 L=  310 anchored rev
+      TDERSETLEEREEEELDONDSESEFYEDFRHERSASNTSSRFERNUYSEESTRESEENRFLEENDNEDDE
+   -9.0290 win= -8.8554 last-letters-palindrome    start=  41808 L=  324 anchored rev
+      TDERSEEREEREEERTDONDSETLFYSLERHERSASNTSTSFESNUYSEESDRETEESESLEENDNEESE
+   -9.0323 win= -8.7182 last-letters-palindrome    start=  41808 L=  303 anchored rev
+      TEERSERSEERFEEEKDONDSEEPFYOYHRHERSASNTLYYTEYNUYSEESEREREETTELEENYNEBEE
+   -9.0325 win= -8.6476 last-letters-palindrome    start=  47508 L=  313 anchored fwd
+      EEDEUISEGSODRTREMTDSTRSYANNLURYSEDNDDSETYEUSEDSWNTHTSTSEEELDOESEDSTONE
+== texts/pd/browning_56621.txt vs cipher 3-2  (pool=257, anchored palindromic=57)
+   anchored (start,length) pairs searched: letters=940141, first-letters=935645, last-letters=935645
+   -8.3393 win= -8.2671 last-letters-palindrome    start=   1169 L=  317 anchored fwd
+      DEFREAGENDTANHERERTHENERESRHENSEEADDEYRDTFTEDEDLDENEYHEYANSEDESONSOEEP
+   -8.5065 win= -8.3138 last-letters-palindrome    start=  69203 L=  267 anchored rev
+      NNNANTYESEDOEELDEDSSEEDOREYEBREEIONEATAKSTEEEENRLDSTOOTEANERNDTTYESTEN
+   -8.6042 win= -8.4288 last-letters-palindrome    start=  26154 L=  231 anchored rev
+      ITNTNEREEMILEOTREDEDMESHEHYHETENDHEEDDEGERRTAAMEEYNERENSASERRNDEYTHRRE
+   -8.6055 win= -8.3895 last-letters-palindrome    start=  58347 L=  230 anchored rev
+      DEEAEEDSDEREELSEEYETELEARSYHDWASYASEENEYTHSWEWNEMFRESTNEESRENHELYRSLLR
+   -8.6177 win= -8.4315 last-letters-palindrome    start=  35713 L=  263 anchored fwd
+      EHETEDHOHESREDDSEETREDSSSENEEEEHEREDSSNENSSOHESTAEEDYDEDPLNEATEFEEREDO
+   -8.6723 win= -8.4238 last-letters-palindrome    start=  87065 L=  253 anchored fwd
+      EOSEUMEERETEINESELESSESSLNARENETDESSADETSSUENEROTEEDYTOETHMRSYEEIEENET
+   -8.6786 win= -8.3819 last-letters-palindrome    start=  87065 L=  263 anchored fwd
+      EOSSTMEERETELLTSELEITESSENAREEETDEDSADATSSUSIEROSETHYTOONMMRUYEELEENET
+   -8.6832 win= -8.1564 last-letters-palindrome    start=  41783 L=  265 anchored fwd
+      TESEESSSEEDFEESLEEREGRELETHEEEENOFTESSEFAETSRSYTEDETYSERSTFLEDTREREMET
+   -8.6871 win= -8.2522 last-letters-palindrome    start=  69203 L=  330 anchored rev
+      NGNATTHSSOEWEELDEDESOEDOREYEBHEEIONEATSKTTESETNRLDSTSOTEENESNSTTYUSTEN
+   -8.6878 win= -8.4554 last-letters-palindrome    start=  69203 L=  327 anchored rev
+      NGNATTERSERWEELDEDESEEDOREYEBHSEIONEATSKTTESETNRLDSTEOTEUNESNETTYUMTEN
+== texts/pd/browning_56621.txt vs cipher 3-3  (pool=258, anchored palindromic=58)
+   anchored (start,length) pairs searched: letters=1625831, first-letters=1614297, last-letters=1614297
+   -8.8712 win= -8.2276 last-letters-palindrome    start=  69115 L=  479 anchored fwd
+      NDADETTSDSENTESENTSENEEDYEEMHOETOGRNERETSTESERIENESSESTECOSEEDNESDMDET
+   -8.8768 win= -8.7023 last-letters-palindrome    start=  75995 L=  526 anchored rev
+      TERSENDESEDREDTHIEAYEGEEDETTTERRODEOTEETEDNEYEEEHEDNINTETTENEREDUEUEIE
+   -8.9277 win= -8.8207 every3-wordlast            start=  19396 L=    - from-end fwd
+      SOASPNSSTEADNTHSYTEELENSESEIRSHEEKTHSEREDTTWETEENOYTSDESOMNDNTYETHROEE
+   -8.9358 win= -8.6496 last-letters-palindrome    start=  24717 L=  463 anchored fwd
+      SELSEEESSNTEMARHESENDEREETOETSHTEGETESEEEAYOOHESRSKIODODKYPREEDEDETEEN
+   -8.9493 win= -8.7014 last-letters-palindrome    start=  47457 L=  534 anchored fwd
+      NTDEESSSTREDNENEEMEEMESERETERSESMAYSOSELNNEENSSFESFWETERNSEPRPSTONTTEY
+   -8.9632 win= -8.4873 last-letters-palindrome    start=  24857 L=  378 anchored fwd
+      EWREODADELGEYNOITDNIEETEROEDDEDEOESTEHASEMNEDSSATTNWDSEITGTETSTTEROOER
+   -8.9736 win= -9.0279 last-letters-palindrome    start=  33254 L=  498 anchored fwd
+      HOETTETRNTTIDYETANRSSEDTEDIEDEEEDEASTOHSEENSEIENTHEITKLEYSIFTENEDRDEES
+   -8.9868 win= -8.7373 last-letters-palindrome    start=  81682 L=  438 anchored fwd
+      ITSSETHTIAEADDTSRSEYHETTETTITNEOREFEHEITSSEESRERMOLAAOMEYIEASSENERGDET
+   -8.9878 win= -8.4762 last-letters-palindrome    start=  35532 L=  400 anchored rev
+      DUREDGSRTHDNTENNOMNSTSSLEHEANDEEDESSIETERENTRRGYERSTTSHITLUORETDWTERER
+   -8.9942 win= -8.8523 last-letters-palindrome    start=  47457 L=  648 anchored fwd
+      NDDEESNSTREEDEFEEMEEMESERYTERSEHRAYDANTLNNTENSSFESFIHEEENSEPRPSTOFTTEY
+== texts/pd/christie_1155.txt vs cipher 2-4  (pool=257, anchored palindromic=57)
+   anchored (start,length) pairs searched: letters=4612791, first-letters=4592011, last-letters=4592011
+   -8.8564 win= -8.4979 last-letters-palindrome    start=  17839 L=  736 anchored fwd
+      NYLDLESNTTETEDSADHKENENNESTENDESENNFETTDAETREGREDESSTOSNEDDEFSNEDTEREW
+   -8.8812 win= -8.4188 last-letters-palindrome    start=  17839 L=  771 anchored fwd
+      NEDEDESNTRRTEDSSDHEENENNEMTTNDESENNFRTTDLEEDEGREDESSTOTEDDDEFSNEDTEREW
+   -8.8932 win= -8.5813 last-letters-palindrome    start=  65639 L=  741 anchored fwd
+      DETNFOONOSDRERSDEISETENEEEPEDENEUNHEERNDUYORUDSTEEOSESEKIRESDEREEDYESY
+   -8.9109 win= -8.6747 last-letters-palindrome    start=  76835 L=  703 anchored fwd
+      YTEODSHTEEORYNESEEHESENHERETYISSLEENOTTNERTFLERDTEYONERSSGEGIADAINDNEN
+   -8.9125 win= -8.5460 every2-wordlast            start=  25208 L=    - fwd      rev
+      ANDDYEYATEENTUSDETSETTSNENADTODRYMRTYEEYSTGYIETDASREDTSEDRIESHHSEEYONT
+   -8.9389 win= -8.5054 letters-palindrome         start= 318291 L=  845 anchored fwd
+      EANCOUAESTITTHSTRMAYLYETYIDEDINOIHEEESRGESREIEAVIEOTKESSUDEIGOTHIEWHEE
+   -8.9458 win= -8.3711 last-letters-palindrome    start=  65639 L=  558 anchored fwd
+      DTEDESONUTERERSHEIDETENEEGSDDENEUNHEERNDEDEMUESTEEOSETEYORESDEREEDYESY
+   -8.9497 win= -8.5809 last-letters-palindrome    start=   6471 L=  992 anchored rev
+      NSSYENTODNTDYWEYDDYEMREEKIRNEEDTETNSSEISINTUELIEYTEKDADENSTEMNESSOWROD
+   -8.9522 win= -8.3976 last-letters-palindrome    start=  17839 L=  899 anchored fwd
+      NENSDNSNTRRTEDSEDHTENENNEOTENDESENNFSTTDDSOSEGREDESSTOWRDDDEFSNEDTEREW
+   -8.9570 win= -8.4616 last-letters-palindrome    start=  65263 L=  557 anchored fwd
+      SNTFEDNEEPEINAENSTRDNDSSDERTTEDESEEMDTEENDEASEDONOTERESENTESDRESEFNAYE
+== texts/pd/christie_1155.txt vs cipher 3-1  (pool=257, anchored palindromic=57)
+   anchored (start,length) pairs searched: letters=2264323, first-letters=2257904, last-letters=2257904
+   -8.8457 win= -8.6988 last-letters-palindrome    start=  77070 L=  365 anchored fwd
+      UDSSEASTHITETEGSEERETIHEEIIDTEENLESTSENISEEYESLESTTTOWTELATSOSRRTETESS
+   -8.9219 win= -8.8038 last-letters-palindrome    start=  76831 L=  323 anchored rev
+      DANETDEDNEEDYDEEYYESFEEADOETTREDSTATEDLEMOEMOSONNAKFNRESETTOSFGEEDRISE
+   -8.9272 win= -8.8528 last-letters-palindrome    start=  36336 L=  302 anchored rev
+      ETDSDGSSREDESESESTODEEESTEETSSEDRESWEERRELEEEHITDSEESSEFRATESNRRYSYEDO
+   -8.9716 win= -8.8896 last-letters-palindrome    start=  77070 L=  362 anchored fwd
+      UDSSESSTUITETEGSEERETRFEESSDTEYRRESTTENIKENEESRIANTTOWNELASETSRRTETESS
+   -8.9883 win= -9.0350 last-letters-palindrome    start=  36422 L=  290 anchored rev
+      TSTDERDTLENNERESDEEESRATEENRAYETODYDDEGYSRESREENGDEEETESEGERENTEENESFN
+   -8.9958 win= -8.7467 last-letters-palindrome    start=  75987 L=  294 anchored fwd
+      INGESTTOTERTESETSNNYSEERDIINEMIGEOSEETDYTESTRHERERNDETOETEOTNFETETYEDD
+   -9.0118 win= -8.3308 last-letters-palindrome    start=  75987 L=  316 anchored rev
+      NNTEEEFIDESIRESEFRTRHERELUNNDSTTTEREETOTNUENYOONSETYEDETERTYDEIOSEETET
+   -9.0201 win= -8.9582 last-letters-palindrome    start=  60436 L=  306 anchored fwd
+      NSOLSDRDESESLEENRFENTSEEYEELESRELNATTDESNEESFTESESLEEEDELSSDESRYSHYELE
+   -9.0252 win= -8.9322 last-letters-palindrome    start=  24914 L=  395 anchored fwd
+      EROUEGDEEETTDEEDRIEESYESSSSIEUHDANTYEEENDENTGENYEGDRITTETEENDDAANTDOHM
+   -9.0266 win= -8.5647 last-letters-palindrome    start=  17735 L=  277 anchored fwd
+      ETYTDSESSTDEDESSGOFEDASNAFFOTHEDTENNAYYDREDEDENDDSTSENDENDEETESETDASET
+== texts/pd/christie_1155.txt vs cipher 3-2  (pool=259, anchored palindromic=59)
+   anchored (start,length) pairs searched: letters=1825805, first-letters=1821309, last-letters=1821309
+   -8.5284 win= -8.2447 every3-wordlast            start=  24854 L=    - from-end fwd
+      DPESEYYETLELENEESTNERESETESTEERSELESEYDDENHEDENYUNURYINEEIDENNRUERRESE
+   -8.5475 win= -8.3504 last-letters-palindrome    start=  77196 L=  279 anchored fwd
+      SSSERNNEHEFOSHESEYESENESEENTEDREDOFTETLAEEOSTTTRAGREYEERSEEPIRSSSOOTTS
+   -8.5830 win= -8.3818 last-letters               start=  61530 L=    - fwd      rev
+      SAESRISETTEDAMTEESNETSEDNEYSTETARDDETDRRNARESTTEEYSDTESLTHASTUSTYSDEER
+   -8.6419 win= -8.4904 last-letters-palindrome    start=  60345 L=  297 anchored rev
+      EESEEETDOSTEORESELSTSESTELYYNSNTOTMEKSTUSETSTYCREENNLEEONEOHEGDEYSDIND
+   -8.6462 win= -8.2070 last-letters-palindrome    start=  60417 L=  226 anchored rev
+      TEDDESELTEOTEEGTETHNESEOSNYYTEDEEOLEEYLENTEEESGETEYTONTSSTETELEDYDESSE
+   -8.6496 win= -8.3098 last-letters-palindrome    start=   4289 L=  309 anchored rev
+      PETEREDEEDDFORDSEDEDDYENSSYESHOEENDETELEMSEDEEEREETESEEDYDDONTORYDYARM
+   -8.6510 win= -8.5626 last-letters-palindrome    start=    226 L=  230 anchored rev
+      TTEOOREERREDOADNEMSERLDERTYEDDEEREEETELERYINENYIDYDTSPIEDENYTONRYDADEN
+   -8.6516 win= -8.1024 last-letters-palindrome    start=   4289 L=  297 anchored rev
+      PETETENTEENFORDSEDEDEYENSSYESDWEENDETESEMSEDEEEREETEREEDLDDANEORYDEARM
+   -8.6566 win= -8.2746 last-letters-palindrome    start=   4289 L=  341 anchored rev
+      PETEWETSEEOFORDSEDEDEYENSSYESDOEENDETETEMSEDEEEREETELEEDEDDONNORYTSARM
+   -8.6799 win= -8.5607 last-letters-palindrome    start=  60345 L=  296 anchored rev
+      EESEDESEONTEORESELETNESTELYYNDNTOTMEKSEUSETSTYCREENNNEEOTEOFEDDEYEEIND
+== texts/pd/christie_1155.txt vs cipher 3-3  (pool=259, anchored palindromic=59)
+   anchored (start,length) pairs searched: letters=3158711, first-letters=3147177, last-letters=3147177
+   -8.8202 win= -8.4033 letters-palindrome         start= 157438 L=  405 anchored fwd
+      NNESOHETROYIEISMAOROEEOTSOSNEVRAIMBASOUSBESOASMWHOOTOFEUORISENMIATESEE
+   -8.8648 win= -8.6026 word3th-letter             start=  47093 L=    - from-end fwd
+      IETGOSSCEPULSREEEOTONESEDSMRALLOPORAMMLINOREHEOOESUTTNSPRTEREAATEMRTEN
+   -8.8974 win= -8.4333 last-letters-palindrome    start=  22611 L=  409 anchored rev
+      VNEDDLYYEYDSDERESKYRESNDENWTDAYSLETLDEENTTETEEDTESATHERDRSWNEEENSGTTUE
+   -8.9083 win= -8.7554 last-letters-palindrome    start=  76923 L=  373 anchored rev
+      FDEOGRESTETDNEDTNDIFITSEEGTONTETDTOINEETLERESSDEEREEETLIKEASYISTEEEYCI
+   -8.9086 win= -8.3131 every3-wordlast            start=  21484 L=    - fwd      rev
+      DUTGRYDRENENESWETPSTNWDMINDASDEELTTEDESSAYINOSOEEEAOEYIEETREDTEERDESIA
+   -8.9105 win= -8.6654 every2-wordlast            start=  16859 L=    - from-end fwd
+      OTFYEMDEHETENEEORETREELGELYEDYSEUDERUNUMAEEDMORSELDDNUWEEHASREHERFENEA
+   -8.9143 win= -8.5487 last-letters-palindrome    start=  29803 L=  580 anchored rev
+      DGRGTSITITYEOUTSYGKEMETESGENLYEDELTTEEORENWEOISOUNEKGYTISEROSUESTARTEE
+   -8.9154 win= -8.8444 last-letters               start=  46332 L=    - from-end fwd
+      GRSERTAOFEEEDETRLESYEESNDTERALTEROTEDNTLORYESENEREISETENEMEDSRGDSDEREL
+   -8.9198 win= -8.8461 every10-wordlast           start=   1212 L=    - fwd      fwd
+      DYTUSDEREETEETGODIEDDEENITHEOYERSEETEHNYTYDENTTAFDYENTESEENYEPDNUEONED
+   -8.9216 win= -8.5112 last-letters-palindrome    start=  70856 L=  405 anchored rev
+      OYONYNSTDEEREODDEOITDANAETRSETERERSECEEDESDEAMSEDDIADERTOOTSTYOERREOTE
+== texts/pd/christie_58866.txt vs cipher 2-4  (pool=258, anchored palindromic=58)
+   anchored (start,length) pairs searched: letters=3641269, first-letters=3620489, last-letters=3620489
+   -8.7411 win= -8.7719 last-letters-palindrome    start=  28390 L=  926 anchored rev
+      DENGDEEPEDEEOUNEORNETSETETSTETTUNTYTENDTESEDENEETTRRTUONTEISETETYEYIIT
+   -8.8063 win= -8.6717 last-letters-palindrome    start=  19917 L=  775 anchored rev
+      TFAEEILEDUEONEGMIEDEDITESKESEDITDESTUSRESMITDRTTYSENITDSSTEDETEDNITEGE
+   -8.8074 win= -8.8113 last-letters-palindrome    start=  28390 L=  933 anchored rev
+      DENGDEEPEDEEDANEORNETSETETSTETTUNTYTENDTESEDENEETTRRTUONTEISETETYSYINE
+   -8.8241 win= -8.4343 last-letters-palindrome    start=  23901 L=  630 anchored rev
+      EEYEEDESEEFHGYLIESWHOEEEDENENGETOGRODGYHESESUGTUFDEDEYEGEEYENFEASENELH
+   -8.8325 win= -8.8037 last-letters-palindrome    start=  28390 L=  902 anchored rev
+      DENGDEEPEDEEYTNEORNETSEEDTSTETTUNTYTENDTESEDENEETTRRTUONTEISETTTYRYIEN
+   -8.8398 win= -8.5146 last-letters-palindrome    start=  19917 L=  735 anchored rev
+      TFAEEILEDUEOTAGMIEDEDITNIKEEEDITDESTHODESMITDRTTYSENITDOETEDETGDSSTERE
+   -8.8616 win= -8.8462 last-letters-palindrome    start=  28390 L=  994 anchored rev
+      DENGDEEPEDEEENNEORNETSETETSTETTUNTYTDNDTESEDENEETTRRTUONTEISETETYLYINE
+   -8.8708 win= -8.7164 last-letters-palindrome    start=  28390 L=  923 anchored rev
+      DENGDEEPEDEEEENEORNETSETETSTETTUNTYTFNDTESEDENEETTRRTUONTEISETSTYAYIND
+   -8.8722 win= -8.5084 last-letters-palindrome    start=  29048 L=  879 anchored rev
+      EFRTYENDTYDESEOREENOGTEDSEEGITANDYETSESTARUEDNYWETNEAEYEGSTTYYEDSGRSTE
+   -8.8729 win= -8.3287 last-letters-palindrome    start=   4762 L=  739 anchored fwd
+      OFETUNESAEENMOMEMATEYESYELTSTEEETIKDOLIEYSTWTYESHLLDRSYEDOYFEEETEAYTSI
+== texts/pd/christie_58866.txt vs cipher 3-1  (pool=254, anchored palindromic=54)
+   anchored (start,length) pairs searched: letters=1787797, first-letters=1781378, last-letters=1781378
+   -8.8414 win= -8.5813 last-letters-palindrome    start=  50426 L=  297 anchored rev
+      GNEDEDDREEOEDEEIASTGNFNIREYANYNNELOSEDRSTLETTERYDENSEODETHEOTTNETENNKE
+   -8.9086 win= -8.8843 last-letters-palindrome    start=   6486 L=  352 anchored rev
+      EESTTNTENERTDUTTEDERETWETSUESEEDNNDDESSRFDEFIESAGDLYDERRETEHEEETTFREDT
+   -8.9593 win= -8.9060 last-letters-palindrome    start=  28018 L=  268 anchored fwd
+      ESSEENDESEMEMSDETUETEETETEENSSEEDENTTEMESEGTUDDFEETRDREENOFNDLOEMNANSE
+   -8.9626 win= -8.8329 last-letters               start=  55804 L=    - from-end rev
+      ENEEDFTTEEDADTEDTSSEOLSEENEYEGYSIETRORNEDMEDHESXTDEDEUOYFNEEEDFEEDPEEL
+   -8.9659 win= -8.9056 last-letters-palindrome    start=  64498 L=  330 anchored fwd
+      DEFESNTEETHRSEYENNDRENREEEETSTETRESSORYMEEOTREEELENMEEDEDREADEDEEDOHED
+   -8.9698 win= -8.6921 last-letters-palindrome    start=   6707 L=  380 anchored rev
+      EEOTTENDDEHEENSROUSOTETEEELSHTTEDDTAWFELADEAMAEMUEPAANTEMDENERENILNESE
+   -8.9703 win= -8.8803 last-letters-palindrome    start=   9925 L=  344 anchored fwd
+      NEKANSSETNMEASSSESEDSTERDOONKDYNDTESSEEKEENDDFNESTFANETEEEASASETNEDESG
+   -8.9734 win= -8.8606 last-letters-palindrome    start=  22074 L=  403 anchored fwd
+      ESDEEDEAOEDENSMRETEEYWEDSNNERSDEETREHYDETETODRUMERYDORRELDSOETLARDHERK
+   -8.9858 win= -8.6677 last-letters-palindrome    start=   6707 L=  315 anchored rev
+      ENOTTENTDEHEENTSOUSOTEEREEYDDTTEDDTAWFHEODEOMAEMUEPSANTTMTENERENLLNEWE
+   -8.9963 win= -8.8259 last-letters-palindrome    start=  63380 L=  333 anchored rev
+      STTOTNEDFEERSRNYENGETTENESMYSTUESSENELEDDTEDRTGETEDDNESSSEESUEEIDESSEE
+== texts/pd/christie_58866.txt vs cipher 3-2  (pool=257, anchored palindromic=57)
+   anchored (start,length) pairs searched: letters=1441629, first-letters=1437133, last-letters=1437133
+   -8.6424 win= -8.3421 last-letters-palindrome    start=  44955 L=  308 anchored rev
+      ESTDETTSIELSEETUEXTTETMEKEYEAARTHEYELSTSDEEMEENLDNEDYEITMYSTUSESYSOGSE
+   -8.6625 win= -8.0645 last-letters-palindrome    start=  24556 L=  242 anchored fwd
+      DSSTEREDTGAAELDANTFOEEAASTLEESETHASNEENEERULTHSHEEIAYETERREASESEENTTLE
+   -8.6844 win= -8.5281 last-letters               start=  37315 L=    - fwd      rev
+      TOEEETTRYESETESFENTHEEESTAYIORESSSTESETNSENMSEDTROANNESEDSHNNEELYEWOTT
+   -8.6942 win= -8.0051 last-letters-palindrome    start=  64538 L=  244 anchored fwd
+      DKRESTERREYSETIKNERDEELKEENSEEDYESAMYETNERRESEEENRESYSOEENTETENSEDTHED
+   -8.6988 win= -8.4295 last-letters-palindrome    start=   7449 L=  278 anchored rev
+      REEDEDERGHFTYNTYEYEHHEESEDYTSTEDESEENSUGODETETEEDOFYDTRTESEEEDNEYONUTD
+   -8.7003 win= -8.4967 last-letters-palindrome    start=  24556 L=  305 anchored fwd
+      DSSEEREDTRNENAGANTFOWEAARTLEEEETHEENEETEERUNNHSHEEEDYETENREAMESENNTTLE
+   -8.7011 win= -8.3769 every5-wordlast            start=   5733 L=    - fwd      fwd
+      IGSDITEDTESTOTRDATEEDDEDDEDOEDTEDTTEESSDHFEEYTENNUTAYHENSSERDIEYOREDEE
+   -8.7050 win= -8.3031 word3th-letter             start=   3399 L=    - fwd      rev
+      REIMRDNORSEAUTEUEADUSESDRSYEEEOTEDSEAREAASRATKSEUSAFTIALECLALEREYEOLOO
+   -8.7094 win= -8.5610 every2-wordlast            start=   3168 L=    - fwd      fwd
+      YSDREDEDSTDEEIRDSYNEIPADROSEEDTEDETGREHIETDEESDSENIEYESESUNSNDMNESTSDE
+   -8.7137 win= -8.4343 last-letters-palindrome    start=  56082 L=  277 anchored fwd
+      EESEELSERERETOYREYOUNEURUODEEEYTIESTSTREEOODEDDROSLAYEDSEETYORNETTENED
+== texts/pd/christie_58866.txt vs cipher 3-3  (pool=259, anchored palindromic=59)
+   anchored (start,length) pairs searched: letters=2493791, first-letters=2482257, last-letters=2482257
+   -8.7207 win= -8.3729 last-letters-palindrome    start=  50588 L=  544 anchored rev
+      ERODSDESTTYTETRSTEERTADDEYFGETTHAAFIRESHOEDETSEFESOTEEIGODTHANERESEEIE
+   -8.7421 win= -8.2713 last-letters-palindrome    start=  18033 L=  378 anchored rev
+      IUSTRIISISNEHFTWEEYDREELEYDUTTOTAYFYNESTSUIEEDOYREDHIRLTYSLESETDNETOTE
+   -8.8407 win= -8.6222 every3-wordlast            start=  17010 L=    - from-end rev
+      DESRTEOTSNOESEEDSEOTSNEEESSEYSUTESEWEELEOLASDOGDDENSEAETSGADDRREDEELTD
+   -8.8774 win= -8.8617 last-letters-palindrome    start=  24184 L=  460 anchored rev
+      FENSELESONETEEIAMEYESEEYATSRSASERDRTWEMRUFYAITETEWOKETHTETEENSSDODYOER
+   -8.9043 win= -8.4547 last-letters-palindrome    start=  37632 L=  361 anchored rev
+      ASTSTDAARDNEAROTSEESDDSDRADADYRSODIODERFDEOTDGITYGENSKEIGPATETEMEATRER
+   -8.9084 win= -8.4850 last-letters               start=  52477 L=    - from-end rev
+      MELRUESMETFDSTOIEUELENEEDDSEMETENENTDELADEEEDNTEDWTYRTETRENIUEEEEDENIR
+   -8.9110 win= -8.5231 every2-wordlast            start=  32192 L=    - fwd      fwd
+      RTHTENNOTENELDGOOLIDDEDDDUDDMEAHMAODSTOMEDRUTOLDRTHGLNEGRETSSEEROMSTET
+   -8.9122 win= -8.8237 last-letters-palindrome    start=  18033 L=  486 anchored rev
+      DUSTHTITESNEITDOEETDREELESDUTOOTAYEYEESTSUINIGNYREDHEDETYSMYIEGDTDTOTD
+   -8.9271 win= -8.4709 last-letters-palindrome    start=  18033 L=  424 anchored rev
+      DUSTIYINESNETGEYEEADREELESDUNNOTAYRYDENTSUITDAFYREDHYMNTYSYYEEIDTNTOTA
+   -8.9273 win= -8.9298 last-letters-palindrome    start=  59149 L=  385 anchored fwd
+      IEAHISTTEETEREEDDESYNEMISSEURTEIHLLERENSERRETSTREEETNTEDDYDOTNSIRDUDET
+== texts/pd/christie_61168.txt vs cipher 2-4  (pool=257, anchored palindromic=57)
+   anchored (start,length) pairs searched: letters=3855877, first-letters=3835097, last-letters=3835097
+   -8.6892 win= -8.1151 last-letters-palindrome    start=  77170 L=  638 anchored rev
+      SEYRRNENSYAADEDIDDREAYFETERTSDEEIDDEEFYOSENEISESEHEEEASFTENEENDHESROET
+   -8.8102 win= -8.6577 last-letters-palindrome    start=   7260 L=  541 anchored fwd
+      SNOOANSNTNADESEETOREEEESESERTDEEEEEEEETYEARVETDSTSFTESGEONIENETEDESNEF
+   -8.8390 win= -8.4214 last-letters-palindrome    start=  62296 L=  590 anchored rev
+      OEDHENEEESYRETDREFESREESEDLSTTEDLYFHNEDYNEDELRGDDOOEEDEESNETDOWETESSES
+   -8.8409 win= -8.7051 last-letters-palindrome    start=  57779 L=  790 anchored rev
+      EIDDENDEEOWININDIASASYDELEYTTETIFLETDEATTREYSRENDNEATFNETSEWDNITRARITO
+   -8.8463 win= -8.7057 last-letters-palindrome    start=  77170 L=  607 anchored fwd
+      NIDNSTEGNTHETDOEASEATATGADERFARTSYEIEDNATREASSENTEUOSSSERIRERSDTASEDAN
+   -8.8492 win= -8.6249 last-letters-palindrome    start=  73589 L=  736 anchored rev
+      ERESTNRESESDYTEEYTRORTDGRIDDSIGDOEEEREYNEDELLEYENNSEGFEEDEEOISETEDTETI
+   -8.8493 win= -8.5754 last-letters-palindrome    start=  73589 L=  701 anchored rev
+      ERESTNRESESDEEEEYTISRTDEEIRDSIGDOEEEYEEREDELLEYENNSEGFEEDEEEISTSNSTEST
+   -8.8759 win= -8.6635 last-letters-palindrome    start=  73418 L=  706 anchored rev
+      TINRESNHAPARDDEPDUTSEDYEYOTREDMUISEETETUOGEETSWETSATMDEEREDMESTNEEDLTE
+   -8.8790 win= -8.7491 last-letters-palindrome    start=   7159 L=  617 anchored fwd
+      DRSSERARDDESEEESEELEKEERETYNNRREATFKETSNSEATATEREENTESEEENTDNERSRKRENE
+   -8.8871 win= -8.5616 last-letters-palindrome    start=  28318 L=  701 anchored fwd
+      IEYLOYTDERERSKEAUEEASAREAUDEATEEDUDTETTITESNDSETHENDAERSOWNEETOTTNTSAN
+== texts/pd/christie_61168.txt vs cipher 3-1  (pool=253, anchored palindromic=53)
+   anchored (start,length) pairs searched: letters=1893061, first-letters=1886642, last-letters=1886642
+   -8.6819 win= -8.3294 last-letters-palindrome    start=  29159 L=  313 anchored fwd
+      TYSLAETETITFEENEENDTSOOEEDDEEDDNINERERTLEETREOSRNEEEYNDESERWEDEEEESYRE
+   -8.7379 win= -8.3856 last-letters-palindrome    start=  29159 L=  309 anchored fwd
+      TYSLATSESITREENEWNDTSEREEDDEEDEEENERITTLEEEEEOTNNYEEYNMESENEEDHDEESERE
+   -8.8147 win= -8.4804 last-letters-palindrome    start=  29159 L=  305 anchored rev
+      YEEKDDTETENWETELOTNRIEDTONTRLESDEDMTEOHOTEETETTELEEKETEOREEGEETERNEITE
+   -8.8547 win= -8.7628 last-letters-palindrome    start=  48798 L=  353 anchored rev
+      NETONYTETESERSEDASNDFLDYKNSRISYTRERDMETDESEESEDHELETEDESEDONHNDATEESAD
+   -8.8633 win= -8.4912 last-letters-palindrome    start=  25408 L=  266 anchored rev
+      TENLORGPTERSRISEFDLEEYTITDTOUESEENSUATSEEHEETSSSTDSETDEHANEEEENYFSENLO
+   -8.8753 win= -8.6263 last-letters-palindrome    start=  29159 L=  277 anchored fwd
+      EYSSANYEDITUOENERNDTSTEEESSEEDTEENERSDTLSELNEOSEASEEYNEESERFEDOEEESEEE
+   -8.8778 win= -8.5192 last-letters-palindrome    start=  29159 L=  293 anchored fwd
+      EYSYAMIELITTDENENNDTSEDEEEEEEDONENEREYTLIETTEOWERDEEYNTESEETEDLEEESDYE
+   -8.8800 win= -8.4912 last-letters-palindrome    start=  48867 L=  286 anchored rev
+      EOSNEEEETEEDORNDEDENETOSIENORSDNEDEGAETATYETEDESESEDERYEOTETTTSINTOTEE
+   -8.8913 win= -8.6052 last-letters-palindrome    start=  29159 L=  266 anchored fwd
+      EYSEAYSELITKEENEENDTSDNEEGGSEDSRENERTETLEEOEEONSEIEEYNNESEEEEDNEEESETE
+   -8.8980 win= -8.9935 last-letters-palindrome    start=  28507 L=  384 anchored rev
+      IDEDYESEEEDETERUTSIOTENNEDYKEETTETETEEREEDEEREYSEDTDSTIREARLOESDSMSOED
+== texts/pd/christie_61168.txt vs cipher 3-2  (pool=258, anchored palindromic=58)
+   anchored (start,length) pairs searched: letters=1526493, first-letters=1521997, last-letters=1521997
+   -8.5838 win= -8.2520 last-letters-palindrome    start=  74650 L=  301 anchored rev
+      OTEEDTRIYENDEPADEENRENEERLYETDEEDETENESDRTYSRMOTDSTSETODSTDERTIEYESTET
+   -8.6148 win= -8.1643 last-letters-palindrome    start=  77403 L=  271 anchored rev
+      RIGLAYGEASEEFSTREENSSSFOEEYSSFYESOSETOTRLSSIDDEREDNENSSTEEYERNETYSDETS
+   -8.6473 win= -8.5034 last-letters               start=  14150 L=    - from-end fwd
+      NDEDEDMIGSTRINDETIEEANTEDDUTETENERNEMRPLUEENSAPISYTYYEDMAIEDEITHIRSTNE
+   -8.6649 win= -8.2957 last-letters-palindrome    start=  50719 L=  236 anchored fwd
+      TIETIIYSSSDTEDEATTRETFEADEHEEETEETINDTAODESMSREERENTYINNREISWENNERRETE
+   -8.6808 win= -8.3519 last-letters-palindrome    start=  50719 L=  242 anchored fwd
+      TIENDIYSSTNIATLATTROOFEAEEHEEETEEIENDTDODESTSREETESEYINWREISEENNARRETE
+   -8.6942 win= -8.3215 every2-wordlast            start=  25430 L=    - from-end fwd
+      FDEOEEDYSISRSYESOEENEDESTREEERETERNDGEEGDKESTENDERENYEIRLDEEEDAYSMRDDE
+   -8.6956 win= -8.0840 last-letters               start=  51344 L=    - from-end fwd
+      NDETSYSDEDTASNDSEDENTFESOTESENINEANOFTUENSEHIPERSERSYERHESOEIONESETESE
+   -8.7026 win= -8.4095 last-letters-palindrome    start=  39746 L=  226 anchored fwd
+      OLDSTMNTSROITDEASOENEDWADERSEEDNNINELSSEAUREITTGUOFAYAREERSTFONSTERNOR
+   -8.7056 win= -8.3139 last-letters-palindrome    start=  74650 L=  242 anchored rev
+      OOEETTTEYIDEEPADEEORINEERLYETDIEDETENEEDSTYOREOTDSTSETODSTDKNEIEYENTOT
+   -8.7121 win= -8.6201 last-letters-palindrome    start=  74563 L=  307 anchored rev
+      OSHTESTEDTHITDSSEEOSTHTEEEYEATFAIESEESTOEATEEEDTITISELESYEDOLGNIYEYESR
+== texts/pd/christie_61168.txt vs cipher 3-3  (pool=259, anchored palindromic=59)
+   anchored (start,length) pairs searched: letters=2640671, first-letters=2629137, last-letters=2629137
+   -8.6950 win= -8.4199 last-letters               start=   1627 L=    - fwd      rev
+      OTEDESRERTEREESEURDNOTTTTEATEGEITENENEEITEHTDDEEOSDUETDEEEDERACWHIDOWE
+   -8.7662 win= -8.4503 last-letters-palindrome    start=  28571 L=  501 anchored rev
+      EISEDSRYEGRTOESSEKREEDEDODTMESEEESEHIEGLESEETEDYEIAUTSENDEOODEEREMSTHK
+   -8.7801 win= -8.4219 last-letters-palindrome    start=  28571 L=  554 anchored rev
+      EISEDTRYEGRTEGESEKEEEDEDODTMESEEESAHEEYLESEDEOEYEIAUSODNDEASSEEREMSTHT
+   -8.8069 win= -8.8203 last-letters-palindrome    start=   7192 L=  528 anchored rev
+      NTNESTEESDEDTEDTOLDELEDLEMEETTTLOOTNDEEFENNEDESELRESEYANDEYOEETGTDNMNE
+   -8.8275 win= -8.7016 every2-letter              start=  71570 L=    - from-end rev
+      WOUFAANTINWEHERDRTIFNESDUSTTEDTEGUTCSETIOISNDSHIERESEPARSOALUSTHEESTST
+   -8.8479 win= -8.6002 last-letters-palindrome    start=   1339 L=  476 anchored fwd
+      EOILEIERDEDDNENERHESFEADHENESIERHETMDATENDYFSENERSYDEOFESORDMONTEEGYEH
+   -8.8536 win= -8.3898 last-letters-palindrome    start=  29202 L=  407 anchored fwd
+      GSSNEEOTYGNSEERETTIOTEYSTETDRWORDRDYEYEEYTHUEDIRWENOREYESENOTREDYOTTEE
+   -8.8731 win= -8.7570 last-letters-palindrome    start=   7192 L=  476 anchored rev
+      NTNETOETSDEDESMHOLEELEDLEMEEDETLOOANRENFENNNERDELRESEETNDETSEETGTDNMNR
+   -8.8762 win= -8.5703 last-letters-palindrome    start=  27648 L=  403 anchored fwd
+      YGRNLRITETIKEAETENSINETOTHEDTESEDEATEEESOTEDYTOLDTYSRSEATNTKTDTORTEAER
+   -8.8765 win= -8.5588 last-letters-palindrome    start=  28964 L=  453 anchored rev
+      EEENETIRENDSETEWTODSELEINSTSREMNDFIDSEDANATETETERSEESEETSATYSSSOREEYTN
+== texts/pd/christie_61262.txt vs cipher 2-4  (pool=258, anchored palindromic=58)
+   anchored (start,length) pairs searched: letters=2814923, first-letters=2794143, last-letters=2794143
+   -8.8039 win= -8.4033 last-letters-palindrome    start=  47377 L=  616 anchored fwd
+      FETTEDEYSDTLELDNATATITORTDSUNESDEDFEENEEEETDEAHHEESTTEDSFEEINESEEEYSYO
+   -8.8582 win= -8.6964 last-letters-palindrome    start=  45177 L=  599 anchored fwd
+      NGSAFTEDNTSYYESOSMERARDYREETTEUSETSTTISTIDYFETUILESINUFEEMGOETINEEEERR
+   -8.8858 win= -8.7199 last-letters-palindrome    start=  47426 L=  549 anchored fwd
+      TSEEUERSHDTELESESDEEDEEDEEEENEDSOMEUNDSTSTEUODEEEEYECANOGEMDTEESEELENM
+   -8.8859 win= -8.7132 last-letters-palindrome    start=  18165 L=  550 anchored rev
+      NSDENYENTOGDRDEONEEHESENOTMOMYFONERREEOEENERTDITOEEEFIEEOTEENEEHOELTTL
+   -8.9074 win= -8.8570 last-letters-palindrome    start=  47377 L=  636 anchored fwd
+      FTETREEYEGELELDTATATITORTDSRNESDEDFEENEEDLTEEEHHEESTTTEESEEINESEEEYSYO
+   -8.9120 win= -8.6568 last-letters-palindrome    start=  18069 L=  569 anchored fwd
+      NDEEELSDTSETINLENTYEEEEDEETATAIMOOETETNOTEWLOEPETNORFDENEFEEITIRADEERE
+   -8.9151 win= -8.7707 last-letters-palindrome    start=  47377 L=  609 anchored fwd
+      FTTSEEEYOSOLELDDATDTITORTESENESDEDFENNEENLTREDHHEESTTOEEIEEINESEEEYSYO
+   -8.9418 win= -8.5891 last-letters-palindrome    start=  31918 L=  652 anchored rev
+      HROTRUNEREAEEDFFDEDEERDEDEEIDESEEOSESHHOANDEHENDHHIRSKEHIFTTSTMERERESE
+   -8.9441 win= -8.8493 last-letters-palindrome    start=  47426 L=  633 anchored fwd
+      TLESERRSEEDELESATDNEDEEDELEENEDSOMEUEDSTRSEAOYEOEEYECTSENEMDTEESEELENM
+   -8.9450 win= -9.0021 last-letters-palindrome    start=  20522 L=  620 anchored fwd
+      RDOOSTYIRTOREDTEPREELEEDENASTESEAORHEERYDETWAITTTHYDSEEPUSDEOOSSEYKGNY
+== texts/pd/christie_61262.txt vs cipher 3-1  (pool=257, anchored palindromic=57)
+   anchored (start,length) pairs searched: letters=1382479, first-letters=1376060, last-letters=1376060
+   -8.8810 win= -8.8323 last-letters-palindrome    start=  36247 L=  331 anchored rev
+      RSLENONEYERETFSESRESETYEOODEDEUSSNEMREEENRENSSDESEONEEELTERNTADSEOTYDO
+   -8.9508 win= -8.9123 last-letters-palindrome    start=  18312 L=  322 anchored fwd
+      NOOMAHATESIFIEERAHEINEHEDSSSERDEMTOEDREMDEETOEEWTOIETTTEEESHOOTREMETTD
+   -8.9596 win= -8.6501 last-letters-palindrome    start=  43280 L=  442 anchored fwd
+      YNTSMSFLERNTOTETAFTEOTSRETTENETSYTOSSEADFEEEAHEEAREARLEEDYESHEREANSYOT
+   -8.9855 win= -8.5136 last-letters-palindrome    start=  29256 L=  333 anchored rev
+      EFNMEDAFDESSSDIEDEDASDESOERESFNTAYEUENTEDOEDDISELSTEDEEDDREEMISERLDESA
+   -8.9858 win= -8.8594 last-letters-palindrome    start=  31413 L=  326 anchored fwd
+      DEREEYSSTEEETDYSFRDENONSESSDOTYTEIEEYDERSESREEMENADYTMTEEAGDOEADNDTESE
+   -9.0031 win= -8.5857 last-letters-palindrome    start=  43280 L=  429 anchored fwd
+      YNTSMSELERNAOTETAFTEOTSREEEENEASYTOSTEADRESEAHSEAREARLEEDYSTHEREANSYOT
+   -9.0066 win= -8.7512 last-letters-palindrome    start=  15212 L=  328 anchored fwd
+      EIDGONHSSTMDEDDSORSSSTTTEEEWNAIGESEEEEDDSEEIFDEMETYADSREDETEDENEETTEYD
+   -9.0080 win= -8.6877 last-letters-palindrome    start=   1046 L=  258 anchored rev
+      EUDOOLDDEEIDTDEETDISTESSDOTUITWSETTENEERLYELSERDEFETYTTDEEDYOEDTSTDETE
+   -9.0089 win= -8.7384 last-letters-palindrome    start=  43280 L=  441 anchored fwd
+      YNTSMSELERNOOTETAFTEOTSREEEENETSYTOSASADEETEAHEEAREARLEEDYESHEREANSYOT
+   -9.0137 win= -8.9219 last-letters               start=   7186 L=    - from-end rev
+      NTOSYGILSEDRESTTEESERROTTDESEENENSTDLETGRRERYTIENOLEEMDEETHTARSYRDESER
+== texts/pd/christie_61262.txt vs cipher 3-2  (pool=258, anchored palindromic=58)
+   anchored (start,length) pairs searched: letters=1114861, first-letters=1110365, last-letters=1110365
+   -8.5204 win= -8.4522 last-letters-palindrome    start=  50141 L=  301 anchored fwd
+      YHOTESSENDSELYEDINDSEEEDETTLESERREEGEDEDEEOIEMEYTONUYEDNTTOGMEEDLITSSI
+   -8.5699 win= -8.2983 every5-letter              start=  45747 L=    - from-end rev
+      ELRESATIHEISEIATEMMEEIATIRYSSEMEFTRENSMDFASPOAWIESCEACRATECTETTHYONTED
+   -8.6501 win= -8.2611 last-letters               start=  18091 L=    - fwd      rev
+      SSINEEMNYTSODERRESTTTONOTTYTRESDMOFESEEANDNEEETOETTEHUSLESEIDEDEYEDERE
+   -8.6545 win= -8.3602 every2-wordlast            start=   8038 L=    - from-end rev
+      OEENOREARNDIRMSNETNENSETIDYADDIMUTHEIEWTEEETEEETTENTSEEEADDEUPEDYADODM
+   -8.6723 win= -8.2650 last-letters-palindrome    start=  24769 L=  264 anchored rev
+      EFTDESDTEEWIDAHEESEAEESTDDYESTENETEEEESDESEBYDENENERENENEKRSSTELYETTEN
+   -8.7112 win= -8.4646 every10-wordlast           start=   1420 L=    - from-end rev
+      PEEEENTERTUGIRGEEETDTHSEREYTRESDEEEEUDEGSEISEINETNYESSETTETHTESNYREEDO
+   -8.7224 win= -8.7343 last-letters-palindrome    start=  41393 L=  240 anchored rev
+      SAFESESESEHSTHEEENTSEERESTYEELOEDEDEEEELUFRDELMESKFEESESETEYEDSDYTYSES
+   -8.7258 win= -8.6616 last-letters-palindrome    start=  41393 L=  239 anchored rev
+      SSFEDENSSTYETHEEENRSTERESTYEEOSEDEDEEERLEFRSEDMESKFEESESSTEARSSDYSSSRS
+   -8.7263 win= -8.8239 last-letters-palindrome    start=  37089 L=  359 anchored rev
+      ETOEESORMEEUTORDEDOYENERSEYSNTTDARNESRENARODSETESSSMEISFTTDENNDSYEEENS
+   -8.7269 win= -8.6754 last-letters-palindrome    start=  37089 L=  369 anchored rev
+      ETOEESOEMEDUTORDEDOYENERSEYSNTSDARNESRENARODSETESSSMOISFTTDENNDSYESENS
+== texts/pd/christie_61262.txt vs cipher 3-3  (pool=258, anchored palindromic=58)
+   anchored (start,length) pairs searched: letters=1928231, first-letters=1916697, last-letters=1916697
+   -8.7554 win= -8.4598 last-letters-palindrome    start=  47646 L=  416 anchored fwd
+      NNETTOEENTDSENSEEMNSEEEEEDONEDNEEENLEDEKENTTOKOSTGAETDFTEADEMNETNERFED
+   -8.7846 win= -8.5776 last-letters-palindrome    start=  48023 L=  512 anchored rev
+      SDEDTYDAADEITSDDERADKESTIFFERTFUESAEYEANEHERNIESTLEHOARSTANGESEERDSENI
+   -8.7933 win= -8.4021 last-letters               start=  47201 L=    - fwd      fwd
+      RINNIHEEEEDEETNIFLUTEENTDAETHETTTEEOOKDSGFOEDROTELDDETORNEDDOEMNDEDEES
+   -8.7998 win= -8.5542 last-letters-palindrome    start=  20996 L=  608 anchored rev
+      OTETIEDOGNEREETTNOHUSTEMTEETSTESREHEDESTTHADESTEEDENSTTRRTYDSTSTOMOSTE
+   -8.8072 win= -8.4455 last-letters-palindrome    start=  48023 L=  555 anchored rev
+      SDEDTDDAADEIRTELERUDKESTIFFERTFUESSEDESNEHEIDNASTLEHOATSTATTASEERDSENG
+   -8.8122 win= -8.5215 last-letters-palindrome    start=  14093 L=  465 anchored rev
+      ETILTEFSMYEOSTTTTSFESRKSOTTENDEHALTEGETTENODDOSSYSTSESETTERRDSETSDYEEE
+   -8.8415 win= -8.3196 last-letters-palindrome    start=   2621 L=  397 anchored rev
+      YESNFEISETSERTETNIILWODTSTTRESRTELEDEEEEREETOTSDSRITTEDISANYAYEOLDONIT
+   -8.8705 win= -8.6217 last-letters               start=  33452 L=    - fwd      fwd
+      SDNDOESESEGMYYESETEDEETRDETLEETSFNDOTFEDDEDRSEEEDSEUEEDIDENGAGODEDINEN
+   -8.8750 win= -8.6737 last-letters-palindrome    start=  53625 L=  503 anchored rev
+      EISIWSENRESKRNTTTEFRIDNERTEWSURHTFROSEESNODSTHEYESYOEDSREERRDENEDKKYEE
+   -8.8839 win= -8.6422 last-letters-palindrome    start=  49271 L=  427 anchored fwd
+      UIDGRARTSNODSEYELWENRENEGLETADETTOESESSTEEFTRAEFSGEDTEEDEDREDDTNSTTEES
+== texts/pd/christie_65238.txt vs cipher 2-4  (pool=259, anchored palindromic=59)
+   anchored (start,length) pairs searched: letters=4312971, first-letters=4292191, last-letters=4292191
+   -8.9469 win= -8.8406 last-letters-palindrome    start=  30765 L=  883 anchored fwd
+      EEASEISFENDTESEYEYDEHEYTEEYLSEHOLDYHINRURTSELEBSNOLTITTESHOTTOANEENERY
+   -8.9588 win= -8.6615 last-letters-palindrome    start=  65746 L=  752 anchored fwd
+      SDYOREISUNTYENESSOTLELHELSREMFRTRSNOLDSRDIRDREGRDEETTMNYTOSYETEEFEDSOE
+   -8.9801 win= -8.7448 last-letters-palindrome    start=  66254 L=  966 anchored fwd
+      INRRETTOUKTOEFRASEESDSOTSEERDWDEDERDOEYSDESEDDEMOEMISESHEOTTEENYWENETO
+   -8.9866 win= -8.8080 last-letters-palindrome    start=  66254 L=  937 anchored fwd
+      ILERETTOUKTOEFRASEESDSOTSEEODWDEDERDOEYSDEWADDEMOEMISESHEOTTEENYWENETO
+   -8.9946 win= -8.6380 last-letters-palindrome    start=  66119 L=  553 anchored rev
+      YARETEDETSETRLDAMSMEWOEYEEREEDSOARESTTTEMYSDSTHFRAAESTETETDREEESORESST
+   -8.9992 win= -8.9486 last-letters-palindrome    start=  30765 L=  858 anchored fwd
+      EFARESSFENDTESEYEYDEHEYTEEYTSEHOLDYHINRUDEAILEBSNOLTITTESHOTTOANEENERY
+   -9.0001 win= -8.7195 last-letters-palindrome    start=  65746 L=  745 anchored fwd
+      SDTDYHISUNTYENEDSOALELHELRRIMFRTRSNONDSRESMYREGRDEETTMORTOSYETEEFEDSOE
+   -9.0033 win= -8.9305 word3th-letter             start=  48202 L=    - fwd      fwd
+      SSYRTOCEOTNOORETANASSSMISNSATEIROURUUTEORMSTOLTENERTIERRCHORLCEREOTUUI
+   -9.0097 win= -8.7174 last-letters-palindrome    start=  69862 L=  851 anchored fwd
+      SLTTADETHATESSNTEAIDEDDWDEEMODGRYFASTELFATTRYTLERDFDEENERMITTTFEDTSLYT
+   -9.0128 win= -8.8624 last-letters-palindrome    start=  15350 L=  687 anchored fwd
+      IORDSTSTIYLEETUESCEATARDAREDSRAELATETSYEETDALHOTTENTOSITTIODYSTLRDEFEF
+== texts/pd/christie_65238.txt vs cipher 3-1  (pool=256, anchored palindromic=56)
+   anchored (start,length) pairs searched: letters=2117263, first-letters=2110844, last-letters=2110844
+   -8.8009 win= -8.6825 last-letters-palindrome    start=  76989 L=  315 anchored rev
+      SEENHESSREFOOSSSHOTDTOETNOEWFSTSAWENOOMEETEESEHEMTEDTEETSENGODLYGREFGE
+   -8.8338 win= -8.6071 last-letters-palindrome    start=  76989 L=  465 anchored rev
+      SEENHTEEREFYOSANHOTDTOEENOWROSTSAWENOODHOTEOSEHEMTERTENESTHGODLYEREHRE
+   -8.8528 win= -8.6181 last-letters-palindrome    start=  76989 L=  479 anchored rev
+      SDENHTESREFYOSANHOTDTONENOWROSTSAWENOODHOTEOSEHEMTERTENOSTHGODLYEREERE
+   -8.9173 win= -8.2749 last-letters               start=  49934 L=    - fwd      fwd
+      EGSOTDEDENYEEENDSIRSDFGHOSSHNDEFDESYTGETDEHDFFROYSSEOYDESEERRADELSEHUT
+   -8.9478 win= -8.9741 last-letters-palindrome    start=  66334 L=  338 anchored fwd
+      URSLIDFRMREEEESEETREGEDASHHENDEHPENNORGOEETRRYSMEUNESWEESSOREUNDIROGNF
+   -8.9509 win= -8.8155 last-letters-palindrome    start=  76989 L=  501 anchored rev
+      SSENHTESREFYOSANHOTDTONENOWROSTSAWENOODHOTEOSEHEMTERTENYSTHGODLYEREERE
+   -8.9559 win= -8.8002 last-letters-palindrome    start=  76989 L=  493 anchored rev
+      SDENHTESREFYOSANHOTDTONENOWROSTSAWENOODHOTEOSEHEMTERTENYSTHGODLYEREERE
+   -8.9595 win= -8.6881 last-letters-palindrome    start=  76989 L=  424 anchored rev
+      STENHTTOREFYOSUIHOTDTONENODROSTSAWENOODYOTEOSEHEMTERTENUSTHGODLYERETEE
+   -8.9666 win= -8.7873 last-letters-palindrome    start=  76989 L=  477 anchored rev
+      SEENHTESREFYOSANHOTDTOTANOWROSTSAWENOODHOTEOSEHEMTERTENDSTHGODLYEREERE
+   -8.9695 win= -8.8105 last-letters-palindrome    start=  76989 L=  486 anchored rev
+      SFENHTESREFYOSANHOTDTONENOWROSTSAWENOODHOTEOSEHEMTERTENTSTHGODLYEREERE
+== texts/pd/christie_65238.txt vs cipher 3-2  (pool=258, anchored palindromic=58)
+   anchored (start,length) pairs searched: letters=1707245, first-letters=1702749, last-letters=1702749
+   -8.4416 win= -8.3716 last-letters-palindrome    start=  66498 L=  375 anchored rev
+      EDSWEHESESEENTESEDETSEUTENYDEEMMRTPEOSEERTEYDEYMOISHERHETYAKANENYMUNDE
+   -8.5197 win= -8.4143 last-letters-palindrome    start=  66498 L=  345 anchored rev
+      EDSWEHEDETYENTESEDETTEUTENYDEEOMRTPEOSEERTEYDEYMOISHORHETYAKASENYMONDE
+   -8.5505 win= -8.5490 last-letters-palindrome    start=  50020 L=  261 anchored fwd
+      YEMSITTENEESEONSRESSYEASHEDEEDEOLSTFASUENHEGODTUESEDYHEYDYSANYEYEEEEGE
+   -8.6065 win= -8.4976 last-letters-palindrome    start=  66498 L=  362 anchored rev
+      EDSWEHEEEOHENTESEDETOEUTENYDEEYMRTPEOSEERTEYDEYMOISHERHETYAKANENYMONDE
+   -8.6250 win= -8.4593 last-letters-palindrome    start=  66498 L=  369 anchored rev
+      EDSWEHETEYFENTESEDETYEUTENYDEESMRTPEOSEERTEYDEYMOISHERHETYAKANENYMENDE
+   -8.6394 win= -8.5033 last-letters-palindrome    start=  50020 L=  304 anchored fwd
+      YEMNATTENEEENDESRESDLEASEEDEEEEOLETFASOENHEEEDTUESTSYHEDDESATYEYNEEEGE
+   -8.6750 win= -8.5594 last-letters-palindrome    start=  66498 L=  238 anchored rev
+      ETSWTHNMESHINTESEDATSEUTENYDEEEMRTPEOSEENTEEDTYMOISHSRHETYADTEENYESNLE
+   -8.6760 win= -8.2375 last-letters-palindrome    start=  48065 L=  266 anchored fwd
+      NESUDNETTSHNOSESEDTEDASSSEUIESTSONTITTETSWELEDEDMUTEYETETEADIEANONKEDP
+   -8.6898 win= -8.4936 last-letters-palindrome    start=  29389 L=  271 anchored fwd
+      EEEENDEEIWEDIDYEDETENYIEERSTEDSEEDTFADERSEENTETOREEEYESDNERNENLRIEDTEG
+   -8.6971 win= -8.2184 letters-palindrome         start= 256178 L=  377 anchored fwd
+      IHLOTEHNSIFSERHICAUASESISTAHEEITWSUNATLILTRECEEAMVEBYTOLISLOTHADENTATE
+== texts/pd/christie_65238.txt vs cipher 3-3  (pool=258, anchored palindromic=58)
+   anchored (start,length) pairs searched: letters=2953511, first-letters=2941977, last-letters=2941977
+   -8.7182 win= -8.6300 last-letters-palindrome    start=  57274 L=  426 anchored fwd
+      NLITHTAPEEETDADDEETTEENDEDNESEAYESERESTSOEMYSERSADEEDNSEDDLEDSERIDNEEE
+   -8.7935 win= -8.7916 last-letters-palindrome    start=  66973 L=  469 anchored rev
+      TSAARTHTENFESDEUEDESMAELALYDANMYREEDRESRELETERGSESDTHINNDEETREETDESYIE
+   -8.8342 win= -8.5747 last-letters-palindrome    start=  29813 L=  416 anchored fwd
+      YEIDSEEDDTEOLEMYEEHENEIOTESITITSTETAISSSNDSSDRNEDTLDNETEOTSESTTENIDEET
+   -8.8560 win= -8.5207 last-letters-palindrome    start=  66174 L=  425 anchored fwd
+      SLDSELSENTTGELAGETERDESYTRHSTESTSTAEAEELETARTNMEESINYETOTFOERFOARNSEEG
+   -8.8689 win= -8.5084 last-letters-palindrome    start=  66329 L=  399 anchored fwd
+      MSTEENSHDDTSEDEESSTUREDENTERTTSESEYNERHRESRLOTTETTSEUWHEDSTEESOHYTSTER
+   -8.8734 win= -8.6238 last-letters-palindrome    start=  14457 L=  555 anchored fwd
+      RDSTTONMEETTEDOINTTERESESTNENYTEATENTEHEEDLYSGANDGEDERRNGEDLSHYTEESYEN
+   -8.8866 win= -8.4016 last-letters-palindrome    start=  66973 L=  557 anchored rev
+      TSAAWOHSENFEHRGEEDESMAELALYDWWMYRENDEETRELENOPESESDTRETNDEDEREETDESYIT
+   -8.8935 win= -8.5407 last-letters-palindrome    start=  66297 L=  475 anchored rev
+      NEERROTSETSEROEEDTATTTRESTETMEMMNAYESEESSTESYNOTEDEEDDDSEEWELYSEOAONEY
+   -8.8962 win= -8.7283 last-letters-palindrome    start=  66329 L=  370 anchored fwd
+      MATEEYSHDETERDTESTEEYEDSNSERTSSYDEYNSSRRESTLOTDRTTSDETHEDSTEESOHYESTER
+   -8.9209 win= -8.8350 last-letters-palindrome    start=  15996 L=  390 anchored fwd
+      ASSTSESENFEDSSOMYFRODENHAESETRESEAGEDOTELLNESYSENNENENTRYNDEEYESTNSTES
+== texts/pd/christie_69087.txt vs cipher 2-4  (pool=258, anchored palindromic=58)
+   anchored (start,length) pairs searched: letters=4101519, first-letters=4080739, last-letters=4080739
+   -8.8224 win= -8.7220 last-letters-palindrome    start=  65111 L=  786 anchored fwd
+      DYEFHDREETTEDIANTNYEEEGEEROASETTOFYTHTEDNTFOODERNNEEETTODSEDENIREIIDHD
+   -8.8686 win= -8.6748 last-letters-palindrome    start=  68498 L=  832 anchored fwd
+      ETEDDETSERTEDLTEGTEDEDTEDSEEETSTEYRTEEDFWSERERYYEOEEATDEEDEEERERTTERIO
+   -8.8699 win= -8.3852 last-letters-palindrome    start=  68498 L=  838 anchored fwd
+      ETEEESTSERTEDLTTGTEDEDTEDSEYETSTEYRTEEDFREWEERYYEOEEATETEDEEERERTTERIO
+   -8.8749 win= -8.5645 last-letters-palindrome    start=  22926 L=  613 anchored rev
+      EYTOEHTEELTGESYDEGESESTDEGSEOREEGEDMATDYEATSOSETEDREESSTEEESDDDEGREDED
+   -8.8836 win= -8.4781 last-letters-palindrome    start=  68498 L=  807 anchored fwd
+      ENFNDNTSERTEDLTEGTEDEDTEDSESETSTEYRTEEDFETEDERYYEOEEATTEEDEEERERTTERIO
+   -8.8871 win= -8.4336 last-letters-palindrome    start=  68498 L=  836 anchored fwd
+      EEYERFTSERTEDLTNGTIDEDTEDSEEETSTEYRTEEDFEDETERYYEOEEATESEDEEERERTTERIO
+   -8.8914 win= -8.5516 last-letters-palindrome    start=  68498 L=  803 anchored fwd
+      ERDERETSERTEDLTSGTDDEDTEDSEYETSTEYRTEEDFNITEERYYEOEEATEETDEEERERTTERIO
+   -8.9036 win= -8.8809 last-letters-palindrome    start=  65111 L=  781 anchored fwd
+      DETTTEREETTEDIATTNYEEEGEEDORSETTOFYTRTEDNORIODERNNEEETERFSEDENIREIIDHD
+   -8.9134 win= -8.6689 last-letters-palindrome    start=  68498 L=  843 anchored fwd
+      EEEOSETSERTEDLTAGTADEDTEDSEEETSTEYRTEEDFEEDEERYYEOEEATEETDEEERERTTERIO
+   -8.9242 win= -8.6000 last-letters-palindrome    start=  68498 L=  852 anchored fwd
+      ENDDOUTSERTEDLTFGTRDEDTEDSERETSTEYRTEEDFEFESERYYEOEEATETEDEEERERTTERIO
+== texts/pd/christie_69087.txt vs cipher 3-1  (pool=259, anchored palindromic=59)
+   anchored (start,length) pairs searched: letters=2013547, first-letters=2007128, last-letters=2007128
+   -8.8888 win= -8.7819 last-letters-palindrome    start=  65193 L=  324 anchored fwd
+      REIRMEENDOTETTCEAROHEESDDEEEOFERTEDYLENGNEGLEETADEENIELEGEESONREEYOMEE
+   -8.9501 win= -8.6563 last-letters-palindrome    start=   9917 L=  283 anchored fwd
+      EMWESRDREYHIENTHEYKEDFTEDEETYWNHSTYNTETYLETTNDDEETTEONTEDNMDDEITTRENTH
+   -8.9833 win= -8.9945 last-letters-palindrome    start=  65216 L=  344 anchored rev
+      EEDEDEEYPEENONEEDETEEERTEAEEEYETRESETEDEFEEFTTOEEENASISFEATTEESDESTMDE
+   -9.0022 win= -8.6724 last-letters-palindrome    start=  37208 L=  392 anchored fwd
+      YETSDWETTUIONDEEEARTTATIEEETOILDTEETTEEDDETIFDEISEETSEEENTHEODEKENDERF
+   -9.0239 win= -8.9301 every5-wordlast            start=    929 L=    - fwd      fwd
+      ESADSESSEERNTYDSTESNTOETDTTENSTEHYEDOFETSEYEYTWNARDEYTEEDTNEEENTIODITA
+   -9.0361 win= -8.9514 last-letters-palindrome    start=  52415 L=  319 anchored fwd
+      GSTAYSRONOHHIEYDEMDEESETREEETGETSYEOTTEETEDDTERSTDETNENEADENEROEOTSTTR
+   -9.0365 win= -8.9505 last-letters-palindrome    start=  65259 L=  291 anchored fwd
+      DEMOSEEADESEETEDADTFOESTEEEEORERTOENLEOHNEGLITTADENDTDLEIYESOSREMEEMER
+   -9.0400 win= -8.8824 last-letters-palindrome    start=  22048 L=  392 anchored fwd
+      HRETEPTEDETTYDADEDENTHCDETTEIDNONHESOTTOSELDSDEDESERENTETENIDEANEDNNSA
+   -9.0403 win= -8.6082 every2-wordlast            start=  27851 L=    - from-end rev
+      EALYEESYSESEEDHEEITEEDERISTSIEDHEISFORSODOEDIUNENEGYEDERSDENATYSNDEDRA
+   -9.0422 win= -8.9910 last-letters-palindrome    start=  15461 L=  344 anchored rev
+      RNISTPYETEYTATDIESTKNLEWEEDLEOSDESIENSTINEENRTARENEUREGINEDSDTDELIRDTE
+== texts/pd/christie_69087.txt vs cipher 3-2  (pool=258, anchored palindromic=58)
+   anchored (start,length) pairs searched: letters=1623629, first-letters=1619133, last-letters=1619133
+   -8.5192 win= -8.2455 last-letters-palindrome    start=  69957 L=  276 anchored fwd
+      OFEDESEGALEDTONMESDESRRMANDEEDEENDTOGNTYRTEHORENERTEYTEANDSINTHYTEESTO
+   -8.5317 win= -8.0755 last-letters-palindrome    start=  69390 L=  281 anchored fwd  <-- window band, known letter-density artifact family
+      EFATTEAGIDETUTENTEDEANENTAREETONSTNEYSITNEINESEYEYIEYEERTTESSETNUTNEDO
+   -8.5378 win= -8.3193 every2-wordlast            start=  32110 L=    - from-end fwd
+      NTRIOANNEERETEDDINEEODODEMLSENRESESEERSERNIDMEEEEYETYEDOLEEONATOTDNSAS
+   -8.5972 win= -8.5817 last-letters-palindrome    start=   4731 L=  232 anchored fwd
+      OETETSESKEESYMENGDTEDSINDERSEREENSESMEDEITREDNSOTNETYIEFNEEMELTTYIOSTE
+   -8.6256 win= -8.4963 last-letters-palindrome    start=   3931 L=  226 anchored rev
+      ERTISEDESEORSSENESETEAFENYYSTIEFRESEENSENETEEOLLEEGYTTEOLRDEOREEYELETH
+   -8.6363 win= -8.3168 last-letters-palindrome    start=  49253 L=  324 anchored fwd
+      YORYNETSMESSEESTETEROYRTTMASEETTOSSEEDILNEDDOFEDELADYSHEGROELEDTEDDETA
+   -8.6380 win= -8.6270 last-letters-palindrome    start=  69390 L=  268 anchored fwd
+      EFATSEAGIDEEGTANTEDEANENEAREEEONSENEYSTTNEIDESEYEYONYEEDTNESAETNGTNEDO
+   -8.6454 win= -8.3879 last-letters-palindrome    start=  69390 L=  269 anchored rev
+      TEEENSATTYEEDYEDERDYYISEETYTUNTEMETENITFTETTIEEODENTENTEESETTEEEYETYEY
+   -8.6464 win= -8.5767 last-letters-palindrome    start=  19435 L=  259 anchored rev
+      ETESOUNFDASEETDEENREAYETEEYSADEDETEEDEETEEHDREUDETOYETOONDEESGHEYESETF
+   -8.6553 win= -8.5654 last-letters-palindrome    start=  49253 L=  243 anchored rev
+      SSIRRORSEEUSSYENETEDEEEDDIYESIROEDREDITHEIRTDDDATEDDETDELEOSITHSYSILDD
+== texts/pd/christie_69087.txt vs cipher 3-3  (pool=255, anchored palindromic=55)
+   anchored (start,length) pairs searched: letters=2808791, first-letters=2797257, last-letters=2797257
+   -8.5031 win= -8.3555 last-letters-palindrome    start=  58640 L=  401 anchored fwd
+      KNONAIENGSTENDOERSTISETRWNOTEDEOFOEEDNTODERNEFSNETHEEDEDTREFDEDESSESEL
+   -8.6963 win= -8.6009 last-letters-palindrome    start=  58519 L=  441 anchored fwd
+      ANOILTSIHEFENLILYESTOEDADNEETEGSEENSSFEDTTONNETSWEENNYOSDOYANOLESILEEO
+   -8.7447 win= -8.6971 last-letters-palindrome    start=  65068 L=  534 anchored rev
+      EESERTWRTTEARDDIDDEERETHEERESTNLDIEEDEESANTTEATDDODEDHSOTGEDEPEHEESEEE
+   -8.7573 win= -8.6013 last-letters-palindrome    start=  58519 L=  404 anchored rev
+      TERDEEEANEHSNDRESEESYSETSRESNEREYINDIEOTTESEEDENDFDESEDHTTNEOTASEDEMES
+   -8.7622 win= -8.6656 last-letters-palindrome    start=  44898 L=  429 anchored fwd
+      EGGETESWEDNDONENADDEDESSEETEENTOGELETSDDDTENDSEEYSSSETSNDEYRAIRSTHIREG
+   -8.8248 win= -8.5281 every2-wordlast            start=   4540 L=    - from-end rev
+      SETESWOHTYODOTTHEEDIEESSTSLETYEGNHYFIEESNATHTAGSIGOTOEEDTTESERNAHDEDNE
+   -8.8372 win= -8.5806 last-letters-palindrome    start=  66499 L=  445 anchored rev
+      STOENEEESHWEDNOWANETYTHLHKERNSEESTYENETREUTINOOSSEAFSTYHLIAWESARNTEDTO
+   -8.8460 win= -8.5387 last-letters-palindrome    start=  37589 L=  525 anchored fwd
+      TTTOEDINTFOOTNEETEORGEYSFTHEINDIESSMORTYSDTSEMTICSTTRYETMTYYENNYNDSDES
+   -8.8524 win= -8.5044 last-letters-palindrome    start=  37589 L=  503 anchored fwd
+      TTTOEDTNTFODCNEETEOREEYOFTHEINDDESSEDEDYSDDSEMTICSTEADETMTYYENNYNESDES
+   -8.8687 win= -8.7895 last-letters-palindrome    start=  44898 L=  424 anchored fwd
+      EHGETRNWEDNETNENADDEEESDEETEETTONELORSTDDTENDSEOSHSEDSSEDEYRAIRSTTIREG
+== texts/pd/christie_70114.txt vs cipher 2-4  (pool=260, anchored palindromic=60)
+   anchored (start,length) pairs searched: letters=2887511, first-letters=2866731, last-letters=2866731
+   -8.7942 win= -8.4538 last-letters-palindrome    start=  17490 L=  736 anchored rev
+      OHLEDSETSGRKEETODSTTLYRDOYSEEEONEONNGTRESSEETSTENMEEOEETEREELREREETUMS
+   -8.8145 win= -8.6430 last-letters-palindrome    start=  17490 L=  772 anchored rev
+      OHLEDSETSGRKEETODSADLYRDAYSTEEONEONNADNESSEETSTENMEEOEEDTREELRDRETTUNN
+   -8.9126 win= -8.7931 last-letters-palindrome    start=   4303 L=  646 anchored fwd
+      SOETTOSNODETRSEFLETIDISTIEDTUTAGTWTANNIETTEITEATERGESOOIDETEDDHITENFYS
+   -8.9288 win= -8.7851 last-letters-palindrome    start=  48097 L=  705 anchored rev
+      NOTEONDNENTOSTOEDSEDYESSUEMSNDISFNNSSENTTANEISDYESTAISTESEENSHTADENRAR
+   -8.9636 win= -8.6547 last-letters-palindrome    start=  53396 L=  582 anchored fwd
+      EMESSESGORDUWODDSLSESETDENTYEYTEURENEEREDEEYUTYEEOEISENTEEYRROTDYNESYN
+   -8.9688 win= -8.7237 last-letters-palindrome    start=   4303 L=  879 anchored fwd
+      SHITIDSNPSSTRSEGLEEIDISTIODFUTAGTWTATNIEDENATLATERGESOOETETEDDHITENFYS
+   -8.9778 win= -8.6195 last-letters-palindrome    start=  41864 L=  574 anchored fwd
+      TTEDEDEEEETNNSEYSNENENEANKSEEAAYNKSEFTDFRTEDNSOFTHDENNETATESASSEASDREE
+   -8.9807 win= -8.7780 last-letters-palindrome    start=   4342 L=  579 anchored rev
+      TUWESSSSFEOETYTEERRRETEENEOUTTETEMTYTTTEWOTEYATENIENEEETUTTFEENOTKECRE
+   -8.9845 win= -8.6547 last-letters-palindrome    start=  17490 L=  783 anchored rev
+      OHLEDSETSGRKNETODSENLYRENYGTEEONEONNTENESSEETSTENMEEOEEETREELRRRETTUTS
+   -8.9914 win= -8.8201 last-letters-palindrome    start=  53072 L=  634 anchored rev
+      LESYGSOOETIKEDEEEHENTSTETEEENSTELAIDMRESTESHTYSERSNSTTIREDMYFOTMSYOEYE
+== texts/pd/christie_70114.txt vs cipher 3-1  (pool=256, anchored palindromic=56)
+   anchored (start,length) pairs searched: letters=1418083, first-letters=1411664, last-letters=1411664
+   -8.8957 win= -8.7942 last-letters-palindrome    start=    197 L=  271 anchored fwd
+      YEFELODANNEENYALEHENETLAREERIEEINTTODEWEGEFTISEAOONEALNEDEAENEESSTEIEP
+   -8.8967 win= -8.7578 last-letters-palindrome    start=  21170 L=  344 anchored rev
+      OFELIETARETEEHEEUFTEADOEESIDEEEDODDEDEIHONEOMEEORFEKERNIFSOTIERSTSHEIT
+   -8.9034 win= -8.9783 last-letters-palindrome    start=  21170 L=  331 anchored rev
+      OFELIETERETTEHESUFTEADEAESSESEEDODDEDEIGDNEDMEEORFEKERMEFTOTIERSTSHRAT
+   -8.9405 win= -8.9610 every2-wordlast            start=   8167 L=    - fwd      fwd
+      TTENDDIDEHEADOFDSTETERDFYEESESOSTHEIETIESEESIYSEERSETENERDTUESSEEHERET
+   -8.9453 win= -8.9496 last-letters-palindrome    start=  53482 L=  291 anchored fwd
+      EENOSTDTRERESEETTRESTEETSEEDOADLTSTTEYYDEENENOOLMPONEESEEYDYSEDNEWDOYE
+   -8.9461 win= -8.8432 last-letters-palindrome    start=  18150 L=  287 anchored fwd
+      EWTOSURATTEDOUEETFETASIOUOOYSTDAATESEDDTDEDTETDRIGTRHETEDSIAWSENTUOUWA
+   -8.9567 win= -8.8591 last-letters-palindrome    start=  53396 L=  289 anchored fwd
+      RTESSEETYMADETOSSHEETTSRITTTYESYYEETTESDREOENYNNDEEITTEESETEMOSSESETYO
+   -8.9597 win= -8.6028 last-letters-palindrome    start=  53396 L=  367 anchored fwd
+      NTENSEETSMATETOSTHEETTERISSEDEDTHEETLESDRESTNYENEOEITTNESERSDOTOESEEAO
+   -8.9926 win= -8.7039 last-letters-palindrome    start=  53396 L=  398 anchored fwd
+      NTENSDDTNMATETOSTHEETWTRIDDEDESTTEETPTSDEETENYEEDDEITTRESEDRSOTOESEEAO
+   -8.9967 win= -8.9039 last-letters-palindrome    start=  53396 L=  391 anchored fwd
+      NTENSDDTOMAEETOSTHEETWERITTEDEEWTEETSSSDOERENYLSEDEITTEESEPSSOTOESEEAO
+== texts/pd/christie_70114.txt vs cipher 3-2  (pool=255, anchored palindromic=55)
+   anchored (start,length) pairs searched: letters=1143565, first-letters=1139069, last-letters=1139069
+   -8.5064 win= -8.2668 last-letters-palindrome    start=  29665 L=  238 anchored fwd
+      DELENGLEOTLETTOAMESTEDRASMITENERSEATNEHTESTSSYESSESTYTREEGDESRIETSEHSS
+   -8.5457 win= -8.3670 last-letters-palindrome    start=  53348 L=  247 anchored rev
+      WEETEFEETEHEDSHRESEREEGEFNYLSOTHPESEDENRDTHERYEESRNFINSTSEILYTERYIETTY
+   -8.5561 win= -8.4949 last-letters-palindrome    start=  29665 L=  237 anchored fwd
+      DELSSGLEONTTEREAMESEUDRATMITEHERSTETNEATESTTEYESWELNYTROEDDETRIEESEHSS
+   -8.5565 win= -8.1892 last-letters-palindrome    start=   1458 L=  318 anchored rev
+      RAGNEEREETSMEEYEEWSTTSTEETYDTEEREETEDEARIERERODENTGOTENLOESSDTEEYEEEAD
+   -8.6040 win= -8.1174 last-letters-palindrome    start=  53658 L=  213 anchored fwd
+      ESEEEESTDEEEPODEENELELREITEPETEETEDEYSEESTERDESITNEDYTEDONENTEIDPIDEEE
+   -8.6216 win= -8.3444 last-letters-palindrome    start=  48602 L=  254 anchored fwd
+      EITTOSDRTNTNESDEEYEASETEAPADEDETONTFWESNSITSISTESINDYHEIGEEENEHEEPISSS
+   -8.6863 win= -8.6135 last-letters-palindrome    start=  41664 L=  213 anchored rev
+      TTTRISWIEREREETGELESRESRASYGEEDPORNERTTSATEENEETLSTODDEAREEDSOREYTYNLO
+   -8.7095 win= -8.4418 last-letters-palindrome    start=  53600 L=  215 anchored rev
+      EEDSEYLYSESTTEDNEDEGEEEIONYEEETPDISEDEDSESNOETELSESEEATSOEEDEETYYTOTOE
+   -8.7183 win= -8.6412 last-letters-palindrome    start=  56266 L=  351 anchored fwd
+      DWARWESEYNGYWTHARERENDAADOSTERSEDYETHARESGTREDSESLETYHEYWEODTEEEWCTEEE
+   -8.7213 win= -8.3024 last-letters-palindrome    start=  29572 L=  214 anchored rev
+      SEODYDRYEETNYETSESSSELSILGYETEMEDIOENOSSDRETOSNEEFEOLUDSERETEEHEYENSES
+== texts/pd/christie_70114.txt vs cipher 3-3  (pool=256, anchored palindromic=56)
+   anchored (start,length) pairs searched: letters=1977911, first-letters=1966377, last-letters=1966377
+   -8.7286 win= -8.3936 every5-wordlast            start=   6051 L=    - fwd      fwd
+      TKSDEFTTRESNYTREEETEEEOTEYDSETDOETTEINEERERTESEDETNWEDDSEENYTTEEEISHES
+   -8.7801 win= -8.3341 last-letters-palindrome    start=  13748 L=  479 anchored rev
+      EEENTDNEGETYGEESEESTEESROUTNETNTEETSEEEEMHREYENEEYEYWEREDYESEEEENETEIS
+   -8.7835 win= -8.4776 last-letters-palindrome    start=   4541 L=  427 anchored rev
+      YLETSFOLOSEDEDEREREYETOISDIDTDETTEDETEUETYDTEURNTOGEOTHTYNSTEEEEFFSETO
+   -8.8503 win= -8.7013 last-letters-palindrome    start=  41845 L=  467 anchored rev
+      DESTSTEEESNENREDYETSISTRTEEUENTEDTERTEUNHNDEEHASNUETNTETNETNDESEELDDTH
+   -8.8670 win= -8.7739 last-letters-palindrome    start=   4541 L=  432 anchored fwd
+      NRLTESLOTEETESSIMRTOHEDTERSOELEEEIRMELADDIETEODIEODTORETTDEAFDDEESENET
+   -8.8743 win= -8.5727 last-letters-palindrome    start=  41454 L=  490 anchored fwd
+      UREEATENYSTITEISHTTSEEENDEERESDTTDETESEDAMEDEEEIANTSYOUOLELYEAYSYETSED
+   -8.8962 win= -8.5196 every5-wordlast            start=   6405 L=    - fwd      fwd
+      ETENSSGODTYLUSSSEDEFIEETIFEDEDEDITERYUILETELESTWAINYEHSSETDDEDASTOITET
+   -8.9013 win= -8.7043 last-letters-palindrome    start=  53217 L=  543 anchored rev
+      NOSHNRAOTKYEDTELESOINEDEETEEDIINESOSKETTWEHSISSSOSEEEDOHPSETOSTYELYDRH
+   -8.9037 win= -8.6997 last-letters-palindrome    start=  24701 L=  377 anchored fwd
+      SHEDDEDETESENSYTEEEENEGSSOFEYTEEANEOFKTTEASSTOSEDRETDTOERFDNDEHIRSSEEG
+   -8.9108 win= -8.5752 last-letters               start=  54698 L=    - from-end rev
+      EDDDTINUIDLEYEYINDESOFETOEOWSEDNETEHEENEOTSTDETMFELTCTENOREETEETEETEFE
+== texts/pd/christie_72824.txt vs cipher 2-4  (pool=254, anchored palindromic=54)
+   anchored (start,length) pairs searched: letters=3874813, first-letters=3854033, last-letters=3854033
+   -8.5192 win= -8.4067 last-letters-palindrome    start=  30272 L=  981 anchored rev
+      SENNENETEEHETTEUNTEEEOREDENTTEDTDENSTEESEDTUTHNYOESTDTOETYSSEDUONEESEL
+   -8.5350 win= -8.3464 last-letters-palindrome    start=  30272 L=  928 anchored rev
+      SENNENETEEHETEEUNTEEEOREWENTTEDTDENSDEESEDTUTHNYOESTDTOETYSSEDUONLESSE
+   -8.5488 win= -8.4602 last-letters-palindrome    start=  30272 L=  919 anchored rev
+      SENNENETEEHEREEUNTEEEORESENTTEDTDENSEEESEDTUTHNYOESTDTOETYSSEDRONSESYG
+   -8.5548 win= -8.4089 last-letters-palindrome    start=  30272 L= 1009 anchored rev
+      SENNENETEEHENYEUNTEEEOREDENTTEDTDENSTEESEDTUTHNYOESTDTOETYSSEDUONEESSS
+   -8.5873 win= -8.3682 last-letters-palindrome    start=  30272 L= 1034 anchored rev
+      SENNENETEEHENYEUNTEEEORESENTTEDTDENSTEESEDTUTHNYOESTDTOETYSSEDUONEESST
+   -8.5963 win= -8.3259 last-letters-palindrome    start=  30272 L=  855 anchored rev
+      SENNENETEEHEDEEUNTEEEORNTEDTTEDTDENSSEESEDTUTHNYOESTDTOETYSSEDSOOTESON
+   -8.5970 win= -8.3754 last-letters-palindrome    start=  30272 L=  905 anchored rev
+      SENNENETEEHEAMEUNTEEEORNOENTTEDTDENSREESEDTUTHNYOESTDTOETYSSEDSONNESES
+   -8.5971 win= -8.3943 last-letters-palindrome    start=  30272 L= 1013 anchored rev
+      SENNENETEEHENYEUNTEEEOREEENTTEDTDENSTEESEDTUTHNYOESTDTOETYSSEDUONEESSS
+   -8.6047 win= -8.4345 last-letters-palindrome    start=  30272 L=  945 anchored rev
+      SENNENETEEHEEDEUNTEEEOREHENTTEDTDENSMEESEDTUTHNYOESTDTOETYSSEDUONEESSE
+   -8.6084 win= -8.4774 last-letters-palindrome    start=  30272 L= 1038 anchored rev
+      SENNENETEEHENYEUNTEEEOREDENTTEDTDENSTEESEDTUTHNYOESTDTOETYSSEDUONEESST
+== texts/pd/christie_72824.txt vs cipher 3-1  (pool=257, anchored palindromic=57)
+   anchored (start,length) pairs searched: letters=1902349, first-letters=1895930, last-letters=1895930
+   -8.8206 win= -8.6010 last-letters-palindrome    start=  37796 L=  350 anchored fwd
+      AYDSOTYYESOFETTERYEETRTETHHTDETTEOTRSTETTEYEYENTTYOTDEFESDEDNRTOTETEEA
+   -8.8671 win= -8.6933 last-letters-palindrome    start=  42899 L=  326 anchored rev
+      TEDIETIDOESTETTEDFOTTEYDDSTGRDASAESEANTUDDEDDDSEETHSIDEINDELOSHTTYFREL
+   -8.9193 win= -8.8532 last-letters-palindrome    start=  23267 L=  302 anchored rev
+      RDDNTEDETEUTIDNEETTYERSOAEENEDERDENEDTDEEDEEDFEDDEFREOOESODERPTFOLDEDS
+   -8.9246 win= -8.5092 last-letters-palindrome    start=   2019 L=  284 anchored fwd
+      ERDRETHATFSNEDNEDESSSTTDREEGESSDFENTTENEDESARSTSEETENSSETTEERSASEESSEO
+   -8.9581 win= -8.5913 last-letters-palindrome    start=   2076 L=  283 anchored rev
+      STDHSGEEPESIEEDDEEDTRDSATETSRGNESLSHTERSMEEMSEPYEFTERTNONLDEDREENSASTM
+   -8.9662 win= -8.8610 last-letters-palindrome    start=  37796 L=  287 anchored fwd
+      TYDDOESYESODETTETYEETSEETSSHDERNOOTREEETEEDMYERSAEOTDETESDDEFREETETTEA
+   -8.9688 win= -8.7767 last-letters-palindrome    start=  37796 L=  349 anchored fwd
+      AYDSODSYESOTETTEAYEETLEETEEHDEEREOTRRRETSEETYERTLSOTDEEESDNEERTOTETEEA
+   -8.9742 win= -8.9115 last-letters-palindrome    start=  59682 L=  263 anchored fwd
+      TMYSNDSUELURTSSEODDEREDSSEEEREEEDEMMODEEDEERDRSEEREMEDTEITPTSTRTFERDET
+   -8.9851 win= -8.5854 last-letters-palindrome    start=  33527 L=  426 anchored fwd
+      EETSNIERSERDSSHRUSKFDYTSSSSTSESRFGETINEARETSYETSTEEKNNRESTTEHANTDERAST
+   -8.9854 win= -8.9805 last-letters-palindrome    start=  37678 L=  427 anchored rev
+      ETLEGSFERETEETERLEREKYEEYFTSEWSTESSETERENOENYEYEREEDSOSEMETYEEORTDEMTE
+== texts/pd/christie_72824.txt vs cipher 3-2  (pool=257, anchored palindromic=57)
+   anchored (start,length) pairs searched: letters=1533981, first-letters=1529485, last-letters=1529485
+   -8.3299 win= -8.1545 last-letters-palindrome    start=  30306 L=  277 anchored fwd
+      YSTHTREONTYESSDNTREONTENEDNEEDDESENSEGNTROETTEESSTEDYEGEHEEDSREESEEETY
+   -8.4758 win= -7.8558 last-letters-palindrome    start=  45276 L=  264 anchored fwd  <-- window band, known letter-density artifact family
+      TNTGNTTETERSEDGETYDDSETESRSEEDTTESYSSDDESTOEERFEERETYSTERRETATENESOSES
+   -8.4811 win= -8.1563 last-letters-palindrome    start=  59691 L=  208 anchored rev
+      ELESEEWETEYHISERERDNEGMSSEYETIEDRSLERTEREFETENOSEREYEATNEEDDEEEDYSSEDY
+   -8.5655 win= -8.0382 last-letters-palindrome    start=  30998 L=  224 anchored rev  <-- window band, known letter-density artifact family
+      TDUOEWHSTELYOSYHETTSENEDEDYEDONDEDEEETSAEEHEYSIERANTEDSOEESTHREEYESSEA
+   -8.5699 win= -8.8177 last-letters-palindrome    start=  30258 L=  251 anchored fwd
+      URESERESLEDRESEETONDYTHEEEHEEDFESREEYDETDDTREENWRRFNYRAROYESOSTEEEEEYD
+   -8.5813 win= -8.5595 last-letters-palindrome    start=  71216 L=  375 anchored fwd
+      MEITEONSTHEEEMIREEYSTTERETSTEESDEEGAIGYEETEEYSUSEETEYDHAEXISTASFEMEADS
+   -8.5852 win= -8.4784 last-letters-palindrome    start=  30388 L=  302 anchored rev
+      LENERSASEEOYSENEEDTOEEERSEYONENHYREERONESEATYESEDELERTMSKEESEOTNYRENDT
+   -8.5924 win= -8.6049 last-letters-palindrome    start=  71216 L=  379 anchored fwd
+      MEITEONSTHETIMTREEYRTTERETSTEESDETGAIGYEETEETSUSEESEYDHAEXISTASFIMEADS
+   -8.5972 win= -8.4713 last-letters-palindrome    start=  20499 L=  306 anchored rev
+      HETNTOSREEFENHEEENTTESENEEYKEEDERNTEESENSGNADERMETOSEWDDEOERESTNYONTES
+   -8.6130 win= -8.3846 last-letters-palindrome    start=  30388 L=  291 anchored rev
+      LENEASEREYEYSENEEDEOYEERSEYONRSHYREEROYESEATYESEDELESTMSTEESENTNYKENDT
+== texts/pd/christie_72824.txt vs cipher 3-3  (pool=257, anchored palindromic=57)
+   anchored (start,length) pairs searched: letters=2653631, first-letters=2642097, last-letters=2642097
+   -8.6296 win= -8.2101 last-letters-palindrome    start=  68103 L=  427 anchored fwd
+      GTRUDEEETESETATEADSSTESSHELRDTOUERSTDEDERENODYTEDEEDTETDASNSETFEETEDES
+   -8.7101 win= -8.5282 last-letters               start=  28346 L=    - from-end rev
+      EEFEESESENNETOLSEHYEFANENDEESTERYYSETEUDDYEDDIRESENNSTHDETERKTRATNEEMM
+   -8.7211 win= -8.5407 last-letters-palindrome    start=  68103 L=  506 anchored fwd
+      GERUDOEETESTEATEADSTFESDHOLRDNODERSSEOFERESODYTAMGEOTETEASNSETFEEEEDES
+   -8.7487 win= -8.7132 last-letters-palindrome    start=  30169 L=  380 anchored fwd
+      ESERYMEERSYESOERESLERESRETSLFEEDSMEEEADSRDEETTDANDSDEDATTANTFEDLREIREE
+   -8.7638 win= -8.5285 last-letters-palindrome    start=  30166 L=  514 anchored rev
+      SLSDOESSEEDMEREEANEEDSESEETNEDTDTHESSEDYOANANEONEEESNEEDOETHTGEOESTNET
+   -8.7818 win= -8.4164 last-letters-palindrome    start=  68103 L=  524 anchored fwd
+      GORUDOTETESEEADEADSTEESDHELRDNOSIRSOHREEREIODYTAMGENDETRASNSETFEEDEDES
+   -8.7824 win= -8.5829 last-letters-palindrome    start=  42795 L=  496 anchored rev
+      YNENRTASEDRSREAINGERSNEDYEOSHEEDEANSNEDSENGOTSDASSTSTAGSRDNATSREENFELS
+   -8.8088 win= -8.3727 last-letters-palindrome    start=  68103 L=  434 anchored fwd
+      GTRUDNDETESENANEADSEYESTHELRDROEHRSSNSGEREEODYSTIDEDSETHASNSETFEETEDES
+   -8.8235 win= -8.6364 last-letters-palindrome    start=  68103 L=  568 anchored fwd
+      GIRUDONETESSIASEADSTEESCHCLRDNOFGRSONTEEREEODYTAMGERRETWASNSETFEEYEDES
+   -8.8266 win= -8.4083 last-letters-palindrome    start=  68103 L=  535 anchored rev
+      EMEENTETDTSNDDEOENDSTOELTOSSFRTSSEYMEEMRDETRILSIHEWSODSSTEEETERENGOTEE
+== texts/pd/christie_75288.txt vs cipher 2-4  (pool=257, anchored palindromic=57)
+   anchored (start,length) pairs searched: letters=3958973, first-letters=3938193, last-letters=3938193
+   -8.5471 win= -8.5592 last-letters-palindrome    start=  19971 L=  569 anchored fwd
+      MINETORTOGSNUNTEONESUSEWSEYERTDEEGATEANEAETDEDITDETEERNSDETONODATSFEET
+   -8.8254 win= -8.6812 last-letters-palindrome    start=  19971 L=  624 anchored rev
+      ULINERUNNEOTTETOTNNTRESRSFORTEUELEELEOWEONSTEREMETEEUMEORTNIFEDRIAERTS
+   -8.8697 win= -8.6917 last-letters-palindrome    start=  17217 L=  539 anchored fwd
+      EENEETEDETEMEYESESTETELSEMOESELWDASTNENETNIEDDLEETRTFEDNETOSEOEDEENDTE
+   -8.8846 win= -8.6018 last-letters-palindrome    start=  19971 L=  667 anchored rev
+      ULINERULEEOTOUTOTNOSLESODFEGTEUELEELONEESSSTOREMETEEUGUNGTNEFERINTETSN
+   -8.9040 win= -8.5748 last-letters-palindrome    start=  65675 L=  544 anchored rev
+      ESYODNREFAPERERTTOETFDOEWNTSNATTESDORITTHORSOYWEPREPTTEISNDERTUNSDTTOT
+   -8.9313 win= -8.6474 last-letters-palindrome    start=  19971 L=  603 anchored fwd
+      MTEFEERTTTNNUNTEENOSUSEWSFEORTDEEGATDANEEDESENITDETEENONTETONODATSFEET
+   -8.9384 win= -8.5357 last-letters-palindrome    start=  65675 L=  685 anchored rev
+      ESYODNRRLAPENNORTORDEDOEYNERSATTESDOFERNSERSEYWEPREPTONERNDERTTANSTHAS
+   -8.9436 win= -8.5425 last-letters               start=  37250 L=    - from-end fwd
+      LANTEGDMENEEMPETERSFTFRHFALENELNESTIDESSTOTYESDENEELDTTEEYRTDLYGEELEDI
+   -8.9471 win= -8.6495 last-letters-palindrome    start=  19971 L=  645 anchored rev
+      ULINERUTSEOTMSTOTNEGOESTEFENTEUELEELSELAITSTWREMETEEUGLENTNAFEESTFEYEH
+   -8.9685 win= -8.4400 last-letters-palindrome    start=  65976 L=  670 anchored fwd
+      NEEGESDLLEDETLEDDILEEEORESEHDSONTAPKESWHNEEETEYRTETPDPHEYENDERTOSETESS
+== texts/pd/christie_75288.txt vs cipher 3-1  (pool=259, anchored palindromic=59)
+   anchored (start,length) pairs searched: letters=1943629, first-letters=1937210, last-letters=1937210
+   -8.9265 win= -8.6600 last-letters-palindrome    start=  33696 L=  347 anchored fwd
+      RTFEUNTSEWTSNRYTOGGEEDEADMMEESDESEYEEFERSEEDNNEYSYTOSSNESSDTNEDEHERTEH
+   -8.9634 win= -8.5009 last-letters-palindrome    start=  33696 L=  375 anchored fwd
+      RTFEUDESDWTTNRYTEGGEEEDADEEIESOLEEYENEEROEDENNYETETOSSTESSEDEEDEHERTEH
+   -9.0111 win= -8.9999 last-letters-palindrome    start=  28685 L=  273 anchored fwd
+      NEEDERTEGKEEENTYESTEKEFRODDTREDFOOSTIHTNSEREEFODESTOETDENNEERDEERHOSTS
+   -9.0160 win= -8.8426 last-letters-palindrome    start=  28649 L=  284 anchored fwd
+      EEEESESESONETKETTERNEEDEDEESTEEYERDSRONSDETYDOSDDKYLSTSEGRTEDNENEEEEAT
+   -9.0237 win= -8.9203 last-letters-palindrome    start=  20165 L=  289 anchored rev
+      TSOUNSETUEODTEESEREFNNRENTEEGAHATNESTTWBENEEERFFERNTGSFEEDTEDOFEEDRSED
+   -9.0280 win= -8.7690 last-letters-palindrome    start=  47340 L=  316 anchored rev
+      ADMYSTSTNERNDTETEDMEYSTSINESNGEEAHDEHERESNESPSTNTSSTNTERYYETTRERSKEANS
+   -9.0317 win= -8.8536 last-letters-palindrome    start=  45075 L=  463 anchored fwd
+      RTRERNTETADSONORSEELLESESEESTNEESSEATTOTEENOEYNDSERSUTEEGLEEENESSEMUTD
+   -9.0339 win= -8.6945 last-letters-palindrome    start=  56419 L=  404 anchored rev
+      YETENENSEETTEDENEEDDTUTDTYRTOITSRSAFEREDLDELESSEYAHADTFNMTTEGHSFEDFIET
+   -9.0426 win= -9.1371 last-letters-palindrome    start=  28693 L=  258 anchored rev
+      EITERFAEREETEETKIEERLDEOTFADTENEEDESDRREDTEDDREESEDOEHEEONETFRGEFDENER
+   -9.0456 win= -8.8235 last-letters-palindrome    start=  47340 L=  285 anchored rev
+      NEMSSRDANEROSTRDEDMEYSNTINTDEGEESHDEFEENSDESPSTNTSSTNTESYTYSTRERSKETOS
+== texts/pd/christie_75288.txt vs cipher 3-2  (pool=256, anchored palindromic=56)
+   anchored (start,length) pairs searched: letters=1567261, first-letters=1562765, last-letters=1562765
+   -8.5992 win= -8.3318 last-letters               start=  26005 L=    - fwd      rev
+      TSEGADREDOSSEMDEETEDOFIEINYDHTEDDETEELFWADOLETDDRNEDSDEMOTESSEISYDYTWS
+   -8.6623 win= -8.5781 last-letters               start=  63091 L=    - fwd      fwd
+      ENDSATEDSDEETEEESWETDTOETSETETELREEDDORDRSEESEDGDDEEYERNDEETORETTEDLDT
+   -8.6994 win= -8.4005 last-letters-palindrome    start=  50603 L=  211 anchored rev
+      EESEERYLEYSESRIEEESLYSEOTNYEEEREDONENNIILAETENEONTTISETTOLEWNTESYSDTAT
+   -8.7023 win= -8.4694 last-letters-palindrome    start=  37032 L=  334 anchored rev
+      TEYEMESTLNTTYEENETEENGASETYETENGTSEEYESOESTONGENEONDEFFSDEDYEDOHYADETE
+   -8.7097 win= -8.6714 last-letters-palindrome    start=  37032 L=  352 anchored rev
+      TEYEMETOLERTYEENETEEEGASETYETENGTSEEYESOESTONGENEONDDFFSEEDYEEOHYASETE
+   -8.7206 win= -8.5100 last-letters-palindrome    start=  29778 L=  267 anchored fwd
+      RESDYEESINDROEASSTTEANYSTSADESTSTREYODTDNHEYATETEEOTYESEEESTTOTEORARDS
+   -8.7220 win= -8.5985 last-letters-palindrome    start=  37926 L=  229 anchored fwd
+      EDYDESKEEOTERESSSEDSEMRSESTGEREEYEYKSDERNTEFNOORTTAEYEEDEEEDEESERETREE
+   -8.7268 win= -8.4064 last-letters-palindrome    start=  11095 L=  388 anchored rev
+      RROTEDRETORETNEDEDRTOREEOAYSENADEENESRISSTSEEELGERYEDONEDSTDLOTTYENTAD
+   -8.7430 win= -8.7486 last-letters-palindrome    start=  48416 L=  249 anchored rev
+      ITELEADENTYEWORCEENATNSTASYEUTTEDTDEFLETLUSIONTKEYENEEEYDEEFETEYYNLEDM
+   -8.7512 win= -8.2836 last-letters-palindrome    start=  43432 L=  217 anchored fwd
+      NTEDNOEDSSTRENEDNGNEFNLDTLYSEDNTERADDEENTEEUTDTNELSTYOUTSONETEDTEWDETE
+== texts/pd/christie_75288.txt vs cipher 3-3  (pool=254, anchored palindromic=54)
+   anchored (start,length) pairs searched: letters=2711231, first-letters=2699697, last-letters=2699697
+   -8.6826 win= -8.2560 last-letters-palindrome    start=  43749 L=  436 anchored rev
+      ETEDNODTESNENOONTEESERDEADETYTEDYRERGETRHERENIANORLEDLIDSDTEDRREONETHE
+   -8.7567 win= -8.5956 last-letters-palindrome    start=  28331 L=  592 anchored fwd
+      DEEENEENTARRNTEFDEYDSEGEGONEKEYEDANYETSTAERENEITAEYETEREDTTOLEADSRDSEE
+   -8.7886 win= -8.5081 last-letters-palindrome    start=  43749 L=  456 anchored rev
+      ETEDEEDDESNERATITETSERDEADETSEEDYRNREETRHERLEEINORLEGNEDSDTTERGEOSETHD
+   -8.8174 win= -8.3830 last-letters-palindrome    start=  11486 L=  543 anchored rev
+      TYEDNERYETEDURSETRETLEENKDRUTEGIEENDTETTTOETTANDEEEEYENEHERGOEDDDOEDED
+   -8.8219 win= -8.3909 last-letters-palindrome    start=  55646 L=  372 anchored rev
+      TTYDSEEEENEGEERENESONEOIDDEWEGTENOESEEWEDEDTDOULELSMEARROSTNOEEYNEDNET
+   -8.8257 win= -8.3479 last-letters-palindrome    start=  43583 L=  481 anchored rev
+      RDUNSNNEMRENETNHOEDDEANEGEETEEODHINEKEYRSTDTESSSDRTELSTEEOTEESDYONISIO
+   -8.8618 win= -7.8857 last-letters-palindrome    start=  43750 L=  449 anchored rev
+      DYRITDNEDDDEENEAEDNDTYEDENISGASETIEDNEDREYDEANSTENDDESTINDDELATNENEYDE
+   -8.8654 win= -8.6660 last-letters-palindrome    start=  44476 L=  372 anchored rev
+      OTELDEDMMERISELDEIUTENFLEDENEKESSESLOEISDGHSEEEURYILEEOLHESTFEEGRTFEEO
+   -8.8706 win= -8.5989 last-letters-palindrome    start=  43749 L=  424 anchored rev
+      ETEDEFDTESNEIONETENSERDEADETTDEDYRORNEMRHERNGDENORLEASNDSDETSREEORETHS
+   -8.8905 win= -8.6969 last-letters-palindrome    start=  28665 L=  535 anchored rev
+      DNTEEETDREETNAOFEEHELIESOOEDERTFEESDREERLTDOTERDATDESFRTTHRTEGSENEEDED
+== texts/pd/christie_863.txt vs cipher 2-4  (pool=260, anchored palindromic=60)
+   anchored (start,length) pairs searched: letters=3179967, first-letters=3159187, last-letters=3159187
+   -8.9366 win= -8.8427 last-letters-palindrome    start=  47934 L=  754 anchored rev
+      DSTHESDOOTEGUSEEEREETEDFERTTFSTENDMEESEDEEYTITOSDDEDTOESTTHETADITYASED
+   -8.9699 win= -8.6850 last-letters-palindrome    start=  23857 L=  634 anchored fwd
+      AYDFEWDSTSEDONTSTSETETEETEEDMTHATTETSMFATETDTYENHEEYESEANSTRYOOETEYENN
+   -8.9719 win= -8.6958 last-letters               start=  38750 L=    - fwd      fwd
+      EDDDERIEDDEETNGOYEDEEETDEETIWEETNTERTEEEMTORNDTADEOENRGSSTEDNTNDESSSEL
+   -9.0096 win= -8.6710 last-letters-palindrome    start=  26878 L=  709 anchored rev
+      YORDNENUEDRFELEFTSESEUSSAFTUNNYSNSGNENRESEREREREITESYHANUTTHENSOESEPOO
+   -9.0126 win= -8.5506 last-letters-palindrome    start=  11810 L=  840 anchored fwd
+      TEEEFSFTETHRIASSRASNENRYNETETEENTDEEDIUMESHSTERSETAEGSREETEISSHDEELTTG
+   -9.0293 win= -8.8216 letters                    start=  72807 L=    - fwd      rev
+      ANTAROSOEFMMOTSIEDATITSNNEUOIIHANISIRTOGEDWAHOOSAGEOHEDTOENEAISDENNENR
+   -9.0497 win= -8.7444 last-letters-palindrome    start=  47934 L=  948 anchored rev
+      DSTHESDOOTEGTDEEERIETEDEARDSFSTENDMENEGDEEYTITOSDDEDTOEESTHETAFIDEASET
+   -9.0533 win= -8.6677 last-letters-palindrome    start=   6984 L=  720 anchored rev
+      YGITSNSEEEHAEDEETEESEENDNTERSTRTORDEEENSSEDRSKTTTRONRHRERENEETASEEONOS
+   -9.0545 win= -8.8605 last-letters-palindrome    start=   8335 L=  601 anchored rev
+      EENEDSRETRDDAMYNTRARTORENOOSROOSSEONNEDTYSETIINTSTDEOTDESIRESDERSETTDT
+   -9.0566 win= -8.8101 last-letters-palindrome    start=   4842 L=  726 anchored rev
+      FNNETFRIEDEEYADEEEOESSGDREREYGEKEALEDORIREDINSYANYYEEEDOENPEYDSDIEDTES
+== texts/pd/christie_863.txt vs cipher 3-1  (pool=256, anchored palindromic=56)
+   anchored (start,length) pairs searched: letters=1561531, first-letters=1555112, last-letters=1555112
+   -8.9113 win= -8.4565 last-letters-palindrome    start=   3907 L=  333 anchored fwd
+      YNSODLRSSSDATEDTRDDEYEDDENNEFAGEDARHEEPENEETHESDEGOEETSERENEDYDYYEDADI
+   -8.9237 win= -8.7060 last-letters-palindrome    start=  27693 L=  396 anchored rev
+      TMEEMEYDPEALOETLOTTYHESEMDLESTRYDEDSPEUSUTEUNTSSTTTEYSETEDEDTENDTGENTE
+   -8.9813 win= -8.6894 last-letters-palindrome    start=  21456 L=  411 anchored fwd
+      SIESEESMANIEFDTRAESEENFEEEEDESLENEESNTTETENETHSTETEYREEEYSERDSEDBEEPEE
+   -8.9919 win= -8.8684 last-letters-palindrome    start=   3927 L=  268 anchored rev
+      YSEEDKEYDEDESHTANEEDSEINTONTNESSNTDATEYNGSEGSYIEKGRANSERNYESFEADNENEED
+   -9.0105 win= -8.8073 last-letters-palindrome    start=  10051 L=  300 anchored rev
+      AFETDOWSUEDDHEEOUDEDAEYROSUPWEETELYDTELESTESSNNTEFENEDDERELDYENDSEDSID
+   -9.0155 win= -8.9663 last-letters-palindrome    start=  24709 L=  362 anchored rev
+      DEYSEEDDEENYERAHONEFEDESEDEGNTTSLTADAHERETEEREDOORTADEEETTESTPHEEDEESR
+   -9.0317 win= -8.8866 last-letters-palindrome    start=   3907 L=  274 anchored fwd
+      TNSIDRESTSDODEDTEDDEYNTDERRENARENARHSMPEGEONHETEGSOEETAEREEISYDEYEDHEI
+   -9.0336 win= -8.5749 last-letters-palindrome    start=  57087 L=  387 anchored fwd
+      ADYETYNDDOFTTASERYEYENATTHHEUMYARYINTSEEYEREPEISTSETDDEEDINERTTSSSUSTE
+   -9.0374 win= -8.8206 last-letters-palindrome    start=   3907 L=  278 anchored rev
+      YSEEDKEYLETESDTAIDNEFEINEENTNDOSNGSATHYNGSEGESRSNETASSEREYESEEASNSREEN
+   -9.0449 win= -8.8764 last-letters-palindrome    start=  24709 L=  348 anchored rev
+      DEYSECSSEENYEREEONEFEDEDEDEANTTSLTADAHERETEEREDOORTADEDETSFSTPHEEDEODR
+== texts/pd/christie_863.txt vs cipher 3-2  (pool=254, anchored palindromic=54)
+   anchored (start,length) pairs searched: letters=1259213, first-letters=1254717, last-letters=1254717
+   -8.5700 win= -8.1444 last-letters-palindrome    start=  13729 L=  219 anchored rev
+      WDURIAMONOREEDOTEDREOUEEYEYTHETSRERESTANELHESSETEORDENNEEYNODESOYUSEET
+   -8.6703 win= -8.5206 last-letters-palindrome    start=  48578 L=  230 anchored fwd
+      INEEEUGHEEERTTEDEEGFTTRDEDEDEEDSTRTINYSOFETUSESERNNTYSREENSTEEITTHTTOT
+   -8.6803 win= -8.4399 last-letters               start=  36793 L=    - from-end rev
+      YEOFTENSDAYDESETEEEEADYENSYSETEEHEEEDFRRDYSETHNEEADDOTEREDERTSTDYDHSNE
+   -8.7238 win= -8.1343 last-letters-palindrome    start=  20772 L=  261 anchored fwd
+      TSLEDSRIGUTERKYDORYENLEDSYESEDEENETODENEIGNIEDTOTANDYSEWEHEGOWTEREATIY
+   -8.7281 win= -8.8768 last-letters-palindrome    start=  34639 L=  379 anchored fwd
+      DSSETODETTENITSEDEYEEIEETSTEEOPEENEGSETEHORTEEDSDREDYYEESNTTITSNIYSHOY
+   -8.7292 win= -8.6953 last-letters-palindrome    start=  34639 L=  355 anchored fwd
+      DSSETODETTESETHEDEYIEIEEGSTEEOPEESEGSETEHOREGEDSDREDYYEESNTTITSNEYSHOY
+   -8.7416 win= -8.5583 last-letters-palindrome    start=   3901 L=  213 anchored rev
+      TTNHEDTSRERYEONSESATEESIRNYEDEODDINEHESSESDEETERNESESTSEDDESNSTGYGDRSE
+   -8.7438 win= -7.8932 last-letters-palindrome    start=  40194 L=  338 anchored rev
+      PINYEDETYENDMIMYEEEEEDNINYYDTRTNDIDEOSSNDTHEDEYDOENDINKEDEENTESEYIEYEN
+   -8.7442 win= -8.1261 last-letters-palindrome    start=  24950 L=  244 anchored rev
+      OSODTESEGEYORTPTENESEOSSAMYRNURDRSEENSFHERDEESETENTNEEHERENNTTEPYTENSE
+   -8.7526 win= -8.3939 last-letters-palindrome    start=  44080 L=  336 anchored fwd
+      ESATSESAFENENDTTSTISANITRYANEEDASETUEARYETIEERSORSTRYSYTHSOELEEENTETLI
+== texts/pd/christie_863.txt vs cipher 3-3  (pool=259, anchored palindromic=59)
+   anchored (start,length) pairs searched: letters=2178071, first-letters=2166537, last-letters=2166537
+   -8.7456 win= -8.5209 last-letters-palindrome    start=   8539 L=  454 anchored rev
+      NEGSTHERDSSTDYEUIGRTOFEDEYEYEASDEDIDRERNTEDNESTEDOSEDSEGEGTOTRNSEOTEIT
+   -8.8360 win= -8.7065 last-letters               start=  21878 L=    - from-end fwd
+      EDTEODEORSGNEKTYEEETHETORETTINSESDESEDHNTHEGSEDLYSYESTNNOHFFIDONNEIGER
+   -8.8991 win= -8.6285 last-letters-palindrome    start=  28550 L=  660 anchored rev
+      NEYTTETEREYEOATSEDESELSEDFGHTNSTSSMTEESAWENEDOTDIOIRHOOSYNEEDSUEPDSESE
+   -8.9121 win= -8.9469 last-letters-palindrome    start=   9663 L=  404 anchored fwd
+      EESHTINSSESETHTNIEYDEETSIDMUESEENSTTLYELTNOYNORTMETGESROSEUTEEYSDNDPEE
+   -8.9265 win= -8.7097 last-letters-palindrome    start=   8539 L=  406 anchored rev
+      EEGSTDEEDSSTLNEMIGGTOFEDEYEYRSSDEDEDTESNTEDNETTEDOSESKEGEGEGDRDSEATEIN
+   -8.9272 win= -8.6269 last-letters-palindrome    start=  44065 L=  465 anchored rev
+      TMDEEDTIEFREULDTUTDNEROYERRNDRBURERDEEESDAYREYTOEEEEMEYYEEDYEISSERDDIE
+   -8.9491 win= -8.6323 last-letters-palindrome    start=  55673 L=  445 anchored rev
+      EEEYTSSNEOMSESEMYRYLYOTEEDESOEREEDSEDEWEPMONENENEREFEESESTTEFTENOGSKEE
+   -8.9497 win= -9.0569 last-letters-palindrome    start=  33029 L=  545 anchored fwd
+      SNSHLENNYELETODTERIOMESESESIDEENMEDATWEESETGNNDNTPERSESLINRDATASEEYEEE
+   -8.9500 win= -8.4826 last-letters-palindrome    start=  24007 L=  368 anchored rev
+      NYRDESNORTUDEEHNETSSETETTODTSEDSNESRNESTNENDDETSESITSSESDEETTETHUENSDS
+   -8.9503 win= -8.6045 last-letters-palindrome    start=  28724 L=  422 anchored fwd
+      SDADELEFSEAWKTSIFWELLETTLESENAIRESERDEHONORSSEDTOFDETEENEELYRSARYSEEEC
+
+No candidate reached the genuine-English band on either statistic. Under the tested rule families - now including the anchored palindromic construction unless --sliding-only was given - this text does not contain the key stream.
+BATCH-END 2026-11-07 17:54:15
