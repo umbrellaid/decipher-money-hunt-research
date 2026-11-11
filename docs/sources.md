@@ -34,7 +34,7 @@ Root: https://drive.google.com/drive/folders/1pxQUqj_h3mlFpApEBe7_g4sY_vazRDD2
 | Subfolder | Link | Contents (verified 2026-10-10) |
 |---|---|---|
 | Decipher II Articles | https://drive.google.com/drive/folders/1Hiet0dmMbgpqmo2j2FaNBc_-yUGwUijV | **Sharlet Brown article scan** (Milwaukee Sentinel, "She cracks code to win $25,000", Thomas Collins, c. Nov 1986); Statesman Journal 1986-03-25 (2-1 Novak, 2 crops); The Leaf-Chronicle 1986-09-27 (AP, 2-2 Chirpich); Spokesman-Review 1985-12-21 (retail ad, $12.00) |
-| Decipher II Instruction Book | https://drive.google.com/drive/folders/1Y7oG91AiyEjSepCCgWZwruCXkA1EEApA | full instruction book scan |
+| Decipher II Instruction Book | https://drive.google.com/drive/folders/1Y7oG91AiyEjSepCCgWZwruCXkA1EEApA | full instruction book scan (`Decipher-II-rulebook-1.jpg`..`7.jpg`): prints the `$117,000` Decipher I payout note (p. 2), 11-author Groups A/B/C/D for Messages 4/2/1/3 (p. 4), all five initial Message #1 clues verbatim (pp. 4–5), defunct `(804) 623-CLUE` hotline (p. 4), and Frederick B. Hill & Co. / NYC vault contest rules (p. 6) |
 | Decipher III Articles | https://drive.google.com/drive/folders/1rrjuIQT03e-7Un05jnORh5-DdzQatmzl | five 1987–1991 clippings — **all ads or gift-guide mentions, no monthly clue columns**: Lincoln Journal Star 1987-12-20 ($13.50), Arizona Daily Star 1988-04-16 (mail-order, $16.95), Courier-Post 1988-12-06 (gift guide), Palm Beach Post 1990-12-20 (promo; prints the (800) 654-3939 line), Honolulu Star-Bulletin 1991-11-14 ($13.99, still on sale) |
 | Decipher III Instruction Book | https://drive.google.com/drive/folders/18wgLEXQh7cihxlcnRd9-PtqwQJ79ilz3 | full instruction book scan |
 | Puzzle 2-2: Solution | https://drive.google.com/drive/folders/1BooFsGnJIDmB6rtYuprLYXkxl6R_huV5 | 2-2 solution material |
@@ -93,6 +93,22 @@ were delivered on the Decipher III phone hotline).
   5-text scoring model; exact IDs in `data/pg_manifest.json`)
 - Standard Ebooks — https://standardebooks.org (three Faulkner texts, listed in
   `data/pg_manifest.json` under `manual_standard_ebooks`)
+
+## Published Decipher II-1 reconstruction & textual witnesses (2026)
+
+| Item | Link |
+|---|---|
+| Eckman, C. A. (2026), *An Independent Reconstruction of Decipher II, Message 1 (1985–86)* + Public Supplement (Zenodo, Oct 31 2026) | https://doi.org/10.5281/zenodo.23844582 |
+| Eckman, C. A. (2026), *Addendum 1: Independent Replication, Textual Witnesses, and Clue Interpretation* (Zenodo, Nov 4 2026) | https://doi.org/10.5281/zenodo.23963541 |
+| Companion verification package (`chriseckman/decipher-ii1-reconstruction`, MIT) | https://github.com/chriseckman/decipher-ii1-reconstruction |
+| Eckman technical workflow overview (Nov 1 2026; updated Nov 5 2026) | https://www.eckmandesign.com/blog/ai-workflow-automation-decipher-ii-message-1/ |
+| Replication & blind-reading review thread (Issue #1 in this repository) | https://github.com/umbrellaid/decipher-money-hunt-research/issues/1 |
+| Alden (1911), *Readings in English Prose of the Eighteenth Century*, p. 97 — Library of Congress scan (492-letter Swift witness) | https://archive.org/details/readingsinenglis00alde/page/97/mode/1up |
+| Alden (1911), p. 97 — Cornell University Library scan (2nd independent 492-letter witness) | https://archive.org/details/cu31924013335579/page/97/mode/1up |
+| Alden (1911), p. 97 — Harvard University / Google Books scan (3rd independent 492-letter witness) | https://books.google.com/books?id=oLMQAAAAYAAJ&pg=PA97 |
+| Swift, *Gulliver's Travels* Part III Ch. 2 — Project Gutenberg #829 (491-letter witness; fails 492 clue) | https://www.gutenberg.org/ebooks/829 |
+| Swift, *Works* (1801 ed., vol. 6) via Wikisource (490-letter witness; fails 492 clue) | https://en.wikisource.org/wiki/The_Works_of_the_Rev._Jonathan_Swift/Volume_6/A_Voyage_to_Laputa/Chapter_2 |
+| Breathed, *Bloom County* in *The University Daily* (Texas Tech, Jul 15 1983, p. 7 — *Yaz Pistachio* strip referenced in 2-1 plaintext analysis) | https://hdl.handle.net/2346/65955 |
 
 ## 2026-10-30 addendum — free-archive sweep results (WebBridge, live)
 

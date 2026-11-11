@@ -7,6 +7,7 @@ the published paper does not cover.**
 Eckman, C. A. (2026). *An Independent Reconstruction of Decipher II, Message 1
 (1985–86).* Zenodo, 31 Oct 2026. https://doi.org/10.5281/zenodo.23844582
 Software: https://github.com/chriseckman/decipher-ii1-reconstruction (v1.0.0, MIT).
+Workflow overview: https://www.eckmandesign.com/blog/ai-workflow-automation-decipher-ii-message-1/ (1 Nov 2026; updated 5 Nov 2026).
 
 > **This document was revised on 2026-11-05** after the author published
 > **Addendum 1: Independent Replication, Textual Witnesses, and Clue Interpretation**,
@@ -156,7 +157,12 @@ textual variant exists in the standard free e-text.
 
 **Not established:** that this is the designer's actual procedure. The author is
 explicit that the reconstruction does not identify Holland's physical edition or
-his rule for choosing among eligible numerical positions. The `330→830` reading at
+his rule for choosing among eligible numerical positions (the 314 observations touch
+only **224 of 492** underlying source positions and **261 of 984** key slots, leaving
+268 source positions unexercised; separately, `Decipher-II-rulebook-4.jpg` and `5.jpg`
+in Kavett's Drive archive confirm all five `2-1` clues were printed initial clues in
+the booklet rather than hotline additions, with the booklet noting that some clues
+pertain to the message itself rather than the key — see `docs/decipher-ii.md`). The `330→830` reading at
 observation 169 was graded *probable* here on 2026-11-03 because every supporting
 reading was candidate-aware; **that conditionality was discharged on 2026-11-05** by a
 blind reading of the sheet — four fresh contexts, no candidate values, unanimous

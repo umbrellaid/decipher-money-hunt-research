@@ -15,8 +15,10 @@ fourth message, for the whole $100,000 in solid gold.
 | 3-3 | 159 | 156 | 721 | E×3 | longest key-stream requirement |
 
 All seven Decipher sequences (II and III) were re-transcribed from the printed puzzle
-surfaces and diffed token-by-token on 2026-10-05; they match `data/ciphers.json`
-exactly (one 2-1 error was found and fixed — see `docs/decipher-ii.md`).
+surfaces and diffed token-by-token on 2026-10-05; the three Decipher III sequences match
+`data/ciphers.json` exactly (two historical transcription errors on solved `2-1` — obs 306
+`338→388` caught 2026-10-05 and obs 169 `330→830` identified in Eckman's reconstruction and
+blind-verified 2026-11-05 — are documented in `docs/decipher-ii.md` and `data/ii1_corrections.json`).
 
 ## The author groups — printed in the rulebook, recovered 2026-10-05
 
@@ -40,7 +42,10 @@ They are printed on rulebook page 6:
 Message #1's printed initial clues are: *"The author you seek to find the key is from
 the group that's labeled B."* · *"10"* · *"End"*. So **3-1 = Group B**. Clues for
 messages 2 and 3 were only released after message 1 was solved — which never happened —
-so **3-2 and 3-3 must be searched against both Group A and Group C**.
+so **3-2 and 3-3 must be searched against both Group A and Group C** (in Decipher II's
+rulebook, the four 11-author groups A/B/C/D mapped 1-to-1 onto the four messages —
+`2-1` = C, `2-2` = B, `2-3` = D, `2-4` = A — making a 1-to-1 split across Group A and
+Group C likely here too, though unconfirmed without the unreleased clues).
 
 ## What has been eliminated
 

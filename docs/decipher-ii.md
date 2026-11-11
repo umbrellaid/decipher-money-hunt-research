@@ -17,7 +17,9 @@ puzzles were solved, though the solution to the last puzzle has since been lost.
 
 On October 31, 2026, Christopher A. Eckman published a [non-peer-reviewed
 technical reconstruction of Decipher II, Message 1](https://doi.org/10.5281/zenodo.23844582),
-with [reproducible Python software](https://github.com/chriseckman/decipher-ii1-reconstruction).
+with [reproducible Python software](https://github.com/chriseckman/decipher-ii1-reconstruction)
+and a [technical workflow overview](https://www.eckmandesign.com/blog/ai-workflow-automation-decipher-ii-message-1/)
+(Nov 1, 2026; updated Nov 5, 2026).
 The reconstruction uses the tailor paragraph from Part III, Chapter 2 of
 Jonathan Swift's *Gulliver's Travels*. Normalizing the passage produces 492
 letters; appending its reversal gives a 984-position numerical key. Applied
@@ -72,8 +74,19 @@ at 148 in the same crop (`results/RUN_LOG.md`, 2026-11-05). The `330` in
 compilation, and the 2-1 decode is no longer conditional on an unverified reading. A
 human inspection of the physical piece remains the only stronger check. The
 reconstruction does not establish the original designer's exact physical edition or
-procedure for choosing among eligible numerical positions. Historical solution credit
-remains with Eileen Novak and the three other successful 1986 contestants.
+procedure for choosing among eligible numerical positions: the 314-token ciphertext
+exercises **224 of the 492** underlying source positions (139 in the forward half, 122
+in the reversal half, 37 in both; **261 of 984** key slots, leaving 268 source
+positions unprobed). Two literal-plaintext details documented in Eckman's report (§3.2,
+§7) also inform open-cipher solver design: the decoded verse spells *Bloom County*'s
+Binkley literally as **`BRINKLEY`** and renders **`PISTACHIO`** without `YAZ` (matching
+characters from Berke Breathed's July 15, 1983 strip) — which both explains why Eileen
+Novak told the *Statesman Journal* she bought a *Bloom County* book *"to make sure the
+names were spelled correctly"* before mailing her entry, and proves that Holland's
+plaintexts can contain a 1-letter proper-noun typo (so future word-lattice or
+scattered-null solvers should allow edit-1 / OOV proper-name tolerance). Historical
+solution credit remains with Eileen Novak and the three other successful 1986
+contestants.
 
 ## Contest timeline, rebuilt from the winner articles (2026-10-10)
 
@@ -91,9 +104,12 @@ Karen's Drive archive (`docs/sources.md`) holds the actual winner-article scans:
   extraction rule; a modern technical reconstruction is linked above.
 - **2-2**: Chirpich (Memphis State chemistry professor; also one of the 36 Decipher
   I winners) solved it by September 1986; AP wire story, e.g. *The Leaf-Chronicle*
-  (Clarksville, TN), September 27, 1986. The AP piece gives a figure seen nowhere
-  else: Holland "put up **$117,000** in prizes for solving the original version of
-  Decipher." One 2-2 clue was **"The first is the last."**
+  (Clarksville, TN), September 27, 1986. The AP piece reports that Holland "put up
+  **$117,000** in prizes for solving the original version of Decipher" — a figure
+  taken directly from page 2 of the Decipher II Instruction Book (*"Decipher II's
+  Predecessor"*, in Karen's Drive archive), which states *"The winners shared in an
+  award of over $117,000"* ($36 \times \$3,251.71 = \$117,061.56$ after accrued
+  interest). One 2-2 clue was **"The first is the last."**
 - **2-3**: the accountants opened the entry vault in Virginia on **October 31,
   1986**; Brown (West Allis, WI) was the *only* correct entrant for message three
   and took the full $25,000. *Milwaukee Sentinel*, "She cracks code to win $25,000"
@@ -105,17 +121,31 @@ Karen's Drive archive (`docs/sources.md`) holds the actual winner-article scans:
   the Milwaukee Journal Sentinel microfilm — **found**, no library card needed.
 - **2-4**: solved by an unknown entrant after that (confirmed to Karen Kavett by creator
   Warren Holland Jr. in 2021, with original records buried in warehouse storage); the
-  solution is lost. One archival clue survives in the Decipher III rulebook: in recounting
+  solution is lost. In the Decipher II Instruction Book (pp. 4–6, `Decipher-II-rulebook-4.jpg`..`6.jpg`
+  in Karen's Drive archive), the four printed 11-author groups map 1-to-1 onto the four
+  messages (`2-1` = Group C, `2-2` = Group B, `2-3` = Group D, **`2-4` = Group A**);
+  monthly clues were distributed on `(804) 623-CLUE` (`804-623-2583`, long defunct — do
+  not call); entries were audited by Norfolk accounting firm **Frederick B. Hill &
+  Company** (1630 United Virginia Bank Building, Norfolk, VA 23514) with solutions
+  locked in a New York City bank vault (18-month charity timeout); and Rule `3f`
+  specifies that as each message was solved its solution was released to the media and
+  mailed to anyone sending a self-addressed stamped envelope. Additional archival clues
+  survive in the Decipher III rulebook: in recounting
   how Decipher I/II prizes were awarded, it mentions the giant dollar-sign ice block
   (Novak, 2-1), a huge Decipher-branded bag delivered by **armored car with armed guards**,
   and winners honored at a **New York press conference followed by dinner at Tavern on the
   Green** in Central Park—potential search handles in 1986–1987 local or trade press for
   identifying the 2-4 winner or remaining 2-1 co-winners.
 
-The 2-1 clues preserved in Karen's solutions guide: *"The key to message one, you
+The 2-1 clues are **all five printed verbatim** in the Decipher II Instruction Book
+(pp. 4–5, `Decipher-II-rulebook-4.jpg` and `5.jpg`, under *"Initial Clues For Message
+#1:"* — settling Addendum 1 §5's question of whether *"492"* or *"S.I.N."* came from a
+later hotline recording): *"The key to message one, you
 see, is from the authors in group C"* · *"492"* · *"A single place has a certain
 pattern to create the key"* · *"One way gets you half way there"* · *"S.I.N."*
-The 2-1 author list from the same guide: Emily Dickinson, Ernest Hemingway, Sylvia
+Directly above them (p. 4), the rulebook frames the clue list explicitly: ***"Some of
+the clues may pertain to the key while others pertain to the message itself."***
+The 2-1 author list (Group C, p. 4): Emily Dickinson, Ernest Hemingway, Sylvia
 Plath, Jonathan Swift, Herman Wouk, Victor Hugo, John Steinbeck, Margaret Mitchell,
 William Shakespeare, T.S. Eliot, Abraham Lincoln.
 
@@ -130,7 +160,7 @@ reconstruction (linked above) decodes them:
 | *"A single place has a certain pattern to create the key"* | One passage ("a single place"), and the "certain pattern" is the doubling. |
 | *"One way gets you half way there"* | **The palindromic construction, stated outright.** Reading one direction covers 492 of 984 positions — exactly half. The reversal half covers the rest. |
 | *"…from the authors in group C"* | Swift is in the Group C list above. Consistent, and already known. |
-| *"S.I.N."* | **Still unexplained.** With the mechanism now known this is the top open 2-1 question, and it may be tractable: candidates worth testing are a reversal/direction indicator, an initials acrostic over the passage or its source, or a numbering convention. No reading is asserted here. |
+| *"S.I.N."* | **Still unexplained.** Because the rulebook (p. 4) states that *"Some of the clues may pertain to the key while others pertain to the message itself"* and the other four printed clues all describe the key, *"S.I.N."* may pertain to **the message/subject itself** rather than an unrecovered key rule; key-side candidates (a reversal/direction indicator, an initials acrostic over the passage or its source, or a numbering convention) also remain open. No reading is asserted here. |
 
 `solver/body_scan.py` has inferred the doubling since **2026-10-18** (commit
 `7ac346b`; the Gemini Q&A prompting it was the evening of 2026-10-17) from

@@ -926,4 +926,40 @@ designer editions remain unresolved.
 A same-day bounded Money Hunt subtraction test on pages 15, 9 and 11 added no verified letter;
 the wishkohaku page-letter mapping stands at 2 of 24 verified.
 
+## 2026-11-11 — cross-audit of Eckman's release, blog, Issue #1, and Decipher II rulebook; palindromic fold scan added
+
+**Not a book sweep — source cross-check and ciphertext-only fold test.** Audited Eckman's
+workflow blog post (`eckmandesign.com/blog/ai-workflow-automation-decipher-ii-message-1/`,
+2026-11-01 / updated 2026-11-05), Zenodo report + Public Supplement (`10.5281/zenodo.23844582`),
+Addendum 1 (`10.5281/zenodo.23963541`), `chriseckman/decipher-ii1-reconstruction`, Issue #1, and
+the Decipher II Instruction Book scans (`Decipher-II-rulebook-1.jpg`..`7.jpg` in Kavett's Drive
+archive) against this repository:
+
+1. **Palindromic fold scan implemented across all seven ciphers (`solver/analyze_ciphertexts.py`).**
+   Implemented Eckman's (2026, Supplement §5) ciphertext-only test (`|a−b| >= 100`, `|a+b−R| <= 1`
+   over `R in [max(c)+1 .. floor(2.2*max(c))]`, 2,000 order permutations) and aligned `2-1` in
+   `analyze_ciphertexts.py` with `data/ii1_corrections.json` by default (`--raw-ciphers` retains
+   unmodified `data/ciphers.json`). Results:
+   - `2-1`: **`10@984` (`p = 0.0005`)**, `261` unique ints, `53` repeats, `49.7% > Max/2`
+     (reproducing Eckman Figure S4 / Table 3).
+   - `2-2`: `2@512` (`p = 0.8276`); `2-3`: `1@2655` (`p = 1.0000`).
+   - **`2-4`**: **`2@1083` (`p = 1.0000`)** — completely flat despite 13 same-direction `|Δ|=1`
+     pairs (`737–739`, `154–156`, `544–546`), indicating zero cross-half hopping and favoring a
+     single-direction ~1,053+ unit key stream (`engine.search_anchored` kept active as insurance).
+   - `3-1`: `4@524` (`p = 0.4298`); `3-2`: `2@417` (`p = 0.9990`); `3-3`: `4@731` (`p = 0.1814`).
+2. **Decipher II Instruction Book provenance verified.** `Decipher-II-rulebook-4.jpg` and `5.jpg`
+   print **all five `2-1` clues verbatim** under *"Initial Clues For Message #1:"* (settling
+   Addendum 1 §5's question of whether *"492"* or *"S.I.N."* came from a later hotline recording),
+   framed on page 4 by *"Some of the clues may pertain to the key while others pertain to the
+   message itself"* — making a message/subject reading of *"S.I.N."* explicit alongside key-side
+   hypotheses. Also recorded from pp. 2–6: the `$117,000` Decipher I award figure cited by AP
+   (1986), the 1-to-1 mapping of Groups C/B/D/A onto `2-1..2-4`, the defunct `(804) 623-CLUE`
+   hotline, and Frederick B. Hill & Co. / NYC vault rules (`docs/decipher-ii.md`, `docs/sources.md`).
+3. **Consistency fixes & open-cipher solver notes.** Fixed a stale "one 2-1 error" reference in
+   `docs/decipher-iii.md`; documented `2-1` key-slot coverage (`224/492` source positions,
+   `261/984` key slots) and the literal `BRINKLEY` (*Binkley*) proper-noun typo precedent in
+   `docs/decipher-ii.md` and `docs/decipher-ciphertext-patterns.md`. `verify_ii1.py` 19/19 PASS;
+   `validate.py` **133/133 PASS**.
+
+
 

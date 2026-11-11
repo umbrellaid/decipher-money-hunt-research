@@ -17,15 +17,17 @@ Comparing the three **solved** Decipher II messages (`2-1`, `2-2`, `2-3`) agains
 four **unsolved** messages (`2-4`, `3-1`, `3-2`, `3-3`) separates their encoding habits
 cleanly:
 
-| Cipher | Status | Tokens | Ints | Literals | Range `[Min..Max]` | Unique Ints | Repeat Uses | Expected Repeats (Uniform) | `\|Δ\|=1` Adj Pairs | Same-Century Adj % | `×100` Count | `> Max/2` % |
-|---|---|---:|---:|---:|---|---:|---:|---:|---:|---:|---:|---:|
-| **2-1** | Solved (*Gulliver* char palindrome) | 314 | 314 | 0 | `1..980` | 260 | **54** | 45.2 | **20** | 24.0% | 7 | 49.4% |
-| **2-2** | Solved (*Catch-22* ToC chars) | 53 | 53 | 0 | `1..477` | 50 | **3** | 2.8 | 2 | 25.0% | 0 | 35.8% |
-| **2-3** | Solved (*Tai-Pan* Ch.5 word-first) | 266 | 259 | 7 (`Z,E,N,V,L,Y,U`) | `14..2420` | 233 | **26** | 13.3 | **15** | **66.9%** | 9 | 23.9% |
-| **2-4** | **OPEN** (Decipher II) | 170 | 170 | 0 | `3..1053` | 161 | **9** | 12.9 | **13** | 27.8% | **9** | 47.1% |
-| **3-1** | **OPEN** (Decipher III, Group B) | 170 | 164 | 6 (`E×5, Z×1`) | `11..516` | 160 | **4** | 23.4 | 2 | 28.0% | 1 | 52.4% |
-| **3-2** | **OPEN** (Decipher III, Group A/C) | 117 | 112 | 5 (`E×3, Y×2`) | `5..416` | 101 | **11** | 13.7 | 2 | 24.5% | 0 | 47.3% |
-| **3-3** | **OPEN** (Decipher III, Group A/C) | 159 | 156 | 3 (`E×3`) | `1..721` | **156** | **0** | 15.6 | 2 | 31.6% | 3 | 50.0% |
+| Cipher | Status | Tokens | Ints | Literals | Range `[Min..Max]` | Unique Ints | Repeat Uses | Expected Repeats (Uniform) | `\|Δ\|=1` Adj Pairs | Same-Century Adj % | `×100` Count | `> Max/2` % | Fold Peak (`p`) |
+|---|---|---:|---:|---:|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| **2-1**\* | Solved (*Gulliver* char palindrome) | 314 | 314 | 0 | `1..980` | 261 | **53** | 45.2 | **20** | 24.0% | 7 | 49.7% | **`10@984` (`0.0005`)** |
+| **2-2** | Solved (*Catch-22* ToC chars) | 53 | 53 | 0 | `1..477` | 50 | **3** | 2.8 | 2 | 25.0% | 0 | 35.8% | `2@512` (`0.83`) |
+| **2-3** | Solved (*Tai-Pan* Ch.5 word-first) | 266 | 259 | 7 (`Z,E,N,V,L,Y,U`) | `14..2420` | 233 | **26** | 13.3 | **15** | **66.9%** | 9 | 23.9% | `1@2655` (`1.00`) |
+| **2-4** | **OPEN** (Decipher II) | 170 | 170 | 0 | `3..1053` | 161 | **9** | 12.9 | **13** | 27.8% | **9** | 47.1% | `2@1083` (`1.00`) |
+| **3-1** | **OPEN** (Decipher III, Group B) | 170 | 164 | 6 (`E×5, Z×1`) | `11..516` | 160 | **4** | 23.4 | 2 | 28.0% | 1 | 52.4% | `4@524` (`0.43`) |
+| **3-2** | **OPEN** (Decipher III, Group A/C) | 117 | 112 | 5 (`E×3, Y×2`) | `5..416` | 101 | **11** | 13.7 | 2 | 24.5% | 0 | 47.3% | `2@417` (`1.00`) |
+| **3-3** | **OPEN** (Decipher III, Group A/C) | 159 | 156 | 3 (`E×3`) | `1..721` | **156** | **0** | 15.6 | 2 | 31.6% | 3 | 50.0% | `4@731` (`0.18`) |
+
+*\*`2-1` statistics include the blind-verified working corrections in [`data/ii1_corrections.json`](../data/ii1_corrections.json) (`169: 330→830`, `306: 338→388`), matching `solver/verify_ii1.py` and Eckman (2026) Table 3; pass `--raw-ciphers` to `solver/analyze_ciphertexts.py` to inspect unmodified `data/ciphers.json` (`260` unique, `54` repeats, `49.4% > Max/2`).*
 
 ---
 
@@ -136,6 +138,26 @@ Unlike Decipher III, **`2-4` looks structurally like solved Decipher II `2-1`**:
      off deliberately, or (b) positions 20–27 are an **8-token clustered null block**
      (which `TrigramScorer.score_best_window` and the `Puzzle_2-4_No100s` variant in
      `solver/toc_and_clue_tester.py` explicitly guard against).
+4. **Absence of a Palindromic Fold Spike (`2@1083`, `p = 1.00`, vs. `2-1`'s `10@984`, `p = 0.0005`):**
+   * Eckman (2026, Supplement §5) introduced a ciphertext-only test for `K = S || reverse(S)`
+     keys: scan candidate fold axes `R` across `[max(c)+1 .. floor(2.2 * max(c))]` and count
+     adjacent token pairs `(a, b)` separated by `|a − b| >= 100` whose sum satisfies
+     `|a + b − R| <= 1`. Under a `2L`-slot palindromic key, hopping across halves on a
+     doubled plaintext letter yields `a + b = 2L + 1` (`985` in `2-1`), while hopping across
+     halves on two adjacent source letters yields `a + b = 2L` or `2L + 2` (`984` or `986`).
+   * On `2-1`, this fold statistic spikes to **`10` pairs at `R = 984` (`p = 0.0005`**,
+     2,000 random order permutations), recovering the exact `984`-slot key length from the
+     ciphertext alone.
+   * On **`2-4`**, despite having **13 same-direction `|Δ| = 1` pairs** (proof that Holland
+     actively exploited consecutive source letters), the fold curve is **completely flat**
+     (`peak = 2` at `R = 1083`, `p = 1.00`). Likewise, `3-1` (`4@524`, `p = 0.43`), `3-2`
+     (`2@417`, `p = 1.00`), and `3-3` (`4@731`, `p = 0.18`) show no significant fold axis.
+   * **Implication:** In `2-4`, Holland never hopped between forward and reversed halves on
+     adjacent letters, strongly favoring a **single-direction ~1,053+ unit key stream** over
+     a `2-1`-style cross-half palindrome. (`engine.search_anchored` still sweeps `S || reverse(S)`
+     on every book as cheap insurance, because a palindromic key where the encoder stayed in
+     one half at a time — or crossed off source positions without replacement, as in `3-1`
+     and `3-3` — would also leave a flat fold curve.)
 
 ---
 
@@ -194,7 +216,9 @@ Anyone picking up this repository has the following cleanly bounded search terri
      nulls into Decipher III plaintexts (say 1 null every 8–10 tokens), trigram scoring
      fails (`validate.py` asserts this). A beam-search / Viterbi scorer allowing a small
      deletion penalty (`~10%` token skip rate) over a word/trigram lattice could detect
-     scattered-null plaintexts without overfitting.
+     scattered-null plaintexts without overfitting — and must allow OOV / 1-edit tolerance
+     on proper nouns rather than rigid dictionary matching, since solved `2-1` encodes
+     *Bloom County*'s Binkley literally as `BRINKLEY` (`docs/decipher-ii.md`).
    * **Paratext & non-body keys:** Book dedications, epigraphs (compare Decipher I's
      Wilkins epigraph in *Cosmos*), author biographical blurbs, jacket copy, or index
      entries in specific 1980s Bantam/Dell/Fawcett mass-market printings.

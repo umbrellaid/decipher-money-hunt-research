@@ -65,12 +65,12 @@ text**; it links to her folders and lets you supply your own books.
 
 ## What this repository adds
 
-1. **A solver with a regression suite.** `solver/validate.py` runs 131 checks: the
+1. **A solver with a regression suite.** `solver/validate.py` runs 133 checks: the
    Decipher III rulebook's worked example (three ciphers that must decode to CODES),
    solved puzzles 2-1 (*Gulliver's Travels* palindromic passage + positive control) and
    2-2 (*Catch-22* chapter titles), an encode→search→decode round trip for each of 21
    rule families in all four direction combinations, null-tolerance checks, ciphertext
-   invariants, and 3-band index-elastic drift recovery (`solver/drift_diagnostic.py`).
+   invariants (including the palindromic fold scan), and 3-band index-elastic drift recovery (`solver/drift_diagnostic.py`).
    `solver/sweep.py` tests both sliding and sentence/word-anchored palindromic `S || reverse(S)`
    keys, plus straight and palindromic chapter-title chains when a `.chapters.json` file
    is present beside the book.
@@ -104,7 +104,7 @@ Needs [uv](https://docs.astral.sh/uv/). From this directory:
 
 ```
 uv run python solver/fetch_texts.py          # public-domain corpus + scoring model
-uv run python solver/validate.py             # 131 checks; all must pass
+uv run python solver/validate.py             # 133 checks; all must pass
 uv run python solver/sweep.py BOOK.txt --cipher all --top 10
 uv run python solver/drift_diagnostic.py BOOK.txt --cipher all --top 5
 ```

@@ -286,7 +286,7 @@ From the repository root (needs [uv](https://docs.astral.sh/uv/)):
 
 ```
 uv run python solver/fetch_texts.py        # public-domain corpus + scoring model
-uv run python solver/validate.py           # 131 regression checks, must all pass
+uv run python solver/validate.py           # 133 regression checks, must all pass
 uv run python solver/sweep.py mybook.txt --cipher 3-1 --top 10
 uv run python solver/drift_diagnostic.py mybook.txt --cipher all --top 5
 ```

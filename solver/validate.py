@@ -371,10 +371,19 @@ def test_null_tolerance(scorer):
 
 
 def test_ciphertext_patterns_and_drift(scorer):
-    """Verify structural invariants and 3-band index-elastic drift recovery."""
-    ciphers = json.loads((ROOT / "data" / "ciphers.json").read_text(encoding="utf-8"))
+    """Verify structural invariants, palindromic fold statistic, and 3-band drift recovery."""
+    ciphers = analyze_ciphertexts.load_ciphers(apply_ii1_corrections=True)
+    s21 = analyze_ciphertexts.analyze_one("2-1", ciphers["2-1"])
+    s24 = analyze_ciphertexts.analyze_one("2-4", ciphers["2-4"])
     s33 = analyze_ciphertexts.analyze_one("3-3", ciphers["3-3"])
     s31 = analyze_ciphertexts.analyze_one("3-1", ciphers["3-1"])
+    check("2-1: working cipher has 261 unique ints and palindromic fold peak 10 at R=984",
+          s21["unique_ints"] == 261 and s21["fold_peak"] == 10
+          and s21["fold_best_r"] == 984 and s21["fold_perm_p"] < 0.005,
+          f"unique={s21['unique_ints']} fold={s21['fold_peak']}@{s21['fold_best_r']} p={s21['fold_perm_p']}")
+    check("2-4: flat palindromic fold scan (peak<=2) despite 13 same-direction |d|=1 pairs",
+          s24["fold_peak"] <= 2 and s24["fold_perm_p"] > 0.5 and s24["step1_count"] == 13,
+          f"fold={s24['fold_peak']} p={s24['fold_perm_p']} step1={s24['step1_count']}")
     check("3-3: strictly zero repeated integers across 156 numeric tokens",
           s33["extra_repeat_uses"] == 0 and s33["unique_ints"] == 156,
           f"unique={s33['unique_ints']} repeats={s33['extra_repeat_uses']}")
