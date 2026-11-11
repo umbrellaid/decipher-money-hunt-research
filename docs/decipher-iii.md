@@ -53,21 +53,31 @@ source — so a sliding-only sweep returns a noise-band negative even on the cor
 and passage. `engine.search_anchored` now covers the construction (`docs/methodology.md`
 gap 3). Status of the re-earning:
 
-- **Re-tested under both search shapes** (198 M anchored pairs, all negative,
-  `results/RUN_LOG.md` 2026-11-03 later entry): *Doctor Zhivago*, *Foundation*,
-  *I, Robot*, *The Thorn Birds* — the four era-verified whole-book scans.
-- **NOT yet re-tested**: Poe, Faulkner, the pre-1931 Christies, Sandburg, O'Neill and
-  cummings below, and the chapter-title chains. Those eliminations stand on the sliding
-  sweep alone and must be treated as provisional.
+- **Re-tested under both search shapes** (all negative; see `results/RUN_LOG.md`
+  2026-11-03 and 2026-11-07 entries):
+  - *Doctor Zhivago*, *Foundation*, *I, Robot*, *The Thorn Birds* — the four
+    era-verified whole-book scans (198 M anchored pairs, 2026-11-03).
+  - **All 58 public-domain / Poe corpus files** — Poe (complete works + 9 splits),
+    Faulkner (*The Sound and the Fury*, *Soldiers' Pay*, *As I Lay Dying*), ten
+    pre-1931 Christies, Sandburg (*Rootabaga*), five early O'Neill plays, cummings
+    (*The Enormous Room*), and the 2-4 public-domain corpus (232 text×cipher runs,
+    0 empty-search warnings, all negative, commit `e6de31f`, 2026-11-07).
+  - Palindromic chapter-title chains (`chapter-titles-palindrome` in `solver/sweep.py`
+    and `Chars|PalFwdRev` in `solver/toc_and_clue_tester.py`).
 - **Cannot be tested at whole-book grade**: *Cat's Cradle* (Vonnegut), ranked #2 for 3-1
   below. **Corrected 2026-11-04:** the old "82 missing chapters" diagnosis was a bad
   split, not missing scans. Re-ingest reduced the boundary gap to **31 chapters**, but
   the OCR remains only about **85–90% accurate at word level**, so the text still cannot
-  support an exact whole-book cipher sweep. The remaining limitation is OCR/text quality,
-  not the superseded 82-chapter split diagnosis; see `results/RUN_LOG.md`.
-- The anchored scan covers only `letters`, `first-letters` and `last-letters`. The
-  every-Nth and word-Nth-letter families in palindromic form remain untested for
-  everything, so no elimination below is complete with respect to this mechanism.
+  support an exact character-level sweep (`solver/drift_diagnostic.py` can check for
+  small local word-initial shifts, not 10–15% word-level OCR noise). The remaining
+  limitation is OCR/text quality, not the superseded 82-chapter split diagnosis; see
+  `results/RUN_LOG.md`.
+- The anchored scan covers `letters`, `first-letters` and `last-letters` (the three
+  families whose stream coordinates map cleanly onto sentence/word starts). The 18
+  every-Nth and word-Nth-letter strided families in palindromic form remain untested
+  for all books; see [`decipher-ciphertext-patterns.md`](decipher-ciphertext-patterns.md)
+  for structural profiles of 3-1, 3-2, and 3-3 (including 3-3's strict
+  without-replacement property and the word-initial `E`-depletion analysis).
 
 - **Edgar Allan Poe for 3-1**: complete works, 21 rule families, every numbering start,
   both directions (best −8.84, noise). Poe is not in the answer.
@@ -118,12 +128,28 @@ clue columns (1987–1991) have never been recovered; finding even a few would c
 "Decipher III Articles" folder, cataloged in `docs/sources.md`) was checked on
 2026-10-10: it holds five 1987–1991 clippings, and **all five are retail ads or
 gift-guide mentions — none prints a monthly clue**. The ads do fix the sales
-window: Decipher III was still being sold new in November 1991 at $13.99. The clue
-hunt therefore has to go to the subscription newspaper archives.
-See `docs/sources.md` for the archives to
-search. Warren Holland, the creator, died in December 2017; the company collapsed by
-2008 after an internal embezzlement, so the family and any surviving company records
-are the only human lead left.
+window: Decipher III was still being sold new in November 1991 at $13.99. See
+`docs/sources.md` for the archives checked.
+
+**Primary creator context from Karen Puzzles' 2021 correspondence with Warren Holland Jr.:**
+*(Correction: an earlier note here confused the Decipher creator **Warren Holland Jr.**—who
+was 29 in 1983 and corresponded directly with Karen Kavett by email for her 2021 Decipher II/III
+video—with his father, Warren L. Holland Sr., whose December 2017 obituary is listed in
+`docs/sources.md`.)* In his emails to Karen (`-XnCfS3ee8c`), Holland confirmed five primary
+facts that frame the remaining search:
+1. **None of the three Decipher III ciphers were ever solved.**
+2. **The 4th runoff cipher was already created and locked in before launch**—the contest was
+   wound down rather than extended because Decipher, Inc. had grown rapidly (*How to Host a
+   Murder*, etc.), reviewing monthly submissions was consuming too much of his time, and the
+   accounting firm handling entries was overwhelmed.
+3. **Original solution & clue records sit deep in warehouse storage** (not destroyed, though
+   Holland noted it was unlikely he would go digging for 35-year-old boxes).
+4. **Author selection:** When shown the author lists, Holland said he was reading so heavily
+   from all of those authors in the mid-1980s that he could no longer recall offhand which
+   specific titles he pulled keys from (confirming keys came from pre-1985 / pre-1987 books
+   he personally read).
+5. **Late cipher Easter egg:** Years later, Decipher included a playable cipher Easter egg on
+   a card in its *Fight Club* trading card game (unusable in gameplay until decoded).
 
 **2026-11-01 — the newspaper route is closed (trial run, consumer + Publisher Extra).**
 Full method and results in `docs/newspapers-com-sweep-2026-10-31.md`. Summary: the

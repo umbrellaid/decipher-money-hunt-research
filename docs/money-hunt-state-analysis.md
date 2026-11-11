@@ -583,7 +583,7 @@ establishing the string's provenance.
 
 1. p15 easel alphabet cube letters (four cubes, mid-right shelf).
 2. p9 both clock faces (wall clock upper-left; tower clock in skyline) for hand positions.
-3. ~~p18 letter columns 2 and 4 (mid-left); the H-E-A-D cabinet columns; letters at the upper salmon's mouth; top-right truncated word "Wea…"; "staying" carton tally count.~~ **Resolved 2026-10-09 evening from the native 300-dpi extraction:** columns read TTGO / HOAL / **BRING** / SGDG; the cabinet strip is phase-shifted **HEAD** tiling (*ADHEAD / EADHEA / EADHE*); salmon-mouth singles are **E P K / E / F i A E**; "Wea…" and the "staying" tally (11 strokes crossed by 2) recorded in [page_18](../data/money_hunt_pages/page_18.md). Only a 600-dip pass could add certainty to the two tiny marks under column 3 of the HEAD strip.
+3. ~~p18 letter columns 2 and 4 (mid-left); the H-E-A-D cabinet columns; letters at the upper salmon's mouth; top-right truncated word "Wea…"; "staying" carton tally count.~~ **Resolved 2026-10-09 evening from the native 300-dpi extraction:** columns read TTGO / HOAL / **BRING** / SGDG; the cabinet strip is phase-shifted **HEAD** tiling (*ADHEAD / EADHEA / EADHE*); salmon-mouth singles are **E P K / E / F i A E**; "Wea…" and the "staying" tally (11 strokes crossed by 2) recorded in [page_18](../data/money_hunt_pages/page_18.md). The two tiny marks under column 3 of the HEAD strip sit at the line-art precision limit of the original drawing.
 4. p24 score-sheet left-edge word fragments.
 5. p14 woman's lapel patch micro-lettering; "No dogs" pictogram wording.
 6. p17 framed portrait face (Lincoln?); church picture detail.

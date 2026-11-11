@@ -1,122 +1,103 @@
-# The Money Hunt — state of play, 2026-10-30
+# Money Hunt — Research Status as of 2026-10-30 (Updated 2026-11-10)
 
-A consolidation of where every thread stands after the 2026-10-30 work session
-(Argon cross-check of the Karen Puzzles video claims against the 300-dpi book
-extraction, the fence-letter mapping test, and the final enhanced-crop pass on
-the page-18 clue board). Established background is in
-[`money-hunt.md`](money-hunt.md); per-page detail is in
-[`money-hunt-state-analysis.md`](money-hunt-state-analysis.md).
+Concise summary of the Money Hunt investigation after the October–November 2026
+source checks, native-300-dpi rescans, crossword verification, and bounded
+subtraction test. See
+[`money-hunt-hypotheses-and-guesses.md`](money-hunt-hypotheses-and-guesses.md)
+for the master zoom-out/zoom-in synthesis, dead ends, and ranked answer guesses.
 
-## Established (unchanged)
+## Proven (hard ground truth)
 
-- **Page 12 = WASHINGTON** — the only proven page (count birds → index into
-  species names, Katie's November 2021 solve). Template for what a solve looks like.
-- **The creator's son** says the solution involves the **28 July 1945 B-25 crash
-  into the Empire State Building**.
-- **Karen's acrostic** reads **EMPIRE STATE BUILDING NY USA** (24 letters, one
-  per page in poster reading order: 15, 9, 18, 24, 14, 6, 17, 21, 23, 27, 7, 19,
-  5, 8, 10, 25, 20, 22, 28, 13, 16, 26, 12, 11). The 27→7→19→5 segment follows
-  the verified artifact record in [`data/money_hunt_artifacts.md`](../data/money_hunt_artifacts.md).
-- Working theory: each of the 24 reading-order pages hides one US state or
-  Canadian province. High-confidence reads: p12 WASHINGTON (proven), p14
-  FLORIDA (state outline + hurricane).
+- **Page 12 = WASHINGTON**: count each bird species, index into the species
+  name, read top-to-bottom → WASHINGTON. (Katie, Nov 2021.)
+- **Poster reading order = 15, 9, 18, 24, 14, 6, 17, 21, 23, 27, 7, 19, 5, 8,
+  10, 25, 20, 22, 28, 13, 16, 26, 12, 11** — verified against the flip-side
+  poster's band connectivity (all 23 consecutive pairs checked; only 19–5
+  photographically faint). The 7→19 vs 19→7 discrepancy in older notes is
+  resolved in favor of **27 → 7 → 19 → 5**; see `data/money_hunt_artifacts.md`.
+- **Page 7 substitution cipher**: `FOLLOW CLUES TO FIND THE MILLION THEN TURN
+  IT INTO A BILLION COMPANY`.
+- **Page 15 math**: `Y = 4X + 1` → blanks are **−3** and **9**.
+- **Page 5 watch dials**: both lack any form of **4**; wristwatch ≈ 7:25–7:35,
+  making Karen's 7:28 ↔ July 28, 1945 (Empire State B-25 crash) plausible.
+- **Page 13 has the book's telescope**: brass tripod spyglass aimed at the
+  inverted sky-building (not p27; no airplane on 10/13/27).
+- **Page 16 MADE IN CAN** is deliberately truncated, not cropped; a second
+  calculator sits at bottom-right (display unreadable at 5×).
+- **Page 28 volume-row anomaly is an exact 19↔22 swap** (shelf reads 23, 19,
+  21, 20, 22, 18), plus DICTIONARY N–Z in slot 8 and DICTIONARY A–M in slot 1,
+  plus **Vol 149145** (14 / 9:45 / 1945 crash numbers).
+- **Crossword (pages 25 + 10/11/22/23)** — top-hat grid solved by Karen's
+  family (143A = TOPHAT, Broadway/music fill, no hidden meta). Clues 95–97 are
+  **DOWN-only entries on page 22**, not missing ACROSS text. **Closed as a
+  standalone solving task.**
 
-## Closed or corrected today
+## Page 18 (verified 2026-10-30, native 300-dpi)
 
-- **p5 calculator reads 1,000,000,000** (one billion) — a money-in-the-safe gag,
-  not a 1-million reference. (Earlier AI-summary claim of "1 million" refuted.)
-- **p5 necklace**: H-O-O / Y-I-P / S-H-I-P (last two beads at the 300-dpi floor).
-- **Watch time 7:28: unverifiable.** The drawing is too crude; the square watch
-  reads ≈7:25–7:35 and the round one ≈8:30–9:30. 7:28 predates any AI summary
-  (Karen's notes and a commenter both recorded it), so it stays plausible but
-  unproven. The crash-date hypothesis does not rest on it alone (p6 bingo
-  shows 2-5-7-28; p28's "Vol 149145" → 1945).
-- **p15 blackboard** blanks are **−3 and 9** (Y = 4X + 1) and the xylophone
-  keys are **C B A 4 3 2 1** — both confirmed, matching Karen's notes exactly.
-- **p17 newspaper masthead is "NEWS PANT"** (deliberate truncation family with
-  "MADE IN CAN"); the framed fruit painting is labeled "Art".
-- **p28 volume row**: the precise anomaly is a **19↔22 swap** (shelf reads
-  23, 19, 21, 20, 22, 18 — 19 sits in 22's slot and vice versa; 20 and 21 are
-  correctly placed). Volumes 1 and 8 are replaced by DICTIONARY A-M and
-  DICTIONARY N-Z. Karen's notes agree.
-- **p27 "circle" object is the reel of the reel-to-reel tape deck**, next to
-  Volume/Tone dials and a box camera — not a telescope, and the earlier
-  "head-on airplane" read is not supported. The real telescope is on **p13**;
-  Karen's "telescope aimed at a head-on airplane" appears to be a composite
-  memory.
-- **The big top-hat crossword yielded nothing beyond its own pun.** Karen's
-  family answer key confirms **143 Across = TOPHAT**; the fill is
-  Broadway/music-themed with no acrostic or meta. **Structure corrected
-  2026-10-31:** page 25 prints the ACROSS list; pages 10/11/22/23 print the DOWN
-  list for the same grid. Clues 95–97 are DOWN-only entries printed on page 22,
-  not missing text or a page defect. See
-  [`data/money_hunt_down_clues.md`](../data/money_hunt_down_clues.md).
-- **The p18 mini-crossword cannot yield as printed** — 12 clues for 13–14
-  entries, forced blanks at 4D (O____) and 6A (__B__), no candidate for "prices
-  & wrists" or "Nap". The genuine new mechanism from the fill: scene-clued
-  entries (RIVERHORSE = the hippopotamus drawing; ICING = the Candy jar).
-- **The post-"Nap" faint lines are confirmed nonexistent.** Enhanced crops
-  (autocontrast/equalize/threshold/invert, 4–6×) of the area below "11D Nap-12"
+- **Mini-crossword is structurally under-specified as printed.** Left cluster
+  locks (1D SAFAR, 2A SCRAP, 3A AMORT), right chain locks via scene-clued
+  entries (**11D RIVERHORSE** from the hippo, **13A ICING** from the Candy
+  jar, 7D BASIC, 10A CAR), 5A = DEAR; 4D and 6A have no clue match, and the
+  middle sub-chain `{6D, 8A, 9D, 12A}` admits multiple fills.
+- **Clue list ends at 12 lines.** Enhanced 4–6× crops below "11D Nap-12"
   show six marks (tick, four strokes, small v) and no letterforms at any
   setting. The machine-read "tail clues" were hallucinations. "Blackjack term"
   is spelled with a **K** (raw 6× crop) — "Blackjam" stays refuted.
 - **The p18 fence letters are 25, not 24**: TTGO / HOAL / BRING / SGDG (third
   column is BRING) plus 8 floaters (E, P, K, E, F, i, A, E). The
-  "fence letters = 24 poster-order pages" idea fails on count alone and was
-  tested anyway (initials, letter-values, Caesar/Atbash, brute-forced
-  orderings) — all at or below chance. The letters remain unexplained; the
-  leading hypothesis is that the solved mini-crossword answers index into them,
-  blocked by the under-specified fill above.
-
+  "fence letters = 24 poster-order pages" idea fails on count alone and tested
+  at or below chance under initial-match, A1Z26, Caesar/Atbash, and brute-forced
+  column orderings.
 - **LINES/CAP cross-check completed 2026-10-31** — DOWN 46 "Queues" = LINES,
-  supporting the subtraction mechanism. Neither the ACROSS nor DOWN list supports
-  CAP, so the CAP/Canada variant has lost its textual basis and is closed.
+  supporting the p13/p20 subtraction pair. Neither the ACROSS nor DOWN list
+  supports CAP, so the CAP/Canada variant has lost its textual basis and is closed.
 
 ## Open threads, ranked
 
-1. **The wishkohaku "deduction = subtraction" mapping** — partially verified
-   (p13 plain-P vs p20 crossed-P → "line" → L ✓; p28 "VA DERS" = IN+VA+DERS →
-   I ✓). Untested: p10→T, p25→E. The bounded next test is pages 15 and 9 (two
-   clean subtractions each), then page 11 (G), using native 300-dpi images. Stop
-   if those predictions fail; do not default to another full 24-page visual sweep.
-2. **Named micro-targets at the 300-dpi floor** — p5 necklace beads, p9 clock
-   hands, p10 suitcase glyphs, p16 calculator display, p24 score-sheet fragments,
-   and p26/p11 card pips. Analyze the existing native images first. A selective
-   physical-book rescan is justified only if a named hypothesis depends on one
-   feature and the existing pixels are genuinely the limiting factor; these are
-   not established as the carriers most likely to hold the remaining states.
-3. **The acrostic derivation rule** — negative so far: no page→state→letter
-   rule reproduces more than one or two positions. Either the acrostic is not
-   derived from per-page states, or most per-page states are still wrong.
-4. **The deliberate-misspelling collection** (Cinderellow, Konnan The
-   Immortan, Snsp, CALL OF THE MILD, FLAMINGCOES, Gone Tmming, Cnocking,
-   HUCKLEBERRY GRINS, AWITHIAKNANNAI, Solitoier, PARCHESI, SVEET, STYNBANG,
-   and p28/p18 additions). Anagram vs all state/province names: no clean hit
-   yet. Theory: the misspellings collect into a key.
-5. **STAFF S5_F Braille string** (from Karen's video) — still mis-filed; six
-   pages checked negative (10, 13, 16, 18, 27, 28). Unknown page. Establish the
-   string and its provenance before considering another book-wide visual sweep.
-6. **Explosion letters W R B N S O (+small B) = BROWNS** — Cleveland read is
-   one option; unconfirmed as a signal.
-7. **Re-transcription** of the fifteen errata-flagged pages before further
-   page-level reasoning.
+1. **The wishkohaku "deduction = subtraction" mapping — PARKED at 2/24 verified
+   (2026-11-07):** p13 plain-`P` vs p20 crossed-`P` → `LINE` → `L` ✓ and p28
+   `VA DERS` = `[IN]VADERS` → `I` ✓ stand, while the bounded native-300-dpi test
+   on pages 15 (`U,S`), 9 (`N,Y`), and 11 (`G`) confirmed **0 new letters** (p15↔p19
+   clown differs in two elements giving `{S, C}`; p9 clocks are plain circles
+   distinct from p5 watches; p11 book reads `THE TAMER OF THE FLAMER` with no
+   `G`-diff). Do not default to another 24-page subtraction sweep.
+2. **Existing 300-dpi micro-puzzles (artwork ceiling reached — no higher-DPI scans
+   needed):** Perry's hand-drawn/paste-up line precision is the limiting factor, not
+   scan DPI. Open analytical puzzles on existing scans: `p10` `2×4` suitcase glyphs
+   (`उ/स/Δ`), `p24` 12-sector five-pin wheel (`AEECHLLLLMV`), `p18` mini-crossword →
+   25 fence/salmon letters, and `p26` vs `p11` three-card hand (`Q♠`, `3♣`, `J♥`).
+3. **The acrostic / state / 3-line Player's Log reconciliation** — negative on simple
+   index rules so far: no page→state→letter formula reproduces more than one or two
+   positions.
+4. **The deliberate-misspelling collection** (`Cinderellow`, `Konnan The Librarian`,
+   `CALL OF THE MILD`, `HUCKLEBERRY GRINS`, `50 WAYS TO LEAVE YOUR MOTHER`, `Cnocking`,
+   `AWITHIAKNANNAI`, `Solitoier`, `PARCHESI`, `SVEET`, `STYNBANG`). Single-state
+   anagrams fail; cross-book key extraction remains open.
+5. **STAFF S5_F Braille string** (from Karen's video) — mis-filed on p18; six pages
+   checked negative (10, 13, 16, 18, 27, 28). Unknown page/provenance.
+6. **Explosion letters W R B N S O (+small B) = BROWNS** — Cleveland read is one
+   option; unconfirmed as a signal.
 
 ## Dead ends (documented — do not retry without new data)
 
+- Higher-DPI (>300 dpi) rescanning (artwork line-precision is the true ceiling).
+- Wishkohaku subtraction predictions on pages 15 (`U,S`), 9 (`N,Y`), and 11 (`G`),
+  plus comment-sourced milk-box and armchair pairs (tested negative 2026-11-07).
 - Post-"Nap" clue lines on p18 (nothing there; marks only).
 - Braille on p18 (exhaustively searched, native res).
 - 24-letter fence→poster-page mapping (count mismatch + tested negative).
-- "Blackjam" deliberate misspelling (K confirmed).
+- "Blackjam" / "Snsp" / "FLAMINGCOES" misspellings (`Blackjack`, `Snap`, `FLAMINGOES`
+  confirmed correctly spelled).
+- Top-hat crossword hidden meta (143A = `TOPHAT` shape pun only; 95–97 are DOWN-only).
 - Anagram of misspellings into any single state/province name.
-- Calculator-upside-down readings of p28 prices (5537→LESS and 618→BIG only
-  partial reproduces; rest fail).
-- AI-summary page details without scan verification (multiple fabrications
-  caught this session — treat any such claim as unverified until checked).
+- Calculator-upside-down readings of p28 prices (5537→LESS and 618→BIG only partial).
+- AI-summary page details without scan verification.
 
 ## Honest framing
 
-The r/themoneyhunt community's objection still stands: if "Mr. S" embedded
-incomplete information, no amount of analysis yields a unique answer. The
-strongest structural leads remain the 1945 crash theme and the ESB acrostic;
-the strongest mechanical lead is now the partially verified subtraction
-mapping. The per-page states and the acrostic have not yet been reconciled.
+The r/themoneyhunt community's objection still stands: if "Mr. S" withheld part of
+the mechanism in November 1985 (or T.G.I. Games retrofitted an override before May
+1986), no purely internal deduction is guaranteed to close uniquely. The strongest
+thematic leads remain the 1945 B-25 crash into the Empire State Building and the
+proven `p12 → WASHINGTON` state mechanism; reconciling them across all 24 pages
+remains open.

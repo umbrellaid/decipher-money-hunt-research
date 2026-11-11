@@ -103,7 +103,14 @@ Karen's Drive archive (`docs/sources.md`) holds the actual winner-article scans:
   "decipher" → number the first letter of each word.) She was still working on 2-4
   at the time. This is the article the YouTube commenter @Mintpuppy17 was hunting in
   the Milwaukee Journal Sentinel microfilm — **found**, no library card needed.
-- **2-4**: solved by an unknown entrant after that; the solution is lost.
+- **2-4**: solved by an unknown entrant after that (confirmed to Karen Kavett by creator
+  Warren Holland Jr. in 2021, with original records buried in warehouse storage); the
+  solution is lost. One archival clue survives in the Decipher III rulebook: in recounting
+  how Decipher I/II prizes were awarded, it mentions the giant dollar-sign ice block
+  (Novak, 2-1), a huge Decipher-branded bag delivered by **armored car with armed guards**,
+  and winners honored at a **New York press conference followed by dinner at Tavern on the
+  Green** in Central Park—potential search handles in 1986–1987 local or trade press for
+  identifying the 2-4 winner or remaining 2-1 co-winners.
 
 The 2-1 clues preserved in Karen's solutions guide: *"The key to message one, you
 see, is from the authors in group C"* · *"492"* · *"A single place has a certain
@@ -180,12 +187,17 @@ repeated by `validate.py`. The decode is.
 Cipher 2-4 is 170 numbers, max index 1053. Its author list (Karen's document) is eleven
 names; six are public domain and have been swept exhaustively:
 
-- **Eliminated** (31 texts × 21 rule families × every offset × both directions, plus
-  chapter-title chains): Nathaniel Hawthorne, Thomas Hardy, Elizabeth Barrett
-  Browning, Jules Verne, Walt Whitman, Henry David Thoreau. Best score across all of
-  it: **−8.77**, deep in the noise band.
-- **Remaining suspects, all in copyright:** John Updike, Colleen McCullough,
-  John Irving, Robert Ludlum, Louis L'Amour.
+- **Eliminated** (31 texts × 21 sliding rule families × every offset × both directions,
+  **plus** the 2026-11-07 sentence/word-anchored palindromic `S || reverse(S)` sweep and
+  chapter-title chains; see `results/RUN_LOG.md`): Nathaniel Hawthorne, Thomas Hardy,
+  Elizabeth Barrett Browning, Jules Verne, Walt Whitman, Henry David Thoreau. Best score
+  across all of it stays deep in the noise band.
+- **Remaining suspects, all in copyright:** John Updike, Colleen McCullough (*The Thorn
+  Birds* whole-book Avon scan swept negative under sliding, anchored-palindromic, and
+  3-band drift rules; other pre-1985 McCullough titles remain), John Irving, Robert Ludlum,
+  Louis L'Amour. See [`decipher-ciphertext-patterns.md`](decipher-ciphertext-patterns.md)
+  for 2-4's structural fingerprint (zero literals, three 3-step `+1` runs `737–739`,
+  `154–156`, `544–546`, and the 8-token round-hundred cluster at positions `20–27`).
 
 So the lost solution's key is most likely a pre-1985 novel by one of those five.
 `docs/check-your-own-book.md` is the route; a used *Rabbit, Run* or *The Thorn Birds*

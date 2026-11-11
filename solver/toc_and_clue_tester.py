@@ -22,50 +22,18 @@ from dataclasses import dataclass
 from pathlib import Path
 
 # ============================================================================
-# 1. CIPHERTEXTS (Puzzles 2-2 Control, 2-4, 3-1, 3-2, 3-3)
+# 1. CIPHERTEXTS (Loaded directly from canonical data/ciphers.json)
 # ============================================================================
 
+_ROOT = Path(__file__).resolve().parent.parent
+_RAW_CIPHERS = json.loads((_ROOT / "data" / "ciphers.json").read_text(encoding="utf-8"))
+
 CIPHERTEXTS: dict[str, list[int | str]] = {
-    "Puzzle_2-2_Control": [
-        112, 111, 402, 34, 202, 99, 352, 3, 106, 399, 162, 20, 327, 107, 135,
-        138, 140, 369, 266, 227, 19, 126, 324, 457, 56, 14, 19, 262, 12, 187,
-        351, 119, 477, 471, 250, 167, 1, 37, 306, 28, 34, 381, 382, 163, 423,
-        9, 380, 203, 181, 191, 199, 428, 3,
-    ],
-    "Puzzle_2-4": [
-        5, 1050, 1049, 901, 917, 902, 71, 251, 737, 738, 739, 437, 388, 201,
-        180, 855, 594, 468, 853, 400, 500, 400, 100, 200, 400, 800, 600, 1002,
-        82, 198, 300, 366, 431, 511, 275, 153, 787, 405, 421, 419, 987, 1016,
-        999, 971, 431, 694, 41, 564, 50, 293, 8,
-    ],
-    "Puzzle_3-1": [
-        302, 189, 67, 309, 133, 428, 512, 100, 423, 158, 91, 505, 316, 218,
-        192, 24, 354, 233, 257, 125, 261, 388, 412, 54, 226, 487, 487, 361,
-        334, 220, 440, 395, 385, 162, 176, 186, 461, 513, 11, 59, 448, "E",
-        496, 420, 148, 152, 431, 426, 422, 375, 44, 61, 230, 118, 405, "E",
-        109, 108, 489, 471, 421, 238, 340, 331, 221, 123, 94, 349, 297, 83,
-        377, 383, 378, 163, 126, 481, 356, 285, 284, 206, 27, 121, 353, 248,
-        324, 185, 113, 159, 510, "E", 312, 195, 262, 188, 453, 446, 153, "Z",
-        134, 415, 258, 434, 472, 97, 88, 329, 20, 116, 198, 245, 313, 374, 417,
-    ],
-    "Puzzle_3-2": [
-        5, 50, 143, 409, 322, 77, 210, 22, 106, 311, 250, 414, 395, 310, 394,
-        222, 233, 132, 7, 415, 350, 224, 165, 222, 390, 195, 194, 97, "E",
-        294, 202, 45, 78, 414, 255, 62, 155, 114, 333, 177, 80, 209, 225, 370,
-        379, 14, 60, 211, 256, 68, 411, 320, "Y", 133, 54, 355,
-    ],
-    "Puzzle_3-3": [
-        44, 686, 173, 190, 244, 460, 706, 338, 336, 394, 224, 564, 572, 147,
-        651, 74, 72, 387, 378, 450, 524, "E", 258, 539, 48, 715, 350, 360,
-        239, 493, 240, 576, 594, 152, 179, 658, 656, 553, 552, 108, 98, 114,
-        610, 366, 370, 296, 440, 436, 435, 445, 85, 647, 645, 585, 6, 675, 53,
-        325, 354, 313, 291, 368, 176, 195, 157, 575, 145, 139, "E", 105, 616,
-        129, 97, 559, 261, 631, 668, 375, 362, 359, 373, 310, 428, 209, 468,
-        606, 75, 598, 601, 702, 1, 80, 96, 453, 402, 175, 496, 100, 605, 607,
-        630, 143, 156, 206, 514, 506, 502, 361, 295, 302, 309, 116, 557, 721,
-        620, 546, 210, 328, 322, 376, 636, "E", 619, 88, 573, 151, 161, 172,
-        31, 478,
-    ],
+    "Puzzle_2-2_Control": _RAW_CIPHERS["2-2"],
+    "Puzzle_2-4": _RAW_CIPHERS["2-4"],
+    "Puzzle_3-1": _RAW_CIPHERS["3-1"],
+    "Puzzle_3-2": _RAW_CIPHERS["3-2"],
+    "Puzzle_3-3": _RAW_CIPHERS["3-3"],
 }
 
 # Variant of Puzzle 2-4 with exact multiples of 100 stripped (testing null hypothesis)
@@ -246,14 +214,17 @@ def generate_toc_key_streams(book_name: str, titles: list[str]) -> dict[str, str
 
             base_id = f"{book_name}|{slice_name}|{fmt_name}"
 
-            # 1. All characters (Forward & Reversed)
+            # 1. All characters (Forward, Reversed, and Palindromic S||rev(S))
             streams[f"{base_id}|Chars|Fwd"] = chars
             streams[f"{base_id}|Chars|Rev"] = chars[::-1]
+            streams[f"{base_id}|Chars|PalFwdRev"] = chars + chars[::-1]
+            streams[f"{base_id}|Chars|PalRevFwd"] = chars[::-1] + chars
 
-            # 2. First letter of each word (Forward & Reversed)
+            # 2. First letter of each word (Forward, Reversed, Palindromic)
             first_j = "".join(w[0] for w in words_joined)
             streams[f"{base_id}|FirstLetter_HyphenJoined|Fwd"] = first_j
             streams[f"{base_id}|FirstLetter_HyphenJoined|Rev"] = first_j[::-1]
+            streams[f"{base_id}|FirstLetter_HyphenJoined|PalFwdRev"] = first_j + first_j[::-1]
 
             first_s = "".join(w[0] for w in words_split)
             streams[f"{base_id}|FirstLetter_HyphenSplit|Fwd"] = first_s
@@ -263,6 +234,7 @@ def generate_toc_key_streams(book_name: str, titles: list[str]) -> dict[str, str
             last_j = "".join(w[-1] for w in words_joined)
             streams[f"{base_id}|LastLetter_EndClue|Fwd"] = last_j
             streams[f"{base_id}|LastLetter_EndClue|Rev"] = last_j[::-1]
+            streams[f"{base_id}|LastLetter_EndClue|PalFwdRev"] = last_j + last_j[::-1]
 
             # 4. Every 10th character decimation (Testing Clue "10")
             if len(chars) >= 50:
@@ -452,7 +424,7 @@ def main() -> None:
     # 1. Print Length-Floor Audit Table
     print("=" * 78)
     print("STAGE 1: PUBLIC TABLE OF CONTENTS LENGTH AUDIT vs. PUZZLE MAX CODENUMBERS")
-    print("  Thresholds: 3-2 (N_max=415) | 3-1 (N_max=513) | 3-3 (N_max=721) | 2-4 (N_max=1050)")
+    print("  Thresholds: 3-2 (N_max=416) | 3-1 (N_max=516) | 3-3 (N_max=721) | 2-4 (N_max=1053)")
     print("=" * 78)
     print(f"{'Book Name':<42} | {'Bare Chars':>10} | {'With Ch#':>10} | {'Words':>6}")
     print("-" * 78)
@@ -503,7 +475,7 @@ def main() -> None:
 
             for drift in (-2, -1, 0, 1, 2):
                 decoded, coverage = decode_with_key(ctext, k_stream, drift=drift)
-                if coverage < 0.45:
+                if coverage < 0.95:
                     continue
 
                 # Bonus check for Puzzle 3-1 repeated codenumber 487, 487

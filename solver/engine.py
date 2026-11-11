@@ -305,7 +305,7 @@ def search_stream(stream: str, cipher, scorer: TrigramScorer, max_n: int,
     Literal letters embedded in the cipher are kept at their positions (they map to
     themselves, as proven by the solved 2-3). Accumulates (score, label, offset,
     direction, plain-direction) into `results`."""
-    need = max_n + 1
+    need = max_n
     L = np.frombuffer(stream.encode(), dtype=np.uint8).astype(np.int64) - 65
     if ((L < 0) | (L > 25)).any():
         raise ValueError('stream must be A-Z only')

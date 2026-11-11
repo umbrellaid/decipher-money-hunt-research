@@ -131,36 +131,52 @@ consolidated state of every open thread as of 2026-10-30.
    matches our own transcription-errata work; and page-10 suitcase glyphs read as
    Devanagari **उ** + Greek **Δ**. No commenter claims a verified solution.
 
-10. **The wishkohaku mapping is now partially verified** — see
-    [`data/money_hunt_wishkohaku_mapping.md`](data/money_hunt_wishkohaku_mapping.md).
-    The "deduction = subtraction" mechanism's worked example **checks out at 300 dpi**:
-    page 13 has a plain parking-sign P, page 20 has the same P with a diagonal line
-    through it → "line" → L, and the mapping assigns 13→L. Page 28 → I is corroborated
-    by the spine **"VA DERS"** = INVADERS missing "IN". New errata surfaced on the same
-    pass: **"HUCKLEBERRY GRINS"** (a Finn→Grins misspelling not previously recorded) and
-    a FLAMINGCOES-vs-FLAMINGOES reading to settle. Pages 10→T and 25→E remain untested;
-    the full test is a systematic repeated-illustration diff across all 24 pages.
+10. **The wishkohaku mapping was tested and parked at 2/24 verified (2026-11-07)** — see
+    [`data/money_hunt_wishkohaku_mapping.md`](../data/money_hunt_wishkohaku_mapping.md).
+    Its worked example **checks out at 300 dpi** (page 13 plain parking-sign `P` vs
+    page 20 slashed `P` → `LINE` → `L`, backed by DOWN 46 `LINES`), and page 28 → `I` is
+    corroborated by the spine **`VA DERS`** = `[IN]VADERS`. However, two comment-sourced
+    motif pairs (milk box, armchair) were falsified, and the bounded native-300-dpi test
+    on **pages 15 (`U,S`), 9 (`N,Y`), and 11 (`G`)** yielded **0 confirmed extractions**
+    (p15 vs p19 clown differs in two elements giving `{S, C}`, not `{U, S}`; p9's clocks
+    are numeral-less circles unrelated to p5's watches; p11's book reads `THE TAMER OF THE
+    FLAMER` and no partner removes a `G`-item). Errata settled during those passes include
+    **`HUCKLEBERRY GRINS`**, **`50 WAYS TO LEAVE YOUR MOTHER`**, and **`FLAMINGOES`**
+    (correctly spelled).
+
+## Synthesis, Dead Ends & Candidate Guesses
+
+See **[`docs/money-hunt-hypotheses-and-guesses.md`](money-hunt-hypotheses-and-guesses.md)**
+for a consolidated **zoom-out** (full 24-page poster sequence, production/legal split
+constraints, entry-page & Player's Log tensions) and **zoom-in** (verified micro-clues,
+falsified dead ends, open high-level mechanisms, and ranked `Country / State / Specifically
+at ___` guesses) built for future human solvers and AI models.
 
 ## What would move it forward
 
-- **A bounded native-resolution subtraction test:** pages 15 and 9 should each yield
-  two clean subtractions (U,S / N,Y), then page 11 should yield G. Use the existing
-  300-dpi images and stop if these predictions do not survive strict visual checks;
-  do not default to another full 24-page repeated-motif sweep.
-- **Analysis of named micro-targets before any rescanning.** Bead letters on p5,
-  clock hands on p9, suitcase glyphs on p10, card pips on p26/p11, and p28 spine
-  titles remain unresolved, but are not established as the most likely state
-  carriers. A selective physical-book rescan is reasonable only when a concrete
-  hypothesis depends on one feature and the existing pixels are the limiting factor.
-- **Re-transcription** of the fifteen pages named in the errata, from the native
-  images, before any further page-level reasoning that depends on them.
+- **Zooming out and zooming in on existing 300-dpi art — not higher-DPI scanning:**
+  `money-hunt-book.pdf` already provides native 300-dpi (`2492×3289`) renders, which
+  hit the precision ceiling of Perry's hand-drawn and photocopied paste-up art. Higher
+  scan resolution will not invent missing detail; progress has to come from cross-page
+  logic, structural sequence analysis, or primary human leads.
+- **Unresolved structural puzzles on existing scans:** reconciling the per-page state
+  layer (proven on `p12 → WASHINGTON`, pictorial `p14 → FLORIDA`) with the 24-step poster
+  trail and the 3-line Page 31 Player's Log; testing how `p18`'s mini-crossword indexes
+  into its 25 fence/salmon letters (`TTGO / HOAL / BRING / SGDG` + 8 floaters); decoding
+  `p10`'s `2×4` suitcase glyph grid (`उ/स/Δ`) and `p24`'s 12-sector five-pin wheel
+  (`AEECHLLLLMV`); and locating the true home (if real) of the mis-attributed
+  `STAFF S5_F` note.
+- **Primary archival / human leads:** contacting surviving Trivia Games / T.G.I. Games
+  principals, Touche Ross escrow alumni, or the YouTube commenter (`@Guitarhitches`) who
+  reported knowing "Mr. S" and owning his later unpublished book.
 - **The large top-hat crossword is closed as a solving task.** Page 25 carries ACROSS;
   pages 10/11/22/23 carry DOWN for the same grid. Karen's family answer key found no
   additional meta, and clues 95–97 are present as DOWN-only entries on page 22.
-- Honest framing: the r/themoneyhunt community's objection stands — if Mr. S embedded
-  incomplete information, no amount of analysis yields a unique answer. The 1945 crash
-  theme and the ESB acrostic are the strongest structural leads; the per-page states
-  are the strongest mechanical ones; they have not yet been reconciled.
+- **Honest framing:** the r/themoneyhunt community's objection stands — if Mr. S
+  withheld part of the mechanism in November 1985 (or T.G.I. Games bolted on a partial
+  override before May 1986), no purely internal deduction is guaranteed to close uniquely.
+  The 1945 B-25 crash into the Empire State Building remains the strongest thematic anchor;
+  how the 24 pages mechanically output the final three lines remains open.
 
 ## Newspaper findings (2026-11-01, newspapers.com trial)
 
@@ -183,9 +199,7 @@ consolidated state of every open thread as of 2026-10-30.
   **Company initials corrected 2026-11-03:** the name is **T.G.I.**, not "T&L" as
   first recorded. Verified at 8× on two independent unhighlighted instances: the
   Herald-Times illustration credit ("T.G.I. Games Inc. illustration") and the Chicago
-  Tribune capsule ("The Money Hunt, T.G.I. Games Inc., $20."); crops in
-  `private/karen-puzzles/newspaper-clips-2026-10-31/zoom-heraldtimes-illustration-credit.png`
-  and `zoom-tribune-company-line.png`.
+  Tribune capsule ("The Money Hunt, T.G.I. Games Inc., $20.").
 - **Chicago Tribune, 1986-11-28, p.128** — gift-guide capsule in a holiday games
   roundup: "The Money Hunt, T.G.I. Games Inc., $20. Moderately difficult, 1-6
   players, unlimited time. An audience-participation game. First person to solve

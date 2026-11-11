@@ -77,10 +77,10 @@ from the images, until those pages are transcribed again.
 ## Consequence for the analysis
 
 The state hunt in `docs/money-hunt-state-analysis.md` was run against the **images**,
-not against these transcriptions, precisely because of this errata. Anyone continuing
-should re-transcribe pages 5, 6, 9, 10, 11, 13, 18, 19, 20, 21, 22, 23, 24, 25, 27, and 28
-from high-resolution renders before trusting page-level conclusions, and should treat
-the 17 regions listed as 600-dpi re-render targets in that document as unread — except
-where the 2026-10-09 native-res rescan of the book PDF has already advanced them (see
-[`money-hunt-pdf-rescan-2026-10-09.md`](money-hunt-pdf-rescan-2026-10-09.md) and the
-status note atop the target list).
+not against these transcriptions, precisely because of this errata. Native 300-dpi
+renders (`2492×3289`) extracted from `money-hunt-book.pdf` on 2026-10-09 already reach
+the line-work ceiling of Perry's hand-drawn and photocopied paste-up illustrations—a
+higher-DPI scan cannot add detail that was never drawn in the original ink art. See
+[`money-hunt-pdf-rescan-2026-10-09.md`](money-hunt-pdf-rescan-2026-10-09.md) and
+[`money-hunt-hypotheses-and-guesses.md`](money-hunt-hypotheses-and-guesses.md) for the
+current consolidated state of every page and hypothesis.

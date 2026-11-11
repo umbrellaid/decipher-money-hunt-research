@@ -52,7 +52,8 @@ uv run python solver/normalize_text.py mybook.txt --chapters
 This strips licence boilerplate, folds typographic punctuation onto ASCII, collapses
 whitespace, and writes `mybook.chapters.json` (heading titles + offsets).
 `solver/sweep.py` reads that file when you sweep `mybook.txt` or `mybook.clean.txt`,
-and tests the concatenated titles as the extra rule `chapter-titles`. The detector
+and tests the concatenated titles both straight (`chapter-titles`) and palindromically
+doubled (`chapter-titles-palindrome`, `chapter-titles-rev-palindrome`). The detector
 finds lines that start with CHAPTER, BOOK, PART, or SECTION. A book whose titles
 are proper names needs those titles written into the JSON by hand. Puzzle 2-2's
 titles are in `data/catch22_chapter_titles.json`.
@@ -63,14 +64,27 @@ titles are in `data/catch22_chapter_titles.json`.
 uv run python solver/sweep.py mybook.clean.txt --cipher all --top 10
 ```
 
-Read the two score columns:
+By default `sweep.py` runs **both** search shapes: the 21 sliding rule families (plus
+chapter-title chains if present) and the sentence/word-anchored palindromic `S || reverse(S)`
+scan (`letters`, `first-letters`, `last-letters`, added after Eckman's 2-1 solve). Pass
+`--sliding-only` only if you want a fast first pass without the ~7-minute anchored scan.
+
+If your OCR or edition might differ by 1–2 dropped/split words inside a passage, also run
+the fast 3-band index-elastic diagnostic (~5 seconds per book):
+
+```
+uv run python solver/drift_diagnostic.py mybook.clean.txt --cipher all --top 5
+```
+
+Read the two score columns from `sweep.py`:
 
 | Column | Meaning |
 |---|---|
-| `score` | whole-decode trigram score. Genuine English ≈ −7.9…−8.0; noise ≤ −8.6 |
-| `win` | best-window score, a secondary null-tolerant check; noise stays ≤ −8.1 |
+| `score` | whole-decode trigram score. Prose plaintexts ≈ −7.9…−8.0; **verse plaintexts** (e.g. solved 2-1 at **−8.144**) sit lower; noise ≤ −8.6 |
+| `win` | best-window score, a secondary null/drift check. Over whole-book sweeps `win` reaches −8.08 on pure noise (and even higher on vowel-heavy `last-letters` / `wordlast` streams), so `sweep.py` requires `score > −8.6` alongside `win > −8.1` |
 
-Anything above **−8.2** in `score` is flagged `<-- CHECK THIS`. Below that, the
+Anything above **−8.2** in `score` (or clearing the gated window threshold on a
+non-`wordlast` family) is flagged `<-- CHECK THIS`. Below that, the
 book is eliminated under every implemented rule family — which is still a real
 result worth reporting, because it shrinks the suspect list.
 
@@ -92,15 +106,19 @@ Paste this, attaching your clean text file:
 
 > You are running a book-cipher search. The repository you are in contains
 > solver/sweep.py, which tests a book text against four unsolved 1980s ciphers under
-> 21 extraction rule families, every numbering start, both directions. If a
-> .chapters.json file sits beside the text, also test the chapter-title chain.
+> 21 sliding extraction rule families (both directions) plus sentence/word-anchored
+> palindromic S||reverse(S) keys. If a .chapters.json file sits beside the text, it
+> also tests straight and palindromic chapter-title chains.
 > Run:
-> `uv run python solver/sweep.py <file> --cipher all --top 10`. Then report, for each
-> cipher: the best score, the rule family and start offset, and the decoded string.
-> State plainly whether any score exceeds -8.2 (the genuine-English threshold is
-> -7.9 to -8.0; noise is -8.6 and below). If one does, quote the decode and the rule,
-> and list the checks from docs/check-your-own-book.md section 5 that still need a
-> human with the physical book. Do not claim a solve from a score alone.
+> `uv run python solver/sweep.py <file> --cipher all --top 10`
+> (and if the text comes from OCR or an unpinned edition, also run
+> `uv run python solver/drift_diagnostic.py <file> --cipher all --top 5`).
+> Report, for each cipher: the best score, the rule family and start offset, and the
+> decoded string. State plainly whether any score exceeds -8.2 (prose decodes land at
+> -7.9 to -8.0, verse decodes like 2-1 land near -8.14, and noise sits at -8.6 and
+> below). If one does, quote the decode and the rule, and list the checks from
+> docs/check-your-own-book.md section 5 that still need a human with the physical book.
+> Do not claim a solve from a score alone.
 
 And for a candidate that needs checking:
 

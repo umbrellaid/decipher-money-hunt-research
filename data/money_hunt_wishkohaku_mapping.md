@@ -117,8 +117,31 @@ Both require a systematic repeated-illustration survey across all 24 pages (see 
   the poem is ambiguous and could support a different final location; (3) the
   direction question (jigsaw says start at 11, flag says start at 15) needs
   one more look at p.11's queen of spades.
-- Cheapest decisive next checks: pages 15 and 9 should each yield TWO clean
-  subtractions (U,S / N,Y); page 11 should yield G.
+- Cheapest decisive next checks (proposed Oct 2026): pages 15 and 9 should each
+  yield TWO clean subtractions (U,S / N,Y); page 11 should yield G.
+- **Bounded native-300-dpi test completed 2026-11-07 — 0 new letters confirmed;
+  mapping parked at 2/24 verified:**
+  - **Page 15 (`U`, `S` predicted):** Only two cross-page partners exist. The
+    star/constellation patch (p15 vs p27) is a generic dotted sky texture with no
+    single named missing object. The clown/jester figure (p15 shelf doll vs p19
+    table lamp) reuses the same base drawing at different scales, and differs in
+    *two* regions—p19 adds a lampshade + `7` finial (**S**hade) while p15's
+    three-pointed jester **C**ap with bells is cropped/absent on p19—yielding
+    `{S, C}` (or `{L, J}`), **not** `{U, S}`. No object yields `U`.
+  - **Page 9 (`N`, `Y` predicted):** p9's two clocks (wall clock + skyline clock
+    tower) are plain numeral-less circles, distinct drawings from p5's Roman-numeral
+    watches (and p17 has no clock dial at all). Wine/champagne glasses (p9 vs p26)
+    and the bell ribbon/clapper piece (p9 vs p18/p19/p26) are multi-page scene or
+    assembly motifs, not single-element diffs yielding `N` and `Y`.
+  - **Page 11 (`G` predicted):** The woman's book cover reads `THE TAMER OF THE
+    FLAMER` (matching p7's `FLAMER TAMER` rebus book, not p28's shelves). The
+    three-card hand (`Q♠`, `3♣`, `J♥` on p11 vs cross-hatched blank backs/faces on
+    p26) strips all pips/faces rather than a single `G`-initial object; the queen of
+    spades sits alone in the woman's hand with no partner page removing a `G`-item.
+  - **Verdict:** While p13↔p20 (`LINE` → `L`, backed by DOWN 46 `LINES`) and p28
+    (`VA DERS` = `[IN]VADERS` → `I`) remain genuine visual anomalies, the mapping's
+    22 other letter assignments do not reproduce under strict native-300-dpi checks.
+    Treat the mapping as an unverified community hypothesis, not an active sweep target.
 
 ## How to test it fully (the real project)
 

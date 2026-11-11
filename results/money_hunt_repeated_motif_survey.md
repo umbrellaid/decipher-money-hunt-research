@@ -45,21 +45,21 @@ in `survey_notes.md` under the money-hunt puzzle folder.
 
 ## Candidate pairs still open (need native-res element diffs)
 
-- **Clocks on 5 / 9 / 17** — three different clocks (Roman dial ~7:28 on p5;
-  two tower faces in the skyline on p9; longcase clock on p17). Different
-  drawings, so probably NOT the mechanism's pair, unless one face/time is
-  altered. Low priority.
+- **Clocks on 5 / 9** — different drawings checked at native 300 dpi (2026-11-07):
+  Roman-numeral pocket watch and wristwatch (both missing `4`) on p5 vs two plain
+  numeral-less dial circles (wall clock + skyline tower) on p9; p17 has no clock
+  dial. Not a photocopied subtraction pair.
 - **Birds on 12 / 14** — both pages are full of flying birds and both have a
-  skyline; the individual bird drawings need a native-res diff. p12 → N,
-  p14 → E per mapping.
-- **Horses on 22 / 23** — both horse-racing scenes; p22 has a giant rearing
-  statue + numbered jockeys (33, 34), p23 a foreground racehorse with rosette
-  and a man in a top hat at the rail. p22 → U, p23 → I.
-- **Suitcases on 8 / 10** — p8's bus-station foreground is full of luggage;
-  p10 has the famous 2×4 glyph "suitcase". Not yet compared at native res.
-  p8 → A, p10 → T.
-- **Books on 11 / 28** — p11 shows a woman reading "THE MUSKETEERS OF THE…";
-  p28 is the bookshelf page. Different objects; open.
+  skyline; p12's species are detailed aviary drawings (solved → WASHINGTON) while
+  p14's are ~20–25 small black storm silhouettes.
+- **Horses on 22 / 23** — both horse-racing/equestrian scenes; p22 is a polo match
+  with numbered helmets (5, 33, 34, 0), p23 an outdoor horse show with Roman-numeral
+  stanchions. Different drawings.
+- **Suitcases on 8 / 10** — p8's bus-station foreground has plain luggage;
+  p10 has the 2×4 glyph suitcase (`उ/स/Δ`). Different drawings.
+- **Books on 7 / 11 / 28** — **corrected 2026-11-07 at native 300 dpi:** p11's
+  poolside reader holds `THE TAMER OF THE FLAMER` (not "Musketeers"), linking
+  thematically to p7's `FLAMER TAMER` rebus book rather than p28's bookshelves.
 - **Top hat on 23 / 25** — p23 has a clear top hat at the rail; no hat located
   on p25 (the giant crossword page) at survey res. If absent, this claimed
   pair fails too.

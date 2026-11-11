@@ -39,7 +39,9 @@ Puzzles' unsolved videos*: you are in the right place, and here is the whole pic
 | [`docs/decipher-i.md`](docs/decipher-i.md) | The solved 1983 puzzle, and why it is the Rosetta stone for the rest |
 | [`docs/decipher-ii.md`](docs/decipher-ii.md) | Three solved messages, the lost fourth, and what has been eliminated for it |
 | [`docs/decipher-iii.md`](docs/decipher-iii.md) | The three open ciphers, the recovered author groups A/B/C, the ranked suspect list |
+| [`docs/decipher-ciphertext-patterns.md`](docs/decipher-ciphertext-patterns.md) | **Ciphertext structural laws, word-initial `'E'` depletion, crib masks & open solver roadmap** |
 | [`docs/money-hunt.md`](docs/money-hunt.md) | The million-dollar treasure hunt: what is established, what was added in 2026, what is open |
+| [`docs/money-hunt-hypotheses-and-guesses.md`](docs/money-hunt-hypotheses-and-guesses.md) | **Money Hunt macro/micro synthesis, 24-page trail table, falsified dead ends & ranked answer guesses** |
 | [`docs/methodology.md`](docs/methodology.md) | How the book-cipher attack works, how the scoring is calibrated, what a "no hit" proves |
 | [`docs/check-your-own-book.md`](docs/check-your-own-book.md) | How to photograph a paperback, OCR it, sweep it, and read a hit |
 | [`docs/sources.md`](docs/sources.md) | Every video, document, archive and article, with links |
@@ -63,27 +65,34 @@ text**; it links to her folders and lets you supply your own books.
 
 ## What this repository adds
 
-1. **A solver with a regression suite.** `solver/validate.py` runs 98 checks: the
+1. **A solver with a regression suite.** `solver/validate.py` runs 131 checks: the
    Decipher III rulebook's worked example (three ciphers that must decode to CODES),
-   puzzle 2-2 against the 42 *Catch-22* chapter titles, an encode→search→decode round
-   trip for each of 21 rule families in all four direction combinations, and 3
-   null-tolerance checks. `solver/sweep.py` also tests a chapter-title chain when a
-   `.chapters.json` file is present beside the book.
-2. **Eliminations that can be rerun.** About 15 million candidate key-stream positions
-   across 61 public-domain texts and 21 rule families. The 61 are 49 Project Gutenberg
-   texts, 9 Poe texts, and 3 Standard Ebooks Faulkner editions. Five further Gutenberg
-   books are the scoring model only; they are not elimination targets. Edgar Allan Poe
-   is ruled out for message 3-1; the public-domain members of all three author groups
-   are ruled out for 3-2/3-3; six of eleven authors are ruled out for the lost 2-4.
-   The logs and top scores are in `results/`.
-3. **Author groups and cipher sequences.** The three Decipher III author groups (A/B/C)
-   are printed in the rulebook and copied here. They had been described as lost with
-   the 1987 hotline. All seven cipher sequences were re-transcribed from the printed
-   puzzle surfaces and compared token by token. One stored number was wrong and is
-   corrected here.
-4. **Money Hunt notes and an errata.** A page-by-page image read of all 24 clue
-   pages, and an errata listing fourteen defects in the earlier transcriptions.
-   Three of those notes describe the wrong page. The affected page files are stubs.
+   solved puzzles 2-1 (*Gulliver's Travels* palindromic passage + positive control) and
+   2-2 (*Catch-22* chapter titles), an encode→search→decode round trip for each of 21
+   rule families in all four direction combinations, null-tolerance checks, ciphertext
+   invariants, and 3-band index-elastic drift recovery (`solver/drift_diagnostic.py`).
+   `solver/sweep.py` tests both sliding and sentence/word-anchored palindromic `S || reverse(S)`
+   keys, plus straight and palindromic chapter-title chains when a `.chapters.json` file
+   is present beside the book.
+2. **Eliminations that can be rerun.** Millions of sliding and anchored-palindromic
+   candidate key-stream positions across 61 public-domain texts and four scanned
+   whole-book paperbacks (*Foundation*, *I, Robot*, *Doctor Zhivago*, *The Thorn Birds*).
+   The 61 public-domain files are 49 Project Gutenberg texts, 9 Poe texts, and 3 Standard
+   Ebooks Faulkner editions; five further Gutenberg books form the scoring model only.
+   Edgar Allan Poe is ruled out for message 3-1; the public-domain members of all three
+   author groups are ruled out for 3-2/3-3; six of eleven authors are ruled out for the
+   lost 2-4. The logs and top scores are in `results/`.
+3. **Author groups, cipher sequences, and structural fingerprints.** The three Decipher III
+   author groups (A/B/C) are printed in the rulebook and copied here. All seven cipher
+   sequences were verified against the printed puzzle surfaces (catching two historical
+   transcription errors on solved 2-1), and `solver/analyze_ciphertexts.py` documents the
+   structural laws of 2-4, 3-1, 3-2, and 3-3 (including 3-3's strict zero-repeat property
+   and word-initial `'E'` depletion).
+4. **Money Hunt page notes, errata, dead ends, and ranked guesses.** Native 300-dpi
+   image reads covering all 24 clue pages (`data/money_hunt_pages/`), an errata of
+   fourteen early vision defects, and [`docs/money-hunt-hypotheses-and-guesses.md`](docs/money-hunt-hypotheses-and-guesses.md)
+   synthesizing the 24-page poster trail, falsified mechanisms, open theories, and concrete
+   `Country / State / Specifically at` location guesses.
 5. **A path for anyone with a bookshelf.** The remaining suspects are all in-copyright
    and DRM-locked as ebooks, so the only lawful machine-readable route is your own
    physical copy. [`docs/check-your-own-book.md`](docs/check-your-own-book.md) is the
@@ -94,9 +103,10 @@ text**; it links to her folders and lets you supply your own books.
 Needs [uv](https://docs.astral.sh/uv/). From this directory:
 
 ```
-uv run python solver/fetch_texts.py     # public-domain corpus + scoring model
-uv run python solver/validate.py        # 98 checks; all must pass
+uv run python solver/fetch_texts.py          # public-domain corpus + scoring model
+uv run python solver/validate.py             # 131 checks; all must pass
 uv run python solver/sweep.py BOOK.txt --cipher all --top 10
+uv run python solver/drift_diagnostic.py BOOK.txt --cipher all --top 5
 ```
 
 If `uv` is not found: install it first (`winget install astral-sh.uv`, or
@@ -106,15 +116,17 @@ complains that no scoring model is found, run the `fetch_texts.py` line
 above first; it downloads the five public-domain model books and the sweep
 corpus.
 
-Genuine English decodes score ≈ −7.9…−8.0 per trigram; noise sits at −8.6 and below.
-Anything above −8.2 is flagged for a human with the physical book.
+Genuine English prose decodes score ≈ −7.9…−8.0 per trigram (verse plaintexts like
+solved 2-1 sit near −8.14); noise sits at −8.6 and below. Anything above −8.2 is
+flagged for a human with the physical book.
 
 ## How this was made
 
 The analysis, transcriptions, eliminations and code were produced with AI coding
 assistants — primarily **Qwen Code** (Alibaba), with earlier exploration by
-**GLM** (Zhipu AI), further research, review and auditing by **Grok** (xAI),
-and this pre-publication audit by **Kimi** (Moonshot AI).
+**GLM** (Zhipu AI), cipher and transcript research, solver tooling, and repository
+organization by **Google Gemini**, further research, review and auditing by **Grok**
+(xAI), and pre-publication auditing and verification by **Kimi** (Moonshot AI).
 Multimodal models read the puzzle scans, rulebook pages and clue-book artwork;
 coding models wrote and tested the solver. What 1987 needed a Symbolics Lisp
 machine and a month of hotline clues to attempt, 2026 needs a laptop, a used

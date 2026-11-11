@@ -38,6 +38,8 @@ from pathlib import Path
 
 import engine
 import rules
+import analyze_ciphertexts
+import drift_diagnostic
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -368,6 +370,66 @@ def test_null_tolerance(scorer):
           f"scattered windowed={scorer.score_best_window(scattered, frac=0.6):.3f}")
 
 
+def test_ciphertext_patterns_and_drift(scorer):
+    """Verify structural invariants and 3-band index-elastic drift recovery."""
+    ciphers = json.loads((ROOT / "data" / "ciphers.json").read_text(encoding="utf-8"))
+    s33 = analyze_ciphertexts.analyze_one("3-3", ciphers["3-3"])
+    s31 = analyze_ciphertexts.analyze_one("3-1", ciphers["3-1"])
+    check("3-3: strictly zero repeated integers across 156 numeric tokens",
+          s33["extra_repeat_uses"] == 0 and s33["unique_ints"] == 156,
+          f"unique={s33['unique_ints']} repeats={s33['extra_repeat_uses']}")
+    check("3-1: only 4 repeat collisions across 164 numeric tokens + adjacent 487,487",
+          s31["extra_repeat_uses"] == 4 and (26, 487) in s31["same_adjacent_pairs"],
+          f"repeats={s31['extra_repeat_uses']} adj={s31['same_adjacent_pairs']}")
+
+    # Exact-length stream check (len(stream) == max_n, previously skipped by need=max_n+1)
+    hardy = (ROOT / "texts" / "pd" / "hardy_110.txt").read_text(encoding="utf-8")
+    wstream = engine.first_letters(hardy)
+    plain = engine.letters_only(
+        "The secret message was hidden inside the first letters of every single word in the chapter"
+    )
+    ciph_nums = encode(plain, wstream, 1000)
+    check("drift-setup: synthetic word-first cipher encoded", ciph_nums is not None)
+    if ciph_nums is not None:
+        exact_len_slice = wstream[1000 : 1000 + max(ciph_nums)]
+        res_exact = []
+        engine.search_stream(exact_len_slice, ciph_nums, scorer,
+                             max_n=max(ciph_nums), label="exact", results=res_exact)
+        check("engine: exact-length stream (len == max_n) is searched, not skipped",
+              len(res_exact) > 0 and res_exact[0][2] == 0 and res_exact[0][0] > -8.0,
+              f"hits={len(res_exact)} top_score={res_exact[0][0]:.3f}")
+
+        # Simulate 2 dropped OCR/edition words inside the key window (1 in Band 1, 1 in Band 2)
+        max_c = max(ciph_nums)
+        b1_drop = 1000 + (max_c // 3) + 5
+        b2_drop = 1000 + (2 * max_c // 3) + 5
+        corrupted = (
+            wstream[:b1_drop]
+            + wstream[b1_drop + 1 : b2_drop]
+            + wstream[b2_drop + 1 : 3500]
+        )
+        hits = drift_diagnostic.search_elastic_stream(
+            corrupted, ciph_nums, scorer, max_step=2, label="first-letters", top_k=3
+        )
+        top_h = hits[0]
+        check("drift-diagnostic: 2 dropped mid-passage words collapse rigid score to noise",
+              top_h["rigid_score"] < -8.5,
+              f"rigid={top_h['rigid_score']:.3f}")
+        check("drift-diagnostic: 3-band index elasticity recovers clean English band & start",
+              top_h["elastic_score"] > -8.05 and top_h["start"] == 1000
+              and top_h["drift_bands"] == (0, -1, -2) and top_h["decode"] == plain,
+              f"elastic={top_h['elastic_score']:.3f} start={top_h['start']} drift={top_h['drift_bands']}")
+
+        # Verify false-positive ceiling on an unrelated slice of the novel
+        wrong_slice = wstream[5000:8000]
+        noise_hits = drift_diagnostic.search_elastic_stream(
+            wrong_slice, ciph_nums, scorer, max_step=2, label="first-letters", top_k=3
+        )
+        check("drift-diagnostic: unrelated novel slice stays well below look threshold",
+              noise_hits[0]["elastic_score"] < drift_diagnostic.ELASTIC_LOOK,
+              f"best_noise={noise_hits[0]['elastic_score']:.3f}")
+
+
 def main():
     test_codes_example()
     test_puzzle_22()
@@ -378,6 +440,7 @@ def main():
     test_palindromic_positive_control(scorer)
     test_round_trips(scorer)
     test_null_tolerance(scorer)
+    test_ciphertext_patterns_and_drift(scorer)
     print()
     if failures:
         print(f"{len(failures)} FAILURES: {failures}")

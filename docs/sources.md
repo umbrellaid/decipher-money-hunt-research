@@ -66,22 +66,26 @@ For the Decipher I coverage trail: Bryant, *Virginian-Pilot*, 1985-04-17, p. D6
 
 | Item | Link |
 |---|---|
-| Warren L. Holland, Sr. obituary, *The Virginian-Pilot*, Dec 2017 | https://www.pilotonline.com/obituaries/warren-l-holland-norfolk-va/ |
+| Warren L. Holland, Sr. obituary, *The Virginian-Pilot*, Dec 2017 *(note: father of Decipher creator **Warren Holland Jr.**, who corresponded with Karen Kavett in 2021)* | https://www.pilotonline.com/obituaries/warren-l-holland-norfolk-va/ |
 | Decipher, Inc. history and the 2009 embezzlement case | https://www.tabletopgameicons.com/remembered-decipher-inc/ |
 | *Virginian-Pilot*, "Game company embezzlement was betrayal to family" (2009) | https://www.pilotonline.com/2009-07-28/game-company-embezzlement-was-betrayal-to-family/ |
 | BoardGameGeek thread on the embezzlement sentencing | https://boardgamegeek.com/thread/428099/man-who-defrauded-decipher-for-millions-sentenced |
 
-## Archives to search for the lost monthly clue columns
+## Archives searched for the lost monthly clue columns
 
 The Decipher III rulebook states clues were released monthly on the hotline *and* to
-the media, with periodic author eliminations. No such column has been recovered yet.
+the media, with periodic author eliminations. **Update 2026-11-01:** a full
+consumer + Publisher Extra sweep on Newspapers.com was completed and logged in
+[`newspapers-com-sweep-2026-10-31.md`](newspapers-com-sweep-2026-10-31.md) — no
+recurring Decipher III newspaper clue column existed in the indexed papers (clues
+were delivered on the Decipher III phone hotline).
 
-| Archive | Link | Access |
+| Archive | Link | Status / Coverage |
 |---|---|---|
-| Newspapers.com — The Virginian-Pilot | https://www.newspapers.com/paper/the-virginian-pilot/30397/ | subscription |
-| A matched but unread Decipher-related page | https://www.newspapers.com/newspage/640735315/ | subscription |
-| NewsBank — pilotonline | https://pilotonline.newsbank.com/ | subscription |
-| Virginia Tech Virginian-Pilot archive | https://scholar.lib.vt.edu/VA-news/VA-Pilot/?S=D | campus-only |
+| Newspapers.com — full 1987–1991 sweep | [`docs/newspapers-com-sweep-2026-10-31.md`](newspapers-com-sweep-2026-10-31.md) | **Completed 2026-11-01** — no monthly clue column; *Virginian-Pilot* (`paper/30397`) holds **zero 1964–2025 pages** on Newspapers.com |
+| Fort Worth Star-Telegram, 1988-04-24 p. 523 | https://www.newspapers.com/newspage/640735315/ | **Read 2026-11-01** — national *Youth Beat* mail-order promo ad, not an editorial clue |
+| NewsBank — pilotonline | https://pilotonline.newsbank.com/ | Subscription/library — note *Virginian-Pilot* full text in NewsBank generally starts c. 1990; pre-1990 requires Norfolk Public Library / Slover Library microfilm |
+| Virginia Tech Virginian-Pilot archive | https://scholar.lib.vt.edu/VA-news/VA-Pilot/?S=D | HTTP 410 (dead) |
 
 ## Public-domain text sources
 
@@ -111,17 +115,19 @@ No monthly clue column surfaced on any query ("decipher III", "decipher III clue
 (Toledo Blade, Lakeland Ledger, St. Petersburg Times and similar) — the Virginian-Pilot
 and most big dailies are NOT in it.
 
-**Dead ends (verified today):** Google Books has no hits for "627-GOLD"/"627-4653";
-Virginia Tech VA-Pilot archive URL returns HTTP 410 (dead); The Tech (MIT) site search
-indexes nothing from 1987-91; newspapers.com hides match counts behind login (shows "0"
-logged out) and the previously matched page newspapers.com/newspage/640735315 is
-**Fort Worth Star-Telegram, Sunday 1988-04-24, page 523, a Publisher Extra (paywalled)
-page** — a live Decipher lead worth reading with a subscription or 7-day trial.
+**Dead ends & completed follow-up (updated 2026-11-01):** Google Books has no hits for
+"627-GOLD"/"627-4653"; Virginia Tech VA-Pilot archive URL returns HTTP 410 (dead);
+The Tech (MIT) site search indexes nothing from 1987-91. On 2026-10-31 / 11-01 a
+logged-in Newspapers.com Publisher Extra trial was run (see
+[`newspapers-com-sweep-2026-10-31.md`](newspapers-com-sweep-2026-10-31.md)):
+`newspapers.com/newspage/640735315` (Fort Worth Star-Telegram, 1988-04-24, p. 523) was
+opened and turned out to be part of a single national Sunday *Youth Beat* mail-order ad
+campaign, not a monthly clue column; *The Virginian-Pilot* on Newspapers.com has zero
+pages between 1964 and 2025; and the 1990-12-20 *Palm Beach Post* states that puzzles
+"can be solved in sequence from **monthly clues available on the Decipher III Hotline**."
 
-**Cheapest paths forward:** (1) newspapers.com 7-day free trial logged in via the
-browser — read the Fort Worth page, then search "decipher" site-wide 1987-1992;
-(2) local-library NewsBank/Newspapers.com Library Edition access — the Virginian-Pilot
-(Newspapers.com paper 30397) is the home paper and most likely to have run the clue
-column monthly; (3) Palm Beach Post Dec 1990 (already in hand as a clipping) printed
-the (800) 654-3939 line — if PBP is in Google News Archive, browsing Sundays Dec 1989-
-Dec 1991 around its style/gift pages may find the recurring column.
+**Remaining physical/microfilm archive leads (if ever pursued):** (1) Norfolk Public
+Library / Slover Library *Virginian-Pilot* microfilm (1987–1991), the only place where
+Decipher's hometown paper exists for those years; (2) searching 1985–1991 regional
+microfilm for the syndicated 1984 Detroit column title **"Deciphering clues"** (see
+`docs/decipher-i.md`).

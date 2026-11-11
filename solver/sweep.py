@@ -126,7 +126,12 @@ def chapters_for(text_path):
             elif isinstance(item, dict) and item.get("title"):
                 titles.append(str(item["title"]))
         if titles:
-            return {"chapter-titles": rules.chapter_title_chain(titles)}
+            chain = rules.chapter_title_chain(titles)
+            return {
+                "chapter-titles": chain,
+                "chapter-titles-palindrome": engine.palindromic_key(chain),
+                "chapter-titles-rev-palindrome": engine.palindromic_key(chain[::-1]),
+            }
     return {}
 
 
@@ -152,7 +157,7 @@ def sweep_text(raw, cipher, scorer, top, extra_rules=None, palindromic=True):
         families.update(extra_rules)
     results = []
     for rule, stream in families.items():
-        if len(stream) <= max_n:
+        if len(stream) < max_n:
             continue
         engine.search_stream(stream, cipher, scorer, max_n=max_n, step=1,
                              label=rule, results=results, top_k=None)

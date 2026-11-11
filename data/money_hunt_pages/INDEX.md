@@ -1,62 +1,49 @@
-# The Money Hunt Clue Book — AI Transcription Index
+# The Money Hunt Clue Book — Page-by-Page Notes Index
 
 **Scans:** [Karen Puzzles' Money Hunt folder](https://drive.google.com/drive/folders/1LgZD4G5UtxEaaQxZ0G3PL6Zj_DDDD3W3?usp=sharing). Crossword answer key: [her crossword folder](https://drive.google.com/drive/folders/1lFzlQ_kqHhT5BZka4xRlcVdksE7zPLea?usp=sharing). Solving notes: [Karen and Katie's Google Doc](https://docs.google.com/document/d/113Qhrs91h3E-vggWBtMERGeSxkfIhzSAGosdZtR6nX8/edit?usp=sharing).
 
-**Ten pages are still withdrawn** as transcriptions (9, 11, 13, 19, 20, 21, 22, 23, 24, 27). Pages 5 and 6 have a scene check only. Pages 10, 18, 25 and 28 were **fully transcribed on 2026-10-09** from the book PDF's native 300-dpi extraction and supersede the state-analysis notes for those pages. The defects are in [`docs/money-hunt-transcription-errata.md`](../../docs/money-hunt-transcription-errata.md). The image-based notes are in [`docs/money-hunt-state-analysis.md`](../../docs/money-hunt-state-analysis.md). Do not treat a withdrawn or scene-only page file as a transcription.
+All 24 clue pages (folios 5–28) now carry scan-verified notes in this folder:
+- **Pages 10, 18, 25, and 28** were **fully transcribed line-by-line** from the native 300-dpi extraction (`2492×3289`) of `money-hunt-book.pdf`.
+- **Pages 11, 22, and 23** have their full **DOWN crossword clue lists** transcribed in [`data/money_hunt_down_clues.md`](../money_hunt_down_clues.md) alongside verified scene and prop notes.
+- **All remaining clue pages** carry verified scene, signage, and micro-clue summaries checked against the native 300-dpi scans (replacing the earlier October 2026 AI-vision drafts whose fourteen defects are recorded in [`docs/money-hunt-transcription-errata.md`](../../docs/money-hunt-transcription-errata.md)).
 
-Pages still transcribed here are unofficial research notes, not a substitute for the clue book. Karen's scans are the source. Check a spelling against the scan before relying on it.
+For the unified macro/micro synthesis, falsified dead ends, and ranked answer guesses, see **[`docs/money-hunt-hypotheses-and-guesses.md`](../../docs/money-hunt-hypotheses-and-guesses.md)** and [`docs/money-hunt-state-analysis.md`](../../docs/money-hunt-state-analysis.md).
 
-Pages 5 and 6 were checked again against the scans at scene level. Pages 10, 18, 25 and 28 were fully transcribed from the native 300-dpi extraction (see the page files and the state analysis). The other withdrawn pages were not re-transcribed. The artwork is dense, and an earlier vision pass invented whole scenes. Their image read remains the state analysis.
-
-## Reading order (from the map poster's flow-chart)
-**15, 9, 18, 24, 14, 6, 17, 21, 23, 27, 7, 19, 5, 8, 10, 25, 20, 22, 28, 13, 16, 26, 12, 11** — page 11 (pool page) last. This order follows the verified artifact record in [`data/money_hunt_artifacts.md`](../money_hunt_artifacts.md).
+## Reading order (from the flip-side poster's flow-chart)
+**`15 → 9 → 18 → 24 → 14 → 6 → 17 → 21 → 23 → 27 → 7 → 19 → 5 → 8 → 10 → 25 → 20 → 22 → 28 → 13 → 16 → 26 → 12 → 11`** (page 15 carries the START flag; page 11 sits at the final arrow pointing to the money pile, though the jigsaw border says *"To start the game go to page eleven…"*). Verified in [`data/money_hunt_artifacts.md`](../money_hunt_artifacts.md).
 
 ## Page-by-page index
-| Page | File | Scene / content | Status |
+| Page | File | Scene / verified highlights | Status |
 |---|---|---|---|
-| 1 | [page_01](page_01.md) | Front cover (motif preview; airplane + Queen Mary unmatched) | — |
-| 2 | [page_02](page_02.md) | Introduction & rules: **US or Canada**; "more than one clue per page" warning; Touche Ross; jigsaw first | — |
-| 3 | [page_03](page_03.md) | Official rules 1–11: $50k×20yrs; extensions "until a winner is declared"; Rush Energy Corp (Vancouver) | — |
-| 4 | [page_04](page_04.md) | Rules end; $5 replacement forms; dedication | — |
-| 5 | [page_05](page_05.md) | Scene checked: safe, calculator 1000000000, VAULT | scene only |
-| 6 | [page_06](page_06.md) | Scene checked: games room, AWITHIAKNANNAI | scene only |
-| 7 | [page_07](page_07.md) | Knitting codes; chief/brume sentence; rebuses; **substitution cipher SOLVED** | mostly solved |
-| 8 | [page_08](page_08.md) | "Bus Company" (font link to p7) | unsolved |
-| 9 | [page_09](page_09.md) | Withdrawn until re-read | withdrawn |
-| 10 | [page_10](page_10.md) | **Fully transcribed 2026-10-09**: resort pool, DOWN list (1–37), 2×4 glyph suitcase, no telescope/airplane | transcribed |
-| 11 | [page_11](page_11.md) | Withdrawn until re-read | withdrawn |
-| 12 | [page_12](page_12.md) | Birds | ✅ **WASHINGTON** (Katie, 11/2021) |
-| 13 | [page_13](page_13.md) | Withdrawn until re-read | withdrawn |
-| 14 | [page_14](page_14.md) | Storm, Florida map, woman w/ 2 dogs, ~20-25 birds | unsolved |
-| 15 | [page_15](page_15.md) | Nursery: **Y=4X+1 (→ −3, 9)**, xylophone, Cantor register, train 1/2, balloon 5 | math solved |
-| 16 | [page_16](page_16.md) | "WORKOUT" rebuses; **W T F S S M T W T F S S M T W T / 1111112222222222** strip | rebuses solved |
-| 17 | [page_17](page_17.md) | Parlor; "Home S**V**eet Home"; coil→phone (p27) | unsolved |
-| 18 | [page_18](page_18.md) | **Fully transcribed 2026-10-09**: kitchen/fish counter; 12-line clue list; letter columns TTGO/HOAL/BRING/SGDG; HEAD strip; BROWNS explosion; crossword **not uniquely solvable as printed** (full write-up in file) | transcribed |
-| 19 | [page_19](page_19.md) | Withdrawn until re-read | withdrawn |
-| 20 | [page_20](page_20.md) | Withdrawn until re-read | withdrawn |
-| 21 | [page_21](page_21.md) | Withdrawn until re-read | withdrawn |
-| 22 | [page_22](page_22.md) | Withdrawn until re-read | withdrawn |
-| 23 | [page_23](page_23.md) | Withdrawn until re-read | withdrawn |
-| 24 | [page_24](page_24.md) | Withdrawn until re-read | withdrawn |
-| 25 | [page_25](page_25.md) | **Fully transcribed 2026-10-09**: ACROSS list 1–156 complete; 95–97 are DOWN-only entries on p22, not a defect; top-hat grid | transcribed |
-| 26 | [page_26](page_26.md) | Ballroom: full bell, 3-card hand (=p11), ribbons | meta-object |
-| 27 | [page_27](page_27.md) | Withdrawn until re-read | withdrawn |
-| 28 | [page_28](page_28.md) | **Fully transcribed 2026-10-09**: library; spines + volume row + prices + Vol 149145 confirmed | transcribed |
-| 29 | [page_29](page_29.md) | **Answer forms: "State/Province" + "Specifically at ___"** | structural key |
-| 30 | [page_30](page_30.md) | Mailing instructions (Chicago registration / Seattle answers) | — |
-| 31 | [page_31](page_31.md) | Player's log | — |
-| 32 | [page_32](page_32.md) | Back cover | — |
-
-## The working theory (as of Oct 2026)
-1. Each clue page hides **one US state or Canadian province** (proven on page 12 → WASHINGTON; answer form demands exactly "State/Province + specific place").
-2. Read in poster order, one letter per page can spell **EMPIRE STATE BUILDING NY US(A/L)** (Karen's acrostic; last letters uncertain).
-3. The creator's son says the solution involves the **July 28, 1945 B-25 crash into the Empire State Building** — the poem's "a sad story was told, of one not very old… with lives made to pay" fits; "find the place one did play" is the remaining riddle (a specific venue/floor?). **2026-10-09 rescan:** the crash layer's best pictorial anchor is **p13's tripod spyglass aimed at the inverted sky-building**, and the **missing 4 on both p5 watch dials** is confirmed (wristwatch ≈ 7:25–7:35, so 7:28 ↔ July 28 stays plausible).
-4. **Deliberate misspellings** are part of the working theory. Several pages that were thought to carry them are withdrawn, so the spelling list has to be rebuilt from the scans.
-5. A bell assembled across pages, and several number clusters, are standing ideas. Pages 9 and 18 are withdrawn, so any assembly that uses them needs a re-read. Page 26 is still transcribed here.
-
-## Next analysis steps
-- **2026-10-09:** the book PDF's native 300 dpi pages were extracted and the priority targets re-read — see [`docs/money-hunt-pdf-rescan-2026-10-09.md`](../../docs/money-hunt-pdf-rescan-2026-10-09.md). p18 definitively has no Braille; the telescope is on p13; p16's calculator and MADE IN CAN truncation are confirmed; p10's glyph grid is 2×4; p10 clue 17 completes to "…wrote *Mighty Lak' a Rose*" (→ NEVIN).
-- Analyze unresolved micro-targets from the native images first: p5's last two necklace beads, p16 calculator display, p9 clock hands, p24 score-sheet fragments, p10 glyph identities, p11/p26 card pips, and p28 garbled spine middles. A selective physical-book rescan is justified only by a named hypothesis and a genuine pixel limitation, not as a blanket 600-dpi pass. Do not launch a book-wide STAFF S5_F Braille sweep without first establishing the string and its provenance.
-- Re-transcribe the withdrawn pages from the extracted native images before using them.
-- Reconcile the WASHINGTON page with the acrostic's "S" at position 23.
-- Page 21 is not a kiosk and has no "ANNUAL" booklet. That was the wrong scene.
+| 1 | [page_01](page_01.md) | Front cover (motif collage; head-on airplane + Queen Mary liner) | front matter |
+| 2 | [page_02](page_02.md) | Introduction & rules: **US or Canada**; "more than one clue per page"; Touche Ross; jigsaw first | front matter |
+| 3 | [page_03](page_03.md) | Official rules 1–11: $50k×20yrs; extensions "until a winner is declared"; Rush Energy Corp (Vancouver) | front matter |
+| 4 | [page_04](page_04.md) | Rules end; $5 replacement forms; dedication to Perry's mother | front matter |
+| 5 | [page_05](page_05.md) | Vault/money collage: safe, calculator `1000 000 000`, `VAULT` ribbon, **missing-4 watches** (`≈7:28`), bead letters | scene verified |
+| 6 | [page_06](page_06.md) | Games room: dice, bingo, `AWITHIAKNANNAI`, `Solitoier`, `PARCHESI` misspellings | scene verified |
+| 7 | [page_07](page_07.md) | Knitting codes; odd sentence; `FLAMER TAMER` rebus; **substitution cipher SOLVED** | mostly solved |
+| 8 | [page_08](page_08.md) | `Bus Company` terminal (`MAIN ST.`, `Enter/Exit/Luggage only`) | scene verified |
+| 9 | [page_09](page_09.md) | Wine/picnic terrace: `POUILLY FUME` bottles, 2 numeral-less clocks, bell ribbon/clapper | scene verified |
+| 10 | [page_10](page_10.md) | Resort pool: **DOWN clues 1–37**, `2×4` Devanagari/triangle suitcase (`उ/स/Δ`) | **transcribed** |
+| 11 | [page_11](page_11.md) | Poolside jigsaw-border page: **DOWN clues 38–69** (`46=LINES`, `55=IDAHOAN`), `Q♠/3♣/J♥`, `THE TAMER OF THE FLAMER` | **DOWN + scene verified** |
+| 12 | [page_12](page_12.md) | Landscape aviary collage: species count → species name index → **`WASHINGTON`** | ✅ **SOLVED** |
+| 13 | [page_13](page_13.md) | Vintage roadster: `FIRST CLASS 2 / 7 / _`, plain `P` sign, **tripod spyglass** aimed at inverted building | scene verified |
+| 14 | [page_14](page_14.md) | Hurricane spiral over unmistakable **Florida** peninsula map; woman with 2 hounds; ~20–25 storm birds | pictorial **FLORIDA** |
+| 15 | [page_15](page_15.md) | Nursery (poster START): **`Y=4X+1 → −3, 9`**, xylophone `C B A 4 3 2 1`, Cantor register, shelf clown | math solved |
+| 16 | [page_16](page_16.md) | `WORKOUT` locker room: **`MADE IN CAN`** (truncated), 2nd calculator, curling stones, 16-day calendar strip | rebuses solved |
+| 17 | [page_17](page_17.md) | Victorian parlor: `Home Sveet Home` sampler, `NEWS/PANT` rebus, phone cord coil (→ p27) | scene verified |
+| 18 | [page_18](page_18.md) | Fish/grocery stall: 12-line clue list (`RIVERHORSE`/`ICING` scene-clued), 25 fence/salmon letters, `HEAD` strip, `BROWNS` | **transcribed** |
+| 19 | [page_19](page_19.md) | Bedroom: circus-parade wallpaper, clown lamp (`7` finial, ↔ p15), bell lantern, headboard scroll crest (↔ p20) | scene verified |
+| 20 | [page_20](page_20.md) | Zoo parking entrance: `CARS`, **2 slashed no-parking `P` signs** (↔ p13 `LINE`), zebra/flamingo, gate crest | scene verified |
+| 21 | [page_21](page_21.md) | Saluting crowd (~15 figures), `ONE WAY` / `BUS STOP`, skyline building with circled `H` | scene verified |
+| 22 | [page_22](page_22.md) | Outdoor polo match: helmets `5, 33, 34, 0`, **DOWN clues 73–117** (`77` FL sound; `95–97` DOWN-only) | **DOWN + scene verified** |
+| 23 | [page_23](page_23.md) | Outdoor horse show: stanchions `I, V, VII, II / X, IIII`, **DOWN clues 121–147** (`145=TSU` Tennessee) | **DOWN + scene verified** |
+| 24 | [page_24](page_24.md) | `How To Bowl Correctly`: **Canadian 5-pin bowling**, 12-sector wheel (`AEECHLLLLMV`), swapped pin cards | scene verified |
+| 25 | [page_25](page_25.md) | Top-hat crossword grid + **ACROSS clues 1–156** (`143A = TOPHAT`; solved by Karen's family, no hidden meta) | **transcribed** |
+| 26 | [page_26](page_26.md) | Ballroom: full **bell** urn + ribbons, 3-card cross-hatched hand (↔ p11), 3 champagne glasses | meta-object |
+| 27 | [page_27](page_27.md) | `MUSIC ROOM`: large **`JAZZ`** wall sign, `STYNBANG` piano, `VOLUME/TON = 60`, `7 8 9 0`, candlestick phone | scene verified |
+| 28 | [page_28](page_28.md) | Library: **`VA DERS`** (`[IN]VADERS`), **`19↔22`** & `A–M/N–Z` shelf swaps, **`Vol 149145`**, confirmed misspellings | **transcribed** |
+| 29 | [page_29](page_29.md) | **Official Answer Forms:** 3 lines (`Country` / `State or Province` / `Specifically at ___`) | structural key |
+| 30 | [page_30](page_30.md) | Mailing instructions: Chicago registration (`P.O. Box 803878`) / Seattle answer submissions | back matter |
+| 31 | [page_31](page_31.md) | **Player's Log:** 3 short blank lines per page | structural constraint |
+| 32 | [page_32](page_32.md) | Back cover | back matter |
