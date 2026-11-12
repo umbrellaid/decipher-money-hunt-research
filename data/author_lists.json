@@ -1,5 +1,5 @@
 {
-  "_provenance": "Groups A/B/C transcribed 2026-10-05 from the printed Decipher III rulebook (page 6); previously believed hotline-only. Message-to-group assignment: #1 = B (printed initial clues, rulebook page 5). Messages #2/#3 clues were only released after #1 was solved, which never happened, so both remaining groups apply to both 3-2 and 3-3. Decipher II 2-4 list from Karen Puzzles' master doc.",
+  "_provenance": "Decipher III Groups A/B/C transcribed 2026-10-05 from the printed Decipher III rulebook (page 6); Message #1 = Group B (printed initial clues, rulebook page 5). Decipher II Groups A/B/C/D and Message #1 initial clues transcribed 2026-11-11 directly from Decipher-II-rulebook-4.jpg and 5.jpg in Karen Puzzles' Drive archive (spelling variants such as 'Ernest Hemmingway', 'T.S. Elliott', and 'Edgar Allen Poe' reflect the printed rulebook). `decipher_ii_2_4` is retained at top level for compatibility.",
   "decipher_iii": {
     "group_A": ["Lawrence Sanders", "Joseph Heller", "William F. Buckley", "Aleksandr Solzhenitsyn", "Bill Cosby", "William Faulkner", "Tom Wolfe", "Agatha Christie", "George Orwell", "John Kenneth Galbraith", "Carl Sandburg"],
     "group_B": ["Richard Nixon", "Bob Woodward", "Robert Ludlum", "Kurt Vonnegut Jr.", "Truman Capote", "Yoko Ono", "Isaac Asimov", "Leon Uris", "Edgar Allan Poe", "Boris Pasternak", "David Halberstam"],
@@ -11,6 +11,48 @@
       "3-3": []
     },
     "constraints": "Key text must be a work published before 1987. Decipher, Inc. periodically eliminated names from the lists via the hotline and press; no elimination notices have been recovered."
+  },
+  "decipher_ii": {
+    "group_A": ["John Updike", "Colleen McCullough", "Nathaniel Hawthorne", "Thomas Hardy", "Elizabeth Barrett Browning", "John Irving", "Jules Verne", "Walt Whitman", "Robert Ludlum", "Henry David Thoreau", "Louis L'Amour"],
+    "group_B": ["F. Scott Fitzgerald", "Agatha Christie", "Leon Uris", "Gertrude Stein", "George Orwell", "Truman Capote", "Joseph Heller", "Washington Irving", "Ralph Waldo Emerson", "Geoffrey Chaucer", "Thomas Jefferson"],
+    "group_C": ["Emily Dickinson", "Ernest Hemingway", "Sylvia Plath", "Jonathan Swift", "Herman Wouk", "Victor Hugo", "John Steinbeck", "Margaret Mitchell", "William Shakespeare", "T.S. Eliot", "Abraham Lincoln"],
+    "group_D": ["Lewis Carroll", "Jane Austen", "James Clavell", "Jeffrey Archer", "Edgar Allan Poe", "James Thurber", "Dashiell Hammett", "Carl Sandburg", "D.H. Lawrence", "Arthur Hailey", "Sir Arthur Conan Doyle"],
+    "printed_rulebook_typos": {
+      "group_C_2": "Ernest Hemmingway",
+      "group_C_10": "T.S. Elliott",
+      "group_D_5": "Edgar Allen Poe"
+    },
+    "message_groups": {
+      "2-1": ["group_C"],
+      "2-2": ["group_B"],
+      "2-3": ["group_D"],
+      "2-4": ["group_A"]
+    },
+    "solved_keys": {
+      "2-1": "Jonathan Swift — Gulliver's Travels, Part III Ch. 2 (492-letter passage S || reverse(S))",
+      "2-2": "Joseph Heller — Catch-22 (42 chapter titles concatenated, reversed)",
+      "2-3": "James Clavell — Tai-Pan, Ch. 5 (first letter of every word)"
+    },
+    "initial_clues": {
+      "2-1": [
+        "The key to message one, you see, is from the authors in group C.",
+        "492",
+        "A single place has a certain pattern to create the key.",
+        "One way gets you half way there.",
+        "S.I.N."
+      ],
+      "2-2": [],
+      "2-3": [],
+      "2-4": []
+    },
+    "surviving_hotline_clues": {
+      "2-2": ["The first is the last."],
+      "2-3": [
+        "The letter used most often in the number three is very important to the key",
+        "D as in decipher."
+      ]
+    },
+    "constraints": "Key text published before 1985. Clues for Message #2..#4 were released sequentially on defunct hotline (804) 623-CLUE after each preceding message was solved."
   },
   "decipher_ii_2_4": {
     "authors": ["John Updike", "Colleen McCullough", "Nathaniel Hawthorne", "Thomas Hardy", "Elizabeth Barrett Browning", "John Irving", "Jules Verne", "Walt Whitman", "Robert Ludlum", "Henry David Thoreau", "Louis L'Amour"],

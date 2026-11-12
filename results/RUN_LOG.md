@@ -961,5 +961,48 @@ archive) against this repository:
    `docs/decipher-ii.md` and `docs/decipher-ciphertext-patterns.md`. `verify_ii1.py` 19/19 PASS;
    `validate.py` **133/133 PASS**.
 
+## 2026-11-11 (part 2) — 21-family anchored palindromes, skip-trigram Viterbi null diagnostic, Decipher II roster archive & Money Hunt p10/p12 checks
+
+1. **All 21 rule families wired into anchored palindromic `S || reverse(S)` (`solver/rules.py`, `solver/sweep.py --all-palindromic`).**
+   `rules.anchored_palindromic_substreams(raw, include_extended=True)` splits strided
+   `every{2,3,5,10}-{letter,wordfirst,wordlast}` families into `n` modulo-`n` phase substreams
+   (`p = (s0 + n - 1) % n`, `q0 = (s0 + n - 1) // n`) and aligns `word{2,3}th-letter`,
+   `line-first`, and `line-last` via `bisect` over sentence/paragraph character offsets so every
+   mid-text passage boundary matches `rules.all_rules(raw[start:])` byte-for-byte without
+   multiplying total anchor counts. Default `sweep.py` keeps the fast 3-family run (`letters`,
+   `first-letters`, `last-letters`); `--all-palindromic` runs all 21.
+2. **Scattered-null skip-trigram Viterbi diagnostic (`solver/null_diagnostic.py`) + 4-wholebook sweep.**
+   Implemented vectorized skip-trigram Viterbi scoring (`skip_penalty = -11.2`, `max_consec = 2`,
+   real-lead gate `NULL_LOOK = -8.12` with `<= 20%` skipped tokens) plus exact backpointer
+   plaintext reconstruction (`reconstruct_null_stripped`). Recovers ~12.5% scattered `XQZJ` and
+   periodic uniform `A–Z` nulls (preserving OOV proper-noun substrings such as `RINKLEY` from
+   `BRINKLEY`) from rigid `< -8.8` back into the `-7.95..-8.05` band. Swept all four scanned
+   wholebooks (`--sentence-chars --cipher all`, testing `first-letters`, `first-letters-split-hyphen`,
+   and `letters@sentence` in both stream and plaintext directions):
+
+   | File | Wall time | Best `2-4` | Best `3-1` | Best `3-2` | Best `3-3` | Verdict |
+   |---|---:|---:|---:|---:|---:|---|
+   | `foundation2.clean.txt` | 56.5 s | −8.2616 | −8.2905 | −8.1957 | −8.3181 | 0 flags — negative |
+   | `i-robot.clean.txt` | 50.5 s | −8.2824 | −8.3376 | −8.2195 | −8.2788 | 0 flags — negative |
+   | `doctor-zhivago.clean.txt` | 186.9 s | −8.2412 | −8.2503 | −8.2022 | −8.2958 | 0 flags — negative |
+   | `the-thorn-birds.clean.txt` | 211.7 s | −8.0228\* | −8.3123 | −8.1702 | −8.3192 | \*1 flag on cover OCR noise (`letters@sentence@1630`, `PSBEBETLEERESENE...`, `ee ee ae` vowel soup); all body candidates `<= -8.17` — negative |
+
+3. **Archival & Money Hunt micro-verifications.**
+   - Added complete printed Decipher II Groups `A–D` (44 authors, printed rulebook typos,
+     1-to-1 message mappings, verbatim `2-1` initial clues, and surviving `2-2`/`2-3` hotline
+     clues) to `data/author_lists.json`.
+   - Verified Money Hunt page 10 suitcase grid (`data/money_hunt_pages/page_10.md`): two
+     identical horizontal 4-column Devanagari `उ` (`U`) + `स` (`SA`) monogram bands confirming
+     `Country: United States` and refuting glyph-count state indexing.
+   - Verified Money Hunt page 12 bird species & DANFS WWII ship hypothesis
+     (`data/money_hunt_pages/page_12.md`, `docs/money-hunt-hypotheses-and-guesses.md`):
+     `WASHINGTON` letter extraction is invariant across `MACAW`/`PARROT`/`PARAKEET` (`2→A`) and
+     `HORNBILL`/`TOUCAN` (`2→O`), and grouping all `6` psittacines recovers `T` (`COCKATOO`[6]/`PARROT`[6]);
+     the strict WWII USN ship-namesake claim fails (*USS Spoonbill* 1955, *USS Sunbird* 1950,
+     *USS Wren* named for USMC Sgt. Solomon Wren).
+   - Added ranked physical scan roadmap (`docs/scan-priority-top10.md`).
+   - Validation: `verify_ii1.py` **19/19 PASS**; `validate.py` **144/144 PASS**.
+
+
 
 

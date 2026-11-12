@@ -207,18 +207,18 @@ Anyone picking up this repository has the following cleanly bounded search terri
      *Tai-Pan*, *King Rat*, *Noble House*), plus Sanders, Buckley, Solzhenitsyn, Cosby,
      Wolfe, Kissinger, Plath, Haley, Mailer, Smith, Follett, Puzo, and post-1931
      Faulkner/Christie.
-2. **Unimplemented rule families (pure algorithm work, no books needed to build):**
-   * **18 strided palindromic families:** `engine.search_anchored` currently tests
-     `S || reverse(S)` on `letters`, `first-letters`, and `last-letters`. Extending
-     sentence-start coordinate mapping to `every-Nth-letter` and `word-Nth-letter` closes
-     the remaining palindromic gap noted in [`methodology.md`](methodology.md).
-   * **Scattered-null partial-word back-solver:** If Holland inserted periodic or random
-     nulls into Decipher III plaintexts (say 1 null every 8–10 tokens), trigram scoring
-     fails (`validate.py` asserts this). A beam-search / Viterbi scorer allowing a small
-     deletion penalty (`~10%` token skip rate) over a word/trigram lattice could detect
-     scattered-null plaintexts without overfitting — and must allow OOV / 1-edit tolerance
-     on proper nouns rather than rigid dictionary matching, since solved `2-1` encodes
-     *Bloom County*'s Binkley literally as `BRINKLEY` (`docs/decipher-ii.md`).
-   * **Paratext & non-body keys:** Book dedications, epigraphs (compare Decipher I's
-     Wilkins epigraph in *Cosmos*), author biographical blurbs, jacket copy, or index
-     entries in specific 1980s Bantam/Dell/Fawcett mass-market printings.
+2. **Newly closed & remaining algorithmic rules (2026-11-11):**
+   * **CLOSED — All 21 anchored palindromic families (`sweep.py --all-palindromic`):**
+     `rules.anchored_palindromic_substreams(raw, include_extended=True)` now maps every
+     sentence and paragraph start onto exact modulo-`N` phase substreams (`every{2,3,5,10}-*`)
+     and character-offset `bisect` coordinates (`word{2,3}th-letter`, `line-first`,
+     `line-last`, `sentence-first`, `paragraph-first`), verified byte-identical in
+     `solver/validate.py`.
+   * **CLOSED — Scattered-null skip-trigram Viterbi diagnostic (`solver/null_diagnostic.py`):**
+     Recovers ~10–15% scattered or periodic `A–Z` nulls (`skip_penalty = -11.2`,
+     `max_consec = 2`, `<= 20%` skip gate) while preserving OOV proper nouns such as
+     `BRINKLEY` and keeping whole-book false positives below `NULL_LOOK = -8.12`.
+   * **Still open — Paratext, page-indexed & key-side-null rules:** Book dedications,
+     epigraphs (compare Decipher I's Wilkins epigraph in *Cosmos*), author biographical
+     blurbs, jacket copy, index entries, page-number-keyed streams, or nulls interleaved
+     inside the key text itself in specific 1980s Bantam/Dell/Fawcett mass-market printings.

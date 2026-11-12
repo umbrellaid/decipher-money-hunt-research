@@ -38,8 +38,10 @@ from pathlib import Path
 
 import engine
 import rules
+import sweep
 import analyze_ciphertexts
 import drift_diagnostic
+import null_diagnostic
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -354,11 +356,11 @@ def test_null_tolerance(scorer):
           scorer.score_best_window(noise, frac=0.6) < -8.1,
           f"noise windowed={scorer.score_best_window(noise, frac=0.6):.3f}")
 
-    # Documented limitation, asserted as a property of the statistics rather than
-    # of the solver: with nulls scattered or periodic, no window of the decode is
-    # null-free, so neither score_best_window nor the whole-decode mean recovers
-    # the English band. A scattered-null plaintext would need partial-word
-    # back-solving, which is not implemented. See docs/methodology.md.
+    # Documented limitation of rigid/windowed statistics: with nulls scattered or
+    # periodic, no contiguous window of the decode is null-free, so neither
+    # score_best_window nor the whole-decode mean recovers the English band.
+    # Scattered/periodic nulls are handled separately by solver/null_diagnostic.py
+    # (tested below in test_extended_palindromic_and_null_viterbi).
     scattered = list(plain)
     rng2 = random.Random(7)
     for _ in range(len(plain) // 8):
@@ -439,6 +441,163 @@ def test_ciphertext_patterns_and_drift(scorer):
               f"best_noise={noise_hits[0]['elastic_score']:.3f}")
 
 
+def test_extended_palindromic_and_null_viterbi(scorer):
+    """Verify 21-family phase-resolved anchored palindromes and skip-trigram Viterbi nulls."""
+    import random
+    import numpy as np
+
+    hardy = (ROOT / "texts" / "pd" / "hardy_110.txt").read_text(encoding="utf-8")
+    sent_chars = rules.sentence_char_offsets(hardy)
+    para_chars = rules.paragraph_char_offsets(hardy)
+    sent_set = set(sent_chars)
+    body_para_starts = [p for p in para_chars if p in sent_set]
+
+    by_fam = {}
+    for fam, phase, sub, st in rules.anchored_palindromic_substreams(hardy, include_extended=True):
+        by_fam.setdefault(fam, []).append((phase, sub, set(st)))
+
+    direct_all = rules.all_rules(hardy[body_para_starts[25]:])
+    check("extended-palindromic: all 21 rule families emitted by anchored_palindromic_substreams",
+          set(by_fam.keys()) == set(direct_all.keys()),
+          f"count={len(by_fam)}")
+
+    exact_para = []
+    for fam, direct_stream in sorted(direct_all.items()):
+        prefix = direct_stream[:240]
+        ok = any(
+            any(sub[s : s + len(prefix)] == prefix for s in st_set if s + len(prefix) <= len(sub))
+            for _, sub, st_set in by_fam[fam]
+        )
+        if not ok:
+            exact_para.append(fam)
+    check("extended-palindromic: all 21 families match direct passage extraction at mid-book boundary",
+          len(exact_para) == 0,
+          f"mismatches={exact_para}")
+
+    direct_mid = rules.all_rules(hardy[sent_chars[123]:])
+    exact_mid = []
+    for fam, direct_stream in sorted(direct_mid.items()):
+        if fam in ("line-first", "paragraph-first"):
+            continue
+        prefix = direct_stream[:200]
+        ok = any(
+            any(sub[s : s + len(prefix)] == prefix for s in st_set if s + len(prefix) <= len(sub))
+            for _, sub, st_set in by_fam[fam]
+        )
+        if not ok:
+            exact_mid.append(fam)
+    check("extended-palindromic: all 19 sentence-granular families match mid-paragraph sentence start",
+          len(exact_mid) == 0,
+          f"mismatches={exact_mid}")
+
+    # End-to-end strided S || reverse(S) round-trip at a NON-ZERO modulo-3 phase
+    snippet = hardy[:18000]
+    sn_starts = rules.sentence_boundary_starts(snippet)
+    sn_chars = rules.sentence_char_offsets(snippet)
+    chosen_char = None
+    chosen_l0 = None
+    for (l0, _), c_off in zip(sn_starts[15:], sn_chars[15:]):
+        if (l0 + 2) % 3 != 0 and len(rules.every_nth_letter(snippet[c_off:], 3)) >= 320:
+            chosen_char = c_off
+            chosen_l0 = l0
+            break
+    check("extended-palindromic: found non-zero-phase sentence start for every3-letter",
+          chosen_char is not None, f"l0={chosen_l0} phase={(chosen_l0 + 2) % 3 if chosen_l0 else None}")
+    if chosen_char is not None:
+        src_3 = rules.every_nth_letter(snippet[chosen_char:], 3)[:260]
+        pal_key_3 = engine.palindromic_key(src_3)
+        plain_pal = engine.letters_only(
+            "When the lantern went out along the ridge they waited together in silence until daybreak came over the hills"
+        )
+        # Homophonic encoding using BOTH halves of S || reverse(S): [1..260] and [261..520]
+        rng_pal = random.Random(11)
+        pos_h1 = {ch: [i + 1 for i, c in enumerate(pal_key_3[:260]) if c == ch] for ch in set(plain_pal)}
+        pos_h2 = {ch: [260 + i + 1 for i, c in enumerate(pal_key_3[260:]) if c == ch] for ch in set(plain_pal)}
+        half = len(plain_pal) // 2
+        if all(pos_h1[ch] and pos_h2[ch] for ch in set(plain_pal)):
+            ciph_pal3 = (
+                [rng_pal.choice(pos_h1[ch]) for ch in plain_pal[:half]]
+                + [rng_pal.choice(pos_h2[ch]) for ch in plain_pal[half:]]
+            )
+        else:
+            ciph_pal3 = None
+        check("extended-palindromic: encoded strided S||rev(S) cipher reaches > len(S)",
+              ciph_pal3 is not None and max(ciph_pal3) > 260,
+              f"L=260 max_n={max(ciph_pal3) if ciph_pal3 else None}")
+        if ciph_pal3 is not None:
+            hits_def, _, _ = sweep.sweep_text(snippet, ciph_pal3, scorer, top=5,
+                                              palindromic=True, all_palindromic=False)
+            hits_ext, _, _ = sweep.sweep_text(snippet, ciph_pal3, scorer, top=5,
+                                              palindromic=True, all_palindromic=True)
+            check("extended-palindromic: 3-family default misses non-zero-phase every3-letter S||rev(S), "
+                  "--all-palindromic recovers it #1",
+                  hits_def[0]["score"] < -8.4 and hits_ext[0]["score"] > -8.0
+                  and hits_ext[0]["decode"] == plain_pal
+                  and hits_ext[0]["rule"].startswith("every3-letter-p"),
+                  f"default={hits_def[0]['score']:.3f} ext={hits_ext[0]['score']:.3f} rule={hits_ext[0]['rule']}")
+
+    # Skip-trigram Viterbi scattered-null checks
+    plain_std = engine.letters_only(
+        "The ship went down in the fog and nobody ever found the bell again"
+    )
+    row_clean = (np.frombuffer(plain_std.encode(), dtype=np.uint8).astype(np.int64) - 65)[None, :]
+    vit_zero = float(null_diagnostic.viterbi_null_score_matrix(row_clean, scorer, max_consec=0)[0])
+    vit_clean = float(null_diagnostic.viterbi_null_score_matrix(row_clean, scorer)[0])
+    rec_sc, rec_str, rec_skips = null_diagnostic.reconstruct_null_stripped(plain_std, scorer)
+    check("null-diagnostic: zero-skip DP matches TrigramScorer.score and vectorized DP matches backpointer",
+          abs(vit_zero - scorer.score(plain_std)) < 1e-9
+          and abs(vit_clean - rec_sc) < 1e-9 and vit_clean >= vit_zero,
+          f"zero_skip={vit_zero:.4f} rigid={scorer.score(plain_std):.4f} vit={vit_clean:.4f}")
+
+    plain_null_base = engine.letters_only(
+        "The ship went down in the fog and nobody ever found the bell again "
+        "though Captain Brinkley searched the harbor until dawn with lanterns"
+    )
+    rng_x = random.Random(7)
+    scat_list = list(plain_null_base)
+    for _ in range(len(plain_null_base) // 8):
+        scat_list.insert(rng_x.randrange(len(scat_list)), rng_x.choice("XQZJ"))
+    scat_str = "".join(scat_list)
+    sc_x, cl_x, sk_x = null_diagnostic.reconstruct_null_stripped(scat_str, scorer)
+    check("null-diagnostic: recovers 12.5% scattered XQZJ nulls into English band while preserving OOV stem",
+          sc_x > null_diagnostic.NULL_LOOK and "BRINKLE" in cl_x
+          and "THEBELLAGAIN" in cl_x and scorer.score(scat_str) < -9.0,
+          f"null_score={sc_x:.3f} rigid={scorer.score(scat_str):.3f} skips={len(sk_x)}")
+
+    rng_az = random.Random(42)
+    per_az = []
+    for i_c, ch in enumerate(plain_null_base):
+        per_az.append(ch)
+        if (i_c + 1) % 8 == 0:
+            per_az.append(rng_az.choice("ABCDEFGHIJKLMNOPQRSTUVWXYZ"))
+    per_str = "".join(per_az)
+
+    wstream = engine.first_letters(hardy)
+    key_win = wstream[1200 : 1200 + 600]
+    by_ch = {}
+    for idx_k, ch_k in enumerate(key_win, 1):
+        by_ch.setdefault(ch_k, []).append(idx_k)
+    rng_enc = random.Random(99)
+    ciph_per = [rng_enc.choice(by_ch[c]) if c in by_ch else c for c in per_str]
+    check("null-diagnostic: encoded periodic-A-Z-null cipher into 600-word novel window",
+          any(isinstance(t, int) for t in ciph_per))
+    nhits = null_diagnostic.search_null_tolerant_stream(
+        wstream[:2500], ciph_per, scorer, label="first-letters", top_k=3
+    )
+    top_n = nhits[0]
+    check("null-diagnostic: stream search locates periodic uniform A-Z null cipher #1 at true start",
+          top_n["start"] == 1200 and null_diagnostic.is_null_lead(top_n)
+          and top_n["rigid_score"] < -8.8 and "BRINKLE" in top_n["cleaned"],
+          f"null={top_n['null_score']:.3f} rigid={top_n['rigid_score']:.3f} start={top_n['start']}")
+
+    noise_nhits = null_diagnostic.search_null_tolerant_stream(
+        wstream[4000:6500], ciph_per, scorer, label="first-letters", top_k=3
+    )
+    check("null-diagnostic: unrelated novel slice triggers zero false-positive null leads",
+          not any(null_diagnostic.is_null_lead(h) for h in noise_nhits),
+          f"best_noise={noise_nhits[0]['null_score']:.3f} skips={noise_nhits[0]['n_skipped']}")
+
+
 def main():
     test_codes_example()
     test_puzzle_22()
@@ -450,6 +609,7 @@ def main():
     test_round_trips(scorer)
     test_null_tolerance(scorer)
     test_ciphertext_patterns_and_drift(scorer)
+    test_extended_palindromic_and_null_viterbi(scorer)
     print()
     if failures:
         print(f"{len(failures)} FAILURES: {failures}")

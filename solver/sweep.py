@@ -2,7 +2,7 @@
 
 Usage:
     uv run python sweep.py TEXT.txt [...] [--cipher 3-1|3-2|3-3|2-4|all] [--top 10]
-                                            [--sliding-only]
+                                            [--sliding-only | --all-palindromic]
 
 `all` is the four open ciphers: 2-4, 3-1, 3-2, 3-3. Name 2-1, 2-2, or 2-3
 explicitly to sweep a solved message.
@@ -135,15 +135,17 @@ def chapters_for(text_path):
     return {}
 
 
-def sweep_text(raw, cipher, scorer, top, extra_rules=None, palindromic=True):
+def sweep_text(raw, cipher, scorer, top, extra_rules=None, palindromic=True,
+               all_palindromic=False):
     """Score `raw` against one cipher, by both search shapes.
 
     Sliding: the 21 families (plus any extra_rules) with the numbering start slid
-    across the whole text and both stream directions tested. Anchored: every family
-    in doubled `S || reverse(S)` form, anchored on paragraph boundaries and gated to
-    the passage lengths this cipher can address. The anchored shape is not optional
-    decoration — 153 of 2-1's 314 integers exceed its 492-letter source, so a purely
-    sliding sweep returns a noise-band negative on the correct book and passage.
+    across the whole text and both stream directions tested. Anchored: `S || reverse(S)`
+    anchored on sentence starts across the 3 core families (`letters`, `first-letters`,
+    `last-letters`) by default, or across all 21 phase-resolved families when
+    `all_palindromic=True`. The anchored shape is not optional decoration — 153 of
+    2-1's 314 integers exceed its 492-letter source, so a purely sliding sweep returns
+    a noise-band negative on the correct book and passage.
 
     `windowed` is computed across the whole retained pool, not just the reported top,
     because the mean and the window score have different noise floors (-8.6 and -8.1).
@@ -181,25 +183,23 @@ def sweep_text(raw, cipher, scorer, top, extra_rules=None, palindromic=True):
         })
 
     if palindromic:
-        starts = rules.sentence_boundary_starts(raw)
-        coords = {
-            "letters": [s[0] for s in starts],
-            "first-letters": [s[1] for s in starts],
-            "last-letters": [s[1] for s in starts],
-        }
         lo, hi = rules.palindromic_length_gate(max_n)
         lengths = list(range(lo, hi + 1))
         seen = set()
-        for fam in rules.anchored_scan_families():
-            stream = families.get(fam)
-            if not stream or not coords[fam]:
+        for fam, phase, stream, st_coords in rules.anchored_palindromic_substreams(
+            raw, include_extended=all_palindromic
+        ):
+            if not stream or not st_coords:
                 continue
             by_mean, by_window = engine.search_anchored(
-                stream, cipher, scorer, coords[fam], lengths, top_k=top)
+                stream, cipher, scorer, st_coords, lengths, top_k=top)
             pairs = by_mean[0]["pairs"] if by_mean else 0
-            anchored_pairs[fam] = pairs
+            anchored_pairs[fam] = anchored_pairs.get(fam, 0) + pairs
+            rule_name = (
+                f"{fam}-palindrome" if phase is None else f"{fam}-p{phase}-palindrome"
+            )
             for h in by_mean + by_window:
-                sig = (fam, h["start"], h["length"], h["plaintext_direction"])
+                sig = (rule_name, h["start"], h["length"], h["plaintext_direction"])
                 if sig in seen:
                     continue
                 seen.add(sig)
@@ -211,7 +211,7 @@ def sweep_text(raw, cipher, scorer, top, extra_rules=None, palindromic=True):
                 out.append({
                     "score": round(h["score"], 4),
                     "windowed": round(h["windowed"], 4),
-                    "rule": f"{fam}-palindrome", "start": h["start"],
+                    "rule": rule_name, "start": h["start"],
                     "length": h["length"], "direction": "anchored",
                     "plaintext_direction": h["plaintext_direction"],
                     "decode": dec, "origin": "palindromic",
@@ -229,6 +229,9 @@ def main():
     ap.add_argument("--sliding-only", action="store_true",
                     help="skip the anchored palindromic family; reproduces the "
                          "pre-2026-11-03 search space, for calibration comparison")
+    ap.add_argument("--all-palindromic", action="store_true",
+                    help="run exact phase-resolved anchored palindromic scan across "
+                         "all 21 rule families, not just the 3 default core families")
     args = ap.parse_args()
 
     if args.cipher == "all":
@@ -251,7 +254,8 @@ def main():
         for key in keys:
             hits, pool, anchored = sweep_text(raw, CIPHERS[key], scorer, args.top,
                                               extra,
-                                              palindromic=not args.sliding_only)
+                                              palindromic=not args.sliding_only,
+                                              all_palindromic=args.all_palindromic)
             n_pal = sum(1 for h in pool if h["origin"] == "palindromic")
             print(f"== {path} vs cipher {key}"
                   f"  (pool={len(pool)}, anchored palindromic={n_pal}"

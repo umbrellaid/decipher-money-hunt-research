@@ -49,14 +49,31 @@ solvable, per the rescan note.)
 
 ## The glyph suitcase (center of the pool deck)
 
-A suitcase whose face carries a **2-row × 4-column grid of 8 composite glyphs**
-(grid shape confirmed at 4×). Each cell pairs a left element with a right element:
-the left element alternates between a **"3"-/J-hook form** and a **curly
-Devanagari-like / M-Σ-like form**; the right element is one or two **triangles**.
-Exact glyph identities remain undecoded, but the grid is exactly 2×4 — it is not
-a longer string. The two forms alternate across the row:
-[J-hook + triangles] [curly + triangle] [J-hook] [curly + triangle], with the
-second row continuing the same alternation with fewer triangles.
+A suitcase whose face carries **two identical horizontal 4-column monogram bands**
+(inspected cell-by-cell at native 300 dpi on 2026-11-11). Only **three symbol types**
+appear anywhere on the suitcase:
+1. **Devanagari `उ` (`U`, U+0909)** — the "3"-like character with a horizontal headbar (`shirorekha`) and right tail;
+2. **Devanagari `स` (`SA`, U+0938)** — the curly consonant with inherent vowel *a*;
+3. **Hollow triangle `Δ`**.
+
+Exact cell breakdown across the upper and lower 4-column bands:
+- **Upper band:** `[2 stacked उ + 3 stacked Δ]` · `[1 large स + 1 Δ below]` · `[2 stacked उ, 0 Δ]` · `[1 large स + 1 Δ below]`
+- **Lower band:** `[2 stacked उ + 3 stacked Δ]` · `[1 large स + lower area occluded by swimmer's dark hair]` · `[2 stacked उ, 0 Δ]` · `[1 large स + 1 Δ below]`
+
+**Hypothesis checks (2026-11-11):**
+- **Devanagari `"USA"` monogram (`@LuNa-zw9wu`, `@hendrikhardeman9832`) — SUPPORTED:**
+  The two non-geometric characters are unambiguously Devanagari **`उ` (`U`)** and **`स`
+  (`SA`)**, repeating `[उ, स, उ, स]` across each band like designer luggage monogramming
+  and spelling **`U` + `SA` = `USA`** phonetically (with `Δ` either decorative/delta or
+  reinforcing `A`). This directly supplies Line 1 (`Country: United States`) without
+  needing higher scan DPI.
+- **Glyph-count indexing (`@StijnHommes`) — NEGATIVE for state/letter extraction:**
+  Visible totals are **`8 उ`, `4 स`, `9 Δ`** (`21` total marks; `10 Δ` / `22` total if the
+  hair-occluded lower-col-2 triangle matches the upper band); single-band totals are
+  `4 उ, 2 स, 5 Δ` (`11` marks). Indexing `(8, 4, 9)` → `H, D, I` (or `(8, 4, 10)` → `H, D, J`),
+  band counts `(4, 2, 5)` → `D, B, E`, or US state admission numbers (`#8 SC`, `#4 GA`,
+  `#9 NH`, `#10 VA`, `#11 NY` only via unverified single-band sum `4+2+5=11`) produces no
+  clean spelling and does not yield wishkohaku's `T` (`20`).
 
 ## Other text and objects
 

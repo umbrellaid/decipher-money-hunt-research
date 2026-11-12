@@ -206,13 +206,20 @@ Future researchers and AI models should **not** spend time repeating these teste
 
 ### Mechanism M5 — High-Signal Human Observations from YouTube Comments & Transcripts
 Future solvers should keep these specific community observations in view:
-1. **`p10` Suitcase `2×4` Glyphs = `"USA"` (`@hendrikhardeman9832` + 2 independent readers):**
-   Devanagari **`उ`** (`U`) + **`स`** (`SA`, with inherent vowel *a*!) + **`Δ`** (`A` /
-   delta), encoding `USA` directly for Line 1 (`Country`) or indexing by glyph counts.
-2. **`p12` Birds = WWII US Navy Ship Namesakes (`@BiffEnterprises`):** Every bird species
-   on `p12` (pelican, flamingo, penguin, hornbill, etc.) also matches a WWII US Navy ship
-   class/vessel (linking `WASHINGTON` → *USS Washington* BB-56 and the WWII military
-   layer).
+1. **`p10` Suitcase Monogram Bands = `"USA"` (`@hendrikhardeman9832` + 2 independent readers; verified at 300 dpi 2026-11-11):**
+   Native crop confirms **two identical 4-column monogram bands** (`[2उ+3Δ, स+Δ, 2उ, स+Δ]` × 2;
+   lower-col-2 `Δ` occluded by swimmer's hair) using Devanagari **`उ`** (`U`) + **`स`** (`SA`,
+   inherent vowel *a*) + **`Δ`**, directly monogramming **`USA`** for Line 1 (`Country`), whereas
+   glyph counts (`8 उ, 4 स, 9–10 Δ`) do not index cleanly to a state or wishkohaku's `T` (`page_10.md`).
+2. **`p12` Birds vs. WWII US Navy Ship Namesakes (`@BiffEnterprises`; checked 2026-11-11):**
+   Most `p12` birds do share names with WWII US Navy vessels (*USS Cockatoo* `AMc-8`, *USS Hornbill*
+   `AMc-13`, *USS Flamingo* `AM-32`, *USS Penguin* `AM-33`, *USS Macaw* `ASR-11`, *USS Pigeon*
+   `ASR-6`, *USS Heron* `AM-10`, *USS Humming Bird* `AMc-26`), but with exceptions (*USS Spoonbill*
+   `MSC-202` is 1955 post-WWII; *USS Wren* `DD-568` honors Sgt. Solomon Wren) and a **high base-rate
+   confound**: USN *Lapwing*/*Auk*/*Accentor*-class minesweepers used hundreds of common bird names.
+   Separately, `p12`'s `WASHINGTON` letter indexing is **invariant** across key bird-ID corrections
+   (`TOUCAN`[2] = `HORNBILL`[2] = `O`; `MACAW`[2] = `PARROT`[2] = `PARAKEET`[2] = `A`; `6` Crowned
+   `PIGEON`[6] = `N`; `6` psittacines `COCKATOO`[6] = `T`; `page_12.md`).
 3. **`p16` 16-Day Strip = May 1986 Launch Calendar (`@eschma94`):** `W T F S S M T W T F S
    S M T W T` starting on a Wednesday matches **May 1, 1986** (a Thursday—so April 30 = W,
    or Oct 1, 1986 = Wednesday!), potentially dating or indexing 16 specific days.

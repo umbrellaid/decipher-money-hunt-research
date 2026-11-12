@@ -73,11 +73,14 @@ the underlying text is. Two consequences, both now enforced in `solver/sweep.py`
 A trimmed-mean variant (average of the best 60–70 % of trigram logs) was implemented,
 tested and **removed on 2026-10-05**: pure-noise decodes score ≈ −7.3 under it, inside
 the genuine-English band, so it cannot separate signal from noise and would have
-produced false positives. And neither statistic can rescue **scattered or periodic**
-nulls, because then no window of the decode is null-free; `validate.py` asserts this
-as a documented limitation. A scattered-null plaintext would need partial-word
-back-solving, which is not implemented — it is the most valuable unimplemented idea
-in this repository.
+produced false positives. And neither rigid nor windowed scoring can rescue **scattered or
+periodic** nulls, because then no contiguous window of the decode is null-free;
+`validate.py` asserts this as a documented limitation of the rigid/windowed statistics.
+**Added 2026-11-11 (`solver/null_diagnostic.py`):** a bounded skip-trigram Viterbi dynamic
+program (`skip_penalty = −11.2`, `max_consec = 2`, gated at `<= 20%` skipped tokens)
+bridges single/double skipped positions without triggering trimmed-mean false positives,
+recovering ~10–15% scattered or periodic `A–Z` nulls (including OOV proper nouns like
+`BRINKLEY`) into the `> −8.12` band while whole-book sweeps stay below `−8.19`.
 
 ## What a negative result proves — and what it does not
 
@@ -263,13 +266,17 @@ stream.* It does **not** prove the book is innocent, because of three known gaps
      sliding sweep already covers. For 2-1 that is `[490, 979]`, which deliberately
      admits the 490-letter Wikisource variant as well as the true 492, so the near-miss
      gets scored instead of silently skipped.
-   - **Coverage is three families, not 21** (`rules.anchored_scan_families`): `letters`,
-     `first-letters`, `last-letters`. Those are the only ones whose stream coordinates map
-     exactly onto a sentence start. The every-Nth and word-Nth-letter families stride
-     through the text, so a sentence start does not land on a stream index without a
-     separate mapping, and guessing it would produce a misaligned search that still looks
-     like a negative. **An anchored-scan negative does not speak to those 18 families.**
-     `letters` is the family 2-1 actually used.
+   - **Default coverage is three core families (`letters`, `first-letters`,
+     `last-letters`), with `--all-palindromic` extending exact phase-resolved coverage
+     to all 21 families (`rules.anchored_palindromic_substreams`, added 2026-11-11).**
+     For strided `every{2,3,5,10}-*` families, splitting the base stream into `n` modulo-`n`
+     phase substreams (`p = (s0 + n - 1) % n`, `q0 = (s0 + n - 1) // n`) makes every
+     mid-text sentence or paragraph start byte-identical to direct passage extraction
+     without increasing the total number of start anchors; character-offset `bisect`
+     alignment handles `word{2,3}th-letter`, `line-first`, and `line-last`, while
+     `sentence-first` and `paragraph-first` index directly. (`letters` is the family 2-1
+     actually used, so the default sweep keeps the fast 3-family run unless
+     `--all-palindromic` is requested.)
    - Measured cost on a 579k-letter book (Austen, 7,544 sentence starts), one family,
      four open ciphers: ~147 s, ~4.0 M pairs total. `sweep.py` runs three families, so
      budget roughly 7–8 minutes per full-size book for the anchored scan alone, on top of
@@ -286,9 +293,10 @@ From the repository root (needs [uv](https://docs.astral.sh/uv/)):
 
 ```
 uv run python solver/fetch_texts.py        # public-domain corpus + scoring model
-uv run python solver/validate.py           # 133 regression checks, must all pass
+uv run python solver/validate.py           # 144 regression checks, must all pass
 uv run python solver/sweep.py mybook.txt --cipher 3-1 --top 10
 uv run python solver/drift_diagnostic.py mybook.txt --cipher all --top 5
+uv run python solver/null_diagnostic.py mybook.txt --cipher all --top 5
 ```
 
 `--cipher all` sweeps the four open ciphers (2-4, 3-1, 3-2, 3-3). The scorer

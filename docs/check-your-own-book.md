@@ -12,7 +12,9 @@ you use if you would rather not run the commands yourself.
 
 ## 0. Which books are worth scanning
 
-See `docs/decipher-iii.md` and `docs/decipher-ii.md` for the ranked suspect lists.
+See [`docs/scan-priority-top10.md`](scan-priority-top10.md) for the current **Top 10
+ranked paperback scan list** (with 15-minute structural spot-scan page targets), plus
+`docs/decipher-iii.md` and `docs/decipher-ii.md` for the full suspect rosters.
 Constraints: the key text must have been published **before 1987** (Decipher III) or
 **before 1985** (Decipher II 2-4). Any printing is worth a sweep — but note that
 numbering depends on the exact edition, so an early printing closest to the contest
@@ -66,14 +68,16 @@ uv run python solver/sweep.py mybook.clean.txt --cipher all --top 10
 
 By default `sweep.py` runs **both** search shapes: the 21 sliding rule families (plus
 chapter-title chains if present) and the sentence/word-anchored palindromic `S || reverse(S)`
-scan (`letters`, `first-letters`, `last-letters`, added after Eckman's 2-1 solve). Pass
-`--sliding-only` only if you want a fast first pass without the ~7-minute anchored scan.
+scan (`letters`, `first-letters`, `last-letters`, added after Eckman's 2-1 solve; pass
+`--all-palindromic` to extend the anchored scan across all 21 phase-resolved families, or
+`--sliding-only` for a fast first pass without the anchored scan).
 
-If your OCR or edition might differ by 1–2 dropped/split words inside a passage, also run
-the fast 3-band index-elastic diagnostic (~5 seconds per book):
+If your OCR or edition might differ by 1–2 dropped/split words inside a passage, or if
+the plaintext contains ~10–15% scattered/periodic nulls, also run the fast diagnostics:
 
 ```
 uv run python solver/drift_diagnostic.py mybook.clean.txt --cipher all --top 5
+uv run python solver/null_diagnostic.py mybook.clean.txt --cipher all --top 5
 ```
 
 Read the two score columns from `sweep.py`:
@@ -111,8 +115,9 @@ Paste this, attaching your clean text file:
 > also tests straight and palindromic chapter-title chains.
 > Run:
 > `uv run python solver/sweep.py <file> --cipher all --top 10`
-> (and if the text comes from OCR or an unpinned edition, also run
-> `uv run python solver/drift_diagnostic.py <file> --cipher all --top 5`).
+> (pass `--all-palindromic` to extend the anchored palindromic scan across all 21 rule
+> families, and also run `uv run python solver/drift_diagnostic.py <file> --cipher all --top 5`
+> and `uv run python solver/null_diagnostic.py <file> --cipher all --top 5`).
 > Report, for each cipher: the best score, the rule family and start offset, and the
 > decoded string. State plainly whether any score exceeds -8.2 (prose decodes land at
 > -7.9 to -8.0, verse decodes like 2-1 land near -8.14, and noise sits at -8.6 and
