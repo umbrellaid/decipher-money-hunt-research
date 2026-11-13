@@ -645,6 +645,15 @@ def test_ocr_spread_and_marker_helpers():
           ingest_by_markers.extract_glued_nums(["Se", "BUC", "erlotSes6"]) == [6]
           and ingest_by_markers.extract_glued_nums(["Secret", "Agent", "X-9"]) == [])
 
+    # 4. ALL-CAPS sans-serif '|' -> 'I' recovery vs border-speck stripping
+    caps_para = [["WHEN | DID SEE SUSAN CALVIN AGAIN, IT WAS AT"], ["| THE VACATION WAS LONGER THAN TWO WEEKS."]]
+    cleaned_caps = ingest_by_markers.dehyphenate_and_clean_paragraphs(caps_para, keep_lines=False)
+    check("marker-ingest: recovers sans-serif 'I' in ALL-CAPS opener while stripping border '|' before article",
+          "WHEN I DID SEE SUSAN CALVIN" in cleaned_caps
+          and "| THE VACATION" not in cleaned_caps
+          and "THE VACATION WAS LONGER" in cleaned_caps,
+          f"cleaned_caps={cleaned_caps!r}")
+
 
 def main():
     test_codes_example()

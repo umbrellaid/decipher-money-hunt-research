@@ -1072,7 +1072,74 @@ Removed *Cat's Cradle* from `docs/scan-priority-top10.md` (no re-scan needed) an
 L'Amour (*The Walking Drum* / *Hondo*) into active slot #10. Validation: `verify_ii1.py` **19/19
 PASS**; `validate.py` **149/149 PASS**.
 
+## 2026-11-13 — Spread-split/OCR re-processing & exhaustive 21-family sweeps of *I, Robot*, *Doctor Zhivago*, and *The Thorn Birds*: all negative
 
+Re-processed the remaining three two-page-spread CZUR paperbacks (`705` raw spreads → `1,404`
+dewarped single-page images, `0` errors) using the upgraded chroma-calibrated spread splitter
+(`solver/preprocess_spreads.py`) and `QUOTE_NONE` parallel marker/map ingestion pipeline
+(`solver/ingest_by_markers.py`), retiring every remaining OCR-noise caveat across our five physical
+book scans.
 
+### Pipeline fixes & before-vs-after QA metrics
+
+1. **`solver/preprocess_spreads.py`:** Calibrated warm-paper chroma gate `(gray_h > 135) & ((R − G) < 15)`
+   (accommodating yellowed Signet 1960 and Fawcett Crest 1970 stock while still rejecting fingers/thumbs
+   at `R − G > +18`), widened `close_1d(..., max_gap=48)` across wide spine shadows, relaxed leaf-stack
+   trim (`max_leaf_w = max(890.0, 0.982 * min(w_L, w_R))`) so wide Avon text blocks are never clipped,
+   and added `--workers` multi-threaded batch execution.
+2. **`solver/ingest_by_markers.py` & `solver/build_whole_books.py`:**
+   - Added `--exclude-images` (dropping aborted mid-flip `image00211` and back-cover `image00225` on
+     *I, Robot*, plus blurred page-lift `image00280_2R` on *Doctor Zhivago* in favor of crisp retake
+     `281_2R`), widened in-place retake deduplication lookback `[-8:] → [-16:]`, raised `--strip-header`
+     top zone to `top < 560` while disambiguating running-head folios (`Reason 47`, `Evidence 147`) from
+     true sunken mid-page story headings, stripped bottom-margin folio specks (`692 Pas`) and decorative
+     dotted rules, added `--drop-line-regex` for misread italic section-`1` glyphs on *Doctor Zhivago*,
+     and added `--mode map --map chapters.csv` with chapter-vignette sinkage filtering (`first_body_top >= 900`)
+     to split *The Thorn Birds* into all **`19` continuously numbered chapters** rather than `7` coarse Parts.
+   - Fixed Futura sans-serif ALL-CAPS opener `|`/`1` → `I` recovery before edge-punctuation stripping
+     (recovering word #1 `"I LOOKED AT MY NOTES AND I DIDN'T LIKE THEM."` on *I, Robot* `ch01` and
+     `"WHEN I DID SEE SUSAN CALVIN AGAIN..."` on `ch07`; covered by unit check #150 in `solver/validate.py`).
+   - Updated `SUPERSEDED` in `solver/build_whole_books.py` (`i-robot → i-robot-v2`,
+     `doctor-zhivago → doctor-zhivago-v2`, `the-thorn-birds → the-thorn-birds-v2`).
+
+| Book (Edition) | Raw Spreads → Pages | Sections Recovered | Clean Body Words (Physical Lines) | Old OCR QA (`< 85%` pages) | New OCR QA (`< 85%` body pages) | Key Structural Fixes |
+|---|---:|---|---:|---|---|---|
+| ***I, Robot*** (Fawcett Crest `M1477`, Sep 1970) | `100 → 198` (`186` body pp. `7..192`) | **`10 / 10`** (`Introduction` + 9 stories) | `69,808` (`11,104` lines) | `38` flagged pages; `Robbie` anchored on p. 7 instead of p. 11; mid-page `Reason` & `Evidence` missed | **`93.2%` mean** (`0 / 186` `< 85%`, min `86.2%`) | Fixed `Robbie` p. 11 (`"NINETY-EIGHT-NINETY-NINE-ONE HUNDRED."`), mid-page `Reason` (p. 47) & `Evidence` (p. 147), sans-serif `I`s (`ch01`, `ch07`), and mid-flip `211` |
+| ***Doctor Zhivago*** (Signet `Q2014`, Feb 1960) | `236 → 470` (`448` body pp. `5..456`) | **`17 / 17`** (`Ch. 1–16` + `Ch. 17` *Poems*) | `198,946` (`26,487` lines) | `309` pages `< 85%` ("strong negative, not elimination" caveat); TSV quote swallowing | **`93.1%` mean** (`6 / 448` `< 85%`, min `83.5%`) | `51×` reduction in `< 85%` pages; `Ch. 17` *Hamlet* (`"The stir is over. I step forth on the boards."`) verified; all 16 recto chapter-subtitle running heads stripped |
+| ***The Thorn Birds*** (Avon `0-380-01817-9`, May 1978) | `369 → 736` (`675` body pp. `11..692`) | **`19 / 19`** (`Ch. 1..19` across Parts `1..7`) | `229,796` (`32,194` lines) | `77.6%` mean (`128` pages `< 70%`), `7` Part files only, off-by-one Part 3/6 starts, `424,855` TSV-corrupted tokens | **`91.5%` mean** (`2 / 675` `< 85%`: `84.8%`, `84.9%`) | All `19` numbered chapters split cleanly; Part 3 (`117_2R`) & Part 6 (`276_2R`) off-by-one starts fixed; front-cover OCR noise excluded from wholebook |
+
+### Exhaustive 5-tool cipher solver results (all negative)
+
+#### 1. *I, Robot* (`i-robot-v2`)
+
+| Tool / Target | `2-4` best | `3-1` best | `3-2` best | `3-3` best | Notes / Verdict |
+|---|---:|---:|---:|---:|---|
+| `sweep.py --all-palindromic` (`i-robot-v2.clean.txt` + `10` titles, `100` title chars) | −8.7662 (win −8.6406) | **−8.8341** (win −8.4205) | −8.3900 (win −7.8227\*) | −8.6614 (win −8.2748) | 21 sliding + 21 anchored-palindromic families; \*1 `every10-wordlast` vowel-salad window artifact — **0 English hits, negative** |
+| `sweep.py --all-palindromic` (`i-robot-v2-lines.clean.txt`, `11,104` physical lines) | −8.8280 (win −8.5107) | **−8.6076** (win −8.5318) | −8.5158 (win −8.2637) | −8.6797 (win −8.1892) | Exact Fawcett Crest physical `line-first` (`0.82M–1.97M` pairs) & `line-last` (`1.13M–2.70M` pairs) — **0 flags, negative** |
+| `drift_diagnostic.py --sentence-chars` (`i-robot-v2.clean.txt`) | −9.1399 | **−9.3573** | −8.9344 | −9.0557 | 25 elastic 3-band profiles (`384.5 s`) — **0 flags (`<= -8.12`), negative** |
+| `null_diagnostic.py --sentence-chars` (`i-robot-v2.clean.txt`) | −8.2723 | **−8.3880** | −8.2028 | −8.3197 | Skip-trigram Viterbi (`74.7 s`) — **0 flags (`<= -8.12`), negative** |
+| `body_scan.py` + `zero_z_prefilter.py` (`texts/i-robot-v2`, `51` windows) | 2.141 (`WordLast`) | 2.263 (`WordLast`) | 2.725 (`WordLast`) | 2.518 (`WordLast`) | **`51/51` windows (`11/11` files) fail `3-1` zero-`Z`**; all previews vowel salad — **negative** |
+
+#### 2. *Doctor Zhivago* (`doctor-zhivago-v2`)
+
+| Tool / Target | `2-4` best | `3-1` best | `3-2` best | `3-3` best | Notes / Verdict |
+|---|---:|---:|---:|---:|---|
+| `sweep.py --all-palindromic` (`doctor-zhivago-v2.clean.txt` + `17` titles, `494` title chars) | −8.7397 (win −8.1848) | **−8.8545** (win −8.6054) | −8.3926 (win −7.8726\*) | −8.6855 (win −8.1967) | 21 sliding + 21 anchored-palindromic families + straight & palindromic `3-2` title chains; \*`wordlast`/`line-last` vowel-salad window artifacts — **0 English hits, negative** |
+| `sweep.py --all-palindromic` (`doctor-zhivago-v2-lines.clean.txt`, `26,487` physical lines) | −8.7162 (win −8.2839) | **−8.8051** (win −8.6212) | −8.4574 (win −8.2465) | −8.6022 (win −7.9986\*) | Exact Signet 1960 physical `line-first` (`1.53M–3.76M` pairs) & `line-last` (`2.55M–6.34M` pairs); \*`last-letters` vowel salad — **0 English hits, negative** |
+| `drift_diagnostic.py --sentence-chars` (`doctor-zhivago-v2.clean.txt`) | −9.1133 | **−9.2494** | −8.8155 | −9.2096 | 25 elastic 3-band profiles (`1,057.2 s`) — **0 flags (`<= -8.12`), negative** |
+| `null_diagnostic.py --sentence-chars` (`doctor-zhivago-v2.clean.txt`) | −8.2909 | **−8.2615** | −8.2156 | −8.3109 | Skip-trigram Viterbi (`213.2 s`) — **0 flags (`<= -8.12`), negative** |
+| `body_scan.py` + `zero_z_prefilter.py` (`texts/doctor-zhivago-v2`, `93` windows) | 1.663 (`WordLast`) | 2.242 (`WordLast`) | 2.487 (`WordLast`) | 2.341 (`WordLast`) | `83/93` windows (`16/18` files; `ch09` & `ch14` pass zero-`Z`) fail `3-1` zero-`Z`; all previews vowel salad — **negative** |
+
+#### 3. *The Thorn Birds* (`the-thorn-birds-v2`)
+
+| Tool / Target | `2-4` best | `3-1` best | `3-2` best | `3-3` best | Notes / Verdict |
+|---|---:|---:|---:|---:|---|
+| `sweep.py --all-palindromic` (`the-thorn-birds-v2.clean.txt` + `19` titles, `366` title chars) | **−8.6897** (win −8.3214) | −8.7006 (win −8.3554) | −8.2182 (win −7.9963\*) | −8.6180 (win −8.1020) | `8.25M–10.33M` anchored `2-4` pairs/family across 21 families; \*`last-letters`/`wordlast` vowel-salad window artifacts — **0 English hits, negative** |
+| `sweep.py --all-palindromic` (`the-thorn-birds-v2-lines.clean.txt`, `32,194` physical lines) | **−8.6961** (win −8.4409) | −8.7491 (win −8.4386) | −8.3414 (win −7.8877\*) | −8.6924 (win −8.4037) | Exact Avon 1978 physical `line-first` (`1.83M–4.56M` pairs) & `line-last` (`3.11M–7.72M` pairs); \*`wordlast` vowel salad — **0 English hits, negative** |
+| `drift_diagnostic.py --sentence-chars` (`the-thorn-birds-v2.clean.txt`) | **−9.1311** | −9.2217 | −8.8345 | −9.2114 | 25 elastic 3-band profiles (`990.0 s`) — **0 flags (`<= -8.12`), negative** |
+| `null_diagnostic.py --sentence-chars` (`the-thorn-birds-v2.clean.txt`) | **−8.2836** | −8.3686 | −8.1813 | −8.3403 | Skip-trigram Viterbi (`187.8 s`) — **0 flags (`<= -8.12`), negative** (confirming the 2026-11-11 `−8.0228` flag was pure front-cover OCR garbage) |
+| `body_scan.py` + `zero_z_prefilter.py` (`texts/the-thorn-birds-v2`, `105` windows) | 1.714 (`1.801` `No100s`, `WordLast`) | 2.089 (`WordLast`) | 2.068 (`WordLast`) | 2.000 (`WordLast`) | `77/105` windows (`14/20` files, incl. `ch10`) fail `3-1` zero-`Z`; all `4,095` streams × `5` drifts × `2` dirs are vowel salad — **negative** |
+
+Validation: `verify_ii1.py` **19/19 PASS**; `validate.py` **150/150 PASS**.
 
 

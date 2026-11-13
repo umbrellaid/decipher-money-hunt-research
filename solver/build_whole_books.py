@@ -33,10 +33,13 @@ SKIP_DIRS = {
     "wholebooks",   # our own output
 }
 SKIP_PREFIXES = ("ia-prescreen",)          # ebook/IA grade, already screened
-SUPERSEDED = {                              # replaced by a later rescan
+SUPERSEDED = {                              # replaced by a later rescan / v2-v3 pipeline
     "foundation_new": "foundation2",
     "foundation_v1_2026-10-21": "foundation2",
-    "the-thorn-birds-old-2026-10-24": "the-thorn-birds",
+    "the-thorn-birds-old-2026-10-24": "the-thorn-birds-v2",
+    "the-thorn-birds": "the-thorn-birds-v2",
+    "i-robot": "i-robot-v2",
+    "doctor-zhivago": "doctor-zhivago-v2",
     # v1 was OCR'd from ScanTailor / thresh=70 mangled splits; v2 missed 31
     # markers due to TSV quote-eating and rigid vertical cuts; v3 splits along
     # the tilted ink-masked spine crease and recovers all 127 chapters cleanly.

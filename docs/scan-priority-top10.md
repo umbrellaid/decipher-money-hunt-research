@@ -1,18 +1,14 @@
-# Top 10 Ranked Paperback Scan Priority List (Updated 2026-11-12)
+# Top 10 Ranked Paperback Scan Priority List (Updated 2026-11-13)
 
 Practical scanning order for the next round of physical book scans (CZUR Aura or overhead
 phone/book scanner), incorporating:
 
-1. **Five completed whole-book physical paperback sweeps** recorded in [`results/RUN_LOG.md`](../results/RUN_LOG.md):
-   - *Foundation* (Del Rey 1986)
-   - *I, Robot* (Fawcett Crest 1970)
-   - *Doctor Zhivago* (Signet 1960)
-   - *The Thorn Birds* (Avon `0-380-01817-9`)
-   - ***Cat's Cradle*** (Dell `#11149`, `0-440-11149-8`, 59th printing Nov 1984 — **recovered
-     2026-11-12 directly from existing 2026-10-26 raw captures** at `92.21%` mean confidence,
-     `181/181` body pages, `127/127` chapters; swept negative across all 21 sliding + 21
-     palindromic families, physical `line-first`/`line-last`, 127-title chains, 3-band drift,
-     and scattered-null diagnostics — **no re-scan needed!**)
+1. **Five completed whole-book physical paperback sweeps** recorded in [`results/RUN_LOG.md`](../results/RUN_LOG.md) (with all four two-page-spread books cleanly re-processed from raw captures on 2026-11-12/13 — **no re-scans needed for any of the five**):
+   - *Foundation* (Del Rey 1986 — `329` single pages, `94.0%` mean conf, `27` chapters)
+   - *I, Robot* (Fawcett Crest 1970 — re-processed 2026-11-13: `186` body pages, `93.2%` mean conf, `0` pages `< 85%`, `10/10` sections)
+   - *Doctor Zhivago* (Signet 1960 — re-processed 2026-11-13: `448` body pages, `93.1%` mean conf, `6/448` pages `< 85%`, `17/17` chapters incl. *The Poems of Yurii Zhivago*)
+   - *The Thorn Birds* (Avon `0-380-01817-9` — re-processed 2026-11-13: `675` body pages, `91.5%` mean conf, `2/675` pages `< 85%`, `19/19` numbered chapters)
+   - *Cat's Cradle* (Dell `#11149`, `0-440-11149-8`, 59th printing Nov 1984 — re-processed 2026-11-12: `181` body pages, `92.2%` mean conf, `0` pages `< 85%`, `127/127` chapters)
 2. **Ciphertext structural laws** from [`docs/decipher-ciphertext-patterns.md`](decipher-ciphertext-patterns.md):
    - **`3-1` (Group B, pre-1987, `max = 516`, clues `"10"` & `"End"`):** almost strict
      without-replacement (`4` repeats across 164 numeric tokens), word-initial `'E'`

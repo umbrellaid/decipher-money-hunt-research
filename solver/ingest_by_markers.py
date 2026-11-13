@@ -330,7 +330,29 @@ def dehyphenate_and_clean_paragraphs(paragraphs: list[list[str]], keep_lines: bo
             continue
         cleaned_lines = []
         for ln in p_lines:
-            toks = strip_edge_noise_tokens(ln.split())
+            raw_toks = ln.split()
+            alpha_toks = [re.sub(r"[^A-Za-z]", "", t) for t in raw_toks]
+            alpha_toks = [a for a in alpha_toks if a]
+            is_all_caps_line = len(alpha_toks) >= 3 and all(a.isupper() for a in alpha_toks)
+            if is_all_caps_line:
+                fixed_raw = []
+                for idx_t, rt in enumerate(raw_toks):
+                    if rt in {"|", "1"}:
+                        if 0 < idx_t < len(raw_toks) - 1:
+                            fixed_raw.append("I")
+                            continue
+                        if idx_t == 0 and len(raw_toks) > 1:
+                            nxt_w = re.sub(r"[^A-Za-z']", "", raw_toks[1]).upper()
+                            if nxt_w in {
+                                "LOOKED", "SAW", "KNEW", "DID", "DIDN'T", "HAD", "HAVE",
+                                "WAS", "AM", "THOUGHT", "FELT", "HEARD", "WENT", "CAME",
+                                "TOOK", "FOUND", "TRIED", "WANTED", "NEVER", "REMEMBER",
+                            }:
+                                fixed_raw.append("I")
+                                continue
+                    fixed_raw.append(rt)
+                raw_toks = fixed_raw
+            toks = strip_edge_noise_tokens(raw_toks)
             toks = [
                 t for t in toks
                 if not re.fullmatch(r"\d{1,4}", t)
@@ -356,16 +378,19 @@ def main() -> None:
     ap.add_argument("--book", required=True)
     ap.add_argument("--pages-dir", required=True, type=Path)
     ap.add_argument("--out-dir", required=True, type=Path)
-    ap.add_argument("--mode", choices=["cc", "phrases"], required=True)
+    ap.add_argument("--mode", choices=["cc", "phrases", "map"], required=True)
     ap.add_argument("--max-chapter", type=int, default=127, help="cc mode: last chapter number")
     ap.add_argument("--phrases", default="", help='phrases mode: "ch=Phrase,ch=Phrase,..."')
+    ap.add_argument("--map", type=Path, default=None, help="map mode: CSV with start_image,chapter,label")
     ap.add_argument("--titles-json", type=Path, default=None, help="JSON mapping chapter number -> exact title")
     ap.add_argument("--psm", type=int, default=6)
     ap.add_argument("--psm-override", default="")
     ap.add_argument("--strip-header", action="append", default=[], help="regex; drop top running-head line")
+    ap.add_argument("--drop-line-regex", action="append", default=[], help="regex; drop short structural divider lines")
     ap.add_argument("--drop-next-line", action="store_true")
     ap.add_argument("--start-image", default="", help="skip marker detection before this image")
     ap.add_argument("--end-image", default="", help="exclude pages strictly after this image from body chapters")
+    ap.add_argument("--exclude-images", default="", help="comma-separated image filenames or stems to exclude")
     ap.add_argument("--wholebook-out", type=Path, default=None, help="optional whole-book text output path")
     ap.add_argument("--lines-out", type=Path, default=None, help="optional physical-lines whole-book output path")
     ap.add_argument("--chapters-json-out", type=Path, default=None, help="optional sibling .chapters.json path")
@@ -391,18 +416,35 @@ def main() -> None:
 
     markers: list[tuple[str, int, str]] = []
     marker_map: dict[str, tuple[int, str]] = {}
+    phrase_by_ch: dict[int, str] = {}
     order: list[int] = []
     order_index: dict[int, int] = {}
+    map_rows: list[tuple[str, int, str]] = []
     if args.mode == "phrases":
         for item in args.phrases.split(","):
             item = item.strip()
             if not item:
                 continue
             ch_s, phrase = item.split("=", 1)
-            markers.append((norm_line(phrase.split()), int(ch_s), phrase))
+            ch_i = int(ch_s)
+            np_str = norm_line(phrase.split())
+            markers.append((np_str, ch_i, phrase))
+            phrase_by_ch[ch_i] = np_str
         marker_map = {np_: (ch, ph) for np_, ch, ph in markers}
         order = [ch for _, ch, _ in markers]
         order_index = {ch: i for i, ch in enumerate(order)}
+    elif args.mode == "map":
+        if not args.map or not args.map.exists():
+            sys.exit("--mode map requires an existing --map CSV")
+        with open(args.map, encoding="utf-8") as mf:
+            for r in csv.DictReader(mf):
+                s_im = r["start_image"].strip()
+                c_i = int(r["chapter"])
+                lbl = r.get("label", "").strip()
+                map_rows.append((s_im, c_i, lbl))
+                if c_i >= 1 and lbl:
+                    known_titles.setdefault(c_i, lbl)
+        map_rows.sort(key=lambda x: natural_key(Path(x[0])))
 
     psm_override = {}
     for item in args.psm_override.split(","):
@@ -424,10 +466,17 @@ def main() -> None:
     dup_dropped = []
     next_phrase_ch = order[0] if args.mode == "phrases" and order else None
 
+    excluded_set = {
+        x.strip()
+        for x in args.exclude_images.split(",")
+        if x.strip()
+    }
     active_imgs = [
         img
         for img in images
-        if not args.end_image or natural_key(img) <= natural_key(Path(args.end_image))
+        if (not args.end_image or natural_key(img) <= natural_key(Path(args.end_image)))
+        and img.name not in excluded_set
+        and img.stem not in excluded_set
     ]
     todo_ocr: list[tuple[Path, int, str]] = []
     for img in active_imgs:
@@ -490,36 +539,53 @@ def main() -> None:
             and len(" ".join(strip_edge_noise_tokens(line_dicts[0]["tokens"]))) <= 4
         ):
             line_dicts.pop(0)
-        while (
-            len(line_dicts) >= 2
-            and (line_dicts[-1]["top"] - line_dicts[-2]["top"]) >= 140
-            and len(" ".join(strip_edge_noise_tokens(line_dicts[-1]["tokens"]))) <= 4
-        ):
-            line_dicts.pop()
+        while len(line_dicts) >= 2 and (line_dicts[-1]["top"] - line_dicts[-2]["top"]) >= 140:
+            c_bot = strip_edge_noise_tokens(line_dicts[-1]["tokens"])
+            is_tiny_speck = len(" ".join(c_bot)) <= 4
+            is_bottom_folio = len(c_bot) <= 3 and any(re.fullmatch(r"\d{1,3}", t) for t in c_bot)
+            if is_tiny_speck or is_bottom_folio:
+                line_dicts.pop()
+            else:
+                break
 
-        # Strip running headers (and isolated folio numbers on top 2 lines)
+        # Drop pure-punctuation / decorative rule lines (e.g. dotted borders '........')
+        line_dicts = [
+            ld
+            for ld in line_dicts
+            if any(re.search(r"[A-Za-z0-9]", t) for t in strip_edge_noise_tokens(ld["tokens"]))
+        ]
+
+        # Strip running headers (and isolated folio numbers in the top header zone y < 560)
         if line_dicts and args.strip_header:
             k = 0
-            while k < min(3, len(line_dicts)):
-                first = " ".join(line_dicts[k]["tokens"])
+            while k < min(3, len(line_dicts)) and line_dicts[k]["top"] < 560:
+                clean_k = strip_edge_noise_tokens(line_dicts[k]["tokens"])
+                first = " ".join(clean_k)
                 is_pure_folio = (
                     k == 0
-                    and len(line_dicts[k]["tokens"]) == 1
-                    and bool(re.fullmatch(r"\d{1,3}", line_dicts[k]["tokens"][0]))
+                    and len(clean_k) == 1
+                    and bool(re.fullmatch(r"\d{1,3}", clean_k[0]))
                 )
-                matches_rx = len(line_dicts[k]["tokens"]) <= 8 and any(
+                matches_rx = len(clean_k) <= 8 and any(
                     re.search(rx, first, flags=re.IGNORECASE) for rx in args.strip_header
                 )
                 if is_pure_folio or matches_rx:
+                    has_folio_num = any(re.fullmatch(r"\d{1,3}", t) for t in clean_k)
+                    exp_has_num = bool(
+                        next_phrase_ch is not None
+                        and re.search(r"\d", phrase_by_ch.get(next_phrase_ch, ""))
+                    )
                     keep = (
                         args.mode == "phrases"
                         and k == 0
-                        and ch_nl_match(norm_line(line_dicts[0]["tokens"]), marker_map) == next_phrase_ch
+                        and line_dicts[0]["top"] >= 330
+                        and (not has_folio_num or exp_has_num)
+                        and ch_nl_match(norm_line(clean_k), marker_map) == next_phrase_ch
                     )
                     # Also do NOT strip Ch. 74 "Cat's Cradle 74" when it is mid-page or has "74"!
-                    if detect and k > 0 and "74" in line_dicts[k]["tokens"]:
+                    if detect and k > 0 and "74" in clean_k:
                         keep = True
-                    if detect and k == 0 and line_dicts[k]["top"] > 350 and "74" in line_dicts[k]["tokens"]:
+                    if detect and k == 0 and line_dicts[k]["top"] > 350 and "74" in clean_k:
                         keep = True
                     if not keep:
                         line_dicts = line_dicts[:k] + line_dicts[k + 1 :]
@@ -537,7 +603,7 @@ def main() -> None:
         words.discard("")
         dup = False
         if len(words) >= 12 and n_words > 20:
-            for prev in [p for p in pages if not p["dropped"]][-8:]:
+            for prev in [p for p in pages if not p["dropped"]][-16:]:
                 pw = prev["wordset"]
                 if not pw:
                     continue
@@ -695,24 +761,89 @@ def main() -> None:
     ch_paras: dict[int, list[list[str]]] = {0: []}
     titles: dict[int, str] = {}
     qa_rows, marker_log = [], []
+    map_ptr = 0
 
     for pi, page in enumerate(pages):
         img, p_lines = page["img"], page["lines"]
         i = 0
+
+        if args.mode == "map":
+            advanced_map = False
+            while map_ptr < len(map_rows) and natural_key(img) >= natural_key(Path(map_rows[map_ptr][0])):
+                s_im, m_ch, m_lbl = map_rows[map_ptr]
+                cur_ch = m_ch
+                if m_lbl:
+                    titles[m_ch] = m_lbl
+                ch_paras.setdefault(m_ch, [[]])
+                if m_ch >= 1:
+                    marker_log.append(
+                        {
+                            "image": img.name,
+                            "chapter": m_ch,
+                            "title": titles.get(m_ch, ""),
+                            "line": f"[map:{s_im}] " + (" ".join(p_lines[0]["tokens"]) if p_lines else ""),
+                        }
+                    )
+                    advanced_map = True
+                map_ptr += 1
+            if advanced_map and p_lines:
+                long_tops = [
+                    ld["top"]
+                    for ld in p_lines
+                    if len(" ".join(strip_edge_noise_tokens(ld["tokens"]))) >= 18
+                ]
+                first_body_top = long_tops[0] if long_tops else 0
+                while i < len(p_lines):
+                    c0 = strip_edge_noise_tokens(p_lines[i]["tokens"])
+                    if len(c0) == 1 and re.fullmatch(r"[0-9IVXLCDMivxlcdm]{1,4}", c0[0]):
+                        i += 1
+                        continue
+                    if (
+                        first_body_top >= 900
+                        and p_lines[i]["top"] <= first_body_top - 90
+                        and len(c0) <= 3
+                        and len(" ".join(c0)) <= 10
+                    ):
+                        i += 1
+                        continue
+                    break
+
         while i < len(p_lines):
             ld = p_lines[i]
-            toks = ld["tokens"]
-            nl = norm_line(toks)
+            toks = list(ld["tokens"])
+            if len(toks) >= 4 and toks[0] in {"|", "1"}:
+                alpha_rest = [re.sub(r"[^A-Za-z]", "", t) for t in toks[1:]]
+                alpha_rest = [a for a in alpha_rest if a]
+                nxt_up = re.sub(r"[^A-Za-z']", "", toks[1]).upper()
+                if (
+                    len(alpha_rest) >= 3
+                    and all(a.isupper() for a in alpha_rest)
+                    and nxt_up in {
+                        "LOOKED", "SAW", "KNEW", "DID", "DIDN'T", "HAD", "HAVE",
+                        "WAS", "AM", "THOUGHT", "FELT", "HEARD", "WENT", "CAME",
+                        "TOOK", "FOUND", "TRIED", "WANTED", "NEVER", "REMEMBER",
+                    }
+                ):
+                    toks[0] = "I"
+            clean_toks = strip_edge_noise_tokens(toks)
+            nl = norm_line(clean_toks)
             hit = None
             consumed = 1
             if args.mode == "cc":
                 if (pi, i) in chosen:
                     hit, consumed = chosen[(pi, i)]
-            else:
+            elif args.mode == "phrases":
+                has_folio_num = any(re.fullmatch(r"\d{1,3}", t) for t in clean_toks)
+                exp_has_num = bool(
+                    next_phrase_ch is not None
+                    and re.search(r"\d", phrase_by_ch.get(next_phrase_ch, ""))
+                )
+                is_running_head_folio = (ld["top"] < 430 and has_folio_num and not exp_has_num)
                 if (
                     page["detect"]
                     and next_phrase_ch is not None
-                    and len(toks) <= 8
+                    and not is_running_head_folio
+                    and len(clean_toks) <= 8
                     and ch_nl_match(nl, marker_map) == next_phrase_ch
                 ):
                     hit = next_phrase_ch
@@ -721,7 +852,7 @@ def main() -> None:
                 raw_head_toks = [
                     t
                     for k in range(consumed)
-                    for t in p_lines[i + k]["tokens"]
+                    for t in strip_edge_noise_tokens(p_lines[i + k]["tokens"])
                     if not re.fullmatch(r"\d{1,3}[.,;:]?", t)
                 ]
                 if args.mode == "cc" and consumed == 1 and len(raw_head_toks) == 0:
@@ -735,7 +866,7 @@ def main() -> None:
                 if known_titles.get(hit):
                     titles[hit] = known_titles[hit]
                 elif raw_head_toks:
-                    titles[hit] = " ".join(raw_head_toks)
+                    titles[hit] = " ".join(raw_head_toks).strip(" ,;:|")
 
                 if (
                     args.drop_next_line
@@ -755,14 +886,24 @@ def main() -> None:
                     }
                 )
                 cur_ch = hit
-                if args.mode != "cc":
+                if args.mode == "phrases":
                     idx = order_index[hit]
                     next_phrase_ch = order[idx + 1] if idx + 1 < len(order) else None
                 i += consumed
                 continue
 
-            # Body line (also drop Book One/Two/Three standalone divider pages if any)
-            line_str = " ".join(toks)
+            # Body line (also drop standalone structural divider lines matching --drop-line-regex)
+            line_str = " ".join(clean_toks)
+            if not line_str:
+                i += 1
+                continue
+            if (
+                args.drop_line_regex
+                and len(clean_toks) <= 10
+                and any(re.search(rx, line_str, flags=re.IGNORECASE) for rx in args.drop_line_regex)
+            ):
+                i += 1
+                continue
             paras = ch_paras.setdefault(cur_ch, [[]])
             if not paras:
                 paras.append([])
@@ -839,11 +980,14 @@ def main() -> None:
             )
         found = {m["chapter"] for m in marker_log}
         if args.mode == "cc":
-            missing = [c for c in range(1, args.max_chapter + 1) if c not in found]
+            expected_chs = list(range(1, args.max_chapter + 1))
+        elif args.mode == "map":
+            expected_chs = [ch for _, ch, _ in map_rows if ch >= 1]
         else:
-            missing = [ch for _, ch, _ in markers if ch not in found]
+            expected_chs = [ch for _, ch, _ in markers]
+        missing = [ch for ch in expected_chs if ch not in found]
         f.write(f"\n{flags} pages (>20 words) below 85% mean confidence.\n")
-        f.write(f"Chapters found: {len(found)} / {args.max_chapter if args.mode == 'cc' else len(markers)}.\n")
+        f.write(f"Chapters found: {len(found)} / {len(expected_chs)}.\n")
         if missing:
             f.write(
                 f"\n**Markers NOT found: {missing}** (chapter text merged into "

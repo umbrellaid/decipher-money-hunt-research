@@ -59,14 +59,17 @@ and passage. `engine.search_anchored` now covers the construction (`docs/methodo
 gap 3). Status of the re-earning:
 
 - **Re-tested under both search shapes** (all negative; see `results/RUN_LOG.md`
-  2026-11-03, 2026-11-07, and 2026-11-12 entries):
-  - *Doctor Zhivago*, *Foundation*, *I, Robot*, *The Thorn Birds*, and *Cat's Cradle* —
-    the five era-verified whole-book paperback scans (*Cat's Cradle* Dell `#11149`,
-    59th printing Nov 1984, recovered `181/181` body pages at `92.21%` mean confidence
-    and `127/127` chapters on 2026-11-12; swept negative across all 21 sliding + 21
-    anchored-palindromic families, exact physical `line-first`/`line-last`, 127-title
-    chains, 3-band index-elastic drift, and skip-trigram Viterbi scattered-null scans;
-    best `3-1` = −8.7948).
+  2026-11-03, 2026-11-07, 2026-11-12, and 2026-11-13 entries):
+  - *Foundation*, *I, Robot*, *Doctor Zhivago*, *The Thorn Birds*, and *Cat's Cradle* —
+    all five era-verified whole-book paperback scans. Following the 2026-11-12 *Cat's Cradle*
+    recovery (`92.2%` mean confidence, `0/181` body pages `< 85%`, `127/127` chapters) and
+    2026-11-13 re-processing of *I, Robot* (`93.2%`, `0/186` `< 85%`, `10/10` sections),
+    *Doctor Zhivago* (`93.1%`, `6/448` `< 85%`, `17/17` chapters incl. *The Poems of Yurii
+    Zhivago*, retiring the earlier OCR-noise caveat), and *The Thorn Birds* (`91.5%`,
+    `2/675` `< 85%`, `19/19` numbered chapters), all four two-page-spread paperbacks have
+    now been swept negative across all 21 sliding + 21 anchored-palindromic families, exact
+    physical `line-first`/`line-last`, chapter-title chains, 3-band index-elastic drift, and
+    skip-trigram Viterbi scattered-null diagnostics.
   - **All 58 public-domain / Poe corpus files** — Poe (complete works + 9 splits),
     Faulkner (*The Sound and the Fury*, *Soldiers' Pay*, *As I Lay Dying*), ten
     pre-1931 Christies, Sandburg (*Rootabaga*), five early O'Neill plays, cummings
@@ -75,9 +78,10 @@ gap 3). Status of the re-earning:
   - Palindromic chapter-title chains (`chapter-titles-palindrome` in `solver/sweep.py`
     and `Chars|PalFwdRev` in `solver/toc_and_clue_tester.py`).
 - **Anchored palindromic family coverage:** `--all-palindromic` in `solver/sweep.py`
-  extends `engine.search_anchored` across all 21 rule families (verified on *Cat's Cradle*,
-  2026-11-12); earlier 2026-11-03/07 batch runs covered the default 3-family anchored
-  set (`letters`, `first-letters`, `last-letters`). See
+  extends `engine.search_anchored` across all 21 rule families (verified across *Cat's
+  Cradle*, *I, Robot*, *Doctor Zhivago*, and *The Thorn Birds*, 2026-11-12/13); earlier
+  2026-11-03/07 batch runs covered the default 3-family anchored set (`letters`,
+  `first-letters`, `last-letters`). See
   [`decipher-ciphertext-patterns.md`](decipher-ciphertext-patterns.md) for structural
   profiles of 3-1, 3-2, and 3-3 (including 3-3's strict without-replacement property
   and the word-initial `E`-depletion analysis).
@@ -106,13 +110,20 @@ Full logs: `results/RUN_LOG.md`.
    *Slaughterhouse-Five* remains top priority (10 numbered chapters where Chapter 10 is
    simultaneously `"10"` and `"End"`, matching Holland's anti-war voice).
 3. ~~**Isaac Asimov** for 3-1~~ — *Foundation* eliminated 2026-10-21; *I, Robot*
-   (Fawcett Crest 1970) eliminated 2026-10-26: **51/51 windows fail the 3-1 zero-Z
-   necessary condition** and no family decoded (RUN_LOG 2026-10-26). Remaining Asimov
-   scan-list titles: *Foundation's Edge*, *Union Club Mysteries*, *The Naked Sun*.
-4. The rest of Group B for 3-1 (Nixon, Woodward, Ludlum, Capote, Uris, Pasternak,
+   (Fawcett Crest 1970, re-processed 2026-11-13 at `93.2%` mean confidence with `0/186`
+   body pages `< 85%` and `10/10` story anchors) eliminated: **51/51 windows fail the
+   3-1 zero-Z necessary condition** and all 21 sliding + 21 anchored-palindromic +
+   physical-line + drift + null families score in the noise band (`RUN_LOG` 2026-11-13).
+   Remaining Asimov scan-list titles: *Foundation's Edge*, *Union Club Mysteries*,
+   *The Naked Sun*.
+4. ~~**Boris Pasternak** (*Doctor Zhivago*)~~ — Signet 1960 mass-market (`448` body pages,
+   `17/17` chapters, re-processed 2026-11-13 at `93.1%` mean confidence with only `6/448`
+   pages `< 85%`, retiring the earlier OCR-noise caveat) eliminated across all 21 sliding +
+   21 anchored-palindromic + physical-line + title-chain + drift + null families (`3-1` best
+   `−8.8051`). The rest of Group B for 3-1 (Nixon, Woodward, Ludlum, Capote, Uris,
    Halberstam, Ono) and the in-copyright members of A and C for 3-2/3-3 (Sanders,
    Buckley, Solzhenitsyn, Cosby, Wolfe; Kissinger, Plath, Haley, Mailer, Smith,
-   Follett, Puzo), plus post-1931 Faulkner and Christie.
+   Follett, Puzo), plus post-1931 Faulkner and Christie, remain open.
 
 Every one of these is in copyright and DRM-locked as an ebook. The route is
 `docs/check-your-own-book.md`.

@@ -223,11 +223,14 @@ names; six are public domain and have been swept exhaustively:
   Elizabeth Barrett Browning, Jules Verne, Walt Whitman, Henry David Thoreau. Best score
   across all of it stays deep in the noise band.
 - **Remaining suspects, all in copyright:** John Updike, Colleen McCullough (*The Thorn
-  Birds* whole-book Avon scan swept negative under sliding, anchored-palindromic, and
-  3-band drift rules; other pre-1985 McCullough titles remain), John Irving, Robert Ludlum,
-  Louis L'Amour. See [`decipher-ciphertext-patterns.md`](decipher-ciphertext-patterns.md)
-  for 2-4's structural fingerprint (zero literals, three 3-step `+1` runs `737–739`,
-  `154–156`, `544–546`, and the 8-token round-hundred cluster at positions `20–27`).
+  Birds* whole-book Avon `0-380-01817-9` scan re-processed 2026-11-13 at `91.5%` mean
+  confidence across all `19` numbered chapters — `2/675` body pages `< 85%` — and swept
+  negative across all 21 sliding + 21 anchored-palindromic families, `32,194` physical
+  lines, 19-title chains, 3-band drift, and scattered-null diagnostics; other pre-1985
+  McCullough titles remain), John Irving, Robert Ludlum, Louis L'Amour. See
+  [`decipher-ciphertext-patterns.md`](decipher-ciphertext-patterns.md) for 2-4's structural
+  fingerprint (zero literals, three 3-step `+1` runs `737–739`, `154–156`, `544–546`, and
+  the 8-token round-hundred cluster at positions `20–27`).
 
 So the lost solution's key is most likely a pre-1985 novel by one of those five.
 `docs/check-your-own-book.md` is the route; a used *Rabbit, Run* or *The Thorn Birds*
@@ -281,10 +284,20 @@ on the back." For Decipher II, the file named `-front` holds Message 1 only, and
 the file named `-back` holds Messages 2, 3, and 4. Read the message numbers on the
 scan. The filenames are a poor guide to which physical side is which.
 
-### 2-4 candidate status after the 2026-10-24/27 Thorn Birds scans
-*The Thorn Birds* (Avon, ISBN 0380018179) body-scanned twice: 2026-10-24 (ScanTailor
-route, INCONCLUSIVE) and 2026-10-27 (fixed pipeline, 7 parts, dups removed). **No
-readable plaintext for 2-4 under any tested family — NEGATIVE, with an OCR-noise
-caveat** (mean conf 77; 128 pages under 70, clustered in Parts Two and Six; rescan
-list: `scanning/book-scans/the-thorn-birds/RESCAN_LIST_2026-10-27.md`). McCullough
-drops below the untested candidates (*Rabbit, Run* etc.) but is not eliminated.
+### 2-4 candidate status after the 2026-11-13 *The Thorn Birds* re-processing & full sweep
+*The Thorn Birds* (Avon mass-market, ISBN `0-380-01817-9`, `369` raw two-page spreads =
+`675` body pages, `229,796` clean body words) was re-processed end-to-end on 2026-11-13
+using the chroma-calibrated spread splitter (`solver/preprocess_spreads.py`) and
+`QUOTE_NONE` chapter-map ingest (`solver/ingest_by_markers.py`), retiring the earlier
+2026-10-24/27 OCR-noise caveat (`77%` mean confidence, `7` Part files, two off-by-one Part
+starts, and `424,855` TSV-corrupted tokens):
+- **QA:** **`91.5%` mean Tesseract confidence**, only **`2 / 675` body pages `< 85%`**
+  (`84.8%` and `84.9%`), and all **`19 / 19` numbered chapters (`1..19` across Parts `1..7`)**
+  recovered cleanly (no re-scan needed).
+- **Sweep verdict:** **NEGATIVE across all 5 solver tools** (`2-4` best `−8.6897` on
+  `sweep.py --all-palindromic`, `−8.6961` on exact physical `line-first`/`line-last` across
+  `32,194` printed lines, `−9.1311` on 3-band index-elastic drift, `−8.2836` on skip-trigram
+  Viterbi scattered-null recovery, and `0` English hits on `body_scan.py`; see
+  `results/RUN_LOG.md`, 2026-11-13). *The Thorn Birds* is cleanly eliminated under all
+  tested families; only other pre-1985 McCullough titles (*Tim*, *An Indecent Obsession*)
+  keep McCullough theoretically open well behind Updike, Irving, Ludlum, and L'Amour.

@@ -9,9 +9,10 @@ CZUR Aura full-frame spread -> clean, deskewed, dewarped single-page JPGs.
 
 Solves all geometric & photometric failure modes on hand-held two-page spreads:
   1. Hand / thumb exclusion via chroma + upper-page geometry: paper & ink on
-     CZUR LED captures have R - G < 0 while skin has R - G in +13..+45, and
-     hands only hold the lower half of the book. Closing small (<65 px) gaps
-     bridges the dark spine crease without merging hands into the book span.
+     CZUR LED captures (including yellowed 1960s-70s stock) have R - G < 15
+     while skin has R - G in +20..+48, and hands only hold the lower half of
+     the book. Closing <95 px gaps bridges deep V-shaped spine shadows without
+     merging hands into the book span.
   2. Ink-masked tilted spine tracking: tracks the narrow vertical shadow crease
      within the ink-free inner gutter corridor across 16 horizontal strips,
      preventing false locks onto black text margins or fanned leaf stacks.
@@ -31,6 +32,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor
 import csv
 import math
 import re
@@ -247,7 +249,7 @@ def estimate_paper_rgb(crop: np.ndarray) -> np.ndarray:
     sub = crop[int(h * 0.15) : int(h * 0.85) : 3, int(w * 0.18) : int(w * 0.82) : 3]
     g = sub.mean(axis=2)
     rg = sub[:, :, 0].astype(np.int16) - sub[:, :, 1].astype(np.int16)
-    pts = sub[(g > 165) & (rg < 8)]
+    pts = sub[(g > 165) & (rg < 15)]
     if len(pts) < 100:
         return np.array([216, 224, 222], dtype=np.uint8)
     return np.median(pts, axis=0).astype(np.uint8)
@@ -301,7 +303,7 @@ def process_image(
     rgb_h = rgb[::2, ::2].astype(np.int16)
     gray_h = rgb_h.mean(axis=2)
     rg_h = rgb_h[:, :, 0] - rgb_h[:, :, 1]
-    paper_h = (gray_h > 135) & (rg_h < 8)
+    paper_h = (gray_h > 135) & (rg_h < 15)
 
     rmask = close_1d(paper_h.sum(axis=1) > 350, max_gap=18)
     rspan = largest_run(rmask, min_len=400)
@@ -312,7 +314,7 @@ def process_image(
         r0_h, r1_h = rspan
         rt0 = r0_h + int(0.05 * (r1_h - r0_h))
         rt1 = r0_h + int(0.38 * (r1_h - r0_h))
-        cmask = close_1d(paper_h[rt0:rt1, :].mean(axis=0) > 0.45, max_gap=32)
+        cmask = close_1d(paper_h[rt0:rt1, :].mean(axis=0) > 0.42, max_gap=48)
         cspan = largest_run(cmask, min_len=350)
         if cspan is not None and (cspan[1] - cspan[0]) * 2 >= min_span_split:
             is_spread = True
@@ -432,8 +434,8 @@ def process_image(
     w_L = int(round(gutter_mid - (m_L * y_mid_book + b_L)))
     w_R = int(round((m_R * y_mid_book + b_R) - gutter_mid))
     # True single-leaf width has zero fanned page-edge stack; trimming beyond
-    # 0.975 * min(w_L, w_R) removes fanned page-edge stripes without touching text.
-    max_leaf_w = max(935.0, 0.975 * float(min(w_L, w_R)))
+    # 0.982 * min(w_L, w_R) removes fanned page-edge stripes without touching text.
+    max_leaf_w = max(890.0, 0.982 * float(min(w_L, w_R)))
 
     ry0 = max(0, r0 - 10)
     ry1 = min(h_img, r1 + 10)
@@ -453,10 +455,10 @@ def process_image(
     mask_L = (
         (xs_L >= xg_col - 4.0)
         | (xs_L <= xl_col + 6.0)
-        | (((ys_col < r0 + 42) | (ys_col > r1 - 42)) & ((lg < 120) | (l_rg >= 8)))
+        | (((ys_col < r0 + 42) | (ys_col > r1 - 42)) & ((lg < 120) | (l_rg >= 15)))
         | (
             ((xs_L < xl_col + 230.0) | (ys_col < r0 + 95) | (ys_col > r1 - 95))
-            & (l_rg >= 8)
+            & (l_rg >= 15)
             & (lg > 65)
         )
     )
@@ -473,10 +475,10 @@ def process_image(
     mask_R = (
         (xs_R <= xg_col + 4.0)
         | (xs_R >= xr_col - 6.0)
-        | (((ys_col < r0 + 42) | (ys_col > r1 - 42)) & ((rg_m < 120) | (r_rg >= 8)))
+        | (((ys_col < r0 + 42) | (ys_col > r1 - 42)) & ((rg_m < 120) | (r_rg >= 15)))
         | (
             ((xs_R > xr_col - 230.0) | (ys_col < r0 + 95) | (ys_col > r1 - 95))
-            & (r_rg >= 8)
+            & (r_rg >= 15)
             & (rg_m > 65)
         )
     )
@@ -526,6 +528,12 @@ def main() -> None:
         default="",
         help="optional comma-separated image filenames/stems to re-process without rewriting full manifest",
     )
+    ap.add_argument(
+        "--workers",
+        type=int,
+        default=4,
+        help="number of parallel worker threads (default 4)",
+    )
     args = ap.parse_args()
 
     only_set = {s.strip().lower() for s in args.only.split(",") if s.strip()}
@@ -542,10 +550,9 @@ def main() -> None:
         sys.exit(f"no images found in {args.raw_dir}")
     args.out_dir.mkdir(parents=True, exist_ok=True)
 
-    rows = []
-    for i, img in enumerate(images, 1):
+    def _work(img: Path) -> dict:
         try:
-            r = process_image(
+            return process_image(
                 img,
                 args.out_dir,
                 args.thresh,
@@ -555,15 +562,20 @@ def main() -> None:
                 args.min_valley,
             )
         except Exception as e:
-            r = {"image": img.name, "action": f"ERROR ({e})"}
-        rows.append(r)
-        extra = ""
-        if r.get("action") == "split":
-            extra = (
-                f" gutter={r.get('gutter_x')} slope={r.get('gutter_slope')}"
-                f" dip={r.get('valley_ratio')} deskew={r.get('deskew_deg')} w={r.get('page_w')}"
-            )
-        print(f"[{i}/{len(images)}] {r['image']}: {r['action']}{extra}")
+            return {"image": img.name, "action": f"ERROR ({e})"}
+
+    rows = []
+    n_workers = max(1, args.workers)
+    with ThreadPoolExecutor(max_workers=n_workers) as pool:
+        for i, r in enumerate(pool.map(_work, images), 1):
+            rows.append(r)
+            extra = ""
+            if r.get("action") == "split":
+                extra = (
+                    f" gutter={r.get('gutter_x')} slope={r.get('gutter_slope')}"
+                    f" dip={r.get('valley_ratio')} deskew={r.get('deskew_deg')} w={r.get('page_w')}"
+                )
+            print(f"[{i}/{len(images)}] {r['image']}: {r['action']}{extra}")
 
     fieldnames = [
         "image",
