@@ -66,20 +66,22 @@ text**; it links to her folders and lets you supply your own books.
 
 ## What this repository adds
 
-1. **A solver with a regression suite.** `solver/validate.py` runs 144 checks: the
+1. **A solver with a regression suite.** `solver/validate.py` runs 149 checks: the
    Decipher III rulebook's worked example (three ciphers that must decode to CODES),
    solved puzzles 2-1 (*Gulliver's Travels* palindromic passage + positive control) and
    2-2 (*Catch-22* chapter titles), an encode→search→decode round trip for each of 21
    rule families in all four direction combinations, phase-resolved 21-family anchored
    palindromic mappings, ciphertext invariants (including the palindromic fold scan),
-   3-band index-elastic drift recovery (`solver/drift_diagnostic.py`), and skip-trigram
-   Viterbi scattered-null recovery (`solver/null_diagnostic.py`).
+   3-band index-elastic drift recovery (`solver/drift_diagnostic.py`), skip-trigram
+   Viterbi scattered-null recovery (`solver/null_diagnostic.py`), and CZUR spread-split /
+   marker-ingest OCR invariants (`solver/preprocess_spreads.py`, `solver/ingest_by_markers.py`).
    `solver/sweep.py` tests both sliding and sentence/word-anchored palindromic `S || reverse(S)`
    keys (`--all-palindromic` extends the anchored scan across all 21 families), plus straight
    and palindromic chapter-title chains when a `.chapters.json` file is present beside the book.
 2. **Eliminations that can be rerun.** Millions of sliding and anchored-palindromic
-   candidate key-stream positions across 61 public-domain texts and four scanned
-   whole-book paperbacks (*Foundation*, *I, Robot*, *Doctor Zhivago*, *The Thorn Birds*).
+   candidate key-stream positions across 61 public-domain texts and five scanned
+   whole-book paperbacks (*Foundation*, *I, Robot*, *Doctor Zhivago*, *The Thorn Birds*,
+   *Cat's Cradle*).
    The 61 public-domain files are 49 Project Gutenberg texts, 9 Poe texts, and 3 Standard
    Ebooks Faulkner editions; five further Gutenberg books form the scoring model only.
    Edgar Allan Poe is ruled out for message 3-1; the public-domain members of all three
@@ -107,7 +109,7 @@ Needs [uv](https://docs.astral.sh/uv/). From this directory:
 
 ```
 uv run python solver/fetch_texts.py          # public-domain corpus + scoring model
-uv run python solver/validate.py             # 144 checks; all must pass
+uv run python solver/validate.py             # 149 checks; all must pass
 uv run python solver/sweep.py BOOK.txt --cipher all --top 10
 uv run python solver/drift_diagnostic.py BOOK.txt --cipher all --top 5
 uv run python solver/null_diagnostic.py BOOK.txt --cipher all --top 5

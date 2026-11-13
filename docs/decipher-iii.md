@@ -59,9 +59,14 @@ and passage. `engine.search_anchored` now covers the construction (`docs/methodo
 gap 3). Status of the re-earning:
 
 - **Re-tested under both search shapes** (all negative; see `results/RUN_LOG.md`
-  2026-11-03 and 2026-11-07 entries):
-  - *Doctor Zhivago*, *Foundation*, *I, Robot*, *The Thorn Birds* — the four
-    era-verified whole-book scans (198 M anchored pairs, 2026-11-03).
+  2026-11-03, 2026-11-07, and 2026-11-12 entries):
+  - *Doctor Zhivago*, *Foundation*, *I, Robot*, *The Thorn Birds*, and *Cat's Cradle* —
+    the five era-verified whole-book paperback scans (*Cat's Cradle* Dell `#11149`,
+    59th printing Nov 1984, recovered `181/181` body pages at `92.21%` mean confidence
+    and `127/127` chapters on 2026-11-12; swept negative across all 21 sliding + 21
+    anchored-palindromic families, exact physical `line-first`/`line-last`, 127-title
+    chains, 3-band index-elastic drift, and skip-trigram Viterbi scattered-null scans;
+    best `3-1` = −8.7948).
   - **All 58 public-domain / Poe corpus files** — Poe (complete works + 9 splits),
     Faulkner (*The Sound and the Fury*, *Soldiers' Pay*, *As I Lay Dying*), ten
     pre-1931 Christies, Sandburg (*Rootabaga*), five early O'Neill plays, cummings
@@ -69,20 +74,13 @@ gap 3). Status of the re-earning:
     0 empty-search warnings, all negative, commit `e6de31f`, 2026-11-07).
   - Palindromic chapter-title chains (`chapter-titles-palindrome` in `solver/sweep.py`
     and `Chars|PalFwdRev` in `solver/toc_and_clue_tester.py`).
-- **Cannot be tested at whole-book grade**: *Cat's Cradle* (Vonnegut), ranked #2 for 3-1
-  below. **Corrected 2026-11-04:** the old "82 missing chapters" diagnosis was a bad
-  split, not missing scans. Re-ingest reduced the boundary gap to **31 chapters**, but
-  the OCR remains only about **85–90% accurate at word level**, so the text still cannot
-  support an exact character-level sweep (`solver/drift_diagnostic.py` can check for
-  small local word-initial shifts, not 10–15% word-level OCR noise). The remaining
-  limitation is OCR/text quality, not the superseded 82-chapter split diagnosis; see
-  `results/RUN_LOG.md`.
-- The anchored scan covers `letters`, `first-letters` and `last-letters` (the three
-  families whose stream coordinates map cleanly onto sentence/word starts). The 18
-  every-Nth and word-Nth-letter strided families in palindromic form remain untested
-  for all books; see [`decipher-ciphertext-patterns.md`](decipher-ciphertext-patterns.md)
-  for structural profiles of 3-1, 3-2, and 3-3 (including 3-3's strict
-  without-replacement property and the word-initial `E`-depletion analysis).
+- **Anchored palindromic family coverage:** `--all-palindromic` in `solver/sweep.py`
+  extends `engine.search_anchored` across all 21 rule families (verified on *Cat's Cradle*,
+  2026-11-12); earlier 2026-11-03/07 batch runs covered the default 3-family anchored
+  set (`letters`, `first-letters`, `last-letters`). See
+  [`decipher-ciphertext-patterns.md`](decipher-ciphertext-patterns.md) for structural
+  profiles of 3-1, 3-2, and 3-3 (including 3-3's strict without-replacement property
+  and the word-initial `E`-depletion analysis).
 
 - **Edgar Allan Poe for 3-1**: complete works, 21 rule families, every numbering start,
   both directions (best −8.84, noise). Poe is not in the answer.
@@ -104,9 +102,9 @@ Full logs: `results/RUN_LOG.md`.
 1. **Joseph Heller** and **James Clavell** — both already used as keys in Decipher II
    (2-2 and 2-3). Holland returned to favourites. Heller: *Something Happened*,
    *Good as Gold*, *God Knows*. Clavell: *Shōgun*, *Noble House*, *King Rat*.
-2. **Kurt Vonnegut** for 3-1 — *Slaughterhouse-Five* matches Holland's taste for
-   thematically resonant keys (war, memory); the "10" and "End" clues fit a
-   chapter/word-10 or every-10th reading.
+2. **Kurt Vonnegut** for 3-1 — *Cat's Cradle* (Dell Nov 1984) eliminated 2026-11-12;
+   *Slaughterhouse-Five* remains top priority (10 numbered chapters where Chapter 10 is
+   simultaneously `"10"` and `"End"`, matching Holland's anti-war voice).
 3. ~~**Isaac Asimov** for 3-1~~ — *Foundation* eliminated 2026-10-21; *I, Robot*
    (Fawcett Crest 1970) eliminated 2026-10-26: **51/51 windows fail the 3-1 zero-Z
    necessary condition** and no family decoded (RUN_LOG 2026-10-26). Remaining Asimov

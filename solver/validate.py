@@ -598,6 +598,54 @@ def test_extended_palindromic_and_null_viterbi(scorer):
           f"best_noise={noise_nhits[0]['null_score']:.3f} skips={noise_nhits[0]['n_skipped']}")
 
 
+def test_ocr_spread_and_marker_helpers():
+    import csv
+    import numpy as np
+    import ingest_by_markers
+    import preprocess_spreads
+
+    # 1. Spine-crease gap closing without merging distant hands
+    col_mask = np.zeros(200, dtype=bool)
+    col_mask[10:25] = True    # left hand
+    col_mask[50:98] = True    # left page
+    col_mask[104:152] = True  # right page (6-px dark spine crease gap at 98..103)
+    closed = preprocess_spreads.close_1d(col_mask, max_gap=10)
+    span = preprocess_spreads.largest_run(closed, min_len=40)
+    check("preprocess-spreads: close_1d bridges spine crease without merging outer hand",
+          span == (50, 152), f"span={span}")
+
+    # 2. TSV DictReader with QUOTE_NONE preserves dialogue lines starting with '"'
+    tsv_text = "level\tconf\ttext\n5\t95.0\t\"All\n5\t96.0\tof\n5\t94.0\t\"lies.\"\n"
+    rows = list(csv.DictReader(tsv_text.splitlines(), delimiter="\t", quoting=csv.QUOTE_NONE))
+    check("ocr-tsv: QUOTE_NONE keeps opening quote token separate instead of swallowing rows",
+          [r["text"] for r in rows] == ['"All', "of", '"lies."'])
+
+    # 3. Multi-line title matching & corrupted/glued trailing margin digits
+    known = {
+        6: ingest_by_markers.norm_alpha("Bug Fights"),
+        54: ingest_by_markers.norm_alpha("Communists, Nazis, Royalists, Parachutists, and Draft Dodgers"),
+        91: ingest_by_markers.norm_alpha("Mona"),
+    }
+    fake_lines = [
+        {"tokens": ["Communists,", "Nazis,", "Royalists,", "Parachutists,", "54"], "top": 500, "left": 200, "right": 900},
+        {"tokens": ["and", "Draft", "Dodgers", "|"], "top": 570, "left": 450, "right": 900},
+        {"tokens": ["Body", "prose", "starts", "here", "and", "continues."], "top": 760, "left": 140, "right": 900},
+    ]
+    m54 = ingest_by_markers.match_known_title(fake_lines, 0, known, spaced=True)
+    check("marker-ingest: multi-line heading consumes exact 2-line span without eating body prose",
+          any(ch == 54 and sp == 2 for ch, sp, _ in m54)
+          and not any(sp == 3 for _, sp, _ in m54), f"m54={m54}")
+
+    m91_lines = [{"tokens": ["Mona", "$f"], "top": 850, "left": 700, "right": 900}]
+    m91 = ingest_by_markers.match_known_title(m91_lines, 0, known, spaced=True)
+    check("marker-ingest: strips corrupted margin-number glyph '$f' to match single-word heading",
+          any(ch == 91 and sp == 1 for ch, sp, _ in m91), f"m91={m91}")
+
+    check("marker-ingest: extract_glued_nums recovers trailing chapter digit without splitting 'X-9'",
+          ingest_by_markers.extract_glued_nums(["Se", "BUC", "erlotSes6"]) == [6]
+          and ingest_by_markers.extract_glued_nums(["Secret", "Agent", "X-9"]) == [])
+
+
 def main():
     test_codes_example()
     test_puzzle_22()
@@ -610,6 +658,7 @@ def main():
     test_null_tolerance(scorer)
     test_ciphertext_patterns_and_drift(scorer)
     test_extended_palindromic_and_null_viterbi(scorer)
+    test_ocr_spread_and_marker_helpers()
     print()
     if failures:
         print(f"{len(failures)} FAILURES: {failures}")

@@ -120,7 +120,9 @@ def ocr_page(tesseract: str, img: Path, psm: int, dehyphenate: bool,
     if proc.returncode != 0:
         return PageResult(img.name, "", 0.0, 0, [f"TESSERACT_ERROR: {proc.stderr.strip()[:120]}"])
 
-    rows = list(csv.DictReader(proc.stdout.splitlines(), delimiter="\t"))
+    rows = list(csv.DictReader(
+        proc.stdout.splitlines(), delimiter="\t", quoting=csv.QUOTE_NONE
+    ))
     words = [
         r for r in rows
         if r.get("text", "").strip() and float(r.get("conf", "-1")) >= 0

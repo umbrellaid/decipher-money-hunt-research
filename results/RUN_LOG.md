@@ -1003,6 +1003,76 @@ archive) against this repository:
    - Added ranked physical scan roadmap (`docs/scan-priority-top10.md`).
    - Validation: `verify_ii1.py` **19/19 PASS**; `validate.py` **144/144 PASS**.
 
+## 2026-11-12 — *Cat's Cradle* (Dell 1984) spread-split/OCR recovery & exhaustive whole-book sweep: all negative
+
+**Provenance verified from `raw/image00023.jpg`:** Kurt Vonnegut, Jr., *Cat's Cradle*, Dell
+Publishing Co. `#11149`, `ISBN 0-440-11149-8`, *"Fifty-ninth printing—November 1984"* (`106`
+`4320×3240` CZUR captures `image00020.jpg`–`image00125.jpg`, `181` physical body pages `11..191`,
+`127` numbered chapters). Era-authentic pre-1987 printing for Decipher III Group B (`3-1`).
+
+### Root causes of the two earlier failed attempts (`pages_v1` / `cats-cradle` and `pages` / `cats-cradle-v2`)
+
+1. **Hand/thumb brightness shifting the book span (`preprocess_spreads.py`):** Under CZUR LEDs,
+   cream paper has `R − G` in `[−15, −7]` and black ink `[−12, −2]`, whereas fingers/thumbs holding
+   the lower edges have `R − G` in `[+13, +40]` and grayscale `160–215`. Grayscale-only thresholding
+   (`thresh = 70` in `v1`, `160` in `v2`) swept bright thumbs into the bounding box, shifting the
+   midpoint cut `60–208 px` off-center and slicing 3–4 characters off the inner margin. (An earlier
+   color test had checked `R − B` instead of `R − G` and omitted 1D gap closing across the dark
+   spine crease.)
+2. **Tilted spreads (`1.5°–3.5°`), fanned leaf stacks, and 3D thumb-lifted corner curl:** Rigid
+   vertical `x = const` cuts clipped tilted gutter lines, column-wide percentiles washed out tilted
+   spine shadows, and upward `3°–5°` page curl near lifted right-hand corners caused Tesseract
+   `--psm 6` to slice diagonally across adjacent bottom lines (`74` body pages `< 85%` confidence).
+3. **Missing `quoting=csv.QUOTE_NONE` on Tesseract TSV (`ocr_ingest.py`, `ingest_by_markers.py`):**
+   Python `csv.DictReader` defaults to `quotechar='"'`, so every word starting with an opening
+   dialogue quote (`"All...`) swallowed tabs and newlines until the next `"`, deleting dialogue
+   tokens and gluing chapter numbers onto words (`"the5"`).
+4. **Marker-chasing & retake-dedup bugs (`ingest_by_markers.py`):** Without `--start-image` /
+   `--end-image`, the Table of Contents consumed markers `1..127` first and the back mail-order
+   coupon appended to `ch127`; `len(toks) > 7` rejected 8–11 word and multi-line headings (`Ch. 54,
+   76, 83`); and out-of-place retake deduplication transposed Page 14 and Page 15 on spread
+   `00029`/`00030`.
+
+### Pipeline upgrades & QA verification (`pages_v2` → `texts/cats-cradle-v3`)
+
+- **`solver/preprocess_spreads.py`:** Chroma + upper-38% hand-free span detection
+  (`(gray > 135) & ((R − G) < 8)` with `close_1d` across the spine crease), ink-masked 16-strip
+  tilted spine-crease line tracking `x_gutter(y) = m*y + b`, seamless `paper_median_rgb` masking +
+  outer fanned leaf-stack trim, global rotation, and `10×9` patch-grid 2D page-curl dewarping + `2×`
+  Lanczos upscale (`103` spreads split + `3` single covers = `209` page images, `0` errors).
+- **`solver/ocr_ingest.py` & `solver/ingest_by_markers.py`:** Added `quoting=csv.QUOTE_NONE`,
+  horizontal baseline-segment merging, in-place duplicate retake replacement (`11` retake half-pages
+  dropped with zero page transpositions), typographic sinkage spacing + multi-line `--titles-json`
+  alignment, parallel 6-worker Tesseract execution with `--ocr-cache`, and dual whole-book outputs
+  preserving both dehyphenated paragraphs (`cats-cradle.clean.txt`) and exact physical paperback
+  line breaks (`cats-cradle-lines.clean.txt`).
+- **QA gate passed:**
+  - Physical body pages (`Pages 11..191`): **`181 / 181`** in exact order (`0` gaps, `0` duplicates).
+  - Chapters recovered: **`127 / 127`** (`0` missing; `52,894` clean body words; `8,483` physical
+    printed lines; `128` files `ch00_front` + `ch001..ch127`, verified `contiguous - sweep-able`
+    via `solver/build_whole_books.py --list`).
+  - Body-page Tesseract confidence: **`92.21%` mean** (`median = 92.3%`, `min = 86.9%`, `max = 95.4%`),
+    with **`0 / 181` body pages below `85%`** (down from `74` in `v1`/`v2`). Visually spot-checked
+    word-for-word against raw photos across `Ch. 1, 5, 6, 10, 95, 102, 127`.
+
+### Sweep & diagnostic results (all negative)
+
+| Tool / Target | `2-4` best | `3-1` best | `3-2` best | `3-3` best | Notes / Verdict |
+|---|---:|---:|---:|---:|---|
+| `sweep.py --all-palindromic` (`cats-cradle.clean.txt` + `127` titles, `2,305` title chars) | −8.7898 (win −8.1494) | **−8.7948** (win −8.4020) | −8.4078 (win −8.1957) | −8.7873 (win −8.4310) | 21 sliding + 21 anchored-palindromic families + straight & palindromic title chains — **0 flags, negative** |
+| `sweep.py --all-palindromic` (`cats-cradle-lines.clean.txt`, `8,483` physical lines) | −8.8168 (win −8.3930) | **−8.8686** (win −8.5463) | −8.5421 (win −8.0739\*) | −8.6831 (win −8.0912) | Tests exact Nov 1984 Dell physical `line-first` (`744k–1.41M` anchored pairs) & `line-last` (`833k–1.93M` pairs); \*1 `every3-wordlast` vowel-salad window artifact — **negative** |
+| `drift_diagnostic.py --sentence-chars` (`cats-cradle.clean.txt`) | −9.2038 | **−9.4147** | −9.0603 | −9.1876 | 25 elastic 3-band profiles (`337.8 s`) — **0 flags (`<= -8.12`), negative** |
+| `null_diagnostic.py --sentence-chars` (`cats-cradle.clean.txt`) | −8.3280 | **−8.3404** | −8.1700 | −8.3081 | Skip-trigram Viterbi (`59.2 s`) — **0 flags (`<= -8.12`), negative** |
+| `body_scan.py` + `zero_z_prefilter.py` (`texts/cats-cradle-v3`, `753` windows) | 2.269 (`WordLast`) | 2.292 (`WordLast`) | 2.476 (`WordLast`) | 2.488 (`WordLast`) | `671/753` windows (`106/128` single chapters) fail `3-1` zero-`Z`; all `22,850` streams × `5` drifts × `2` dirs are vowel salad — **negative** |
+
+*Cat's Cradle* joins *Foundation*, *I, Robot*, *Doctor Zhivago*, and *The Thorn Birds* as the **fifth**
+era-verified physical paperback cleanly swept end-to-end across all sliding, 21-family anchored
+palindromic, physical-line, chapter-title, index-elastic drift, and scattered-null diagnostics.
+Removed *Cat's Cradle* from `docs/scan-priority-top10.md` (no re-scan needed) and promoted Louis
+L'Amour (*The Walking Drum* / *Hondo*) into active slot #10. Validation: `verify_ii1.py` **19/19
+PASS**; `validate.py` **149/149 PASS**.
+
+
 
 
 

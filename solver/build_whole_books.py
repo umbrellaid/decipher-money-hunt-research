@@ -37,10 +37,11 @@ SUPERSEDED = {                              # replaced by a later rescan
     "foundation_new": "foundation2",
     "foundation_v1_2026-10-21": "foundation2",
     "the-thorn-birds-old-2026-10-24": "the-thorn-birds",
-    # v1 was OCR'd from ScanTailor's mangled split (each half-image held most of
-    # BOTH pages); v2 re-OCR'd the correct preprocess_spreads output and recovered
-    # 51 of the 82 lost chapter markers. Still not contiguous - see scan_log.
-    "cats-cradle": "cats-cradle-v2",
+    # v1 was OCR'd from ScanTailor / thresh=70 mangled splits; v2 missed 31
+    # markers due to TSV quote-eating and rigid vertical cuts; v3 splits along
+    # the tilted ink-masked spine crease and recovers all 127 chapters cleanly.
+    "cats-cradle": "cats-cradle-v3",
+    "cats-cradle-v2": "cats-cradle-v3",
 }
 
 CHAP_FILE = re.compile(r"^ch(\d+)(?:_.*)?\.txt$", re.I)
